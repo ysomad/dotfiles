@@ -1,23 +1,23 @@
 #!/usr/bin/env bash
 
 bootstrap_macos () {
-    # Homebrew
+    # homebrew
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-    # Oh-my-zsh
+    # oh-my-zsh
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-    # install all from brew
     brew bundle
+    brew cleanup
 
     # symlink config files
     ./install
 
-    # Vim-plug
+    # vim-plug
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-    # gopls
+    # gopls lsp server
     go install golang.org/x/tools/gopls@latest
 }
 

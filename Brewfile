@@ -1,4 +1,5 @@
 # ============ Tap ============ #
+
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
@@ -46,6 +47,7 @@ brew "koekeishiya/formulae/skhd"
 
 # web
 cask "google-chrome"
+cask "telegram-desktop"
 
 # term
 cask "kitty"
@@ -53,7 +55,6 @@ cask "alacritty"
 
 # utils
 cask "alfred"
-cask "copyclip"
 cask "spaceid" # show desktops in top bar
 cask "stats"
 
@@ -72,8 +73,8 @@ cask "font-jetbrains-mono"
 
 
 # ============ App Store ============ #
+
 mas "Slack", id: 803453959
-mas "Telegram", id: 747648890
 mas "Hidden Bar", id: 1452453066
 mas "CopyClip", id: 595191960
 mas "Amphetamine", id: 937984704
