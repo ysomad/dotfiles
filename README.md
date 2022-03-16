@@ -21,3 +21,6 @@ chmod +x ./bootstrap.sh
 ```sh
 ./bootstrap.sh
 ```
+## TODO
+1. Collect all default mac os system settings and put them in `.macos` and run it after installation
+2. Collect alfred settings
