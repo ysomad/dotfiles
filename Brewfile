@@ -74,7 +74,7 @@ cask "font-jetbrains-mono"
 # ============ App Store ============ #
 mas "Slack", id: 803453959
 mas "Telegram", id: 747648890
-mas "Hidden Bar", id: 1452453066  
-mas "CopyClip", id: 595191960   
-mas "Amphetamine", id: 937984704   
-mas "WireGuard", id: 1451685025  
+mas "Hidden Bar", id: 1452453066
+mas "CopyClip", id: 595191960
+mas "Amphetamine", id: 937984704
+mas "WireGuard", id: 1451685025

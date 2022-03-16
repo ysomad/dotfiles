@@ -8,7 +8,7 @@ bootstrap_macos () {
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
     # install all from brew
-    brew build
+    brew bundle
 
     # symlink config files
     ./install
