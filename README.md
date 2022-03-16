@@ -6,8 +6,9 @@
 - kitty
 - zsh + oh-my-fish and plugins
 - tmux
-- neovim + vimplug (plugin manager) + (for unnamedplus clipboard) + fd
+- neovim + vimplug (plugin manager) + (for unnamedplus clipboard) + fd, rgm, pbcopy
 - go + gopls LSP
+- pyenv
 - jetbrains, fira code fonts
 - mpv
 - docker
@@ -26,6 +27,9 @@
 - telegram
 - slack
 - discord
+- tree
+- npm/nodejs
+
 
 
 # Steps

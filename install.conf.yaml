@@ -1,0 +1,28 @@
+- defaults:
+    link:
+        relink: true
+        create: true
+
+- clean: ['~']
+
+- link:
+    # Git
+    ~/.gitconfig: .gitconfig
+    
+    # Shell
+    ~/.zshrc: .zshrc
+    ~/.zprofile: .zprofile
+    ~/.tmux.conf: .tmux.conf
+
+    # Terminal
+    ~/.config/kitty/kitty.conf: .config/kitty/kitty.conf
+    ~/.config/alacritty/alacritty.yml: .config/alacritty/alacritty.yml
+
+    # Neovim
+    ~/.config/nvim/init.vim: .config/nvim/init.vim
+    ~/.config/nvim/lua/lsp.lua: .config/nvim/lua/lsp.lua
+    ~/.config/nvim/lua/plug-colorizer.lua: .config/nvim/lua/plug-colorizer.lua
+
+    # WM
+    ~/.config/yabai/yabairc: .config/yabai/yabairc
+    ~/.config/skhd/skhdrc: .config/skhd/skhdrc
