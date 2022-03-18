@@ -22,6 +22,7 @@ brew "tree"
 brew "htop"
 brew "jq"
 brew "neofetch"
+brew "fzf"
 
 # zsh plugins
 brew "zsh-completions"
@@ -33,6 +34,7 @@ brew "go"
 brew "pyenv"
 brew "node"
 brew "yarn"
+brew "golang-migrate"
 
 # nvim deps
 brew "fd"
