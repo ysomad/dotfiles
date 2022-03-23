@@ -64,6 +64,8 @@ cask "stats"
 cask "visual-studio-code"
 cask "docker"
 cask "insomnia"
+cask "goland"
+cask "another-redis-desktop-manager"
 
 # media
 cask "spotify"
