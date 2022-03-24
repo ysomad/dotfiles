@@ -8,7 +8,7 @@
 - link:
     # Git
     ~/.gitconfig: .gitconfig
-    
+
     # Shell
     ~/.zshrc: .zshrc
     ~/.zprofile: .zprofile
@@ -26,3 +26,6 @@
     # WM
     ~/.config/yabai/yabairc: .config/yabai/yabairc
     ~/.config/skhd/skhdrc: .config/skhd/skhdrc
+
+    # JetBrains
+    ~/.ideavimrc: .ideavimrc
