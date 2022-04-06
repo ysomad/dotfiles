@@ -66,6 +66,7 @@ cask "docker"
 cask "insomnia"
 cask "goland"
 cask "another-redis-desktop-manager"
+cask "mongodb-compass"
 
 # media
 cask "spotify"
