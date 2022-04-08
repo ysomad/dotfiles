@@ -125,6 +125,7 @@ yabai -m rule --add app="^Amphetamine$" manage=off
 # yabai -m rule --add app="^Discord$" manage=off
 yabai -m rule --add app="^zoom.us$" manage=off
 yabai -m rule --add app="^Docker Desktop$" manage=off
+yabai -m rule --add app="^Battle.net$" manage=off
 
 
 # ========== Other ========== #
