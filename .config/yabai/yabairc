@@ -105,7 +105,7 @@ yabai -m config active_window_border_topmost on
 # ========== Rules ========== #
 
 # system floating windows
-# yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add title='Preferences$' manage=off
 yabai -m rule --add title='Settings$' manage=off
