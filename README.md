@@ -4,12 +4,12 @@
 
 1. Clone repository
 ```sh
-git clone git@github.com:ysomad/.dotfiles.git
+git clone git@github.com:ysomad/dotfiles.git
 ```
 
 2. Go to dotfiles directory
 ```sh
-cd /path/to/.dotfiles
+cd /path/to/dotfiles
 ```
 
 3. Make bootstrap script executable
