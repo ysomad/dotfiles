@@ -22,6 +22,10 @@ bootstrap_macos () {
 
     # gopls lsp server
     go install golang.org/x/tools/gopls@latest
+
+    # macOS sensible defaults
+    sudo chmod 755 ./.macos
+    ./.macos
 }
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
