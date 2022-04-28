@@ -53,7 +53,6 @@ cask "telegram-desktop"
 
 # term
 cask "kitty"
-cask "alacritty"
 
 # utils
 cask "alfred"
@@ -70,7 +69,6 @@ cask "mongodb-compass"
 cask "postman"
 
 # media
-cask "spotify"
 cask "mpv"
 
 # fonts
@@ -80,8 +78,6 @@ cask "font-jetbrains-mono"
 
 # ============ App Store ============ #
 
-mas "Slack", id: 803453959
-mas "Hidden Bar", id: 1452453066
 mas "CopyClip", id: 595191960
 mas "Amphetamine", id: 937984704
 mas "WireGuard", id: 1451685025
