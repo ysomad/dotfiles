@@ -11,6 +11,8 @@ bootstrap_macos () {
     echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/ysomad/.zprofile
     eval "$(/opt/homebrew/bin/brew shellenv)"
 
+    exec $SHELL
+
     brew bundle
     brew cleanup
 
