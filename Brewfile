@@ -53,6 +53,7 @@ cask "telegram-desktop"
 
 # term
 cask "kitty"
+cask "alacritty"
 
 # utils
 cask "alfred"
