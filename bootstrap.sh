@@ -3,13 +3,19 @@
 bootstrap_macos () {
     # command line tools
     xcode-select --install
+    softwareupdate --all --install --force
 
     # homebrew
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/ysomad/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+
     brew bundle
     brew cleanup
 
+    rm -f ~/.zshrc
+    rm -f ~/.zprofile
     # symlink config files
     ./install
 
