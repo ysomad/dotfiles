@@ -5,8 +5,8 @@ shift + alt - r : brew services restart yabai && brew services restart skhd
 # app shortcuts
 
 # terminal
-# alt - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
-alt - return : /Applications/kitty.app/Contents/MacOS/kitty -d ~
+alt - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+# alt - return : /Applications/kitty.app/Contents/MacOS/kitty -d ~
 
 # browser
 alt - b : /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome

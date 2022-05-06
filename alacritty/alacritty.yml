@@ -67,7 +67,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 0.9
+  opacity: 0.87
 
   # Startup Mode (changes require restart)
   #
@@ -139,7 +139,7 @@ font:
     # family: SF Mono
     # style: Regular Italic
 
-  size: 15.0
+  size: 16.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -166,11 +166,12 @@ font:
 
 
 # Colors (Tomorrow Night)
-#colors:
+colors:
   # Default colors
-  #primary:
-  #  background: '#1d1f21'
-  #  foreground: '#c5c8c6'
+  primary:
+    # background: '#1d1f21'
+    foreground: '#dddddd'
+    background: '#000000'
 
     # Bright and dim foreground colors
     #

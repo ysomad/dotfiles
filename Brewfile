@@ -24,10 +24,6 @@ brew "jq"
 brew "neofetch"
 brew "fzf"
 
-# zsh plugins
-brew "zsh-completions"
-brew "zsh-syntax-highlighting"
-
 # dev
 brew "neovim"
 brew "go"
@@ -52,7 +48,6 @@ cask "google-chrome"
 cask "telegram-desktop"
 
 # term
-cask "kitty"
 cask "alacritty"
 
 # utils
@@ -80,5 +75,4 @@ cask "font-jetbrains-mono"
 # ============ App Store ============ #
 
 mas "CopyClip", id: 595191960
-mas "Amphetamine", id: 937984704
 mas "WireGuard", id: 1451685025

@@ -25,15 +25,9 @@ ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(buffer-empty bracketed-paste accept-line push-li
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 
-# pyenv
-eval "$(pyenv init -)"
-
 # Aliases
 alias vi=nvim
 alias vim=nvim
-
-# fix brew doctor pyenv warning
-alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 
 # Golang exports for Gopls LSP server
 export GOPATH=$HOME/go
