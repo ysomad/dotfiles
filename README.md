@@ -12,12 +12,7 @@ git clone git@github.com:ysomad/dotfiles.git
 cd /path/to/dotfiles
 ```
 
-3. Make bootstrap script executable
-```sh
-chmod +x ./bootstrap.sh
-```
-
-4. Run
+3. Run
 ```sh
 ./bootstrap.sh
 ```
