@@ -1,9 +1,6 @@
 # restart services
 shift + alt - r : brew services restart yabai && brew services restart skhd
 
-
-# app shortcuts
-
 # terminal
 alt - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
 # alt - return : /Applications/kitty.app/Contents/MacOS/kitty -d ~
@@ -11,15 +8,12 @@ alt - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
 # browser
 alt - b : /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
 
-
 # toggle fullscreen with gaps
 alt - f : yabai -m window --toggle zoom-fullscreen
 shift + alt - f : yabai -m window --toggle native-fullscreen
 
-
 # Toggle split
 shift + alt - s : yabai -m window --toggle split
-
 
 # move window
 shift + alt - h : yabai -m window --warp west
@@ -27,13 +21,11 @@ shift + alt - j : yabai -m window --warp south
 shift + alt - k : yabai -m window --warp north
 shift + alt - l : yabai -m window --warp east
 
-
 # swap with another window (obtaining its size and position)
 ctrl + alt - h : yabai -m window --swap west
 ctrl + alt - j : yabai -m window --swap south
 ctrl + alt - k : yabai -m window --swap north
 ctrl + alt - l : yabai -m window --swap east
-
 
 # change spaces
 alt - 1 : yabai -m space --focus 1
@@ -45,7 +37,6 @@ alt - 6 : yabai -m space --focus 6
 alt - 7 : yabai -m space --focus 7
 alt - 8 : yabai -m space --focus 8
 
-
 # send window to space and focus
 ctrl + alt - 1 : yabai -m window --space  1; yabai -m space --focus 1
 ctrl + alt - 2 : yabai -m window --space  2; yabai -m space --focus 2
@@ -55,7 +46,6 @@ ctrl + alt - 5 : yabai -m window --space  5; yabai -m space --focus 5
 ctrl + alt - 6 : yabai -m window --space  6; yabai -m space --focus 6
 ctrl + alt - 7 : yabai -m window --space  7; yabai -m space --focus 7
 ctrl + alt - 8 : yabai -m window --space  8; yabai -m space --focus 8
-
 
 # send window to space
 shift + alt - 1 : yabai -m window --space  1
@@ -67,17 +57,14 @@ shift + alt - 6 : yabai -m window --space  6
 shift + alt - 7 : yabai -m window --space  7
 shift + alt - 8 : yabai -m window --space  8
 
+# focus next window
+alt - n : yabai -m window --focus next
 
-# focus display
-# ctrl + alt - 1  : yabai -m display --focus 1
-# ctrl + alt - 2  : yabai -m display --focus 2
+# focus prev window
+alt - p : yabai -m window --focus prev
 
+# next space
+alt - o : yabai -m space --focus next || yabai -m space --focus first
 
-# focus window in direction of focused window (options: north, east, south, west)
-# yabai -m window --focus east
-# focus window that was previously focused
-# yabai -m window --focus recent
-# focus previous or next window in window tree (options: prev, next)
-# yabai -m window --focus prev
-# focus first or last window in window tree (options: first, last)
-# yabai -m window --focus first
+# previous space
+alt - i : yabai -m space --focus prev || yabai -m space --focus last
