@@ -31,6 +31,7 @@ brew "pyenv"
 brew "node"
 brew "yarn"
 brew "golang-migrate"
+brew "minikube"
 
 # nvim deps
 brew "fd"
