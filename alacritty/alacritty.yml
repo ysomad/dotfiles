@@ -67,7 +67,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 0.87
+  opacity: 0.85
 
   # Startup Mode (changes require restart)
   #
@@ -109,35 +109,15 @@ scrolling:
 
 # Font configuration
 font:
-  # normal:
-    # family: JetBrains Mono
-    # style: Regular
-
-    # family: "Fira Code"
-    # style: Retina
-
-    # family: SF Mono
-    # style: Regular
-
-  # bold:
-    # family: JetBrains Mono
-    # style: Bold
-
-    # family: "Fira Code"
-    # style: Bold
-
-    # family: SF Mono
-    # style: Bold
-
-  # italic:
-    # family: JetBrains Mono
-    # style: Italic
-
-    # family: "Fira Code"
-    # style: Italic
-
-    # family: SF Mono
-    # style: Regular Italic
+  normal:
+    family: Fira Code
+    style: Regular
+  bold:
+    family: Fira Code
+    style: Medium
+  italic:
+    family: Fira Code
+    style: Italic
 
   size: 16.0
 
