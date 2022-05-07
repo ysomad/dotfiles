@@ -56,9 +56,10 @@ set termguicolors
 let mapleader = " "
 
 " Colorscheme
-colorscheme onedark
-let g:airline_theme='onedark'
+colorscheme gruvbox
+" let g:airline_theme='onedark'
 highlight Normal guibg=none
+highlight signcolumn guibg=none
 
 " Import lua configs
 lua require("lsp")
