@@ -1,6 +1,6 @@
 # Dotfiles
 
-## How to install?
+## Installation
 
 1. Clone repository
 ```sh
@@ -12,8 +12,29 @@ git clone git@github.com:ysomad/dotfiles.git
 cd /path/to/dotfiles
 ```
 
-3. Run
+3. Install package manager and packages which is not installable with it
 ```sh
 ./bootstrap.sh
 ```
-It will install Homebrew, oh-my-zsh, link configs and install brew dependancies along side with macOS sensible defaults
+
+4. Reload terminal session
+
+5. Install symlinks for config files
+```sh
+./install
+```
+
+### MacOS
+
+1. Install packages from Brewfile
+```sh
+brew bundle && brew doctor && brew cleanup
+```
+
+2. Set macOS sensible defaults
+```sh
+sudo chmod 755 ./.macos
+./.macos
+```
+
+
