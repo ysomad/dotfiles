@@ -42,6 +42,8 @@ brew "ripgrep"
 brew "koekeishiya/formulae/yabai"
 brew "koekeishiya/formulae/skhd"
 
+# fonts
+brew "font-fira-code-nerd-font"
 
 # ============ Cask ============ #
 
@@ -69,10 +71,6 @@ cask "docker"
 
 # media
 cask "mpv"
-
-# fonts
-cask "font-fira-code"
-cask "font-jetbrains-mono"
 
 
 # ============ App Store ============ #

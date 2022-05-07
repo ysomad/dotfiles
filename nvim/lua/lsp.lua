@@ -105,3 +105,7 @@ function goimports(timeout_ms)
         end
     end
 end
+
+require'nvim-web-devicons'.setup {
+ default = true;
+}

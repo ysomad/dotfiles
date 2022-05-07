@@ -17,6 +17,7 @@ Plug 'nvim-telescope/telescope.nvim'
 
 Plug 'vim-airline/vim-airline' " status bar
 Plug 'norcalli/nvim-colorizer.lua' " hex, rgb colorizer
+Plug 'kyazdani42/nvim-web-devicons'
 
 " Color schemas
 Plug 'gruvbox-community/gruvbox'
