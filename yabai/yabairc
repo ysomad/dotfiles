@@ -65,7 +65,7 @@ yabai -m config window_gap 10
 # yabai -m config mouse_action2 resize
 
 # set focus follows mouse mode (default: off, options: off, autoraise, autofocus)
-# yabai -m config focus_follows_mouse autofocus
+yabai -m config focus_follows_mouse autofocus
 
 # set mouse follows focus mode (default: off)
 # yabai -m config mouse_follows_focus off
@@ -78,7 +78,7 @@ yabai -m config window_gap 10
 
 # modify window shadows (default: on, options: on, off, float)
 # example: show shadows only for floating windows
-yabai -m config window_shadow off
+yabai -m config window_shadow float
 
 # window opacity (default: off)
 # example: render all unfocused windows with 90% opacity
@@ -87,8 +87,8 @@ yabai -m config active_window_opacity 1.0
 yabai -m config normal_window_opacity 1.0
 
 # window border settings
-yabai -m config window_border off
-yabai -m config window_border_width 4
+yabai -m config window_border on
+yabai -m config window_border_width 4.4
 yabai -m config active_window_border_color 0xfff5f5f5
 yabai -m config normal_window_border_color 0xff737373
 yabai -m config insert_feedback_color 0xff737373
