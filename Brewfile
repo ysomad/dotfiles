@@ -27,11 +27,12 @@ brew "fzf"
 # dev
 brew "neovim"
 brew "go"
+brew "golangci-lint"
 brew "pyenv"
 brew "node"
 brew "yarn"
 brew "golang-migrate"
-brew "minikube"
+brew "docker"
 
 # nvim deps
 brew "fd"
@@ -64,6 +65,7 @@ cask "goland"
 cask "another-redis-desktop-manager"
 cask "mongodb-compass"
 cask "postman"
+cask "docker"
 
 # media
 cask "mpv"

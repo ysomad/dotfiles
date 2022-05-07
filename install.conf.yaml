@@ -12,7 +12,7 @@
     # Shell
     ~/.zshrc: .zshrc
     ~/.zprofile: .zprofile
-    ~/.tmux.conf: .tmux.conf
+    ~/.config/tmux/tmux.conf: tmux/tmux.conf
 
     # Terminal
     ~/.config/kitty/kitty.conf: kitty/kitty.conf
