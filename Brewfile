@@ -68,6 +68,7 @@ cask "another-redis-desktop-manager"
 cask "mongodb-compass"
 cask "postman"
 cask "docker"
+cask "beekeeper-studio"
 
 # media
 cask "mpv"
