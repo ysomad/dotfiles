@@ -39,8 +39,8 @@ brew "fd"
 brew "ripgrep"
 
 # yabai
-brew "koekeishiya/formulae/yabai"
-brew "koekeishiya/formulae/skhd"
+brew "yabai"
+brew "skhd"
 
 # fonts
 brew "font-fira-code-nerd-font"
