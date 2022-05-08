@@ -1,4 +1,6 @@
 call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-fugitive' " Git
+
 " LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
