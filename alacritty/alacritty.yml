@@ -6,7 +6,7 @@ window:
     x: 8
     y: 8
   decorations: buttonless
-  opacity: 0.8
+  opacity: 0.75
   title: Terminal
 
 scrolling:
@@ -31,7 +31,7 @@ font:
 
 colors:
   primary:
-    background: '#1d2021'
+    background: '#000000'
     foreground: '#ebdbb2'
   normal:
     black:   '#282828'
