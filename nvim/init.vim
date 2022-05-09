@@ -24,6 +24,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 " Color schemas
 Plug 'gruvbox-community/gruvbox'
 Plug 'joshdick/onedark.vim'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " Base settings
@@ -60,7 +61,7 @@ let mapleader = " "
 
 " Colorscheme
 colorscheme gruvbox
-" let g:airline_theme='onedark'
+let g:airline_theme='gruvbox'
 highlight Normal guibg=none
 highlight signcolumn guibg=none
 

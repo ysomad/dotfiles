@@ -6,7 +6,7 @@ window:
     x: 8
     y: 8
   decorations: buttonless
-  opacity: 0.75
+  opacity: 0.7
   title: Terminal
 
 scrolling:
