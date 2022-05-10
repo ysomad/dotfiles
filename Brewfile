@@ -33,7 +33,6 @@ brew "pyenv"
 brew "node"
 brew "yarn"
 brew "golang-migrate"
-brew "docker"
 
 # nvim deps
 brew "fd"
@@ -58,6 +57,7 @@ cask "alacritty"
 # utils
 cask "alfred"
 cask "stats"
+cask "hiddenbar"
 
 # dev
 cask "visual-studio-code"
