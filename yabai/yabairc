@@ -116,6 +116,7 @@ yabai -m rule --add app="^Disk Utility$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add title='Archive Utility$' manage=off
 yabai -m rule --add title='Bin$' manage=off
+yabai -m rule --add title="^Opening*" manage=off
 
 # 3rd party
 yabai -m rule --add app="^Alfred Preferences$" manage=off
@@ -124,7 +125,7 @@ yabai -m rule --add app="^Hidden Bar$" manage=off
 yabai -m rule --add app="^Amphetamine$" manage=off
 yabai -m rule --add app="^zoom.us$" manage=off
 yabai -m rule --add app="^Docker Desktop$" manage=off
-yabai -m rule --add title="^Opening*" manage=off
+yabai -m rule --add app="^Spaceman$" manage=off
 
 
 # ========== Other ========== #

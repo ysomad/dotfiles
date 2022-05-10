@@ -23,6 +23,7 @@ brew "htop"
 brew "jq"
 brew "neofetch"
 brew "fzf"
+brew "spaceman" # for displaying spaces
 
 # dev
 brew "neovim"
@@ -56,7 +57,6 @@ cask "alacritty"
 
 # utils
 cask "alfred"
-cask "spaceid" # show desktops in top bar
 cask "stats"
 
 # dev
