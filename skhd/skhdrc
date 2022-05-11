@@ -9,11 +9,13 @@ alt - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
 alt - b : /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
 
 # toggle fullscreen with gaps
-alt - f : yabai -m window --toggle zoom-fullscreen &&
+alt - f : \
+    yabai -m window --toggle zoom-fullscreen ; \
+    yabai -m space --toggle padding; yabai -m space --toggle gap
 shift + alt - f : yabai -m window --toggle native-fullscreen
 
-# Toggle split
-shift + alt - s : yabai -m window --toggle split
+# Rotate
+shift + alt - s : yabai -m space --rotate 90
 
 # move window
 shift + alt - h : yabai -m window --warp west
@@ -57,14 +59,19 @@ shift + alt - 6 : yabai -m window --space  6
 shift + alt - 7 : yabai -m window --space  7
 shift + alt - 8 : yabai -m window --space  8
 
-# focus next window
-alt - n : yabai -m window --focus next
+# Resize windows
+alt - y : \
+    yabai -m window --resize left:-20:0 ; \
+    yabai -m window --resize right:-20:0
+alt - u : \
+    yabai -m window --resize bottom:0:20 ; \
+    yabai -m window --resize top:0:20
+alt - i : \
+    yabai -m window --resize top:0:-20 ; \
+    yabai -m window --resize bottom:0:-20
+alt - o : \
+    yabai -m window --resize right:20:0 ; \
+    yabai -m window --resize left:20:0
 
-# focus prev window
-alt - p : yabai -m window --focus prev
-
-# next space
-alt - o : yabai -m space --focus next || yabai -m space --focus first
-
-# previous space
-alt - i : yabai -m space --focus prev || yabai -m space --focus last
+# Toggle gaps
+alt - g : yabai -m space --toggle padding; yabai -m space --toggle gap
