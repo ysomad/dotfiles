@@ -61,17 +61,17 @@ cask "hiddenbar"
 
 # dev
 cask "visual-studio-code"
-cask "docker"
-cask "insomnia"
 cask "goland"
 cask "another-redis-desktop-manager"
 cask "mongodb-compass"
 cask "postman"
+cask "insomnia"
 cask "docker"
 cask "beekeeper-studio"
 
 # media
 cask "mpv"
+cask "obs"
 
 
 # ============ App Store ============ #
