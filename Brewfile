@@ -58,6 +58,7 @@ cask "alacritty"
 cask "alfred"
 cask "stats"
 cask "hiddenbar"
+cask "aldente"
 
 # dev
 cask "visual-studio-code"
