@@ -9,9 +9,7 @@ alt - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
 alt - b : /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
 
 # toggle fullscreen with gaps
-alt - f : \
-    yabai -m window --toggle zoom-fullscreen ; \
-    yabai -m space --toggle padding; yabai -m space --toggle gap
+alt - f : yabai -m window --toggle zoom-fullscreen
 shift + alt - f : yabai -m window --toggle native-fullscreen
 
 # Rotate
