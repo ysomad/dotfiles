@@ -15,7 +15,6 @@
     ~/.config/tmux/tmux.conf: tmux/tmux.conf
 
     # Terminal
-    ~/.config/kitty/kitty.conf: kitty/kitty.conf
     ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
 
     # Neovim
