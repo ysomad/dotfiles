@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-fugitive' " Git
+" Git
+Plug 'tpope/vim-fugitive'
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
@@ -17,14 +18,17 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-telescope/telescope.nvim'
 
-Plug 'vim-airline/vim-airline' " status bar
-Plug 'norcalli/nvim-colorizer.lua' " hex, rgb colorizer
+" Status bar
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" Pretty things
+Plug 'norcalli/nvim-colorizer.lua'
 Plug 'kyazdani42/nvim-web-devicons'
 
 " Color schemas
 Plug 'gruvbox-community/gruvbox'
 Plug 'joshdick/onedark.vim'
-Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " Base settings
