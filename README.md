@@ -24,7 +24,10 @@ cd /path/to/dotfiles
 ./install
 ```
 
-### MacOS
+## NeoVim
+Open vim and run `:PlugInstall`
+
+## MacOS
 
 1. Install packages from Brewfile
 ```sh
