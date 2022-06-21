@@ -1,6 +1,6 @@
 # Dotfiles
 
-## Installation
+## Install configuration and package manager
 
 1. Clone repository
 ```sh
@@ -24,9 +24,6 @@ cd /path/to/dotfiles
 ./install
 ```
 
-## NeoVim
-Open vim and run `:PlugInstall`
-
 ## MacOS
 
 1. Install packages from Brewfile
@@ -39,5 +36,13 @@ brew bundle && brew doctor && brew cleanup
 sudo chmod 755 ./.macos
 ./.macos
 ```
+
+## Extra packages configuration
+
+### Yabai
+[Disable system integrity protection](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
+
+### NeoVim
+Open nvim and run `:PlugInstall` to install plugins.
 
 
