@@ -69,6 +69,10 @@ let g:airline_theme='gruvbox'
 highlight Normal guibg=none
 highlight signcolumn guibg=none
 
+" Show buffers on top
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
 " Import lua configs
 lua require("lsp")
 lua require("plug-colorizer")
