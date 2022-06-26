@@ -2,8 +2,7 @@
 
 ## TODO NVIM
 - Setup buffers (topbar, keymaps)
-- Refactor Configuration structure
-- Refactor keymaps (primeagen dotfiles)
+- Refactor keymaps
 
 ## Install configuration and package manager
 
