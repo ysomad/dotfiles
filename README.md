@@ -1,5 +1,10 @@
 # Dotfiles
 
+## TODO NVIM
+1. Install lualine
+2. Setup buffers (topbar, keymaps)
+3. Refactor Configuration structure
+
 ## Install configuration and package manager
 
 1. Clone repository

@@ -18,9 +18,14 @@
     ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
 
     # Neovim
-    ~/.config/nvim/init.vim: nvim/init.vim
-    ~/.config/nvim/lua/lsp.lua: nvim/lua/lsp.lua
-    ~/.config/nvim/lua/plug-colorizer.lua: nvim/lua/plug-colorizer.lua
+    #~/.config/nvim/init.vim: nvim/init.vim
+    #~/.config/nvim/lua/lsp.lua: nvim/lua/lsp.lua
+    #~/.config/nvim/lua/plug-colorizer.lua: nvim/lua/plug-colorizer.lua
+
+    ~/.config/nvim/init.lua: nvim/init.lua
+    ~/.config/nvim/lua/plugins.lua: nvim/lua/plugins.lua
+    ~/.config/nvim/lua/keymaps.lua: nvim/lua/keymaps.lua
+    ~/.config/nvim/lua/settings.lua: nvim/lua/settings.lua
 
     # WM
     ~/.config/yabai/yabairc: yabai/yabairc
