@@ -96,9 +96,6 @@ autocmd({'BufWritePre'}, {
 })
 
 -- Omnifunc
---cmd [[
---autocmd FileType go setlocal omnifunc=v:lua.vim.lsp.omnifunc
---]]
 autocmd({'FileType'}, {
   pattern = 'go',
   callback = function()
@@ -107,7 +104,7 @@ autocmd({'FileType'}, {
 })
 
 
--- TODO: MOVE 
+-- TODO: MOVE  somewhere
 
 require('nvim-web-devicons').setup { default = true; }
 
@@ -132,11 +129,10 @@ require('telescope').setup{
 
 require('lualine').setup {
   options = {
-    icons_enabled = true,
+    icons_enabled = false,
     theme = 'auto',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
-    disabled_filetypes = {},
     always_divide_middle = true,
     globalstatus = false,
   },
@@ -156,6 +152,43 @@ require('lualine').setup {
     lualine_y = {},
     lualine_z = {}
   },
-  tabline = {},
-  extensions = {}
+}
+
+require('bufferline').setup {
+  options = {
+    mode = 'buffers', -- set to "tabs" to only show tabpages instead
+    numbers = 'buffer_id',
+    -- NOTE: this plugin is designed with this icon in mind,
+    -- and so changing this is NOT recommended, this is intended
+    -- as an escape hatch for people who cannot bear it for whatever reason
+    indicator_icon = '▎',
+    buffer_close_icon = '',
+    modified_icon = '●',
+    close_icon = '',
+    left_trunc_marker = '',
+    right_trunc_marker = '',
+    name_formatter = function(buf)  -- buf contains a "name", "path" and "bufnr"
+      if buf.name:match('%.md') then
+        return vim.fn.fnamemodify(buf.name, ':t:r')
+      end
+    end,
+    max_name_length = 32,
+    max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
+    tab_size = 0,
+    diagnostics = 'nvim_lsp',
+    diagnostics_update_in_insert = false,
+    diagnostics_indicator = function(count, level, diagnostics_dict, context)
+      return "("..count..")"
+    end,
+    color_icons = false, -- whether or not to add the filetype icon highlights
+    show_buffer_icons = false, -- disable filetype icons for buffers
+    show_buffer_close_icons = false,
+    show_buffer_default_icon = false, -- whether or not an unrecognised filetype should show a default icon
+    show_close_icon = false,
+    show_tab_indicators = true,
+    persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
+    separator_style = 'thin',
+    enforce_regular_tabs = false,
+    always_show_bufferline = true,
+  }
 }
