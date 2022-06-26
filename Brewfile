@@ -72,7 +72,7 @@ cask "beekeeper-studio"
 # media
 cask "mpv"
 cask "obs"
-
+cask "transmission"
 
 # ============ App Store ============ #
 
