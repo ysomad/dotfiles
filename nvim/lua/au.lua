@@ -1,5 +1,5 @@
 local autocmd = vim.api.nvim_create_autocmd
-local opt = vim.opt                         
+local opt = vim.opt
 local opt_local = vim.opt_local
 
 -- don't auto commenting new lines
@@ -19,6 +19,12 @@ autocmd({'FileType'}, {
     opt_local.shiftwidth = 2
     opt_local.tabstop = 2
   end
+})
+
+-- trim whitespace
+autocmd({'BufWritePre'}, {
+    pattern = '*',
+    command = '%s/\\s\\+$//e',
 })
 
 -- Go: format and sort imports on save
