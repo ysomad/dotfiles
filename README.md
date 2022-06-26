@@ -4,6 +4,7 @@
 1. Install lualine
 2. Setup buffers (topbar, keymaps)
 3. Refactor Configuration structure
+4. Refactor keymaps (primeagen dotfiles)
 
 ## Install configuration and package manager
 
@@ -48,6 +49,6 @@ sudo chmod 755 ./.macos
 [Disable system integrity protection](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
 
 ### NeoVim
-Open nvim and run `:PlugInstall` to install plugins.
+Open nvim and run `:PackerSync` to install plugins.
 
 
