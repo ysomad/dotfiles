@@ -30,7 +30,10 @@ return require('packer').startup(function(use)
   
   -- Pretty things
   use 'norcalli/nvim-colorizer.lua'
-  use 'kyazdani42/nvim-web-devicons'
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
 
   -- Colorschemas
   use 'gruvbox-community/gruvbox'

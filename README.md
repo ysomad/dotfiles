@@ -1,10 +1,9 @@
 # Dotfiles
 
 ## TODO NVIM
-1. Install lualine
-2. Setup buffers (topbar, keymaps)
-3. Refactor Configuration structure
-4. Refactor keymaps (primeagen dotfiles)
+- Setup buffers (topbar, keymaps)
+- Refactor Configuration structure
+- Refactor keymaps (primeagen dotfiles)
 
 ## Install configuration and package manager
 
