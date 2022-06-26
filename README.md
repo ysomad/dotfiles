@@ -1,7 +1,7 @@
 # Dotfiles
 
 ## TODO NVIM
-- Setup buffers (topbar, keymaps)
+- Customize buffereline, statusline and tmux to match each other
 - Refactor keymaps
 
 ## Install configuration and package manager
