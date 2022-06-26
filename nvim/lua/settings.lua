@@ -61,6 +61,7 @@ g.mapleader = ' '
 
 -- Plugin settings
 require('nvim-web-devicons').setup { default = true; }
+require('Comment').setup()
 
 require('colorizer').setup({'*';}, {
   RGB      = true;         -- #RGB hex codes
