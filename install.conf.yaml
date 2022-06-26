@@ -19,11 +19,10 @@
 
     # Neovim
     ~/.config/nvim/init.lua: nvim/init.lua
-    ~/.config/nvim/lua/lsp.lua: nvim/lua/lsp.lua
-    ~/.config/nvim/lua/plugins.lua: nvim/lua/plugins.lua
-    ~/.config/nvim/lua/keymaps.lua: nvim/lua/keymaps.lua
-    ~/.config/nvim/lua/settings.lua: nvim/lua/settings.lua
-
+    ~/.config/nvim/lua/: 
+      path: nvim/lua/*
+      glob: true
+    
     # WM
     ~/.config/yabai/yabairc: yabai/yabairc
     ~/.config/skhd/skhdrc: skhd/skhdrc

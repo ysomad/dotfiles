@@ -2,8 +2,6 @@ local cmd = vim.cmd                         -- execute Vim commands
 local exec = vim.api.nvim_exec              -- execute Vimscript
 local g = vim.g                             -- global variables
 local opt = vim.opt                         -- global/buffer/windows-scoped options
-local opt_local = vim.opt_local             -- local options
-local autocmd = vim.api.nvim_create_autocmd -- create auto command
 
 -- Colors
 cmd('colorscheme gruvbox')
@@ -61,51 +59,7 @@ opt.colorcolumn = '100'
 
 g.mapleader = ' '
 
--- ??????????????
-g.tagbar_compact = 1
-g.tagbar_sort = 0
-
--- Auto commands
-
--- don't auto commenting new lines
-autocmd({'BufEnter'}, {
-  pattern = '*',
-  callback = function()
-    opt.fo:remove('c')
-    opt.fo:remove('r')
-    opt.fo:remove('o')
-  end
-})
-
--- 2 spaces for selected filetypes
-autocmd({'FileType'}, {
-  pattern = 'xml,html,xhtml,css,scss,javascript,lua,yaml,htmljinja',
-  callback = function()
-    opt_local.shiftwidth = 2
-    opt_local.tabstop = 2
-  end
-})
-
--- Go: format and sort imports on save
-autocmd({'BufWritePre'}, {
-  pattern = '*.go',
-  callback = function()
-    vim.lsp.buf.formatting()
-    goimports(1000)
-  end
-})
-
--- Omnifunc
-autocmd({'FileType'}, {
-  pattern = 'go',
-  callback = function()
-    opt_local.omnifunc = 'v:lua.vim.lsp.omnifunc'
-  end
-})
-
-
--- TODO: MOVE  somewhere
-
+-- Plugin settings
 require('nvim-web-devicons').setup { default = true; }
 
 require('colorizer').setup({'*';}, {

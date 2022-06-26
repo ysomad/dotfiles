@@ -1,4 +1,5 @@
 require('plugins')
 require('settings')
+require('au')
 require('keymaps')
 require('lsp')
