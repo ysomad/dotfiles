@@ -54,7 +54,7 @@ autocmd({'BufWritePre'}, {
         end
       end
     end
-	end,
+  end,
 })
 
 -- Go: omnifunc
