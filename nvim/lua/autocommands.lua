@@ -38,7 +38,7 @@ autocmd({'BufWritePre'}, {
   end
 })
 
--- Go: format on save
+-- Go: sort imports on save
 autocmd({'BufWritePre'}, {
   pattern = '*.go',
   callback = function()
