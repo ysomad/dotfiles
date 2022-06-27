@@ -33,7 +33,8 @@ local timeout_ms = 3000
 autocmd({'BufWritePre'}, {
   pattern = '*.go',
   callback = function()
-    vim.lsp.buf.formatting(nil, timeout_ms)
+    -- TODO: replace with vim.lsp.buf.format when its released
+    vim.lsp.buf.formatting_sync(nil, timeout_ms) -- DEPRECATED
   end
 })
 
