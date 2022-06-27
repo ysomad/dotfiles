@@ -27,7 +27,7 @@ return require('packer').startup(function(use)
       'nvim-treesitter/nvim-treesitter',
       run = ':TSUpdate'
   }
-  
+
   -- Pretty things
   use 'norcalli/nvim-colorizer.lua'
   use {
@@ -39,7 +39,7 @@ return require('packer').startup(function(use)
   -- Colorschemas
   use 'gruvbox-community/gruvbox'
   use 'joshdick/onedark.vim'
-  use 'folke/tokyonight.nvim'  
+  use 'folke/tokyonight.nvim'
 
   -- Utils
   use {

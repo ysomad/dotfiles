@@ -76,8 +76,8 @@ require('colorizer').setup({'*';}, {
 
 require('telescope').setup{
   pickers = {
-    buffers = { 
-      initial_mode = 'normal' 
+    buffers = {
+      initial_mode = 'normal'
     }
   }
 }
