@@ -65,14 +65,14 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
   }, {
-      { name = 'buffer' },
+    { name = 'buffer' },
   })
 })
 
 local function config(_config)
-	return vim.tbl_deep_extend('force', {
-		capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
-	}, _config or {})
+  return vim.tbl_deep_extend('force', {
+    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+  }, _config or {})
 end
 
 -- init lsp servers
@@ -80,11 +80,11 @@ nvim_lsp.gopls.setup(config({
   cmd = { 'gopls', 'serve' },
   filetypes = { 'go', 'go.mod' },
   root_dir = util.root_pattern('go.work', 'go.mod', '.git'),
-	settings = {
-		gopls = {
-			analyses = { unusedparams = true, },
-			staticcheck = true,
-		},
-	},
+  settings = {
+    gopls = {
+      analyses = { unusedparams = true, },
+      staticcheck = true,
+    },
+  },
   on_attach = on_attach,
 }))
