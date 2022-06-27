@@ -75,7 +75,7 @@ local function config(_config)
 	}, _config or {})
 end
 
--- Init LSP servers
+-- init lsp servers
 nvim_lsp.gopls.setup(config({
   cmd = { 'gopls', 'serve' },
   filetypes = { 'go', 'go.mod' },

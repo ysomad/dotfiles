@@ -22,7 +22,7 @@
     ~/.config/nvim/lua/: 
       path: nvim/lua/*
       glob: true
-    
+        
     # WM
     ~/.config/yabai/yabairc: yabai/yabairc
     ~/.config/skhd/skhdrc: skhd/skhdrc
