@@ -23,7 +23,7 @@ o.relativenumber = true
 o.hidden = true
 o.errorbells = false
 o.emoji = false
-o.cul = true -- cursor line
+o.cul = false -- cursor line
 o.mouse = 'a'
 
 o.tabstop = 4

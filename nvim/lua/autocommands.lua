@@ -29,7 +29,7 @@ autocmd({'BufWritePre'}, {
 
 local timeout_ms = 3000
 
--- Go: format on save
+-- go: format on save
 autocmd({'BufWritePre'}, {
   pattern = '*.go',
   callback = function()
@@ -38,13 +38,13 @@ autocmd({'BufWritePre'}, {
   end
 })
 
--- Go: sort imports on save
+-- go: sort imports on save
 autocmd({'BufWritePre'}, {
   pattern = '*.go',
   callback = function()
     local params = vim.lsp.util.make_range_params(nil, vim.lsp.util._get_offset_encoding())
-    params.context = {only = {"source.organizeImports"}}
-    local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, timeout_ms)
+    params.context = { only = {'source.organizeImports'} }
+    local result = vim.lsp.buf_request_sync(0, 'textDocument/codeAction', params, timeout_ms)
     for _, res in pairs(result or {}) do
       for _, r in pairs(res.result or {}) do
         if r.edit then
@@ -57,7 +57,7 @@ autocmd({'BufWritePre'}, {
   end,
 })
 
--- Go: omnifunc
+-- go: omnifunc
 autocmd({'FileType'}, {
   pattern = 'go',
   callback = function()
