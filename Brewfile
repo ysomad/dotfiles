@@ -24,6 +24,7 @@ brew "jq"
 brew "neofetch"
 brew "fzf"
 brew "spaceman" # for displaying spaces
+brew "wget"
 
 # dev
 brew "neovim"
