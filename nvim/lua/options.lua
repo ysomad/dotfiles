@@ -95,7 +95,6 @@ o.updatetime = 50
 o.shortmess:append('c')
 
 o.colorcolumn = '100'
+o.showmode = false
 
 g.mapleader = ' '
-
-
