@@ -1,8 +1,8 @@
 # Dotfiles
 
 ## TODO NVIM
-- Customize buffereline, statusline and tmux to match each other
-- Refactor keymaps
+1. Configure snippets for go
+2. LSP for lua
 
 ## Install configuration and package manager
 
