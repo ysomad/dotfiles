@@ -13,7 +13,7 @@ cmd('colorscheme gruvbox')
 
 -- transparent column on the left side from line numbers
 hl('SignColumn', {
-  bg = 'none',
+  bg = 'none'
 })
 
 -- transparent bg
