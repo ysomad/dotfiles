@@ -3,14 +3,26 @@ local o = vim.opt                           -- global/buffer/windows-scoped opti
 local cmd = vim.cmd                         -- execute Vim commands
 local exec = vim.api.nvim_exec              -- execute Vimscript
 
+-- yoinked from primeagen dots
+local hl = function(thing, opts)
+  vim.api.nvim_set_hl(0, thing, opts)
+end
+
 -- colors
 cmd('colorscheme gruvbox')
 
+-- transparent column on the left side from line numbers
+hl('SignColumn', {
+  bg = 'none',
+})
+
+-- transparent bg
+hl('Normal', {
+  bg = 'none'
+})
+
 g.gruvbox_contrast_dark = 'hard'
 g.gruvbox_invert_selection = '0'
-
-cmd('highlight Normal guibg=none')
-cmd('highlight signcolumn guibg=none')
 
 o.termguicolors = true
 
@@ -85,4 +97,5 @@ o.shortmess:append('c')
 o.colorcolumn = '100'
 
 g.mapleader = ' '
+
 
