@@ -33,7 +33,9 @@ return require('packer').startup {
     -- telescope
     use {
       'nvim-telescope/telescope.nvim',
-      config = require('plugins.telescope')
+      config = function()
+        require('plugins.telescope')
+      end
     }
     use {
         'nvim-treesitter/nvim-treesitter',
@@ -43,27 +45,35 @@ return require('packer').startup {
     -- Pretty things
     use {
       'norcalli/nvim-colorizer.lua',
-      config = require('plugins.nvim-colorizer')
+      config = function()
+        require('plugins.nvim-colorizer')
+      end
     }
     use {
       'nvim-lualine/lualine.nvim',
-      config = require('plugins.lualine')
+      config = function()
+        require('plugins.lualine')
+      end
     }
     use {
       'akinsho/bufferline.nvim',
       tag = "v2.*",
-      config = require('plugins.bufferline')
+      config = function()
+        require('plugins.bufferline')
+      end
     }
 
     -- Utils
     use {
       'numToStr/Comment.nvim',
-      config = require('Comment').setup()
+      config = function()
+        require('Comment').setup()
+      end
     }
 
     -- Snippets
-    -- use 'L3MON4D3/LuaSnip'
-    -- use 'saadparwaiz1/cmp_luasnip'
+    use 'L3MON4D3/LuaSnip'
+    use 'saadparwaiz1/cmp_luasnip'
 
     if packer_bootstrap then
       require('packer').sync()
