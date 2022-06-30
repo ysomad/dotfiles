@@ -1,4 +1,5 @@
 local autocmd = vim.api.nvim_create_autocmd
+local augroup = vim.api.nvim_create_augroup
 local opt = vim.opt
 local opt_local = vim.opt_local
 
@@ -21,10 +22,24 @@ autocmd({'FileType'}, {
   end
 })
 
--- trim whitespace
-autocmd({'BufWritePre'}, {
-    pattern = '*',
-    command = '%s/\\s\\+$//e',
+--- remove all trailing whitespace on save
+local TrimWhiteSpaceGrp = augroup('TrimWhiteSpaceGrp', {})
+autocmd('BufWritePre', {
+	group = TrimWhiteSpaceGrp,
+  pattern = '*',
+  command = '%s/\\s\\+$//e',
+})
+
+local yankGrp = augroup('YankHighlight', {})
+autocmd('TextYankPost', {
+	group = yankGrp,
+  pattern = '*',
+  callback = function()
+    vim.highlight.on_yank({
+      higroup = 'IncSearch',
+      timeout = 40,
+    })
+  end,
 })
 
 local timeout_ms = 3000

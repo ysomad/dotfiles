@@ -29,6 +29,12 @@ return require('packer').startup {
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/nvim-cmp'
+    use {
+      'tzachar/cmp-tabnine',
+      run='./install.sh',
+      requires = 'hrsh7th/nvim-cmp'
+    }
+    use('onsails/lspkind-nvim')
 
     -- telescope
     use {
@@ -42,7 +48,7 @@ return require('packer').startup {
         run = ':TSUpdate'
     }
 
-    -- Pretty things
+     -- pretty things
     use {
       'norcalli/nvim-colorizer.lua',
       config = function()
@@ -63,7 +69,7 @@ return require('packer').startup {
       end
     }
 
-    -- Utils
+    -- utils
     use {
       'numToStr/Comment.nvim',
       config = function()
@@ -71,7 +77,7 @@ return require('packer').startup {
       end
     }
 
-    -- Snippets
+    -- snippets
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
 
