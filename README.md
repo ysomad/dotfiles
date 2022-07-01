@@ -47,11 +47,12 @@ sudo chmod 755 ./.macos
 [Disable system integrity protection](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
 
 ## NeoVim
-1. Install Gopls server (cannot be installed in bootstrap since `Go` is dependency in `Brewfile`)
+2. Install Gopls server (cannot be installed in bootstrap since `Go` is dependency in `Brewfile`)
 ```sh
 go install golang.org/x/tools/gopls@latest
 ```
 
 2. Open nvim and run `:PackerSync` to install plugins.
+3. To install Go dependencies run in nvim `:GoInstallDeps`
 
 
