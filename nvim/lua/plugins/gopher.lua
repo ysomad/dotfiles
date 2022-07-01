@@ -1,0 +1,2 @@
+require('gopher').setup {}
+

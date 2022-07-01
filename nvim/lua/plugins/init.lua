@@ -48,6 +48,14 @@ return require('packer').startup {
         run = ':TSUpdate'
     }
 
+    -- go
+    use {
+      'olexsmir/gopher.nvim',
+      config = function()
+        require('plugins.gopher')
+      end
+    }
+
      -- pretty things
     use {
       'norcalli/nvim-colorizer.lua',
