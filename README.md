@@ -23,9 +23,7 @@ cd /path/to/dotfiles
 ./bootstrap.sh
 ```
 
-4. Reload terminal session
-
-5. Install symlinks for config files
+4. Install symlinks for config files
 ```sh
 ./install
 ```
@@ -48,7 +46,12 @@ sudo chmod 755 ./.macos
 ### Yabai
 [Disable system integrity protection](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
 
-### NeoVim
-Open nvim and run `:PackerSync` to install plugins.
+## NeoVim
+1. Install Gopls server (cannot be installed in bootstrap since `Go` is dependency in `Brewfile`)
+```sh
+go install golang.org/x/tools/gopls@latest
+```
+
+2. Open nvim and run `:PackerSync` to install plugins.
 
 
