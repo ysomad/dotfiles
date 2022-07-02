@@ -55,7 +55,6 @@ yabai -m rule --add app="^zoom.us$" manage=off
 yabai -m rule --add app="^Docker Desktop$" manage=off
 yabai -m rule --add app="^Spaceman$" manage=off
 yabai -m rule --add app="^Steam$" manage=off
-yabai -m rule --add app="^Telegram$" manage=off
 
 
 echo "yabai configuration loaded.."
