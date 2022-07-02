@@ -84,10 +84,10 @@ yabai -m config active_window_opacity 1.0
 yabai -m config normal_window_opacity 1.0
 
 # window border settings
-yabai -m config window_border off
-yabai -m config window_border_width 4.4
-yabai -m config active_window_border_color 0xfff5f5f5
-yabai -m config normal_window_border_color 0xff737373
+yabai -m config window_border on
+yabai -m config window_border_width 5
+yabai -m config active_window_border_color 0xffd79921
+yabai -m config normal_window_border_color 0xff928374
 yabai -m config insert_feedback_color 0xff737373
 yabai -m config active_window_border_topmost on
 
