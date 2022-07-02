@@ -12,7 +12,7 @@ require('lualine').setup {
     },
   },
   sections = {
-    lualine_a = { 'mode' },
+    lualine_a = { 'filename' },
     lualine_b = { 'branch' },
     lualine_c = {},
     lualine_x = { 'diff', { 'diagnostics', sources = { 'nvim_diagnostic' } } },

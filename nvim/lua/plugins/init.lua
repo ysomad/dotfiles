@@ -45,7 +45,10 @@ return require('packer').startup {
     }
     use {
         'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
+        run = ':TSUpdate',
+        config = function()
+          require('plugins.treesitter')
+        end
     }
 
     -- go
@@ -67,13 +70,6 @@ return require('packer').startup {
       'nvim-lualine/lualine.nvim',
       config = function()
         require('plugins.lualine')
-      end
-    }
-    use {
-      'akinsho/bufferline.nvim',
-      tag = "v2.*",
-      config = function()
-        require('plugins.bufferline')
       end
     }
 
