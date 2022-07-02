@@ -3,6 +3,9 @@
 ## TODO NVIM
 - Go debugger
 
+## TODO tmux
+-- Change bg color on action (when Ctrl+x for example)
+
 ## Install configuration and package manager
 
 1. Clone repository
