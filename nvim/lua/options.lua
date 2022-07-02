@@ -18,9 +18,9 @@ hl('SignColumn', { bg = 'none' })
 -- transparent bg
 hl('Normal', { bg = 'none' })
 
--- set cursorline bg to none
-hi('CursorLine', { guibg='none' })
-hi('CursorLineNr', { guibg='none' })
+o.cursorline = false -- cursor line
+-- hi('CursorLine', { guibg='none' })
+-- hi('CursorLineNr', { guibg='none' })
 
 g.gruvbox_contrast_dark = 'hard'
 g.gruvbox_invert_selection = '0'
@@ -36,7 +36,6 @@ o.relativenumber = true
 o.hidden = true
 o.errorbells = false
 o.emoji = false
-o.cul = true -- cursor line
 o.mouse = 'a'
 
 o.tabstop = 4
