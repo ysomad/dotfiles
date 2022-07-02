@@ -72,6 +72,13 @@ return require('packer').startup {
         require('plugins.lualine')
       end
     }
+   use {
+      'akinsho/bufferline.nvim',
+      tag = "v2.*",
+      config = function()
+        require('plugins.bufferline')
+      end
+    }
 
     -- utils
     use {
@@ -82,7 +89,15 @@ return require('packer').startup {
     }
 
     -- snippets
-    use 'L3MON4D3/LuaSnip'
+    use {
+      'L3MON4D3/LuaSnip',
+      after = 'friendly-snippets',
+      config = function()
+        require('luasnip/loaders/from_vscode').load({
+          paths = { '~/.local/share/nvim/site/pack/packer/start/friendly-snippets' }
+        })
+      end
+    }
     use 'saadparwaiz1/cmp_luasnip'
     use 'rafamadriz/friendly-snippets'
 
