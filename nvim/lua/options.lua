@@ -2,6 +2,7 @@ local g = vim.g                             -- global variables
 local o = vim.opt                           -- global/buffer/windows-scoped options
 local cmd = vim.cmd                         -- execute Vim commands
 local exec = vim.api.nvim_exec              -- execute Vimscript
+local hi = vim.highlight.create             -- create hightlight
 
 -- yoinked from primeagen dots
 local hl = function(thing, opts)
@@ -9,17 +10,17 @@ local hl = function(thing, opts)
 end
 
 -- colors
-cmd('colorscheme gruvbox')
+cmd('colorscheme ruvbox')
 
 -- transparent column on the left side from line numbers
-hl('SignColumn', {
-  bg = 'none'
-})
+hl('SignColumn', { bg = 'none' })
 
 -- transparent bg
-hl('Normal', {
-  bg = 'none'
-})
+hl('Normal', { bg = 'none' })
+
+-- set cursorline bg to none
+hi('CursorLine', { guibg='none' })
+hi('CursorLineNr', { guibg='none' })
 
 g.gruvbox_contrast_dark = 'hard'
 g.gruvbox_invert_selection = '0'
@@ -35,7 +36,7 @@ o.relativenumber = true
 o.hidden = true
 o.errorbells = false
 o.emoji = false
-o.cul = false -- cursor line
+o.cul = true -- cursor line
 o.mouse = 'a'
 
 o.tabstop = 4
