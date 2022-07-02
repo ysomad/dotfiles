@@ -21,6 +21,12 @@ shift + alt - j : yabai -m window --warp south
 shift + alt - k : yabai -m window --warp north
 shift + alt - l : yabai -m window --warp east
 
+# focus window
+alt - h : yabai -m window --focus west
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - l : yabai -m window --focus east
+
 # swap with another window (obtaining its size and position)
 ctrl + alt - h : yabai -m window --swap west
 ctrl + alt - j : yabai -m window --swap south
