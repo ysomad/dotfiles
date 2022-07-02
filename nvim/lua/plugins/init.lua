@@ -52,7 +52,7 @@ return require('packer').startup {
     use {
       'olexsmir/gopher.nvim',
       config = function()
-        require('plugins.gopher')
+        require('gopher').setup{}
       end
     }
 
@@ -88,6 +88,7 @@ return require('packer').startup {
     -- snippets
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
+    use 'rafamadriz/friendly-snippets'
 
     if packer_bootstrap then
       require('packer').sync()
