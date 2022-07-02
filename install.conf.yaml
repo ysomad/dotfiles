@@ -34,3 +34,8 @@
     ~/bin/:
       path: bin/*
       glob: true
+
+    # wallpapers
+    ~/Pictures/wallpapers/:
+      path: wallpapers/*
+      glob: true
