@@ -1,9 +1,6 @@
 # Dotfiles
 
 ## TODO NVIM
-- Configure Go utils
-- Configure snippets for go
-- LSP for lua
 - Go debugger
 
 ## Install configuration and package manager
