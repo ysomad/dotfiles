@@ -53,4 +53,5 @@ go install golang.org/x/tools/gopls@latest
 2. Open nvim and run `:PackerSync` to install plugins.
 3. To install Go dependencies run in nvim `:GoInstallDeps`
 
-
+## Tmux
+- Open tmux session and press `Ctrl-a + I` to install tmux plugins
