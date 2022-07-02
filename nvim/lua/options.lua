@@ -10,7 +10,7 @@ local hl = function(thing, opts)
 end
 
 -- colors
-cmd('colorscheme ruvbox')
+cmd('colorscheme gruvbox')
 
 -- transparent column on the left side from line numbers
 hl('SignColumn', { bg = 'none' })
