@@ -38,13 +38,11 @@ sudo chmod 755 ./.macos
 ./.macos
 ```
 
-## Extra packages configuration
-
 ### Yabai
 [Disable system integrity protection](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
 
 ## NeoVim
-2. Install Gopls server (cannot be installed in bootstrap since `Go` is dependency in `Brewfile`)
+1. Install Gopls server (cannot be installed in bootstrap since `Go` is dependency in `Brewfile`)
 ```sh
 go install golang.org/x/tools/gopls@latest
 ```

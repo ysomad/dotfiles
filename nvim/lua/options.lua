@@ -45,17 +45,7 @@ o.expandtab = true
 o.smartindent = true
 o.wrap = false
 
--- do not show empty buffers
-o.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
-
--- window Splitting and Buffers
 o.hidden = true
-o.splitbelow = true
-o.splitright = true
-o.eadirection = "hor"
--- exclude usetab as we do not want to jump to buffers in already open tabs
--- do not use split or vsplit to ensure we don't open any new windows
-o.switchbuf = 'useopen,uselast'
 o.fillchars = {
   vert = " ",
   fold = " ",
@@ -66,7 +56,6 @@ o.fillchars = {
   foldsep = "|",
   foldclose = "▸",
 }
-o.foldmethod = 'manual'
 
 o.swapfile = false
 o.backup = false
