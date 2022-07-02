@@ -18,14 +18,10 @@ macos () {
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-    # tmux plugin manager
-    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-
     # packer
     git clone --depth 1 https://github.com/wbthomason/packer.nvim\
      ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-
-    }
+}
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     macos
