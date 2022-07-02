@@ -6,7 +6,6 @@ require('bufferline').setup {
     max_prefix_length = 15,
     modified_icon = '*',
     tab_size = 0,
-    diagnostics = 'nvim_lsp',
     color_icons = false,
     show_buffer_icons = false,
     show_buffer_close_icons = false,

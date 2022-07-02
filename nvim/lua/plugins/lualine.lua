@@ -2,7 +2,7 @@ require('lualine').setup {
   options = {
     icons_enabled = false,
     globalstatus = true,
-    component_separators = { left = '', right = '┃' },
+    component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' },
     disabled_filetypes = {
       'NvimTree',
@@ -12,12 +12,12 @@ require('lualine').setup {
     },
   },
   sections = {
-    lualine_a = { 'mode' },
-    lualine_b = { 'branch' },
+    lualine_a = { 'branch' },
+    lualine_b = { 'filename' },
     lualine_c = { 'diagnostics' },
-    lualine_x = { 'diff', 'encoding', 'fileformat', 'filetype' },
-    lualine_y = { 'progress' } ,
-    lualine_z = { 'location' },
+    lualine_x = {},
+    lualine_y = { 'diff' } ,
+    lualine_z = { 'encoding' },
   },
 }
 

@@ -17,10 +17,10 @@ scrolling:
 font:
   normal:
     family: FiraCode Nerd Font
-    style: Regular
+    style: Light
   bold:
     family: FiraCode Nerd Font
-    style: Medium
+    style: Retina
   italic:
     family: FiraCode Nerd Font
     style: Italic
@@ -29,7 +29,7 @@ font:
     x: 0
     y: 0
   use_thin_strokes: true
-  draw_bold_text_with_bright_colors: true
+  draw_bold_text_with_bright_colors: false
 
 # gruvbox
 colors:
@@ -63,4 +63,3 @@ colors:
     magenta: '#8f3f71'
     cyan:    '#427b58'
     white:   '#d5c4a1'
-

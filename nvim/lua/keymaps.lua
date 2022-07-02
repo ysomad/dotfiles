@@ -8,17 +8,17 @@ map('n', 'Q', '<nop>', opts)
 map('v', '<', '<gv', opts)
 map('v', '>', '>gv', opts)
 
--- Disable arrows
+-- disable arrows
 map('', '<up>', '', opts)
 map('', '<down>', '', opts)
 map('', '<left>', '', opts)
 map('', '<right>', '', opts)
 
--- Telescope
+-- telescope
 map('n', '<leader>ff', ':Telescope find_files<CR>', opts)
 map('n', '<leader>fg', ':Telescope live_grep<CR>', opts)
 map('n', '<leader>fb', ':Telescope buffers<CR>', opts)
 
--- Bufferline
+-- bufferline
 map('n', ']b', ':BufferLineCycleNext<CR>', opts)
 map('n', '[b', ':BufferLineCyclePrev<CR>', opts)
