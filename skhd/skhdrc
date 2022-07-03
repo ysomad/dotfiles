@@ -15,6 +15,9 @@ shift + alt - f : yabai -m window --toggle native-fullscreen
 # Rotate
 shift + alt - s : yabai -m space --rotate 90
 
+# toggle topmost (keep above other windows)
+alt - o : yabai -m window --toggle topmost
+
 # move window
 shift + alt - h : yabai -m window --warp west
 shift + alt - j : yabai -m window --warp south
