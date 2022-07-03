@@ -1,10 +1,6 @@
 # Dotfiles
 
-## TODO NVIM
-- Go debugger
-
-## TODO tmux
--- Change bg color on action (when Ctrl+x for example)
+![img](screenshots/magenta_tree.png)
 
 ## Install configuration and package manager
 
@@ -55,3 +51,11 @@ go install golang.org/x/tools/gopls@latest
 
 ## Tmux
 - Open tmux session and press `Ctrl-a + I` to install tmux plugins
+
+## TODO
+### Nvim
+- Go debugger
+
+### Tmux
+- Change bg color on action (when Ctrl+x for example)
+
