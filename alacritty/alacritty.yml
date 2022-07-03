@@ -17,7 +17,7 @@ scrolling:
 font:
   normal:
     family: FiraCode Nerd Font
-    style: Light
+    style: Regular
   bold:
     family: FiraCode Nerd Font
     style: Retina
