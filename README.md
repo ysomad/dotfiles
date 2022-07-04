@@ -58,4 +58,3 @@ go install golang.org/x/tools/gopls@latest
 
 ### Tmux
 - Change bg color on action (when Ctrl+x for example)
-
