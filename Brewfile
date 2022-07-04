@@ -16,6 +16,7 @@ brew "mas" # for installing from apple store
 
 # term
 brew "tmux"
+brwe "exa" # ls replacement
 
 # utils
 brew "tree"

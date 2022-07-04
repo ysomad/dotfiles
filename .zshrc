@@ -29,6 +29,9 @@ ZSH_AUTOSUGGEST_USE_ASYNC=true
 alias vi=nvim
 alias vim=nvim
 
+alias ls=exa
+alias la='ls -la'
+
 # Golang exports for Gopls LSP server
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
