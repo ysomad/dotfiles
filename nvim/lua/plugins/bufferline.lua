@@ -17,3 +17,9 @@ require('bufferline').setup {
     sort_by = 'insert_after_current',
   }
 }
+
+local map = vim.api.nvim_set_keymap
+local opts = {noremap = true, silent = true}
+
+map('n', ']b', '<cmd>BufferLineCycleNext<CR>', opts)
+map('n', '[b', '<cmd>BufferLineCyclePrev<CR>', opts)
