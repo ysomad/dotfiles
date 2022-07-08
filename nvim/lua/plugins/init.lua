@@ -51,6 +51,14 @@ return require('packer').startup {
         end
     }
 
+    -- git
+    use {
+      'TimUntersberger/neogit',
+      config = function()
+        require('neogit').setup()
+      end
+    }
+
     -- go
     use {
       'olexsmir/gopher.nvim',
@@ -85,6 +93,12 @@ return require('packer').startup {
       'numToStr/Comment.nvim',
       config = function()
         require('Comment').setup()
+      end
+    }
+    use {
+      'windwp/nvim-autopairs',
+      config = function()
+        require("nvim-autopairs").setup()
       end
     }
 

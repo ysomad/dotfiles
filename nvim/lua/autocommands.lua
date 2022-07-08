@@ -30,9 +30,9 @@ autocmd('BufWritePre', {
   command = '%s/\\s\\+$//e',
 })
 
-local yankGrp = augroup('YankHighlight', {})
+local YankHighlightGrp = augroup('YankHighlightGrp', {})
 autocmd('TextYankPost', {
-	group = yankGrp,
+	group = YankHighlightGrp,
   pattern = '*',
   callback = function()
     vim.highlight.on_yank({
