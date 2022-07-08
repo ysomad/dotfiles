@@ -13,12 +13,3 @@ map('', '<up>', '', opts)
 map('', '<down>', '', opts)
 map('', '<left>', '', opts)
 map('', '<right>', '', opts)
-
--- telescope
-map('n', '<leader>ff', '<cmd>Telescope find_files<CR>', opts)
-map('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', opts)
-map('n', '<leader>fb', '<cmd>Telescope buffers<CR>', opts)
-
--- bufferline
-map('n', ']b', '<cmd>BufferLineCycleNext<CR>', opts)
-map('n', '[b', '<cmd>BufferLineCyclePrev<CR>', opts)
