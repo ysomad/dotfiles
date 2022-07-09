@@ -65,7 +65,7 @@ cmp.setup({
       vim_item.menu = menu
       return vim_item
     end
-	},
+  },
   sources = cmp.config.sources({
     { name = 'cmp_tabnine' },
     { name = 'nvim_lsp' },
