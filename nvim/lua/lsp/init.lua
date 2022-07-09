@@ -8,22 +8,24 @@ local on_attach = function(client, bufnr)
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
+  local map = vim.keymap.set
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
-  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-  vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
-  vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
-  vim.keymap.set('n', '<leader>wl', function()
+
+  map('n', 'gD', vim.lsp.buf.declaration, bufopts)
+  map('n', 'gd', vim.lsp.buf.definition, bufopts)
+  map('n', 'K', vim.lsp.buf.hover, bufopts)
+  map('n', 'gi', vim.lsp.buf.implementation, bufopts)
+  map('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+  map('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
+  map('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
+  map('n', '<leader>wl', function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, bufopts)
-  vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
-  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
-  vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<leader>f', vim.lsp.buf.formatting, bufopts)
+  map('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
+  map('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
+  map('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+  map('n', 'gr', vim.lsp.buf.references, bufopts)
+  map('n', '<leader>f', vim.lsp.buf.formatting, bufopts)
 end
 
 -- cmp
