@@ -3,6 +3,9 @@
 local map = vim.keymap.set
 local opts = { noremap=true, silent=true }
 
+-- Remove diagnostic errors in signcolumn
+vim.diagnostic.config({signs=false})
+
 map('n', '<leader>e', vim.diagnostic.open_float, opts)
 map('n', '[d', vim.diagnostic.goto_prev, opts)
 map('n', ']d', vim.diagnostic.goto_next, opts)
