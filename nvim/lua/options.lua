@@ -19,8 +19,6 @@ hl('SignColumn', { bg = 'none' })
 hl('Normal', { bg = 'none' })
 
 o.cursorline = false -- cursor line
--- hi('CursorLine', { guibg='none' })
--- hi('CursorLineNr', { guibg='none' })
 
 g.gruvbox_contrast_dark = 'hard'
 g.gruvbox_invert_selection = '0'

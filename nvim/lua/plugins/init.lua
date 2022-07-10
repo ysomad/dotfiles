@@ -80,13 +80,13 @@ return require('packer').startup {
         require('plugins.lualine')
       end
     }
-   -- use {
-   --    'akinsho/bufferline.nvim',
-   --    tag = "v2.*",
-   --    config = function()
-   --      require('plugins.bufferline')
-   --    end
-   --  }
+    -- use {
+    --    'akinsho/bufferline.nvim',
+    --    tag = "v2.*",
+    --    config = function()
+    --      require('plugins.bufferline')
+    --    end
+    --  }
 
     -- utils
     use {
