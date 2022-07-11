@@ -63,7 +63,7 @@ return require('packer').startup {
     use {
       'olexsmir/gopher.nvim',
       config = function()
-        require('gopher').setup{}
+        require('plugins.gopher')
       end
     }
 
