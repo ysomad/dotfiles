@@ -16,7 +16,7 @@ brew "mas" # for installing from apple store
 
 # term
 brew "tmux"
-brwe "exa" # ls replacement
+brew "exa" # ls replacement
 
 # utils
 brew "tree"
@@ -24,8 +24,8 @@ brew "htop"
 brew "jq"
 brew "neofetch"
 brew "fzf"
-brew "spaceman" # for displaying spaces
 brew "wget"
+brew "pgformatter" # postgresql formatter for queries
 
 # dev
 brew "neovim"
@@ -44,9 +44,6 @@ brew "ripgrep"
 brew "yabai"
 brew "skhd"
 
-# fonts
-brew "font-fira-code-nerd-font"
-
 # ============ Cask ============ #
 
 # web
@@ -61,6 +58,7 @@ cask "alfred"
 cask "stats"
 cask "hiddenbar"
 cask "aldente"
+cask "spaceman" # for displaying spaces
 
 # dev
 cask "visual-studio-code"
@@ -75,6 +73,9 @@ cask "beekeeper-studio"
 cask "mpv"
 cask "obs"
 cask "transmission"
+
+# fonts
+cask "font-fira-code-nerd-font"
 
 # ============ App Store ============ #
 
