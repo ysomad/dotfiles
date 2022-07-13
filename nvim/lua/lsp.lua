@@ -19,7 +19,6 @@ local on_attach = function(client, bufnr)
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-  local map = vim.keymap.set
   local bufopts = { noremap=true, silent=true, buffer=bufnr }
 
   map('n', 'gD', vim.lsp.buf.declaration, bufopts)
