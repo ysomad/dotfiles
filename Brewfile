@@ -9,23 +9,21 @@ tap "homebrew/services"
 # yabai
 tap "koekeishiya/formulae"
 
-
 # ============ Formulae ============ #
 
 brew "mas" # for installing from apple store
 
-# term
-brew "tmux"
-brew "exa" # ls replacement
-
 # utils
+brew "tmux"
+brew "exa"
 brew "tree"
 brew "htop"
 brew "jq"
 brew "neofetch"
 brew "fzf"
 brew "wget"
-brew "pgformatter" # postgresql formatter for queries
+brew "curl"
+brew "grep"
 
 # dev
 brew "neovim"
@@ -35,6 +33,7 @@ brew "pyenv"
 brew "node"
 brew "yarn"
 brew "golang-migrate"
+brew "pgformatter"
 
 # nvim deps
 brew "fd"
@@ -48,6 +47,7 @@ brew "skhd"
 
 # web
 cask "google-chrome"
+cask "brave-browser"
 cask "telegram-desktop"
 
 # term
