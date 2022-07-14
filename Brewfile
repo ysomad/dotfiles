@@ -47,7 +47,6 @@ brew "skhd"
 
 # web
 cask "google-chrome"
-cask "brave-browser"
 cask "telegram-desktop"
 
 # term

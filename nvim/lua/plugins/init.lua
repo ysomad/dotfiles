@@ -77,7 +77,6 @@ return require('packer').startup {
     -- colorschemas
     use 'gruvbox-community/gruvbox'
     use 'joshdick/onedark.vim'
-    use 'folke/tokyonight.nvim'
 
     -- statusbar
     use {
