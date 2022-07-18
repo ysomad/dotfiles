@@ -10,11 +10,21 @@ return require('packer').startup {
 
     -- core
     use 'nvim-lua/plenary.nvim'
-    use 'neovim/nvim-lspconfig'
+    use {
+      'hrsh7th/nvim-cmp',
+      config = function()
+        require('plugins.cmp')
+      end
+    }
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
-    use 'hrsh7th/nvim-cmp'
+    use {
+      'neovim/nvim-lspconfig',
+      config = function()
+        require('plugins.lspconfig')
+      end
+    }
     use {
       'nvim-treesitter/nvim-treesitter',
       run = ':TSUpdate',
