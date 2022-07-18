@@ -42,7 +42,7 @@ autocmd('TextYankPost', {
   end,
 })
 
-local timeout_ms = 3000
+local timeout_ms = 1000
 
 -- go: format on save
 autocmd({'BufWritePre'}, {
