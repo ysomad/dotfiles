@@ -6,7 +6,9 @@ alt - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
 # alt - return : /Applications/kitty.app/Contents/MacOS/kitty -d ~
 
 # browser
-alt - b : /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+# alt - b : /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+alt - b : /Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser
+
 
 # toggle fullscreen with gaps
 alt - f : yabai -m window --toggle zoom-fullscreen
