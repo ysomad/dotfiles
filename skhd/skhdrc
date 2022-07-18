@@ -87,3 +87,10 @@ alt - t: yabai -m window --toggle float && yabai -m window --grid 4:4:1:1:2:2
 
 # Toggle gaps
 alt - g : yabai -m space --toggle padding; yabai -m space --toggle gap
+
+# balance size of windows
+shift + alt - 0 : yabai -m space --balance
+
+# fast focus desktop
+alt - 0 : yabai -m space --focus recent
+
