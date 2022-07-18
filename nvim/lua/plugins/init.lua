@@ -16,11 +16,11 @@ return require('packer').startup {
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/nvim-cmp'
     use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate',
-        config = function()
-          require('plugins.treesitter')
-        end
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate',
+      config = function()
+        require('plugins.treesitter')
+      end
     }
 
     -- icons
@@ -31,7 +31,6 @@ return require('packer').startup {
       end
     }
 
-    -- lsp extra
     use {
       'tzachar/cmp-tabnine',
       run='./install.sh'
@@ -85,7 +84,6 @@ return require('packer').startup {
         require('plugins.lualine')
       end
     }
-
     -- use {
     --    'akinsho/bufferline.nvim',
     --    tag = "v2.*",
@@ -101,19 +99,18 @@ return require('packer').startup {
         require('Comment').setup()
       end
     }
-    use {
-      'windwp/nvim-autopairs',
-      config = function()
-        require("nvim-autopairs").setup()
-      end
-    }
+    -- use {
+    --   'windwp/nvim-autopairs',
+    --   config = function()
+    --     require("nvim-autopairs").setup()
+    --   end
+    -- }
     use {
       'norcalli/nvim-colorizer.lua',
       config = function()
         require('plugins.nvim-colorizer')
       end
     }
-
 
     if packer_bootstrap then
       require('packer').sync()
