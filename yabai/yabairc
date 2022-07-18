@@ -8,11 +8,11 @@ yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 yabai -m config debug_output on
 
 # global
-yabai -m config mouse_follows_focus on
-yabai -m config focus_follows_mouse autoraise
+yabai -m config mouse_follows_focus off
+yabai -m config focus_follows_mouse off
 
 yabai -m config window_placement second_child
-yabai -m config window_topmost on
+yabai -m config window_topmost off
 yabai -m config window_shadow off
 yabai -m config window_opacity off
 yabai -m config window_border on
@@ -22,10 +22,10 @@ yabai -m config normal_window_border_color 0xff282828
 
 # general space settings
 yabai -m config layout bsp
-yabai -m config top_padding 15
-yabai -m config bottom_padding 15
-yabai -m config left_padding 15
-yabai -m config right_padding 15
+yabai -m config top_padding 10
+yabai -m config bottom_padding 10
+yabai -m config left_padding 10
+yabai -m config right_padding 10
 yabai -m config window_gap 10
 
 # system floating windows
