@@ -7,8 +7,10 @@ alt - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
 
 # browser
 # alt - b : /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
-alt - b : /Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser
-# alt - b : /Applications/Firefox.app/Contents/MacOS/Firefox
+# alt - b : /Applications/Brave\ Browser.app/Contents/MacOS/Brave\ Browser
+alt - b : /Applications/Firefox.app/Contents/MacOS/Firefox
+
+alt - q : yabai -m window --close
 
 # toggle fullscreen with gaps
 alt - f : yabai -m window --toggle zoom-fullscreen
