@@ -94,6 +94,7 @@ return require('packer').startup {
         require('plugins.lualine')
       end
     }
+
     -- use {
     --    'akinsho/bufferline.nvim',
     --    tag = "v2.*",
