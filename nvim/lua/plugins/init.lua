@@ -55,6 +55,13 @@ return require('packer').startup {
       end
     }
 
+    -- use {
+    --   'kyazdani42/nvim-tree.lua',
+    --   config = function()
+    --     require('plugins.nvim-tree')
+    --   end
+    -- }
+
     -- snippets
     use {
       'L3MON4D3/LuaSnip',
