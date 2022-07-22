@@ -5,8 +5,8 @@ env:
 
 window:
   padding:
-    x: 15
-    y: 10
+    x: 10
+    y: 5
   decorations: buttonless
   opacity: 0.8
   title: Terminal
