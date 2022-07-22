@@ -123,6 +123,7 @@ return require('packer').startup {
     --     require("nvim-autopairs").setup()
     --   end
     -- }
+
     use {
       'norcalli/nvim-colorizer.lua',
       config = function()
