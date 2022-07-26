@@ -2,7 +2,6 @@ local g = vim.g
 local o = vim.opt
 local cmd = vim.cmd
 local exec = vim.api.nvim_exec
-local hi = vim.highlight.create
 
 local hl = function(thing, opts)
   vim.api.nvim_set_hl(0, thing, opts)
@@ -44,4 +43,4 @@ o.cmdheight = 1
 o.updatetime = 50
 o.shortmess:append('c')
 o.showmode = false
-o.colorcolumn = '100'
+o.colorcolumn = '120'
