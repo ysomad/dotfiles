@@ -30,7 +30,7 @@ alias vi=nvim
 alias vim=nvim
 
 alias ls='exa'
-alias la='ls -la'
+alias la='ls -la --icons'
 
 # Golang exports for Gopls LSP server
 export GOPATH=$HOME/go
