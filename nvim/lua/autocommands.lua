@@ -79,9 +79,3 @@ autocmd({'FileType'}, {
     opt_local.omnifunc = 'v:lua.vim.lsp.omnifunc'
   end
 })
-
--- sql: format sql files on save via pgFormatter
-autocmd({'BufWritePre'}, {
-  pattern = '*.sql',
-  command = ':%!pg_format'
-})
