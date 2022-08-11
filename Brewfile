@@ -33,7 +33,6 @@ brew "pyenv"
 brew "node"
 brew "yarn"
 brew "golang-migrate"
-brew "pgformatter"
 
 # nvim deps
 brew "fd"
@@ -66,9 +65,7 @@ cask "visual-studio-code"
 cask "goland"
 cask "another-redis-desktop-manager"
 cask "postman"
-cask "insomnia"
 cask "docker"
-cask "beekeeper-studio"
 
 # media
 cask "mpv"

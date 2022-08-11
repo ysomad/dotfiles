@@ -8,7 +8,7 @@ window:
     x: 10
     y: 5
   decorations: buttonless
-  opacity: 0.85
+  opacity: 0.9
   title: Terminal
 
 scrolling:
@@ -24,7 +24,7 @@ font:
   italic:
     family: FiraCode Nerd Font
     style: Italic
-  size: 17
+  size: 16
   offset:
     x: 0
     y: 0
