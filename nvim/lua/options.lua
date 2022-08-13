@@ -10,6 +10,7 @@ end
 g.mapleader = ' '
 o.cursorline = true
 o.termguicolors = true
+o.clipboard = 'unnamedplus'
 o.nu = true
 o.relativenumber = true
 o.hidden = true
