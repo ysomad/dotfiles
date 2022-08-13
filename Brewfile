@@ -26,13 +26,14 @@ brew "curl"
 brew "grep"
 
 # dev
-brew "neovim"
+brew "neovim --HEAD"
 brew "go"
 brew "golangci-lint"
 brew "pyenv"
 brew "node"
 brew "yarn"
 brew "golang-migrate"
+brew "rust"
 
 # nvim deps
 brew "fd"

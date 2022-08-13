@@ -1,10 +1,9 @@
 require('bufferline').setup {
   options = {
     mode = 'buffers',
-    numbers = 'none',
+    numbers = 'id',
     max_name_length = 32,
     max_prefix_length = 15,
-    modified_icon = '*',
     tab_size = 0,
     color_icons = false,
     show_buffer_icons = false,

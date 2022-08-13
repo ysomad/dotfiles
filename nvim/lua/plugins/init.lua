@@ -55,13 +55,6 @@ return require('packer').startup {
       end
     }
 
-    -- use {
-    --   'kyazdani42/nvim-tree.lua',
-    --   config = function()
-    --     require('plugins.nvim-tree')
-    --   end
-    -- }
-
     -- snippets
     use {
       'L3MON4D3/LuaSnip',
@@ -93,6 +86,9 @@ return require('packer').startup {
     -- colorschemas
     use 'gruvbox-community/gruvbox'
     use 'joshdick/onedark.vim'
+    use "EdenEast/nightfox.nvim"
+    use {'shaunsingh/oxocarbon.nvim', run = './install.sh'}
+    use ({ 'projekt0n/github-nvim-theme' })
 
     -- statusbar
     use {
@@ -102,13 +98,13 @@ return require('packer').startup {
       end
     }
 
-    -- use {
-    --    'akinsho/bufferline.nvim',
-    --    tag = "v2.*",
-    --    config = function()
-    --      require('plugins.bufferline')
-    --    end
-    --  }
+    use {
+       'akinsho/bufferline.nvim',
+       tag = "v2.*",
+       config = function()
+         require('plugins.bufferline')
+       end
+     }
 
     -- utils
     use {
@@ -117,12 +113,6 @@ return require('packer').startup {
         require('Comment').setup()
       end
     }
-    -- use {
-    --   'windwp/nvim-autopairs',
-    --   config = function()
-    --     require("nvim-autopairs").setup()
-    --   end
-    -- }
 
     use {
       'norcalli/nvim-colorizer.lua',
