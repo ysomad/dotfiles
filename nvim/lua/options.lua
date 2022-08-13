@@ -7,17 +7,9 @@ local hl = function(thing, opts)
   vim.api.nvim_set_hl(0, thing, opts)
 end
 
-cmd('colorscheme gruvbox')
-hl('SignColumn', { bg = 'none' })
-hl('Normal', { bg = 'none' })
-
-g.gruvbox_contrast_dark = 'hard'
-g.gruvbox_invert_selection = '0'
-
 g.mapleader = ' '
 o.cursorline = true
 o.termguicolors = true
-o.clipboard = 'unnamedplus'
 o.nu = true
 o.relativenumber = true
 o.hidden = true
@@ -38,9 +30,19 @@ o.hlsearch = false
 o.incsearch = true
 o.scrolloff = 8
 o.signcolumn = 'yes'
-o.isfname:append('@-@')
 o.cmdheight = 1
 o.updatetime = 50
-o.shortmess:append('c')
 o.showmode = false
 o.colorcolumn = '120'
+
+cmd("colorscheme oxocarbon")
+-- cmd("colorscheme github_dark")
+-- cmd('colorscheme nordfox')
+-- cmd('colorscheme gruvbox')
+-- g.gruvbox_contrast_dark = 'hard'
+-- g.gruvbox_invert_selection = '0'
+
+-- cmd('colorscheme onedark')
+-- hl('SignColumn', { bg = 'none' })
+-- hl('Normal', { bg = 'none' })
+
