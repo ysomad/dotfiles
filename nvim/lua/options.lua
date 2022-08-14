@@ -36,6 +36,7 @@ o.updatetime = 50
 o.showmode = false
 o.colorcolumn = '120'
 
+-- cmd("colorscheme doom-one")
 cmd("colorscheme oxocarbon")
 -- cmd("colorscheme github_dark")
 -- cmd('colorscheme nordfox')
