@@ -7,17 +7,17 @@ require('lualine').setup {
     disabled_filetypes = { 'NeogitStatus', 'Packer' },
   },
   sections = {
-    lualine_a = { 'branch' },
+    lualine_a = { 'mode' },
     lualine_b = {
       {
         'filename',
         path = 1,
       }
-    },
-    lualine_c = { 'diagnostics' },
+ },
+  lualine_c = { 'diagnostics' },
     lualine_x = {},
     lualine_y = { 'diff' } ,
-    lualine_z = { 'encoding' },
+    lualine_z = { 'branch' },
   },
 }
 
