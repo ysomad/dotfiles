@@ -87,8 +87,8 @@ return require('packer').startup {
     use 'gruvbox-community/gruvbox'
     use 'joshdick/onedark.vim'
     use "EdenEast/nightfox.nvim"
-    use {'shaunsingh/oxocarbon.nvim', run = './install.sh'}
     use ({ 'projekt0n/github-nvim-theme' })
+    use 'B4mbus/oxocarbon-lua.nvim'
 
     -- statusbar
     use {
@@ -111,6 +111,14 @@ return require('packer').startup {
       'numToStr/Comment.nvim',
       config = function()
         require('Comment').setup()
+      end
+    }
+
+    -- show blank lines
+    use {
+      'lukas-reineke/indent-blankline.nvim',
+      config = function()
+        require('plugins.indent_blankline')
       end
     }
 
