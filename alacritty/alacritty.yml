@@ -72,14 +72,14 @@ colors:
   normal:
     black:   '#262626'
     red:     '#ee5396'
-    green:   '#f2f4f8'
+    green:   '#42be65'
     yellow:  '#be95ff'
     blue:    '#33b1ff'
     magenta: '#ee5396'
     cyan:    '#3ddbd9'
     white:   '#f2f4f8'
   bright:
-    black:   '#161616'
+    black:   '#393939'
     red:     '#ee5396'
     green:   '#42be65'
     yellow:  '#be95ff'
