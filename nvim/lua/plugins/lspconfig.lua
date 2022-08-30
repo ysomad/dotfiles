@@ -7,9 +7,11 @@ local function config(_config)
   }, _config or {})
 end
 
+local on_attach = require('plugins.lsp')
+
 -- https://github.com/golang/tools/blob/master/gopls/doc/vim.md#neovim-install
 lspconfig.gopls.setup(config({
-  on_attach = require('plugins.lsp'),
+  on_attach = on_attach,
   cmd = { 'gopls', 'serve' },
   filetypes = { 'go', 'go.mod' },
   root_dir = util.root_pattern('go.work', 'go.mod', '.git'),
@@ -23,3 +25,7 @@ lspconfig.gopls.setup(config({
     }
   }
 }))
+
+lspconfig.pyright.setup(config{
+    on_attach = on_attach
+})
