@@ -8,7 +8,6 @@ return require('packer').startup {
   function(use)
     use 'wbthomason/packer.nvim'
 
-    -- core
     use 'nvim-lua/plenary.nvim'
     use {
       'hrsh7th/nvim-cmp',
@@ -33,7 +32,6 @@ return require('packer').startup {
       end
     }
 
-    -- icons
     use {
       'kyazdani42/nvim-web-devicons',
       config = function()
@@ -41,13 +39,9 @@ return require('packer').startup {
       end
     }
 
-    use {
-      'tzachar/cmp-tabnine',
-      run='./install.sh'
-    }
+    use 'ray-x/lsp_signature.nvim' -- show function signature on type
     use('onsails/lspkind-nvim')
 
-    -- fzf
     use {
       'nvim-telescope/telescope.nvim',
       config = function()
@@ -55,7 +49,6 @@ return require('packer').startup {
       end
     }
 
-    -- snippets
     use {
       'L3MON4D3/LuaSnip',
       after = 'friendly-snippets',
@@ -68,14 +61,13 @@ return require('packer').startup {
     use 'saadparwaiz1/cmp_luasnip'
     use 'rafamadriz/friendly-snippets'
 
-    use {
-      'TimUntersberger/neogit',
-      config = function()
-        require('neogit').setup()
-      end
-    }
+    -- use {
+    --   'TimUntersberger/neogit',
+    --   config = function()
+    --     require('neogit').setup()
+    --   end
+    -- }
 
-    -- go utils
     use {
       'olexsmir/gopher.nvim',
       config = function()
@@ -83,14 +75,12 @@ return require('packer').startup {
       end
     }
 
-    -- colorschemas
-    use 'gruvbox-community/gruvbox'
-    use 'joshdick/onedark.vim'
-    use "EdenEast/nightfox.nvim"
-    use ({ 'projekt0n/github-nvim-theme' })
+    -- use 'gruvbox-community/gruvbox'
+    -- use 'joshdick/onedark.vim'
+    -- use "EdenEast/nightfox.nvim"
+    -- use ({ 'projekt0n/github-nvim-theme' })
     use 'B4mbus/oxocarbon-lua.nvim'
 
-    -- statusbar
     use {
       'nvim-lualine/lualine.nvim',
       config = function()
@@ -106,7 +96,6 @@ return require('packer').startup {
        end
      }
 
-    -- utils
     use {
       'numToStr/Comment.nvim',
       config = function()
@@ -114,7 +103,6 @@ return require('packer').startup {
       end
     }
 
-    -- show blank lines
     use {
       'lukas-reineke/indent-blankline.nvim',
       config = function()

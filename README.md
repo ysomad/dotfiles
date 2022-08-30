@@ -54,7 +54,7 @@ go install golang.org/x/tools/gopls@latest
 
 ## TODO
 ### Nvim
-- Go debugger
-
-### Tmux
-- Change bg color on action (when Ctrl+x for example)
+https://github.com/antgubarev/dotfiles/blob/master/nvim/init.vim
+1. Configure Git integration
+2. Configure debugger ('mfussenegger/nvim-dap', 'leoluz/nvim-dap-go', 'rcarriga/nvim-dap-ui')
+3. Configure Go test integrations ('nvim-neotest/neotest', 'nvim-neotest/neotest-go')
