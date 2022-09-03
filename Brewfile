@@ -1,82 +1,66 @@
-# ============ Tap ============ #
-
+tap "fwartner/tap"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "homebrew/services"
-
-# yabai
 tap "koekeishiya/formulae"
-
-# ============ Formulae ============ #
-
-brew "mas" # for installing from apple store
-
-# utils
-brew "tmux"
+brew "curl"
+brew "docker"
 brew "exa"
-brew "tree"
+brew "fd"
+brew "fzf"
+brew "git"
+brew "libtool"
+brew "go"
+brew "golang-migrate"
+brew "golangci-lint"
+brew "grep"
+brew "ncurses"
 brew "htop"
 brew "jq"
+brew "mas"
 brew "neofetch"
-brew "fzf"
-brew "wget"
-brew "curl"
-brew "grep"
-
-# dev
-brew "neovim --HEAD"
-brew "go"
-brew "golangci-lint"
-brew "pyenv"
+brew "neovim", args: ["HEAD"]
 brew "node"
-brew "yarn"
-brew "golang-migrate"
-brew "rust"
-
-# nvim deps
-brew "fd"
+brew "poetry"
+brew "protoc-gen-go"
+brew "pyenv"
 brew "ripgrep"
-
-# yabai
-brew "yabai"
-brew "skhd"
-
-# ============ Cask ============ #
-
-# web
-cask "brave-browser"
-cask "google-chrome"
-cask "firefox"
-cask "telegram-desktop"
-
-# term
+brew "rust"
+brew "tmux"
+brew "tree"
+brew "wget"
+brew "yarn"
+brew "zsh-completions"
+brew "koekeishiya/formulae/skhd"
+brew "koekeishiya/formulae/yabai"
 cask "alacritty"
-
-# utils
-cask "alfred"
-cask "stats"
-cask "hiddenbar"
 cask "aldente"
-cask "spaceman" # for displaying spaces
-
-# dev
-cask "visual-studio-code"
-cask "goland"
+cask "alfred"
 cask "another-redis-desktop-manager"
-cask "postman"
+cask "beekeeper-studio"
+cask "blackhole-16ch"
+cask "discord"
 cask "docker"
-
-# media
+cask "firefox"
+cask "font-fira-code-nerd-font"
+cask "goland"
+cask "google-chrome"
+cask "hiddenbar"
+cask "mongodb-compass"
 cask "mpv"
 cask "obs"
+cask "postman"
+cask "rar"
+cask "spaceman"
+cask "stats"
+cask "telegram-desktop"
+cask "termius"
 cask "transmission"
-
-# fonts
-cask "font-fira-code-nerd-font"
-
-# ============ App Store ============ #
-
+cask "visual-studio-code"
+cask "wine-stable"
+cask "zoom"
 mas "CopyClip", id: 595191960
 mas "WireGuard", id: 1451685025
