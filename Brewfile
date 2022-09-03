@@ -26,6 +26,7 @@ brew "neovim", args: ["HEAD"]
 brew "node"
 brew "poetry"
 brew "protoc-gen-go"
+brew "protoc-gen-go-grpc"
 brew "pyenv"
 brew "ripgrep"
 brew "rust"
