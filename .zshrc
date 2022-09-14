@@ -34,4 +34,5 @@ alias la='ls -la --icons'
 
 # Golang exports for Gopls LSP server
 export GOPATH=$HOME/go
-export PATH="$PATH:$(go env GOPATH)/bin"
+export PATH=$(go env GOPATH)/bin:$PATH
+export GOBIN=$(go env GOPATH)/bin
