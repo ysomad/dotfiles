@@ -1,5 +1,10 @@
 local map = vim.api.nvim_set_keymap
-local opts = {noremap = true, silent = true}
+local opts = {noremap = true}
+
+-- greates remaps ever (yoinked from primeagen)
+map('x', '<leader>p', '"_dP', opts)
+map('n', '<leader>d', '"_d', opts)
+map('v', '<leader>d', '"_d', opts)
 
 map('n', '<leader>pv', ':Ex<CR>', opts)
 map('n', 'Q', '<nop>', opts)
