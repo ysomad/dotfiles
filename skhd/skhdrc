@@ -96,7 +96,3 @@ shift + alt - 0 : yabai -m space --balance
 # fast focus desktop
 alt - 0 : yabai -m space --focus recent
 
-# Toggle borders
-alt - e : yabai -m space --toggle border
-
-
