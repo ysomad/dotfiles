@@ -5,7 +5,7 @@ env:
 
 window:
   padding:
-    x: 0
+    x: 5
     y: 1
   decorations: buttonless
   opacity: 1
