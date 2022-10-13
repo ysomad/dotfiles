@@ -27,5 +27,11 @@ lspconfig.gopls.setup(config({
 }))
 
 lspconfig.pyright.setup(config{
-    on_attach = on_attach
+  on_attach = on_attach
+})
+
+lspconfig.bufls.setup(config{
+  on_attach = on_attach,
+  cmd = { "bufls", "serve" },
+  filetypes = { "proto" }
 })
