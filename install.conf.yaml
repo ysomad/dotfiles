@@ -6,6 +6,9 @@
 - clean: ['~']
 
 - link:
+    # file removing last login msg from terminal
+    ~/.hushlogin: .hushlogin
+
     # Git
     ~/.gitconfig: .gitconfig
 
@@ -34,3 +37,5 @@
     ~/bin/:
       path: bin/*
       glob: true
+
+    # trashcode
