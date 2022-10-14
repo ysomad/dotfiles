@@ -1,0 +1,17 @@
+{
+    "editor.fontSize": 15,
+    "editor.fontFamily": "FiraCode Nerd Font Mono",
+    "editor.fontLigatures": true,
+
+    "workbench.iconTheme": "material-icon-theme",
+
+    "editor.minimap.enabled": false,
+    "explorer.compactFolders": false,
+
+    "window.titleBarStyle": "native",
+    "customizeUI.titleBar": "frameless",
+    "customizeUI.activityBar": "bottom",
+    "terminal.integrated.fontFamily": "monospace",
+
+    "terminal.external.osxExec": "Alacritty.app"
+}
