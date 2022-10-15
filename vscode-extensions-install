@@ -4,11 +4,13 @@ plugins=(
     adpyke.vscode-sql-formatter
     golang.go
     golang.go-nightly
+    Gruntfuggly.todo-tree
     iocave.customize-ui
     iocave.monkey-patch
     ms-azuretools.vscode-docker
     PKief.material-icon-theme
     vscodevim.vim
+    wayou.vscode-todo-highlight
     zxh404.vscode-proto3
 )
 
