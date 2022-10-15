@@ -33,8 +33,7 @@ brew bundle && brew doctor && brew cleanup
 
 2. Set macOS sensible defaults
 ```sh
-sudo chmod 755 ./.macos
-./.macos
+sudo chmod 755 ./.macos && ./.macos
 ```
 
 ### Yabai
@@ -48,6 +47,13 @@ go install golang.org/x/tools/gopls@latest
 
 2. Open nvim and run `:PackerSync` to install plugins.
 3. To install Go dependencies run in nvim `:GoInstallDeps`
+
+## VSCode
+1. To install extensions, run:
+```sh
+./vscode-extensions-install
+```
+2. Settings will be symlinked from steps above
 
 ## Tmux
 - Open tmux session and press `Ctrl-a + I` to install tmux plugins
