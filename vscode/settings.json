@@ -14,5 +14,7 @@
     "customizeUI.activityBar": "bottom",
     "terminal.integrated.fontFamily": "monospace",
 
-    "terminal.external.osxExec": "Alacritty.app"
+    "terminal.external.osxExec": "Alacritty.app",
+
+    "sql-formatter.dialect": "pl/sql"
 }
