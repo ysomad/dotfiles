@@ -1,17 +1,32 @@
-#!/usr/bin/env bash
+#!/bin/bash
+
+plugins=(
+    golang.go
+    golang.go-nightly
+    iocave.customize-ui
+    iocave.monkey-patch
+    ms-azuretools.vscode-docker
+    PKief.material-icon-theme
+    vscodevim.vim
+    zxh404.vscode-proto3
+)
 
 code -v > /dev/null
 if [[ $? -eq 0 ]];then
     read -r -p "Do you want to install VSC extensions? [y|N] " configresponse
     if [[ $configresponse =~ ^(y|yes|Y) ]];then
-        code --install-extension golang.go
-        code --install-extension golang.go-nightly
-        code --install-extension iocave.customize-ui
-        code --install-extension iocave.monkey-patch
-        code --install-extension ms-azuretools.vscode-docker
-        code --install-extension PKief.material-icon-theme
-        code --install-extension vscodevim.vim
-        code --install-extension zxh404.vscode-proto3
+        for p in "${plugins[@]}"; do
+            code --install-extension "$p"
+        done
+
+        # code --install-extension golang.go
+        # code --install-extension golang.go-nightly
+        # code --install-extension iocave.customize-ui
+        # code --install-extension iocave.monkey-patch
+        # code --install-extension ms-azuretools.vscode-docker
+        # code --install-extension PKief.material-icon-theme
+        # code --install-extension vscodevim.vim
+        # code --install-extension zxh404.vscode-proto3
 
         echo "Extensions for VSC have been installed. Please restart your VSC."
     else
