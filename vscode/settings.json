@@ -7,6 +7,7 @@
 
     "editor.minimap.enabled": false,
     "explorer.compactFolders": false,
+    "extensions.ignoreRecommendations": true,
 
     "window.titleBarStyle": "native",
     "customizeUI.titleBar": "frameless",
