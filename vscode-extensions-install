@@ -1,6 +1,7 @@
 #!/bin/bash
 
 plugins=(
+    adpyke.vscode-sql-formatter
     golang.go
     golang.go-nightly
     iocave.customize-ui
