@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+code -v > /dev/null
+if [[ $? -eq 0 ]];then
+    read -r -p "Do you want to install VSC extensions? [y|N] " configresponse
+    if [[ $configresponse =~ ^(y|yes|Y) ]];then
+        code --install-extension golang.go
+        code --install-extension golang.go-nightly
+        code --install-extension iocave.customize-ui
+        code --install-extension iocave.monkey-patch
+        code --install-extension ms-azuretools.vscode-docker
+        code --install-extension PKief.material-icon-theme
+        code --install-extension vscodevim.vim
+        code --install-extension zxh404.vscode-proto3
+
+        echo "Extensions for VSC have been installed. Please restart your VSC."
+    else
+        echo "Skipping extensions install.";
+    fi
+else
+    echo "It looks like the command 'code' isn't accessible."
+    echo "Please make sure you have Visual Studio Code installed"
+    echo "And that you executed this procedure: https://code.visualstudio.com/docs/setup/mac"
+fi
