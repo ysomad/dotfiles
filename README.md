@@ -16,7 +16,7 @@ cd /path/to/dotfiles
 
 3. Install package manager and packages which is not installable with it
 ```sh
-./bootstrap.sh
+./bootstrap
 ```
 
 4. Install symlinks for config files
@@ -43,6 +43,10 @@ brew bundle && brew doctor && brew cleanup
 1. Install Gopls server (cannot be installed in bootstrap since `Go` is dependency in `Brewfile`)
 ```sh
 go install golang.org/x/tools/gopls@latest
+```
+2. Install bufls server for protobuf definitions
+```sh
+go install github.com/bufbuild/buf-language-server/cmd/bufls@latest
 ```
 
 2. Open nvim and run `:PackerSync` to install plugins.
