@@ -33,7 +33,7 @@ brew bundle && brew doctor && brew cleanup
 
 2. Set macOS sensible defaults
 ```sh
-sudo chmod 755 ./.macos && ./.macos
+./.macos
 ```
 
 ### Yabai
