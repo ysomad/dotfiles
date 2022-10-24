@@ -80,6 +80,12 @@ return require('packer').startup {
     -- use "EdenEast/nightfox.nvim"
     -- use ({ 'projekt0n/github-nvim-theme' })
     use 'B4mbus/oxocarbon-lua.nvim'
+    -- use {
+    --   'aktersnurra/no-clown-fiesta.nvim',
+    --   config = function()
+    --     require('plugins.no-clown-fiesta')
+    --   end
+    -- }
 
     use {
       'nvim-lualine/lualine.nvim',
