@@ -36,16 +36,12 @@ o.updatetime = 50
 o.showmode = false
 o.colorcolumn = '120'
 
--- cmd("colorscheme doom-one")
-vim.g.oxocarbon_lua_alternative_telescope = true
+g.oxocarbon_lua_alternative_telescope = true
 cmd("colorscheme oxocarbon-lua")
--- cmd("colorscheme github_dark")
--- cmd('colorscheme nordfox')
--- cmd('colorscheme gruvbox')
+
 -- g.gruvbox_contrast_dark = 'hard'
 -- g.gruvbox_invert_selection = '0'
 
 -- cmd('colorscheme onedark')
 -- hl('SignColumn', { bg = 'none' })
 -- hl('Normal', { bg = 'none' })
-
