@@ -36,6 +36,7 @@ o.updatetime = 50
 o.showmode = false
 o.colorcolumn = '120'
 
+
 -- g.oxocarbon_lua_alternative_telescope = true
 -- cmd("colorscheme oxocarbon-lua")
 
