@@ -36,12 +36,9 @@ o.updatetime = 50
 o.showmode = false
 o.colorcolumn = '120'
 
-g.oxocarbon_lua_alternative_telescope = true
-cmd("colorscheme oxocarbon-lua")
+-- g.oxocarbon_lua_alternative_telescope = true
+-- cmd("colorscheme oxocarbon-lua")
 
+-- cmd("colorscheme gruvbox")
 -- g.gruvbox_contrast_dark = 'hard'
 -- g.gruvbox_invert_selection = '0'
-
--- cmd('colorscheme onedark')
--- hl('SignColumn', { bg = 'none' })
--- hl('Normal', { bg = 'none' })
