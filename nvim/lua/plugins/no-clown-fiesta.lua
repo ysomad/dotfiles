@@ -1,1 +1,1 @@
-require("no-clown-fiesta").setup({})
+require("no-clown-fiesta").setup({ type = "bold,italic" })
