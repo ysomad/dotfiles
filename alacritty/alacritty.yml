@@ -17,17 +17,17 @@ scrolling:
 
 font:
   normal:
-    family: BlexMono Nerd Font
+    family: BlexMono Nerd Font Mono
     style: Light
   bold:
-    family: BlexMono Nerd Font
-    style: Regular
+    family: BlexMono Nerd Font Mono
+    style: Medium
   italic:
-    family: BlexMono Nerd Font
-    style: Regular
+    family: BlexMono Nerd Font Mono
+    style: Italic
   bold_italic:
-    family: BlexMono Nerd Font
-    style: Regular
+    family: BlexMono Nerd Font Mono
+    style: Medium Italic
   italic_bold:
   size: 16
   offset:
