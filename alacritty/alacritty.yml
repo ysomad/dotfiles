@@ -5,22 +5,30 @@ env:
 
 window:
   padding:
-    x: 5
-    y: 1
+    x: 0
+    y: 0
   decorations: buttonless
   opacity: 1
   title: Terminal
+  dynamic_padding: true
 
 scrolling:
   history: 5000
 
 font:
   normal:
-    family: FiraCode Nerd Font
+    family: BlexMono Nerd Font
     style: Light
   bold:
-    family: FiraCode Nerd Font
+    family: BlexMono Nerd Font
     style: Regular
+  italic:
+    family: BlexMono Nerd Font
+    style: Regular
+  bold_italic:
+    family: BlexMono Nerd Font
+    style: Regular
+  italic_bold:
   size: 16
   offset:
     x: 0
