@@ -18,3 +18,11 @@ map('', '<up>', '', opts)
 map('', '<down>', '', opts)
 map('', '<left>', '', opts)
 map('', '<right>', '', opts)
+
+-- center screen on Ctrl+u, Ctrl+d moves
+map('n', '<C-d>', '<C-d>zz', opts)
+map('n', '<C-u>', '<C-u>zz', opts)
+
+-- center screen on next
+map('n', 'n', 'nzzzv', opts)
+map('n', 'N', 'Nzzzv', opts)

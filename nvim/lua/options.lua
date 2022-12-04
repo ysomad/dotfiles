@@ -37,6 +37,7 @@ o.showmode = false
 o.colorcolumn = '120'
 
 
+cmd("colorscheme no-clown-fiesta")
 -- g.oxocarbon_lua_alternative_telescope = true
 -- cmd("colorscheme oxocarbon-lua")
 
