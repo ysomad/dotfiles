@@ -38,13 +38,14 @@ brew bundle
 
 ### yabai
 1. [Disable system integrity protection](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
+2. [Configure scripting addition](https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(from-HEAD)#configure-scripting-addition)
 
-2. Start skhd service
+3. Start skhd service
 ```sh
 brew services start skhd
 ```
 
-3. Start yabai service
+4. Start yabai service
 ```sh
 brew services start yabai
 ```
@@ -85,3 +86,10 @@ go install github.com/bufbuild/buf-language-server/cmd/bufls@latest
 - fix colorschema
 - Configure Git integration
 - Configure Go test integrations ('nvim-neotest/neotest', 'nvim-neotest/neotest-go')
+
+### macos
+- unbind all default keyboard shortcuts except screenshots
+- enable "open window in center by default"
+
+Dock & Menu Bar:
+- enable "Show battery percentage"
