@@ -75,6 +75,9 @@ go install github.com/bufbuild/buf-language-server/cmd/bufls@latest
 
 ## TODO
 
+### yabai
+- use raycast instead of alfred
+
 ### neovim
 - fix packer setup (like in primeagen dots)
 - use mason for managing lsp servers
