@@ -13,22 +13,23 @@ yabai -m config focus_follows_mouse off
 
 yabai -m config window_placement second_child
 yabai -m config window_topmost off
-yabai -m config window_shadow off
+yabai -m config window_shadow float
 yabai -m config window_opacity off
 yabai -m config window_border on
 yabai -m config window_border_width 1
-yabai -m config window_border_hidpi off
+yabai -m config window_border_radius 11
+yabai -m config window_border_hidpi on
 yabai -m config window_border_blur off
 yabai -m config active_window_border_color 0xffe1e1e1
 yabai -m config normal_window_border_color 0xff373737
 
 # general space settings
 yabai -m config layout bsp
-yabai -m config top_padding 10
-yabai -m config bottom_padding 10
-yabai -m config left_padding 10
-yabai -m config right_padding 10
-yabai -m config window_gap 10
+yabai -m config top_padding 7
+yabai -m config bottom_padding 7
+yabai -m config left_padding 7
+yabai -m config right_padding 7
+yabai -m config window_gap 7
 
 # system floating windows
 yabai -m rule --add app="^Finder$" manage=off
@@ -45,7 +46,6 @@ yabai -m rule --add title='Bin$' manage=off
 yabai -m rule --add title="^Opening*" manage=off
 
 # 3rd party
-yabai -m rule --add app="^Alfred Preferences$" manage=off
 yabai -m rule --add app="^Stats$" manage=off
 yabai -m rule --add app="^Hidden Bar$" manage=off
 yabai -m rule --add app="^Amphetamine$" manage=off
