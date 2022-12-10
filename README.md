@@ -37,11 +37,13 @@ brew bundle
 ```
 
 ### yabai
-1. Start skhd service
+1. [Disable system integrity protection](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
+
+2. Start skhd service
 ```sh
 brew services start skhd
 ```
-2. [Disable system integrity protection](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
+
 3. Start yabai service
 ```sh
 brew services start yabai
