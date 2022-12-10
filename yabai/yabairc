@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
-# Yabai configuration file documentantion
-# https://github.com/koekeishiya/yabai/wiki/Configuration#configuration-file
-
-sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
 yabai -m config debug_output on
 
 # global
@@ -31,7 +29,7 @@ yabai -m config window_gap 7
 # system floating windows
 yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
-yabai -m rule --add title='Preferences$' manage=off topmost=on
+yabai -m rule --add title='Preferences$' manage=off
 yabai -m rule --add title='Settings$' manage=off
 yabai -m rule --add app="^System Information$" manage=off
 yabai -m rule --add title="Software Update$" manage=off
