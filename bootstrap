@@ -1,14 +1,8 @@
 #!/usr/bin/env bash
 
 macos () {
-    # command line tools
-    xcode-select --install
-    softwareupdate --all --install --force
-
     # homebrew
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/ysomad/.zprofile
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     eval "$(/opt/homebrew/bin/brew shellenv)"
 
     # oh-my-zsh
