@@ -1,7 +1,8 @@
 {
-    "editor.fontSize": 15,
-    "editor.fontFamily": "FiraCode Nerd Font Mono",
-    "editor.fontLigatures": true,
+    "editor.fontSize": 16,
+    "editor.fontFamily": "BlexMono Nerd Font Mono",
+    "editor.fontLigatures": false,
+    "editor.lineNumbers": "relative",
 
     "workbench.iconTheme": "material-icon-theme",
 
