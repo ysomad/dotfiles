@@ -14,57 +14,69 @@ git clone git@github.com:ysomad/dotfiles.git
 cd /path/to/dotfiles
 ```
 
-3. Install package manager and packages which is not installable with it
-```sh
-./bootstrap
-```
-
-4. Install symlinks for config files
+3. Install symlinks for config files
 ```sh
 ./install
 ```
 
-## MacOS
+4. Install package manager and packages which is not installable via package manager
+```sh
+./bootstrap
+```
+
+## macos
 
 1. Install packages from Brewfile
 ```sh
-brew bundle && brew doctor && brew cleanup
+brew bundle
 ```
 
-2. Set macOS sensible defaults
+2. Set macos sensible defaults
 ```sh
 ./.macos
 ```
 
-### Yabai
-[Disable system integrity protection](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
+### yabai
+1. Start skhd service
+```sh
+brew services start skhd
+```
+2. [Disable system integrity protection](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
+3. Start yabai service
+```sh
+brew services start yabai
+```
 
-## NeoVim
+## neovim
+
 1. Install Gopls server (cannot be installed in bootstrap since `Go` is dependency in `Brewfile`)
 ```sh
 go install golang.org/x/tools/gopls@latest
 ```
+
 2. Install bufls server for protobuf definitions
 ```sh
 go install github.com/bufbuild/buf-language-server/cmd/bufls@latest
 ```
 
-2. Open nvim and run `:PackerSync` to install plugins.
-3. To install Go dependencies run in nvim `:GoInstallDeps`
+2. Open nvim and run `:PackerInstall` to install plugins
+3. Compile packer `:PackerCompile`
 
-## VSCode
-1. To install extensions, run:
+## vscode
+- Install extensions, run:
 ```sh
 ./vscode-extensions-install
 ```
-2. Settings will be symlinked from steps above
 
-## Tmux
+## tmux
 - Open tmux session and press `Ctrl-a + I` to install tmux plugins
 
 ## TODO
-### Nvim
-https://github.com/antgubarev/dotfiles/blob/master/nvim/init.vim
-1. Configure Git integration
-2. Configure debugger ('mfussenegger/nvim-dap', 'leoluz/nvim-dap-go', 'rcarriga/nvim-dap-ui')
-3. Configure Go test integrations ('nvim-neotest/neotest', 'nvim-neotest/neotest-go')
+
+### neovim
+- fix packer setup (like in primeagen dots)
+- use mason for managing lsp servers
+- use https://github.com/ray-x/go.nvim instead of gopher
+- fix colorschema
+- Configure Git integration
+- Configure Go test integrations ('nvim-neotest/neotest', 'nvim-neotest/neotest-go')
