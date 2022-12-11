@@ -88,8 +88,6 @@ go install github.com/bufbuild/buf-language-server/cmd/bufls@latest
 - Configure Go test integrations ('nvim-neotest/neotest', 'nvim-neotest/neotest-go')
 
 ### macos
-- enable "open window in center by default"
-
 Keyboard:
 - disable "Adjust keyboard brightness in low light"
 - unbind cmd+q (bind cmd+q to Zoom > Turn focus following on or off)
