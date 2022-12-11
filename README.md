@@ -88,8 +88,16 @@ go install github.com/bufbuild/buf-language-server/cmd/bufls@latest
 - Configure Go test integrations ('nvim-neotest/neotest', 'nvim-neotest/neotest-go')
 
 ### macos
-- unbind all default keyboard shortcuts except screenshots
 - enable "open window in center by default"
+
+Keybinds:
+- unbind cmd+q
+- unbind all default keyboard shortcuts except screenshots
+
+Trackpad:
+- disable "Swipe between fullscreen apps"
+- disable "Mission control"
+- disable "Show desktop"
 
 Dock & Menu Bar:
 - enable "Show battery percentage"
