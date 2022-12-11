@@ -90,9 +90,10 @@ go install github.com/bufbuild/buf-language-server/cmd/bufls@latest
 ### macos
 - enable "open window in center by default"
 
-Keybinds:
-- unbind cmd+q
-- unbind all default keyboard shortcuts except screenshots
+Keyboard:
+- disable "Adjust keyboard brightness in low light"
+- unbind cmd+q (bind cmd+q to Zoom > Turn focus following on or off)
+- unbind all default keyboard shortcuts except screenshots, input sources and spotlight
 
 Trackpad:
 - disable "Swipe between fullscreen apps"
