@@ -4,20 +4,23 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use {
-  'nvim-telescope/telescope.nvim', tag = '0.1.0',
-  requires = { {'nvim-lua/plenary.nvim'} }
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    requires = { {'nvim-lua/plenary.nvim'} }
   }
 
   -- use 'gruvbox-community/gruvbox'
   -- use 'joshdick/onedark.vim'
-  -- use('aktersnurra/no-clown-fiesta.nvim')
   use({
-    'nyoom-engineering/oxocarbon.nvim',
-    config = function()
-      vim.cmd.colorscheme('oxocarbon')
-      vim.opt.background = 'dark'
-    end
+    'aktersnurra/no-clown-fiesta.nvim',
+    config = function() vim.cmd.colorscheme('no-clown-fiesta') end
   })
+  -- use({
+  --   'nyoom-engineering/oxocarbon.nvim',
+  --   config = function()
+  --     vim.cmd.colorscheme('oxocarbon')
+  --     vim.opt.background = 'dark'
+  --   end
+  -- })
 
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
@@ -28,6 +31,11 @@ return require('packer').startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
+
+  use({
+    'norcalli/nvim-colorizer.lua',
+    config = function() require'colorizer'.setup() end
+  })
 
   use {
     'numToStr/Comment.nvim',
