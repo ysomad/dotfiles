@@ -32,11 +32,6 @@ return require('packer').startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
-  use({
-    'norcalli/nvim-colorizer.lua',
-    config = function() require'colorizer'.setup() end
-  })
-
   use {
     'numToStr/Comment.nvim',
     config = function()
