@@ -162,7 +162,7 @@ _G.packer_plugins = {
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["oxocarbon.nvim"] = {
-    config = { "\27LJ\2\n]\0\0\3\0\6\0\t6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\0\0009\0\3\0'\1\5\0=\1\4\0K\0\1\0\tdark\15background\bopt\26colorscheme oxocarbon\bcmd\bvim\0" },
+    config = { "\27LJ\2\na\0\0\3\0\a\0\n6\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\0016\0\0\0009\0\4\0'\1\6\0=\1\5\0K\0\1\0\tdark\15background\bopt\14oxocarbon\16colorscheme\bcmd\bvim\0" },
     loaded = true,
     path = "/Users/ysomad/.local/share/nvim/site/pack/packer/start/oxocarbon.nvim",
     url = "https://github.com/nyoom-engineering/oxocarbon.nvim"
@@ -192,7 +192,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: oxocarbon.nvim
 time([[Config for oxocarbon.nvim]], true)
-try_loadstring("\27LJ\2\n]\0\0\3\0\6\0\t6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\0\0009\0\3\0'\1\5\0=\1\4\0K\0\1\0\tdark\15background\bopt\26colorscheme oxocarbon\bcmd\bvim\0", "config", "oxocarbon.nvim")
+try_loadstring("\27LJ\2\na\0\0\3\0\a\0\n6\0\0\0009\0\1\0009\0\2\0'\2\3\0B\0\2\0016\0\0\0009\0\4\0'\1\6\0=\1\5\0K\0\1\0\tdark\15background\bopt\14oxocarbon\16colorscheme\bcmd\bvim\0", "config", "oxocarbon.nvim")
 time([[Config for oxocarbon.nvim]], false)
 -- Config for: indent-blankline.nvim
 time([[Config for indent-blankline.nvim]], true)

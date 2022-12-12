@@ -24,7 +24,7 @@ brew "jq"
 brew "libtool"
 brew "mas"
 brew "neofetch"
-brew "neovim"
+brew "neovim", args: ["HEAD"]
 brew "node"
 brew "poetry"
 brew "protobuf"

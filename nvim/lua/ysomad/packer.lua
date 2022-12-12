@@ -14,7 +14,7 @@ return require('packer').startup(function(use)
   use({
     'nyoom-engineering/oxocarbon.nvim',
     config = function()
-      vim.cmd('colorscheme oxocarbon')
+      vim.cmd.colorscheme('oxocarbon')
       vim.opt.background = 'dark'
     end
   })

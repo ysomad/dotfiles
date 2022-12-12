@@ -1,17 +1,15 @@
 # Dotfiles
 
-![img](screenshots/magenta_tree.png)
-
 ## Install configuration and package manager
 
 1. Clone repository
 ```sh
-git clone git@github.com:ysomad/dotfiles.git
+git clone git@github.com:ysomad/.dotfiles.git
 ```
 
 2. Go to dotfiles directory
 ```sh
-cd /path/to/dotfiles
+cd /path/to/.dotfiles
 ```
 
 3. Install symlinks for config files
@@ -51,19 +49,7 @@ brew services start yabai
 ```
 
 ## neovim
-
-1. Install Gopls server (cannot be installed in bootstrap since `Go` is dependency in `Brewfile`)
-```sh
-go install golang.org/x/tools/gopls@latest
-```
-
-2. Install bufls server for protobuf definitions
-```sh
-go install github.com/bufbuild/buf-language-server/cmd/bufls@latest
-```
-
-2. Open nvim and run `:PackerInstall` to install plugins
-3. Compile packer `:PackerCompile`
+- Open nvim and run `:PackerInstall` to install plugins
 
 ## vscode
 - Install extensions, run:
@@ -80,10 +66,7 @@ go install github.com/bufbuild/buf-language-server/cmd/bufls@latest
 - use raycast instead of alfred
 
 ### neovim
-- fix packer setup (like in primeagen dots)
-- use mason for managing lsp servers
 - use https://github.com/ray-x/go.nvim instead of gopher
-- fix colorschema
 - Configure Git integration
 - Configure Go test integrations ('nvim-neotest/neotest', 'nvim-neotest/neotest-go')
 
