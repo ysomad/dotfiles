@@ -19,15 +19,15 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # zsh-autosuggestions autocompletion
-bindkey '^I'   complete-word       # tab          | complete
-bindkey '^[[Z' autosuggest-accept  # shift + tab  | autosuggest
+bindkey "^I"   complete-word       # tab          | complete
+bindkey "^[[Z" autosuggest-accept  # shift + tab  | autosuggest
 ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(buffer-empty bracketed-paste accept-line push-line-or-edit)
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 
 alias vi=vim
-alias ls='exa'
-alias la='ls -la --icons'
+alias ls="exa"
+alias la="ls -la --icons"
 
 # Golang exports for Gopls LSP server
 export GOPATH="$HOME/go"

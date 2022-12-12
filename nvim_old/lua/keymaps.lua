@@ -26,3 +26,5 @@ map('n', '<C-u>', '<C-u>zz', opts)
 -- center screen on next
 map('n', 'n', 'nzzzv', opts)
 map('n', 'N', 'Nzzzv', opts)
+
+vim.keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")

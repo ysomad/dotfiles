@@ -1,29 +1,17 @@
 # Dotfiles
 
 ## Install configuration and package manager
-
-1. Clone repository
-```sh
-git clone git@github.com:ysomad/.dotfiles.git
-```
-
-2. Go to dotfiles directory
-```sh
-cd /path/to/.dotfiles
-```
-
-3. Install symlinks for config files
+1. Install symlinks for config files
 ```sh
 ./install
 ```
 
-4. Install package manager and packages which is not installable via package manager
+2. Install package manager and packages which is not installable via package manager
 ```sh
 ./bootstrap
 ```
 
 ## macos
-
 1. Install packages from Brewfile
 ```sh
 brew bundle
@@ -37,12 +25,10 @@ brew bundle
 ### yabai
 1. [Disable system integrity protection](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
 2. [Configure scripting addition](https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(from-HEAD)#configure-scripting-addition)
-
 3. Start skhd service
 ```sh
 brew services start skhd
 ```
-
 4. Start yabai service
 ```sh
 brew services start yabai
@@ -58,7 +44,7 @@ brew services start yabai
 ```
 
 ## tmux
-- Open tmux session and press `Ctrl-a + I` to install tmux plugins
+- Open tmux and press `Ctrl-a + I` to install tmux plugins
 
 ## TODO
 
