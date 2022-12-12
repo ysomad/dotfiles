@@ -34,40 +34,6 @@ font:
     x: 0
     y: 0
 
-# oxocarbon
-# colors:
-  # primary:
-  #   background: '#161616'
-  #   foreground: '#ffffff'
-  # normal:
-  #   black:   '#262626'
-  #   red:     '#ee5396'
-  #   green:   '#42be65'
-  #   yellow:  '#be95ff'
-  #   blue:    '#33b1ff'
-  #   magenta: '#ee5396'
-  #   cyan:    '#3ddbd9'
-  #   white:   '#f2f4f8'
-  # bright:
-  #   black:   '#393939'
-  #   red:     '#ee5396'
-  #   green:   '#42be65'
-  #   yellow:  '#be95ff'
-  #   blue:    '#33b1ff'
-  #   magenta: '#ee5396'
-  #   cyan:    '#3ddbd9'
-  #   white:   '#ffffff'
-  # dim:
-  #   black:   '#393939'
-  #   red:     '#ff7eb6'
-  #   green:   '#42be65'
-  #   yellow:  '#be95ff'
-  #   blue:    '#82cfff'
-  #   magenta: '#ff7eb6'
-  #   cyan:    '#08bdba'
-  #   white:   '#dde1e6'
-
-  # no-clown-fiesta
 colors:
 
   primary:
