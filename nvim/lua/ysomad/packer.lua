@@ -30,12 +30,13 @@ return require('packer').startup(function(use)
   }
 
   use {
-    'lukas-reineke/indent-blankline.nvim',
+    'numToStr/Comment.nvim',
     config = function()
-      show_current_context = true
-      show_current_context_start = false
+        require('Comment').setup()
     end
-  }
+}
+
+  use('lukas-reineke/indent-blankline.nvim')
 
   use {
     'VonHeikemen/lsp-zero.nvim',
