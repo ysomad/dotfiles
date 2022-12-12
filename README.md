@@ -49,6 +49,7 @@ brew services start yabai
 ## TODO
 
 ### yabai
+- update border colors to decrease contrast
 - use raycast instead of alfred
 
 ### neovim
