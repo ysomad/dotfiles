@@ -9,28 +9,32 @@
     # file removing last login msg from terminal
     ~/.hushlogin: .hushlogin
 
-    # Git
+    # git
     ~/.gitconfig: .gitconfig
 
-    # Shell
+    # shell
     ~/.zshrc: .zshrc
     ~/.zprofile: .zprofile
     ~/.config/tmux/tmux.conf: tmux/tmux.conf
 
-    # Terminal
+    # term
     ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
 
     # Neovim
     ~/.config/nvim/init.lua: nvim/init.lua
-    ~/.config/nvim/lua/:
-      path: nvim/lua/*
+    ~/.config/nvim/plugin/packer_compiled.lua: nvim/plugin/packer_compiled.lua
+    ~/.config/nvim/lua/ysomad:
+      path: nvim/lua/ysomad/*
+      glob: true
+    ~/.config/nvim/after/plugin:
+      path: nvim/after/plugin/*
       glob: true
 
-    # WM
+    # yabai
     ~/.config/yabai/yabairc: yabai/yabairc
     ~/.config/skhd/skhdrc: skhd/skhdrc
 
-    # JetBrains
+    # jetbrains
     ~/.ideavimrc: .ideavimrc
 
     # bin

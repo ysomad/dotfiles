@@ -100,3 +100,7 @@ Trackpad:
 
 Dock & Menu Bar:
 - enable "Show battery percentage"
+
+Sound:
+- disable "play sound on startup"
+- show sound in menu bar - "always"
