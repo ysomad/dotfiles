@@ -17,5 +17,6 @@
 
     "terminal.external.osxExec": "Alacritty.app",
 
-    "sql-formatter.dialect": "pl/sql"
+    "sql-formatter.dialect": "pl/sql",
+    "editor.accessibilitySupport": "off"
 }
