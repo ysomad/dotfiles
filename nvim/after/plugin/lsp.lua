@@ -1,6 +1,7 @@
 local lsp = require('lsp-zero')
 
-lsp.preset('recommended')
+lsp.preset("recommended")
+
 
 lsp.ensure_installed({
   'gopls',
@@ -19,7 +20,17 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 })
 
 lsp.set_preferences({
-  sign_icons = {}
+    suggest_lsp_servers = false,
+    sign_icons = {
+        error = 'E',
+        warn = 'W',
+        hint = 'H',
+        info = 'I'
+    }
+})
+
+vim.diagnostic.config({
+    virtual_text = true,
 })
 
 lsp.setup_nvim_cmp({
