@@ -48,10 +48,6 @@ brew services start yabai
 
 ## TODO
 
-### yabai
-- update border colors to decrease contrast
-- use raycast instead of alfred
-
 ### neovim
 - use https://github.com/ray-x/go.nvim instead of gopher
 - Configure Git integration
@@ -62,6 +58,7 @@ Keyboard:
 - disable "Adjust keyboard brightness in low light"
 - unbind cmd+q (bind cmd+q to Zoom > Turn focus following on or off)
 - unbind all default keyboard shortcuts except screenshots, input sources and spotlight
+- bind spotlight to alt-d
 
 Trackpad:
 - disable "Swipe between fullscreen apps"
