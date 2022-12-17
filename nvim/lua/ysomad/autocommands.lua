@@ -20,7 +20,7 @@ autocmd('TextYankPost', {
 autocmd('BufWritePre', {
   group = ysomad_group,
   pattern = '*',
-  command = '%s/\\s\\+$//e',
+  command = [[%s/\s\+$//e]],
 })
 
 -- don't auto commenting new lines
