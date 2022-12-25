@@ -11,12 +11,35 @@
     "extensions.ignoreRecommendations": true,
 
     "window.titleBarStyle": "native",
-    "customizeUI.titleBar": "frameless",
-    "customizeUI.activityBar": "bottom",
     "terminal.integrated.fontFamily": "monospace",
 
     "terminal.external.osxExec": "Alacritty.app",
 
     "sql-formatter.dialect": "pl/sql",
-    "editor.accessibilitySupport": "off"
+    "editor.accessibilitySupport": "off",
+
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "u"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "undo"
+                }
+            ]
+        },
+        {
+            "before": [
+                "<C-r>"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "redo"
+                }
+            ]
+        }
+    ]
 }
