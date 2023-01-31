@@ -27,7 +27,8 @@ return require('packer').startup(function(use)
   })
 
   use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
-  use('tpope/vim-fugitive')
+  use 'nvim-treesitter/nvim-treesitter-context'
+
   use('ray-x/lsp_signature.nvim')
   use('mbbill/undotree')
 
@@ -47,6 +48,7 @@ return require('packer').startup(function(use)
 
   use {
     'VonHeikemen/lsp-zero.nvim',
+    branch = 'v1.x',
     requires = {
       -- LSP Support
       { 'neovim/nvim-lspconfig' },
@@ -67,6 +69,10 @@ return require('packer').startup(function(use)
     }
   }
 
+  use {
+    'fatih/vim-go',
+    run = ':GoUpdateBinaries'
+  }
   use 'github/copilot.vim'
 
 end)
