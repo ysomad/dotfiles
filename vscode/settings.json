@@ -41,5 +41,6 @@
                 }
             ]
         }
-    ]
+    ],
+    "editor.unicodeHighlight.ambiguousCharacters": false
 }

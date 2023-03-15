@@ -8,3 +8,5 @@ vim.keymap.set('n', '<leader>fg', function()
 end)
 vim.keymap.set('n', '<leader>fh', builtin.help_tags)
 vim.keymap.set('n', '<leader>fx', builtin.treesitter)
+
+

@@ -8,19 +8,6 @@ return require('packer').startup(function(use)
     requires = { { 'nvim-lua/plenary.nvim' } }
   }
 
-  -- themes
-  -- use 'gruvbox-community/gruvbox'
-
-  -- use 'joshdick/onedark.vim'
-
-  -- use({
-  --   'nyoom-engineering/oxocarbon.nvim',
-  --   config = function()
-  --     vim.cmd.colorscheme('oxocarbon')
-  --     vim.opt.background = 'dark'
-  --   end
-  -- })
-
   use({
     'aktersnurra/no-clown-fiesta.nvim',
     config = function() vim.cmd.colorscheme('no-clown-fiesta') end
@@ -70,9 +57,16 @@ return require('packer').startup(function(use)
   }
 
   use {
-    'fatih/vim-go',
-    run = ':GoUpdateBinaries'
+    "folke/trouble.nvim",
+    config = function()
+      require("trouble").setup { icons = false }
+    end
   }
-  use 'github/copilot.vim'
+
+  -- use {
+  --   'fatih/vim-go',
+  --   run = ':GoUpdateBinaries'
+  -- }
+  -- use 'github/copilot.vim'
 
 end)
