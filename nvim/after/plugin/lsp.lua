@@ -7,11 +7,10 @@ lsp.ensure_installed({
   'gopls',
   'pyright',
   'tsserver',
-  'sumneko_lua',
 })
 
 -- Fix Undefined global 'vim'
-lsp.configure('sumneko_lua', {
+lsp.configure('lua-language-server', {
   settings = {
     Lua = {
       diagnostics = {
