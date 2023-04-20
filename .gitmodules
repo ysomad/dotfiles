@@ -2,6 +2,7 @@
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
 	ignore = dirty
+
 [submodule "nvim"]
 	path = nvim
 	url = git@github.com:ysomad/init.lua.git
