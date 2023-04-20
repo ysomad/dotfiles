@@ -24,11 +24,14 @@ brew bundle
 
 ### yabai
 1. [Disable system integrity protection](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
+
 2. [Configure scripting addition](https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(from-HEAD)#configure-scripting-addition)
+
 3. Start skhd service
 ```sh
 brew services start skhd
 ```
+
 4. Start yabai service
 ```sh
 brew services start yabai
@@ -48,22 +51,12 @@ brew services start yabai
 
 ## TODO
 
-### neovim
-- use https://github.com/ray-x/go.nvim instead of gopher
-- Configure Git integration
-- Configure Go test integrations ('nvim-neotest/neotest', 'nvim-neotest/neotest-go')
-
 ### macos
 Keyboard:
 - disable "Adjust keyboard brightness in low light"
 - unbind cmd+q (bind cmd+q to Zoom > Turn focus following on or off)
 - unbind all default keyboard shortcuts except screenshots, input sources and spotlight
 - bind spotlight to alt-d
-
-Trackpad:
-- disable "Swipe between fullscreen apps"
-- disable "Mission control"
-- disable "Show desktop"
 
 Dock & Menu Bar:
 - enable "Show battery percentage"

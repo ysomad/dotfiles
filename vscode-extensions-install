@@ -5,8 +5,6 @@ plugins=(
     golang.go
     golang.go-nightly
     Gruntfuggly.todo-tree
-    iocave.customize-ui
-    iocave.monkey-patch
     ms-azuretools.vscode-docker
     PKief.material-icon-theme
     vscodevim.vim

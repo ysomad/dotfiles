@@ -22,7 +22,6 @@
 
     # Neovim
     ~/.config/nvim/init.lua: nvim/init.lua
-    ~/.config/nvim/plugin/packer_compiled.lua: nvim/plugin/packer_compiled.lua
     ~/.config/nvim/lua/ysomad:
       path: nvim/lua/ysomad/*
       glob: true
