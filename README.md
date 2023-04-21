@@ -1,26 +1,28 @@
 # Dotfiles
 
-## Install configuration and package manager
-1. Install symlinks for config files
+## Install packages and configs
+
+1. Install symlinks
 ```sh
 ./install
 ```
 
-2. Install package manager and packages which is not installable via package manager
+2. Install brew and other packages which is not installable with it
 ```sh
 ./bootstrap
 ```
 
-## macos
-1. Install packages from Brewfile
+3. Install packages from Brewfile
 ```sh
 brew bundle
 ```
 
-2. Set macos sensible defaults
+4. Set macos sensible defaults
 ```sh
-./.macos
+./macos
 ```
+
+## Specific configuration
 
 ### yabai
 1. [Disable system integrity protection](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
@@ -37,17 +39,17 @@ brew services start skhd
 brew services start yabai
 ```
 
-## neovim
-- Open nvim and run `:PackerInstall` to install plugins
+### neovim
+Open nvim and run `:PackerInstall` to install plugins
 
-## vscode
-- Install extensions, run:
+### vscode
+To Install extensions, run:
 ```sh
 ./vscode-extensions-install
 ```
 
-## tmux
-- Open tmux and press `Ctrl-a + I` to install tmux plugins
+### tmux
+Open tmux and press `Ctrl-a + I` to install tmux plugins
 
 ## TODO
 
