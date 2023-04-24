@@ -11,7 +11,7 @@ opacity=$(awk '$1 == "opacity:" {print $2; exit}' "$CONF")
 ## Assign toggle opacity value
 case $opacity in
   1)
-    toggle_opacity=0.7
+    toggle_opacity=0.95
     ;;
   *)
     toggle_opacity=1
@@ -19,4 +19,4 @@ case $opacity in
 esac
 
 ## Replace opacity value in alacritty.yml
-sed -i -- "s/opacity: $opacity/opacity: $toggle_opacity/" "$CONF"
+gsed -i "s/opacity: $opacity/opacity: $toggle_opacity/" "$CONF"
