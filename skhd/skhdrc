@@ -49,6 +49,7 @@ alt - 5 : yabai -m space --focus 5
 alt - 6 : yabai -m space --focus 6
 alt - 7 : yabai -m space --focus 7
 alt - 8 : yabai -m space --focus 8
+alt - 9 : yabai -m space --focus 9
 
 # send window to space and focus
 ctrl + alt - 1 : yabai -m window --space  1; yabai -m space --focus 1
@@ -59,6 +60,7 @@ ctrl + alt - 5 : yabai -m window --space  5; yabai -m space --focus 5
 ctrl + alt - 6 : yabai -m window --space  6; yabai -m space --focus 6
 ctrl + alt - 7 : yabai -m window --space  7; yabai -m space --focus 7
 ctrl + alt - 8 : yabai -m window --space  8; yabai -m space --focus 8
+ctrl + alt - 9 : yabai -m window --space  9; yabai -m space --focus 9
 
 # send window to space
 shift + alt - 1 : yabai -m window --space  1
@@ -69,6 +71,7 @@ shift + alt - 5 : yabai -m window --space  5
 shift + alt - 6 : yabai -m window --space  6
 shift + alt - 7 : yabai -m window --space  7
 shift + alt - 8 : yabai -m window --space  8
+shift + alt - 9 : yabai -m window --space  9
 
 # Resize windows
 alt - y : \
