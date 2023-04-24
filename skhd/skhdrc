@@ -13,7 +13,7 @@ alt - b : /Applications/Firefox.app/Contents/MacOS/Firefox
 alt - q : yabai -m window --close
 
 # toggle fullscreen with gaps
-alt - f : yabai -m window --toggle zoom-fullscreen
+alt - f : yabai -m window --toggle zoom-fullscreen && ~/bin/toggle_alacritty_opacity
 shift + alt - f : yabai -m window --toggle native-fullscreen
 
 # Rotate
@@ -98,4 +98,3 @@ shift + alt - 0 : yabai -m space --balance
 
 # fast focus desktop
 alt - 0 : yabai -m space --focus recent
-
