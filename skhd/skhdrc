@@ -1,5 +1,5 @@
 # restart services
-shift + alt - r : brew services restart yabai && brew services restart skhd
+shift + alt - r : yabai --restart-service && skhd --reload
 
 # terminal
 alt - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
