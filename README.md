@@ -31,12 +31,12 @@ brew bundle
 
 3. Start skhd service
 ```sh
-brew services start skhd
+skhd --start-service
 ```
 
 4. Start yabai service
 ```sh
-brew services start yabai
+yabai --start-service
 ```
 
 ### neovim
