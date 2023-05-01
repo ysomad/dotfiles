@@ -8,7 +8,7 @@ window:
     x: 5
     y: 0
   decorations: buttonless
-  opacity: 1
+  opacity: 0.95
   title: Terminal
   dynamic_padding: false
 
