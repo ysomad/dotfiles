@@ -15,6 +15,7 @@ alt - q : yabai -m window --close
 # toggle fullscreen with gaps
 alt - f : yabai -m window --toggle zoom-fullscreen && ~/bin/toggle_alacritty_opacity
 shift + alt - f : yabai -m window --toggle native-fullscreen
+shift + alt - t : ~/bin/toggle_alacritty_opacity
 
 # Rotate
 shift + alt - s : yabai -m space --rotate 90
