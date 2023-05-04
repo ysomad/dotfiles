@@ -10,7 +10,6 @@
     "explorer.compactFolders": false,
     "extensions.ignoreRecommendations": true,
 
-    "window.titleBarStyle": "native",
     "terminal.integrated.fontFamily": "monospace",
 
     "terminal.external.osxExec": "Alacritty.app",
