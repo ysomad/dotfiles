@@ -42,12 +42,6 @@ yabai --start-service
 ### neovim
 Open nvim and run `:PackerInstall` to install plugins
 
-### vscode
-To Install extensions, run:
-```sh
-./vscode-extensions-install
-```
-
 ### tmux
 Open tmux and press `Ctrl-a + I` to install tmux plugins
 
