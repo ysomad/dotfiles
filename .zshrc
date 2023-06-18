@@ -33,5 +33,3 @@ alias la="ls -la --no-icons"
 # Golang exports for Gopls LSP server
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
-
-#export DOCKER_HOST='unix:///Users/ysomad/.local/share/containers/podman/machine/qemu/podman.sock'
