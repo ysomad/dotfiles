@@ -22,6 +22,8 @@ brew bundle
 ./macos
 ```
 
+5. [Configure podman to work with docker-compose](https://gist.github.com/kaaquist/dab64aeb52a815b935b11c86202761a3)
+
 ## Specific configuration
 
 ### yabai
