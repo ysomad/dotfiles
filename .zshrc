@@ -40,3 +40,6 @@ export PATH=$PATH:$GOROOT/bin
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# podman
+export DOCKER_HOST='unix:///tmp/podman.sock'
