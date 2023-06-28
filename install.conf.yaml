@@ -28,6 +28,7 @@
     ~/.config/nvim/after/plugin:
       path: nvim/after/plugin/*
       glob: true
+    ~/.config/nvim/plugin/packer_compiled.lua: nvim/plugin/packer_compiled.lua
 
     # yabai
     ~/.config/yabai/yabairc: yabai/yabairc
