@@ -44,9 +44,6 @@ yabai --start-service
 ### neovim
 Open nvim and run `:PackerInstall` to install plugins
 
-### tmux
-Open tmux and press `Ctrl-a + I` to install tmux plugins
-
 ## TODO
 
 ### macos
