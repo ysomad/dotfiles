@@ -42,7 +42,13 @@ yabai --start-service
 ```
 
 ### neovim
-Open nvim and run `:PackerInstall` to install plugins
+1. Install packer
+```sh
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+ ```
+
+2. Open nvim and run `:PackerInstall` to install plugins
 
 ### tmux
 Open tmux and press `Ctrl-a + I` to install tmux plugins
