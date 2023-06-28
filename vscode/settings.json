@@ -15,7 +15,6 @@
     "terminal.external.osxExec": "Alacritty.app",
 
     "sql-formatter.dialect": "pl/sql",
-    "editor.accessibilitySupport": "off",
 
     "vim.normalModeKeyBindingsNonRecursive": [
         {
@@ -40,6 +39,5 @@
                 }
             ]
         }
-    ],
-    "editor.unicodeHighlight.ambiguousCharacters": false
+    ]
 }

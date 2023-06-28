@@ -30,6 +30,13 @@ alias vim=nvim
 alias ls="exa"
 alias la="ls -la --no-icons"
 
-# Golang exports for Gopls LSP server
-export GOPATH="$HOME/go"
-export PATH="$PATH:$GOPATH/bin"
+# Golang
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOPATH
+export PATH=$PATH:$GOROOT/bin
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
