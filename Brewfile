@@ -25,6 +25,7 @@ brew "libpq", link: true
 brew "mas"
 brew "neofetch"
 brew "neovim", args: ["HEAD"]
+brew "node"
 brew "openssl@1.1"
 brew "podman"
 brew "poetry"
