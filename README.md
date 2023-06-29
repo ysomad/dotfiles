@@ -59,3 +59,7 @@ Dock & Menu Bar:
 Sound:
 - disable "play sound on startup"
 - show sound in menu bar - "always"
+
+Accessibility > Display
+- reduce motion
+- reduce transparency
