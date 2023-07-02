@@ -238,7 +238,7 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 # Dock, Dashboard, and hot corners
 
 # set to left
-defaults write com.apple.dock "orientation" -string "left"
+defaults write com.apple.dock "orientation" -string "bottom"
 
 # show active applications only
 defaults write com.apple.dock "static-only" -bool "true"
