@@ -30,11 +30,12 @@ alias vim=nvim
 alias ls="exa"
 alias la="ls -la --no-icons"
 
-# Golang
+# go
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH
 export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOBIN
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
