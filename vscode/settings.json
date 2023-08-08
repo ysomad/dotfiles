@@ -3,6 +3,7 @@
     "editor.fontFamily": "BlexMono Nerd Font Mono",
     "editor.fontLigatures": false,
     "editor.lineNumbers": "relative",
+    "editor.rulers": [80],
 
     "workbench.iconTheme": "material-icon-theme",
 
