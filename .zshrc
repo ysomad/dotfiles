@@ -44,3 +44,4 @@ eval "$(pyenv init -)"
 
 # podman
 export DOCKER_HOST='unix:///Users/ysomad/.local/share/containers/podman/machine/qemu/podman.sock'
+export DOCKER_BUILDKIT=0
