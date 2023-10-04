@@ -27,8 +27,8 @@ ZSH_AUTOSUGGEST_USE_ASYNC=true
 
 alias vi=nvim
 alias vim=nvim
-alias ls="exa"
-alias la="ls -la --no-icons"
+alias ls="eza"
+alias la="eza -la --no-icons"
 
 # go
 export GOPATH=$HOME/go
