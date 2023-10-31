@@ -12,6 +12,7 @@ alt - q : yabai -m window --close
 
 # toggle fullscreen with gaps
 # alt - f : yabai -m window --toggle zoom-fullscreen && ~/bin/toggle_alacritty_opacity
+alt - f : yabai -m window --toggle zoom-fullscreen
 # shift + alt - f : yabai -m window --toggle native-fullscreen
 # shift + alt - t : ~/bin/toggle_alacritty_opacity
 
