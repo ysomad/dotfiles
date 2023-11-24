@@ -25,10 +25,12 @@ ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(buffer-empty bracketed-paste accept-line push-li
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 
+# aliases
 alias vi=nvim
 alias vim=nvim
 alias ls="eza"
 alias la="eza -la"
+alias yabai.up="$HOME/bin/update_yabai"
 
 # go
 export GOPATH=$HOME/go
@@ -45,3 +47,4 @@ eval "$(pyenv init -)"
 # podman
 export DOCKER_HOST='unix:///Users/ysomad/.local/share/containers/podman/machine/qemu/podman.sock'
 export DOCKER_BUILDKIT=0
+
