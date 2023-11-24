@@ -41,6 +41,11 @@ skhd --start-service
 yabai --start-service
 ```
 
+To update yabai to latest version run:
+```sh
+yabai.up
+```
+
 ### tmux
 Open tmux session and press `Ctrl+a - I` to install plugins
 
