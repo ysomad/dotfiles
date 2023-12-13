@@ -40,5 +40,7 @@
                 }
             ]
         }
-    ]
+    ],
+    "githubPullRequests.pullBranch": "never",
+    "go.toolsManagement.autoUpdate": true
 }
