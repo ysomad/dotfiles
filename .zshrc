@@ -30,7 +30,6 @@ alias vi=nvim
 alias vim=nvim
 alias ls="eza"
 alias la="eza -la"
-alias yabai.up="$HOME/bin/update_yabai"
 
 # go
 export GOPATH=$HOME/go
