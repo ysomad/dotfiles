@@ -43,23 +43,3 @@ yabai --start-service
 
 ### tmux
 Open tmux session and press `Ctrl+a - I` to install plugins
-
-## TODO
-
-### macos
-Keyboard:
-- disable "Adjust keyboard brightness in low light"
-- unbind cmd+q (bind cmd+q to Zoom > Turn focus following on or off)
-- unbind all default keyboard shortcuts except screenshots, input sources and spotlight
-- bind spotlight to alt-d
-
-Dock & Menu Bar:
-- enable "Show battery percentage"
-
-Sound:
-- disable "play sound on startup"
-- show sound in menu bar - "always"
-
-Accessibility > Display
-- reduce motion
-- reduce transparency

@@ -41,3 +41,6 @@
 
     # vscode
     ~/Library/Application Support/Code/User/settings.json: vscode/settings.json
+
+    # karabiner
+    ~/.config/karabiner/karabiner.json: karabiner/karabiner.json
