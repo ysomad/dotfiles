@@ -36,10 +36,6 @@ yellow = "#f4bf75"
 
 [colors.primary]
 background = "#151515"
-bright_background = "#171717"
-bright_foreground = "#e1e1e1"
-dim_background = "#151515"
-dim_foreground = "#e1e1e1"
 foreground = "#e1e1e1"
 
 [env]
