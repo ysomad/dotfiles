@@ -18,7 +18,7 @@
     ~/.config/tmux/tmux.conf: tmux/tmux.conf
 
     # term
-    ~/.config/alacritty/alacritty.yml: alacritty/alacritty.yml
+    ~/.config/alacritty/alacritty.toml: alacritty/alacritty.toml
 
     # Neovim
     ~/.config/nvim/init.lua: nvim/init.lua
