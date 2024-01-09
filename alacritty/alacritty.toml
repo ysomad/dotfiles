@@ -70,7 +70,7 @@ history = 5000
 [window]
 decorations = "buttonless"
 dynamic_padding = false
-opacity = 0.95
+opacity = 1
 title = "Terminal"
 
 [window.padding]
