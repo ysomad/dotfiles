@@ -28,8 +28,14 @@ ZSH_AUTOSUGGEST_USE_ASYNC=true
 # aliases
 alias vi=nvim
 alias vim=nvim
+
+# eza (better ls)
 alias ls="eza"
 alias la="eza -la"
+
+# zoxide (better cd)
+eval "$(zoxide init zsh)"
+alias cd=z
 
 # go
 export GOPATH=$HOME/go
