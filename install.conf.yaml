@@ -26,9 +26,6 @@
       path: nvim/lua/ysomad/*
       glob: true
     ~/.config/nvim/lazy-lock.json: nvim/lazy-lock.json
-    ~/.config/nvim/colors:
-      path: nvim/colors/*
-      glob: true
 
     # yabai
     ~/.config/yabai/yabairc: yabai/yabairc
