@@ -29,7 +29,6 @@
     ~/.config/nvim/colors:
       path: nvim/colors/*
       glob: true
-      force: true
 
     # yabai
     ~/.config/yabai/yabairc: yabai/yabairc
