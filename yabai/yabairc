@@ -22,10 +22,10 @@ yabai -m config normal_window_border_color 0xff373737
 # general space settings
 yabai -m config layout bsp
 yabai -m config window_gap 2
-yabai -m config top_padding 2
-yabai -m config bottom_padding 2
-yabai -m config left_padding 2
-yabai -m config right_padding 2
+yabai -m config top_padding 0
+yabai -m config bottom_padding 0
+yabai -m config left_padding 0
+yabai -m config right_padding 0
 
 # system floating windows
 # yabai -m rule --add app="^Finder$" manage=off
