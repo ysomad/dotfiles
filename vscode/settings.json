@@ -3,9 +3,9 @@
     "editor.fontFamily": "BlexMono Nerd Font Mono",
     "editor.fontLigatures": false,
     "editor.lineNumbers": "relative",
-    "editor.rulers": [90],
-
-    "workbench.iconTheme": "material-icon-theme",
+    "editor.rulers": [
+        90
+    ],
 
     "editor.minimap.enabled": false,
     "explorer.compactFolders": false,
@@ -42,5 +42,6 @@
         }
     ],
     "githubPullRequests.pullBranch": "never",
-    "go.toolsManagement.autoUpdate": true
+    "go.toolsManagement.autoUpdate": true,
+    "workbench.iconTheme": "vscode-icons"
 }

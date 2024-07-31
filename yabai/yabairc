@@ -21,11 +21,11 @@ yabai -m config window_opacity off
 
 # general space settings
 yabai -m config layout bsp
-yabai -m config window_gap 3
-yabai -m config top_padding 3
-yabai -m config bottom_padding 3
-yabai -m config left_padding 3
-yabai -m config right_padding 3
+yabai -m config window_gap 1
+yabai -m config top_padding 1
+yabai -m config bottom_padding 1
+yabai -m config left_padding 1
+yabai -m config right_padding 1
 
 # system floating windows
 # yabai -m rule --add app="^Finder$" manage=off
