@@ -1,10 +1,9 @@
+---
 - defaults:
     link:
-        relink: true
-        create: true
-
+      relink: true
+      create: true
 - clean: ['~']
-
 - link:
     # file removing last login msg from terminal
     ~/.hushlogin: .hushlogin
@@ -33,9 +32,10 @@
       glob: true
     ~/.config/nvim/lazy-lock.json: nvim/lazy-lock.json
 
-    # yabai
-    ~/.config/yabai/yabairc: yabai/yabairc
-    ~/.config/skhd/skhdrc: skhd/skhdrc
+    # window manager
+    # ~/.config/yabai/yabairc: yabai/yabairc
+    # ~/.config/skhd/skhdrc: skhd/skhdrc
+    ~/.config/aerospace/aerospace.toml: aerospace/aerospace.toml
 
     # jetbrains
     ~/.ideavimrc: .ideavimrc
