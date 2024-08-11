@@ -19,14 +19,14 @@ brew bundle
 
 4. Set macos sensible defaults
 ```sh
-./macos
+./.macos
 ```
 
 5. [Configure podman to work with docker-compose](https://gist.github.com/kaaquist/dab64aeb52a815b935b11c86202761a3)
 
 ## Specific configuration
 
-### yabai
+### yabai (DEPRECATED)
 1. [Disable system integrity protection](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
 
 2. [Configure scripting addition](https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(from-HEAD)#configure-scripting-addition)
@@ -47,4 +47,3 @@ Open tmux session and press `Ctrl+a - I` to install plugins
 ### keyboard
 1. Disable all default shortcuts except for spotlight, screenshots and input sources
 2. Set 'Open Spotlight' to `Option+D' shortcut
-3. Change CapsLock to Ctrl keymap
