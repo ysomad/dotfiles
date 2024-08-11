@@ -106,9 +106,6 @@ cat > ~/Library/KeyBindings/DefaultKeyBinding.dict <<EOF
 }
 EOF
 
-# replace capslock with control key, HHKB ROCKS
-hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x7000000E0}]}'
-
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
