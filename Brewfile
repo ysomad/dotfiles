@@ -30,7 +30,6 @@ brew "mas"
 brew "mockery"
 brew "neovim"
 brew "node"
-brew "openapi-generator"
 brew "podman"
 brew "poetry"
 brew "postgresql@14"
@@ -81,7 +80,6 @@ cask "thunderbird"
 cask "transmission"
 cask "visual-studio-code"
 cask "zed"
-mas "Money Flow", id: 900890647
 mas "Outline", id: 1356178125
 mas "WireGuard", id: 1451685025
 mas "Xcode", id: 497799835
