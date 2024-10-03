@@ -1,3 +1,7 @@
 [user]
-    name = Alex Malykh
+    name = Aleksei Malykh
     email = 49870662+ysomad@users.noreply.github.com
+	signingkey = 4725F43EE3A3F86C84D56EF000FB366088A4D4CA
+
+[commit]
+	gpgsign = true
