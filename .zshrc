@@ -40,7 +40,6 @@ alias cd=z
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH
-export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOBIN
 
 # pyenv
