@@ -18,6 +18,7 @@
 
     # term
     ~/.config/alacritty/alacritty.toml: alacritty/alacritty.toml
+    ~/.config/ghostty/config: ghostty/config
 
     # Neovim
     ~/.config/nvim/init.lua: nvim/init.lua

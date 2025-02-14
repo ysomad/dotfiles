@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+  echo "Usage: $0 <font-name>"
+  exit 1
+fi
+
+FONT_NAME=$1
+
+ghostty +list-fonts | grep "$FONT_NAME"

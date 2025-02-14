@@ -42,6 +42,8 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH
 export PATH=$PATH:$GOBIN
 
+export GOEXPERIMENT=aliastypeparams
+
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
@@ -52,3 +54,6 @@ export DOCKER_BUILDKIT=0
 
 # remap CapsLock to Ctrl
 /usr/bin/hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x7000000E0}]}' > /dev/null 2>&1
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/ysomad/.lmstudio/bin"
