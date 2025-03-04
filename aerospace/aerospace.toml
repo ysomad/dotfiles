@@ -84,7 +84,8 @@ outer.right = 0
 
 # You can uncomment this line to open up terminal with alt + enter shortcut
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
-alt-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
+# alt-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
+alt-enter = 'exec-and-forget open -n /Applications/Ghostty.app'
 alt-b = 'exec-and-forget open -n /Applications/Firefox\ Nightly.app'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout
@@ -176,6 +177,11 @@ run = 'move-node-to-workspace 1'
 [[on-window-detected]]
 if.app-id = 'org.alacritty'
 run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = 'move-node-to-workspace 2'
+
 
 [[on-window-detected]]
 if.app-id = 'com.tdesktop.Telegram'
