@@ -24,6 +24,9 @@ ZSH_AUTOSUGGEST_CLEAR_WIDGETS+=(buffer-empty bracketed-paste accept-line push-li
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 
+# nvim
+export PATH=$PATH:$HOME/.local/share/nvim/mason/bin
+
 # aliases
 alias vi=nvim
 alias vim=nvim
