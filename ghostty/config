@@ -6,3 +6,5 @@ foreground = e1e1e1
 
 macos-titlebar-style = hidden
 mouse-hide-while-typing = true
+
+keybind = super+enter=unbind
