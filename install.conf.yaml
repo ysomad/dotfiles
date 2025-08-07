@@ -7,6 +7,7 @@
 - link:
     # file removing last login msg from terminal
     ~/.hushlogin: .hushlogin
+    ~/.aider.conf.yml: .aider.conf.yml
 
     # git
     ~/.gitconfig: .gitconfig
