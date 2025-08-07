@@ -1,0 +1,36 @@
+---
+# https://aider.chat/docs/config/aider_conf.html
+
+# Default Model
+model: haiku
+
+# Behavior
+cache-prompts: false
+check-update: false
+multiline: false
+notifications: true
+show-release-notes: false
+stream: false
+suggest-shell-commands: false
+watch-files: true
+yes-always: true
+reasoning-effort: high
+thinking-tokens: 8k
+
+# Git
+# Disabled because of: https://github.com/Aider-AI/aider/issues/3049
+gitignore: false
+auto-commits: false
+dirty-commits: false
+subtree-only: true
+
+# Theme
+code-theme: no-clown-fiesta
+user-input-color: '#a5d6ff'
+tool-output-color: '#e1e1e1'
+tool-error-color: '#cc6666'
+tool-warning-color: '#f4bf75'
+assistant-output-color: '#e1e1e1'
+completion-menu-color: '#e1e1e1'
+completion-menu-bg-color: '#151515'
+completion-menu-current-color: '#373737'
