@@ -25,8 +25,8 @@ dirty-commits: false
 subtree-only: true
 
 # Theme
-code-theme: no-clown-fiesta
-user-input-color: '#a5d6ff'
+code-theme: default
+user-input-color: '#7e97ab'
 tool-output-color: '#e1e1e1'
 tool-error-color: '#cc6666'
 tool-warning-color: '#f4bf75'
