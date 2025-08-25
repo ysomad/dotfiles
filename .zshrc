@@ -59,3 +59,4 @@ eval "$(pyenv init -)"
 . "$HOME/.local/bin/env"
 
 source ~/.config/.secrets
+
