@@ -26,13 +26,14 @@
     ~/.config/nvim/lua:
       path: nvim/lua/*
       glob: true
-    ~/.config/nvim/after:
-      path: nvim/after/*
-      glob: true
     ~/.config/nvim/plugin:
       path: nvim/plugin/*
       glob: true
+    ~/.config/nvim/lsp:
+      path: nvim/lsp/*
+      glob: true
     ~/.config/nvim/lazy-lock.json: nvim/lazy-lock.json
+
 
     # window manager
     # ~/.config/yabai/yabairc: yabai/yabairc
