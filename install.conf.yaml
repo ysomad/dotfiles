@@ -32,6 +32,9 @@
     ~/.config/nvim/lsp:
       path: nvim/lsp/*
       glob: true
+    ~/.config/nvim/after:
+      path: nvim/after/*
+      glob: true
     ~/.config/nvim/lazy-lock.json: nvim/lazy-lock.json
 
 
