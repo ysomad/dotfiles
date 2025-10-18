@@ -60,7 +60,7 @@
     #enableCompletions = true;
     #enableAutosuggestions = true;
     shellAliases = {
-      update = "sudo nixos-rebuild switch --flake";
+      rebuild = "sudo nixos-rebuild switch --flake ${config.home.homeDirectory}/dotfiles/nix";
       cd = "z";
       ls = "eza";
       sl = "eza";
