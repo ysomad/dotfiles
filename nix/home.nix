@@ -117,10 +117,12 @@
 
   programs.ssh = {
     enable = true;
-    startAgent = true;
     enableDefaultConfig = false;
     matchBlocks."*" = {
-      forwardAgent = true;
+      identityFile = [ "~/.ssh/id_ed25519" ];
+      extraOptions = {
+        AddKeysToAgent = "yes";
+      };
     };
   };
   services.ssh-agent.enable = true;
