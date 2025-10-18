@@ -117,6 +117,7 @@
 
   programs.ssh = {
     enable = true;
+    startAgent = true;
     enableDefaultConfig = false;
     matchBlocks."*" = {
       forwardAgent = true;
