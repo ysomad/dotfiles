@@ -26,21 +26,6 @@ brew bundle
 
 ## Specific configuration
 
-### yabai (DEPRECATED)
-1. [Disable system integrity protection](https://github.com/koekeishiya/yabai/wiki/Disabling-System-Integrity-Protection)
-
-2. [Configure scripting addition](https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(from-HEAD)#configure-scripting-addition)
-
-3. Start skhd service
-```sh
-skhd --start-service
-```
-
-4. Start yabai service
-```sh
-yabai --start-service
-```
-
 ### tmux
 Open tmux session and press `Ctrl+a - I` to install plugins
 
