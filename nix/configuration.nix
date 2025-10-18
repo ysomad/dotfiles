@@ -126,7 +126,6 @@
 
     # Git
     git
-    gh
     lazygit
 
     # CLI

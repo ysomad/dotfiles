@@ -110,11 +110,6 @@
     userEmail = "49870662+ysomad@users.noreply.github.com";
   };
 
-  programs.gh = {
-    enable = true;
-    gitCredentialHelper.enable = true;
-  };
-
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
