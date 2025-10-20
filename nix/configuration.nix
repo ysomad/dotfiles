@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -53,7 +55,7 @@
   };
 
   # i3
-  environment.pathsToLink = [ "/libexec" ];
+  environment.pathsToLink = ["/libexec"];
   services.xserver = {
     enable = true;
     xkb = {
@@ -96,7 +98,7 @@
   programs.light.enable = true;
 
   users.defaultUserShell = pkgs.zsh;
-  environment.shells = with pkgs; [ zsh ];
+  environment.shells = with pkgs; [zsh];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ysomad = {
@@ -106,7 +108,7 @@
       "networkmanager"
       "wheel"
     ];
-    packages = with pkgs; [ ];
+    packages = with pkgs; [];
   };
 
   nix.settings.experimental-features = [
@@ -173,6 +175,7 @@
     beautysh
     yamlfix
     pgformatter
+    alejandra # nix
 
     # Go
     go
@@ -201,10 +204,6 @@
     zsh-syntax-highlighting
     zsh-autosuggestions
     ghostty
-
-    # Fonts
-    font-awesome
-    nerd-fonts.blex-mono
 
     # Browsers
     firefox-beta
@@ -250,6 +249,11 @@
     # Network
     networkmanagerapplet
     iw
+  ];
+
+  fonts.packages = with pkgs; [
+    font-awesome
+    nerd-fonts.blex-mono
   ];
 
   programs.zsh.enable = true;

@@ -12,24 +12,28 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, ... }@inputs:
-    let
-      inherit (self) outputs;
-      inherit (nixpkgs.lib) nixosSystem;
-      specialArgs = { inherit inputs outputs; };
-    in {
+  outputs = {
+    self,
+    nixpkgs,
+    nixos-hardware,
+    home-manager,
+    ...
+  } @ inputs: let
+    inherit (self) outputs;
+    inherit (nixpkgs.lib) nixosSystem;
+    specialArgs = {inherit inputs outputs;};
+  in {
     nixosConfigurations.nixos = nixosSystem {
       specialArgs = specialArgs;
       modules = [
         ./configuration.nix
-	# nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
-	home-manager.nixosModules.home-manager
-	{
-	  home-manager.useGlobalPkgs = true;
-	  home-manager.useUserPackages = true;
-	  home-manager.users.ysomad = import ./home.nix;
-	  home-manager.extraSpecialArgs = specialArgs;
-	}
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.ysomad = import ./home.nix;
+          home-manager.extraSpecialArgs = specialArgs;
+        }
       ];
     };
   };
