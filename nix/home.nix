@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "ysomad";
@@ -17,7 +19,7 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; [ ];
+  home.packages = with pkgs; [];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -50,7 +52,7 @@
   #
   #  /etc/profiles/per-user/ysomad/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = { };
+  home.sessionVariables = {};
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -61,6 +63,7 @@
     #enableAutosuggestions = true;
     shellAliases = {
       rebuild = "sudo nixos-rebuild switch --flake ${config.home.homeDirectory}/dotfiles/nix";
+      cleanup = "sudo nix-collect-garbage -d";
       cd = "z";
       ls = "eza";
       sl = "eza";
@@ -114,7 +117,7 @@
     enable = true;
     enableDefaultConfig = false;
     matchBlocks."*" = {
-      identityFile = [ "~/.ssh/id_ed25519" ];
+      identityFile = ["~/.ssh/id_ed25519"];
       extraOptions = {
         AddKeysToAgent = "yes";
       };
