@@ -226,9 +226,10 @@
     # insomnia
     # postman
 
-    # GNUPG
+    # ssh
     gnupg
     pinentry-tty
+    keychain
 
     # VPN / Proxy
     wireguard-ui
