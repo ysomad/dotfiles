@@ -139,6 +139,42 @@
     };
   };
 
+  programs.tmux = {
+    enable = true;
+    prefix = "C-a";
+    keyMode = "vi";
+    baseIndex = 1;
+    escapeTime = 0;
+    historyLimit = 100000;
+    plugins = with pkgs.tmuxPlugins; [
+      yank
+      vim-tmux-navigator
+      better-mouse-mode
+    ];
+    extraConfig = ''
+      # create windows
+      bind c new-window -c "#{pane_current_path}"
+      bind-key C command-prompt -p "Name of new window: " "new-window -n '%%'"
+
+      # splits
+      bind | split-window -h -c "#{pane_current_path}"
+      bind - split-window -v -c "#{pane_current_path}"
+
+      # tmux-yank
+      bind-key -T copy-mode-vi v send-keys -X begin-selection
+      bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
+      bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+
+      # looks
+      set-option -g status-style bg=default
+      set -g status-fg colour7
+      set-window-option -g window-status-current-style fg=colour1
+      set -g status-left "#[fg=colour7][#S] "
+      set-window-option -g window-status-format " #I:#W"
+      set-window-option -g window-status-current-format "#[fg=colour1, bold] #I:#W"
+    '';
+  };
+
   # symlink neovim from dotfiles
   home.file.".config/nvim".source =
     config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim";
