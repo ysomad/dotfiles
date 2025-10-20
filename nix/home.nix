@@ -59,8 +59,9 @@
 
   programs.zsh = {
     enable = true;
-    #enableCompletions = true;
-    #enableAutosuggestions = true;
+    enableCompletion = true;
+    # autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
     shellAliases = {
       rebuild = "sudo nixos-rebuild switch --flake ${config.home.homeDirectory}/dotfiles/nix";
       cleanup = "sudo nix-collect-garbage -d";
@@ -87,6 +88,10 @@
       ];
       theme = "robbyrussell";
     };
+    initContent = ''
+      # Add ssh key to the agent
+      eval "$(keychain --eval --nogui -q ${config.home.homeDirectory}/.ssh/id_ed25519)"
+    '';
   };
 
   programs.fzf = {
@@ -120,12 +125,10 @@
     enable = true;
     enableDefaultConfig = false;
     matchBlocks."*" = {
-      identityFile = ["~/.ssh/id_ed25519"];
-      extraOptions = {
-        AddKeysToAgent = "yes";
-      };
+      forwardAgent = true;
     };
   };
+
   services.ssh-agent.enable = true;
 
   programs.ghostty = {
