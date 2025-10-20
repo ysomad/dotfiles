@@ -125,6 +125,7 @@
     # Sound
     pavucontrol
     easyeffects
+    wiremix
 
     # Git
     git
@@ -154,6 +155,7 @@
     # Containers
     podman
     podman-compose
+    lazydocker
 
     # AI
     claude-code
@@ -246,9 +248,26 @@
     feh
     gthumb
 
+    # Passwords
+    keepass
+    keepassxc
+
     # Network
     networkmanagerapplet
     iw
+
+    # Screenshots
+    satty # annotations
+
+    # Wayland
+    # hyprland
+    # kitty
+    # walker
+    # waybar
+    # mako - notifications
+    # swayosd
+    # swaybg
+    # hyprsunset
   ];
 
   fonts.packages = with pkgs; [
