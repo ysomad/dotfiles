@@ -64,6 +64,7 @@
     shellAliases = {
       rebuild = "sudo nixos-rebuild switch --flake ${config.home.homeDirectory}/dotfiles/nix";
       cleanup = "sudo nix-collect-garbage -d";
+      upgrade = "sudo nixos-rebuild switch --upgrade --flake ${config.home.homeDirectory}/dotfiles/nix";
       cd = "z";
       ls = "eza";
       sl = "eza";
