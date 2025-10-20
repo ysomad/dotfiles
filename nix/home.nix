@@ -152,6 +152,11 @@
       better-mouse-mode
     ];
     extraConfig = ''
+      set -g default-terminal "tmux-256color"
+      set -ga terminal-overrides ",256color*:Tc"
+      set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
+      set-environment -g COLORTERM "truecolor"
+
       # create windows
       bind c new-window -c "#{pane_current_path}"
       bind-key C command-prompt -p "Name of new window: " "new-window -n '%%'"
