@@ -109,8 +109,10 @@
 
   programs.git = {
     enable = true;
-    userName = "Aleksei Malykh";
-    userEmail = "49870662+ysomad@users.noreply.github.com";
+    settings.user = {
+      email = "49870662+ysomad@users.noreply.github.com";
+      name = "Aleksei Malykh";
+    };
   };
 
   programs.ssh = {

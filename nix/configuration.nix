@@ -155,15 +155,15 @@
     # Containers
     podman
     podman-compose
-    lazydocker
+    # lazydocker
 
     # AI
     claude-code
 
     # Editors
     neovim
-    vscode
-    zed
+    # vscode
+    # zed
 
     # LSP
     gopls
@@ -203,8 +203,8 @@
 
     # Shells / Terminals
     zsh
-    zsh-syntax-highlighting
-    zsh-autosuggestions
+    # zsh-syntax-highlighting
+    # zsh-autosuggestions
     ghostty
 
     # Browsers
@@ -224,7 +224,7 @@
 
     # API clients
     # insomnia
-    postman
+    # postman
 
     # GNUPG
     gnupg
