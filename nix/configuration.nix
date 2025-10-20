@@ -256,6 +256,7 @@
     # Network
     networkmanagerapplet
     iw
+    localsend
 
     # Screenshots
     satty # annotations
