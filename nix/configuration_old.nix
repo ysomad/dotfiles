@@ -1,40 +1,40 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   config,
   pkgs,
   ...
 }: {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
 
+  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  # Use latest kernel.
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  # Enable networking
-  networking.networkmanager.enable = true;
+  networking = {
+    hostName = "nixos";
+    firewall = {
+      enable = true;
+    };
+    nftables.enable = true; # new iptables
+    networkmanager.enable = true;
+    stevenblack.enable = true;
+    useDHCP = false;
+    dhcpcd.enable = false;
+    nameservers = [
+      "1.1.1.1"
+      "1.0.0.1"
+      "8.8.8.8"
+      "8.8.4.4"
+    ];
+  };
 
   # Bluetooth
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
-
-  # Battery
-  powerManagement.enable = true;
-
-  # Touchpad
-  # services.libunput.enable = true;
 
   # Set your time zone.
   time.timeZone = "Asia/Novosibirsk";
@@ -54,37 +54,82 @@
     LC_TIME = "ru_RU.UTF-8";
   };
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us,ru";
-    variant = "";
+  # i3
+  environment.pathsToLink = ["/libexec"];
+  services.xserver = {
+    enable = true;
+    xkb = {
+      layout = "us,ru";
+      variant = "";
+    };
+    desktopManager = {
+      xterm.enable = false;
+    };
+    windowManager.i3 = {
+      enable = true;
+      extraPackages = with pkgs; [
+        dmenu
+        i3status
+        i3blocks
+        i3lock
+      ];
+    };
   };
+  services.displayManager.defaultSession = "none+i3";
+  programs.i3lock.enable = true;
+  programs.dconf.enable = true;
+
+  # Sound
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
+
+  # Battery
+  powerManagement.enable = true;
+
+  # Touchpad
+  services.libinput.enable = true;
+
+  # Backlight
+  programs.light.enable = true;
+
+  users.defaultUserShell = pkgs.zsh;
+  environment.shells = with pkgs; [zsh];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ysomad = {
     isNormalUser = true;
-    description = "Aleksei Malykh";
-    extraGroups = ["networkmanager" "wheel"];
+    description = "ysomad";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [];
   };
 
-  # Shell
-  users.defaultUserShell = pkgs.zsh;
-  environment.shells = with pkgs; [zsh];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
+  # Overlays
   nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Sound
-    #pavucontrol
-    #easyeffects
-    #wiremix
+    pavucontrol
+    easyeffects
+    wiremix
 
     # Git
     git
-    #lazygit
+    lazygit
 
     # CLI
     eza
@@ -104,16 +149,16 @@
     fastfetch
 
     # DB
-    #dbeaver-bin
-    #libpq
+    dbeaver-bin
+    libpq
 
     # Containers
-    #podman
-    #podman-compose
+    podman
+    podman-compose
     # lazydocker
 
     # AI
-    #claude-code
+    claude-code
 
     # Editors
     neovim
@@ -154,7 +199,7 @@
     stylua
 
     # JS
-    #nodejs_24
+    nodejs_24
 
     # Shells / Terminals
     zsh
@@ -167,15 +212,15 @@
     chromium
 
     # Messengers
-    #telegram-desktop
+    telegram-desktop
     # slack
 
     # Video
     mpv
-    #obs-studio
+    obs-studio
 
     # Emails
-    #thunderbird
+    thunderbird
 
     # API clients
     # insomnia
@@ -187,34 +232,44 @@
     keychain
 
     # VPN / Proxy
-    #wireguard-ui
-    #v2raya
-    #v2rayn
-    #nekoray
+    wireguard-ui
+    v2raya
+    v2rayn
+    nekoray
 
     # Torrents
-    #transmission_4-gtk
+    transmission_4-gtk
 
     # Archives
     zip
     unzip
 
     # Images
-    #gimp
-    #feh
-    #gthumb
+    gimp
+    feh
+    gthumb
 
     # Passwords
-    #keepass
-    #keepassxc
+    keepass
+    keepassxc
 
     # Network
-    #networkmanagerapplet
-    #iw
-    #localsend
+    networkmanagerapplet
+    iw
+    localsend
 
     # Screenshots
-    #satty # annotations
+    satty # annotations
+
+    # Wayland
+    # hyprland
+    # kitty
+    # walker
+    # waybar
+    # mako - notifications
+    # swayosd
+    # swaybg
+    # hyprsunset
   ];
 
   fonts.packages = with pkgs; [
@@ -235,17 +290,6 @@
     enableSSHSupport = true;
     pinentryPackage = pkgs.pinentry-tty;
   };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
