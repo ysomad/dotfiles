@@ -217,10 +217,13 @@
     #satty # annotations
   ];
 
-  fonts.packages = with pkgs; [
-    font-awesome
-    nerd-fonts.blex-mono
-  ];
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+      font-awesome
+      nerd-fonts.blex-mono
+    ];
+  };
 
   programs.zsh.enable = true;
 
