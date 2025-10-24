@@ -7,7 +7,6 @@
   ...
 }: {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
 
@@ -27,7 +26,10 @@
   networking.networkmanager.enable = true;
 
   # Bluetooth
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false;
+  };
   services.blueman.enable = true;
 
   # Battery
@@ -215,6 +217,9 @@
 
     # Screenshots
     #satty # annotations
+
+    # Menu
+    bemenu
   ];
 
   fonts = {
@@ -229,8 +234,6 @@
 
   environment.variables = {
     EDITOR = "nvim";
-    TERMINAL = "ghostty";
-    TERM = "ghostty";
   };
 
   programs.gnupg.agent = {

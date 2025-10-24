@@ -43,7 +43,7 @@ foreground = "#e1e1e1"
 TERM = "xterm-256color"
 
 [font]
-size = 16
+size = 10
 
 [font.bold]
 family = "BlexMono Nerd Font Mono"
@@ -59,7 +59,7 @@ style = "Italic"
 
 [font.normal]
 family = "BlexMono Nerd Font Mono"
-style = "Light"
+style = "Regular"
 
 [font.offset]
 x = 0
