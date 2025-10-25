@@ -242,6 +242,20 @@
     ];
   };
 
+  services.keyd = {
+    enable = true;
+    keyboards.default = {
+      ids = ["*"];
+      settings = {
+        main = {
+          capslock = "layer(control)";
+          backslash = "backspace";
+          backspace = "backslash";
+        };
+      };
+    };
+  };
+
   programs.zsh.enable = true;
 
   environment.variables = {
@@ -272,16 +286,10 @@
   #   capabilities = "cap_net_admin=ep";
   # };
 
-  programs.clash-verge = {
-    enable = true;
-    serviceMode = true;
-  };
-
   stylix = {
     enable = true;
-    image = ../wallpapers/1.jpg;
     polarity = "dark";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/classic-dark.yaml";
   };
 
   system.stateVersion = "25.05";

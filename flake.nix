@@ -17,6 +17,8 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
+
+    nix-ai-tools.url = "github:numtide/nix-ai-tools";
   };
 
   outputs = {
@@ -35,10 +37,10 @@
     nixosConfigurations.nixos = nixosSystem {
       specialArgs = specialArgs;
       modules = [
-        stylix.nixosModules.stylix
         ./nix/configuration.nix
         hyprland.nixosModules.default
         home-manager.nixosModules.home-manager
+        stylix.nixosModules.stylix
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
