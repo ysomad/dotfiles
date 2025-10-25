@@ -263,11 +263,7 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-    enableExtraSocket = true;
-    pinentryPackage = pkgs.pinentry-tty;
-    settings = {
-      defaultCacheTtl = 99999;
-    };
+    pinentryPackage = pkgs.pinentry-curses;
   };
 
   programs.hyprland = {
