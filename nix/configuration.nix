@@ -5,7 +5,6 @@
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  security.polkit.enable = true;
 
   networking = {
     hostName = "nixos";
@@ -264,6 +263,7 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
+    enableExtraSocket = true;
     pinentryPackage = pkgs.pinentry-tty;
     settings = {
       defaultCacheTtl = 99999;

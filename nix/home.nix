@@ -39,6 +39,7 @@
       cat = "bat";
       vim = "nvim";
       vi = "nvim";
+      monitors = "hyprctl monitors all";
     };
     history = {
       expireDuplicatesFirst = true;
