@@ -40,6 +40,7 @@
     enableZshIntegration = true;
   };
 
+  programs.git.enable = true;
   programs.bat.enable = true;
   programs.btop.enable = true;
 
