@@ -54,6 +54,20 @@
 
   # Battery
   powerManagement.enable = true;
+  # powerManagement.powertop.enable = true;
+  # services = {
+  #   power-profiles-daemon.enable = false;
+  #   tlp = {
+  #     enable = true;
+  #     settings = {
+  #       CPU_BOOST_ON_AC = 1;
+  #       CPU_BOOST_ON_BAT = 0;
+  #       CPU_SCALING_GOVERNOR_ON_AC = "performance";
+  #       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+  #       STOP_CHARGE_THRESH_BAT0 = 95;
+  #     };
+  #   };
+  # };
 
   time.timeZone = "Asia/Novosibirsk";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -69,10 +83,6 @@
     extraGroups = ["audio" "networkmanager" "wheel"];
     packages = with pkgs; [];
   };
-
-  # Shell
-  users.defaultUserShell = pkgs.zsh;
-  environment.shells = with pkgs; [zsh];
 
   nixpkgs.config.allowUnfree = true;
 
@@ -116,11 +126,10 @@
     fastfetch
     unzip
     tree
+    brightnessctl
 
     # Shells / Terminals
     zsh
-    # zsh-syntax-highlighting
-    # zsh-autosuggestions
     ghostty
 
     # DB
@@ -237,6 +246,42 @@
     ];
   };
 
+  # Shell
+  users.defaultUserShell = pkgs.zsh;
+  environment.shells = with pkgs; [zsh];
+
+  programs.zoxide.enable = true;
+
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
+    histSize = 100000;
+    shellAliases = {
+      rebuild = "sudo nixos-rebuild switch --flake ~/dotfiles";
+      cleanup = "sudo nix-collect-garbage -d";
+      upgrade = "sudo nixos-rebuild switch --upgrade --flake ~/dotfiles";
+      monitors = "hyprctl monitors all";
+      cd = "z";
+      ls = "eza";
+      sl = "eza";
+      la = "eza -la";
+      al = "eza -la";
+      cat = "bat";
+      vim = "nvim";
+      vi = "nvim";
+    };
+    ohMyZsh = {
+      enable = true;
+      plugins = [
+        "git"
+        "sudo"
+      ];
+      theme = "robbyrussell";
+    };
+  };
+
   services.keyd = {
     enable = true;
     keyboards.default = {
@@ -250,8 +295,6 @@
       };
     };
   };
-
-  programs.zsh.enable = true;
 
   environment.variables = {
     EDITOR = "nvim";
