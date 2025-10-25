@@ -23,8 +23,6 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  gtk.enable = true;
-
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -147,11 +145,6 @@
   };
   services.ssh-agent.enable = true;
 
-  programs.ghostty = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-
   programs.tmux = {
     enable = true;
     prefix = "C-a";
@@ -192,6 +185,8 @@
       set-window-option -g window-status-current-format "#[fg=colour1, bold] #I:#W"
     '';
   };
+
+  gtk.enable = true;
 
   # rclone to mount gdrvive
   # programs.rclone.enable = true;

@@ -24,6 +24,7 @@
     nixpkgs,
     nixos-hardware,
     home-manager,
+    stylix,
     hyprland,
     ...
   } @ inputs: let
@@ -34,6 +35,7 @@
     nixosConfigurations.nixos = nixosSystem {
       specialArgs = specialArgs;
       modules = [
+        stylix.nixosModules.stylix
         ./nix/configuration.nix
         hyprland.nixosModules.default
         home-manager.nixosModules.home-manager

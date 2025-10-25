@@ -1,12 +1,10 @@
 {
   config,
   pkgs,
-  inputs,
   ...
 }: {
   imports = [
     ./hardware-configuration.nix
-    inputs.stylix.nixosModules.stylix
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -281,7 +279,7 @@
 
   stylix = {
     enable = true;
-    # image = ./wallpapers/1.jpg;
+    image = ../wallpapers/1.jpg;
     polarity = "dark";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
   };
