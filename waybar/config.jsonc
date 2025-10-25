@@ -60,7 +60,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "spacing": 1,
-    "on-click": "$TERMINAL impala"
+    // "on-click": "$TERMINAL impala"
   },
   "battery": {
     "format": "{capacity}% {icon}",

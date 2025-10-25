@@ -54,10 +54,6 @@
       ];
       theme = "robbyrussell";
     };
-    initContent = ''
-      # Add ssh key to the agent
-      eval "$(keychain --eval --nogui -q ${config.home.homeDirectory}/.ssh/id_ed25519)"
-    '';
   };
 
   programs.fzf = {
@@ -93,6 +89,69 @@
     matchBlocks."*" = {
       forwardAgent = true;
     };
+    extraConfig = ''
+      Host *
+        AddKeysToAgent yes
+        UseKeychain yes
+        IdentityFile ~/.ssh/id_ed25519
+      Host master
+        HostName 185.161.251.102
+        StrictHostKeyChecking no
+        User root
+        ForwardAgent yes
+        IdentityFile ~/.ssh/id_ed25519
+        IdentitiesOnly yes
+        AddKeysToAgent yes
+        ServerAliveInterval 60
+        ServerAliveCountMax 1200
+        Port 38671
+        LocalForward 1337 localhost:2387
+        LocalForward 1488 localhost:6767
+      Host de1
+        HostName 164.90.242.229
+        StrictHostKeyChecking no
+        User root
+        ForwardAgent yes
+        IdentityFile ~/.ssh/id_ed25519
+        IdentitiesOnly yes
+        AddKeysToAgent yes
+        ServerAliveInterval 60
+        ServerAliveCountMax 1200
+        Port 38671
+      Host de2
+        HostName 194.87.71.214
+        StrictHostKeyChecking no
+        User root
+        ForwardAgent yes
+        IdentityFile ~/.ssh/id_ed25519
+        IdentitiesOnly yes
+        AddKeysToAgent yes
+        ServerAliveInterval 60
+        ServerAliveCountMax 1200
+        Port 38671
+      Host dev-lob
+        HostName 10.127.0.71
+        StrictHostKeyChecking no
+        User www
+        ForwardAgent yes
+        IdentityFile ~/.ssh/id_ed25519
+        IdentitiesOnly yes
+        AddKeysToAgent yes
+        ServerAliveInterval 60
+        ServerAliveCountMax 1200
+        Port 22
+      Host prod-lob
+        HostName 10.128.1.200
+        StrictHostKeyChecking no
+        User www
+        ForwardAgent yes
+        IdentityFile ~/.ssh/id_ed25519
+        IdentitiesOnly yes
+        AddKeysToAgent yes
+        ServerAliveInterval 60
+        ServerAliveCountMax 1200
+        Port 22
+    '';
   };
   services.ssh-agent.enable = true;
 
