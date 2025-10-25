@@ -1,14 +1,17 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
     ./hardware-configuration.nix
+    inputs.stylix.nixosModules.stylix
   ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  security.polkit.enable = true;
 
   networking = {
     hostName = "nixos";
@@ -201,12 +204,11 @@
 
     # VPN / Proxy
     wireguard-ui
-    v2raya
-    v2rayn
-    nekoray
+    # nekoray
+    clash-verge-rev
 
     # Torrents
-    transmission_4
+    transmission_4-gtk
 
     # Images
     #gimp
@@ -229,6 +231,9 @@
     kitty
     hyprland
     waybar
+
+    # Google drive mount
+    rclone
   ];
 
   fonts = {
@@ -257,6 +262,28 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+  };
+
+  # https://discourse.nixos.org/t/nekoray-tun-mode-not-work/68696/2
+  # security.wrappers.nekobox_core = {
+  #   enable = true;
+  #   source = "${pkgs.nekoray.nekobox-core}/bin/nekobox_core";
+  #   program = "nekobox_core";
+  #   owner = "ysomad";
+  #   group = "users";
+  #   capabilities = "cap_net_admin=ep";
+  # };
+
+  programs.clash-verge = {
+    enable = true;
+    serviceMode = true;
+  };
+
+  stylix = {
+    enable = true;
+    # image = ./wallpapers/1.jpg;
+    polarity = "dark";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
   };
 
   system.stateVersion = "25.05";
