@@ -1,6 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   config,
   pkgs,
@@ -15,15 +12,33 @@
 
   networking = {
     hostName = "nixos";
-    firewall.enable = true;
     nftables.enable = true;
     stevenblack.enable = true; # hosts file
     nameservers = ["8.8.8.8" "8.8.4.4"];
+
+    firewall = {
+      enable = true;
+
+      # localsend: https://forums.linuxmint.com/viewtopic.php?t=408601
+      allowedTCPPorts = [53317];
+      allowedUDPPorts = [53317];
+    };
+
     networkmanager = {
       enable = true;
-      wifi.powersave = true;
+      wifi = {
+        backend = "iwd";
+        powersave = true;
+      };
     };
-    wireless.iwd.enable = true;
+
+    wireless.iwd = {
+      enable = true;
+      settings = {
+        Network.EnableIPv6 = true;
+        Settings.AutoConnect = true;
+      };
+    };
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
