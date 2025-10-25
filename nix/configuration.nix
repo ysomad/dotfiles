@@ -245,6 +245,7 @@
     EDITOR = "nvim";
     TERMINAL = "ghostty";
     TERM = "ghostty";
+    BROWSER = "firefox-beta";
   };
 
   programs.gnupg.agent = {

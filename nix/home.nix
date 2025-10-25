@@ -92,7 +92,6 @@
     extraConfig = ''
       Host *
         AddKeysToAgent yes
-        UseKeychain yes
         IdentityFile ~/.ssh/id_ed25519
       Host master
         HostName 185.161.251.102
