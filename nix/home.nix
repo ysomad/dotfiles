@@ -26,6 +26,8 @@
   home.file = {
     ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim";
     ".config/ghostty".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/ghostty";
+    ".config/hypr".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/hypr";
+    ".config/waybar".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/waybar";
   };
 
   # Home Manager can also manage your environment variables through
@@ -49,15 +51,16 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  gtk.enable = true;
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    # autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
-      rebuild = "sudo nixos-rebuild switch --flake ${config.home.homeDirectory}/dotfiles/nix";
+      rebuild = "sudo nixos-rebuild switch --flake ~/dotfiles";
       cleanup = "sudo nix-collect-garbage -d";
-      upgrade = "sudo nixos-rebuild switch --upgrade --flake ${config.home.homeDirectory}/dotfiles/nix";
+      upgrade = "sudo nixos-rebuild switch --upgrade --flake ~/dotfiles";
       cd = "z";
       ls = "eza";
       sl = "eza";
@@ -167,171 +170,5 @@
       set-window-option -g window-status-format " #I:#W"
       set-window-option -g window-status-current-format "#[fg=colour1, bold] #I:#W"
     '';
-  };
-
-  # hypr
-  programs.kitty.enable = true;
-  wayland.windowManager.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-    settings = {
-      monitor = "DP-1,1920x1080@60,0x0,1";
-
-      "$terminal" = "ghostty";
-      "$fileManager" = "nautilus";
-      "$menu" = "bemenu";
-      "$browser" = "firefox-beta";
-
-      exec-once = [
-        "waybar"
-      ];
-
-      env = [
-        "XCURSOR_SIZE,24"
-        "HYPRCURSOR_SIZE,24"
-      ];
-
-      general = {
-        gaps_in = 2;
-        gaps_out = 2;
-        border_size = 1;
-        "col.active_border" = "rgba(7e97abee)";
-        "col.inactive_border" = "rgba(373737ee)";
-        resize_on_border = false;
-        allow_tearing = false;
-        layout = "dwindle";
-      };
-
-      decoration = {
-        rounding = 0;
-        active_opacity = 1.0;
-        inactive_opacity = 1.0;
-        shadow.enabled = false;
-        blur.enabled = false;
-      };
-
-      animations.enabled = false;
-
-      dwindle = {
-        pseudotile = true;
-        preserve_split = true;
-      };
-
-      master = {
-        new_status = "master";
-      };
-
-      misc = {
-        force_default_wallpaper = -1;
-        disable_hyprland_logo = false;
-      };
-
-      input = {
-        kb_layout = "us,ru";
-        kb_variant = "";
-        kb_model = "";
-        kb_options = "";
-        kb_rules = "";
-        follow_mouse = 1;
-        sensitivity = 0;
-
-        touchpad = {
-          natural_scroll = false;
-        };
-      };
-
-      "$mainMod" = "SUPER";
-
-      bind = [
-        # Basic binds
-        "$mainMod, RETURN, exec, $terminal"
-        "$mainMod, B, exec, $browser"
-        "$mainMod SHIFT, Q, killactive,"
-        "$mainMod, M, exit,"
-        "$mainMod, E, exec, $fileManager"
-        "$mainMod, V, togglefloating,"
-        "$mainMod, F, fullscreen,"
-        "$mainMod, D, exec, $menu"
-        "$mainMod, P, pseudo," # dwindle
-        "$mainMod, J, togglesplit," # dwindle
-
-        # Move focus with arrow keys
-        "$mainMod, H, movefocus, l"
-        "$mainMod, L, movefocus, r"
-        "$mainMod, K, movefocus, u"
-        "$mainMod, J, movefocus, d"
-
-        # Switch workspaces
-        "$mainMod, 1, workspace, 1"
-        "$mainMod, 2, workspace, 2"
-        "$mainMod, 3, workspace, 3"
-        "$mainMod, 4, workspace, 4"
-        "$mainMod, 5, workspace, 5"
-        "$mainMod, 6, workspace, 6"
-        "$mainMod, 7, workspace, 7"
-        "$mainMod, 8, workspace, 8"
-        "$mainMod, 9, workspace, 9"
-        "$mainMod, 0, workspace, 10"
-
-        # Move windows to workspaces
-        "$mainMod SHIFT, 1, movetoworkspace, 1"
-        "$mainMod SHIFT, 2, movetoworkspace, 2"
-        "$mainMod SHIFT, 3, movetoworkspace, 3"
-        "$mainMod SHIFT, 4, movetoworkspace, 4"
-        "$mainMod SHIFT, 5, movetoworkspace, 5"
-        "$mainMod SHIFT, 6, movetoworkspace, 6"
-        "$mainMod SHIFT, 7, movetoworkspace, 7"
-        "$mainMod SHIFT, 8, movetoworkspace, 8"
-        "$mainMod SHIFT, 9, movetoworkspace, 9"
-        "$mainMod SHIFT, 0, movetoworkspace, 10"
-
-        # Special workspace (scratchpad)
-        "$mainMod, S, togglespecialworkspace, magic"
-        "$mainMod SHIFT, S, movetoworkspace, special:magic"
-
-        # Scroll through workspaces
-        "$mainMod, mouse_down, workspace, e+1"
-        "$mainMod, mouse_up, workspace, e-1"
-      ];
-
-      bindm = [
-        "$mainMod, mouse:272, movewindow"
-        "$mainMod, mouse:273, resizewindow"
-      ];
-
-      bindel = [
-        ",XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
-        ",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-        ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        ",XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-        ",XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+"
-        ",XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-"
-      ];
-
-      bindl = [
-        ", XF86AudioNext, exec, playerctl next"
-        ", XF86AudioPause, exec, playerctl play-pause"
-        ", XF86AudioPlay, exec, playerctl play-pause"
-        ", XF86AudioPrev, exec, playerctl previous"
-      ];
-
-      windowrule = [
-        "suppressevent maximize, class:.*"
-        "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
-      ];
-    };
-  };
-
-  programs.waybar = {
-    enable = true;
-    settings.main = {
-      modules-center = ["clock"];
-      "clock" = {
-        "interval" = 1;
-        "format" = "{:%A %I:%M}";
-      };
-
-      modules-right = ["cpu" "memory"];
-    };
   };
 }

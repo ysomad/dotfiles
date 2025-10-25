@@ -13,17 +13,20 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  networking = {
+    hostName = "nixos";
+    firewall.enable = true;
+    nftables.enable = true;
+    stevenblack.enable = true; # hosts file
+    nameservers = ["8.8.8.8" "8.8.4.4"];
+    networkmanager = {
+      enable = true;
+      wifi.powersave = true;
+    };
+    wireless.iwd.enable = true;
+  };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  # Enable networking
-  networking.networkmanager.enable = true;
 
   # Bluetooth
   hardware.bluetooth = {
@@ -32,41 +35,27 @@
   };
   services.blueman.enable = true;
 
+  # Audio
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+  };
+
   # Battery
   powerManagement.enable = true;
 
-  # Touchpad
-  # services.libunput.enable = true;
-
-  # Set your time zone.
   time.timeZone = "Asia/Novosibirsk";
-
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "ru_RU.UTF-8";
-    LC_IDENTIFICATION = "ru_RU.UTF-8";
-    LC_MEASUREMENT = "ru_RU.UTF-8";
-    LC_MONETARY = "ru_RU.UTF-8";
-    LC_NAME = "ru_RU.UTF-8";
-    LC_NUMERIC = "ru_RU.UTF-8";
-    LC_PAPER = "ru_RU.UTF-8";
-    LC_TELEPHONE = "ru_RU.UTF-8";
-    LC_TIME = "ru_RU.UTF-8";
-  };
-
-  # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "us,ru";
+    layout = "us";
     variant = "";
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.ysomad = {
     isNormalUser = true;
     description = "Aleksei Malykh";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["audio" "networkmanager" "wheel"];
     packages = with pkgs; [];
   };
 
@@ -79,14 +68,19 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # Sound
-    #pavucontrol
-    #easyeffects
-    #wiremix
+    # Audio
+    pavucontrol
+
+    # Bluetooth
+    blueman
+
+    # Network
+    impala
+    localsend
 
     # Git
     git
-    #lazygit
+    lazygit
 
     # CLI
     eza
@@ -106,16 +100,16 @@
     fastfetch
 
     # DB
-    #dbeaver-bin
-    #libpq
+    dbeaver-bin
+    libpq
 
     # Containers
-    #podman
-    #podman-compose
-    # lazydocker
+    podman
+    podman-compose
+    lazydocker
 
     # AI
-    #claude-code
+    claude-code
 
     # Editors
     neovim
@@ -140,10 +134,10 @@
     go
     gofumpt
     golines
-    # gci
+    # gci # broken for some reason
     goose
     golangci-lint
-    # go-swagger
+    # go-swagger # broken for some reason
 
     # Python
     python3
@@ -156,7 +150,7 @@
     stylua
 
     # JS
-    #nodejs_24
+    nodejs_24
 
     # Shells / Terminals
     zsh
@@ -169,15 +163,15 @@
     chromium
 
     # Messengers
-    #telegram-desktop
-    # slack
+    telegram-desktop
+    slack
 
     # Video
     mpv
     #obs-studio
 
     # Emails
-    #thunderbird
+    thunderbird
 
     # API clients
     # insomnia
@@ -189,13 +183,13 @@
     keychain
 
     # VPN / Proxy
-    #wireguard-ui
-    #v2raya
-    #v2rayn
-    #nekoray
+    wireguard-ui
+    v2raya
+    v2rayn
+    nekoray
 
     # Torrents
-    #transmission_4-gtk
+    transmission_4-gtk
 
     # Archives
     zip
@@ -207,19 +201,21 @@
     #gthumb
 
     # Passwords
-    #keepass
-    #keepassxc
-
-    # Network
-    #networkmanagerapplet
-    #iw
-    #localsend
+    keepass
+    keepassxc
 
     # Screenshots
     #satty # annotations
 
-    # Menu
-    bemenu
+    # App launcher
+
+    # File manager
+    nautilus
+
+    # Hypr
+    kitty
+    hyprland
+    waybar
   ];
 
   fonts = {
@@ -234,6 +230,8 @@
 
   environment.variables = {
     EDITOR = "nvim";
+    TERMINAL = "ghostty";
+    TERM = "ghostty";
   };
 
   programs.gnupg.agent = {
@@ -242,22 +240,10 @@
     pinentryPackage = pkgs.pinentry-tty;
   };
 
-  # List services that you want to enable:
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
 
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.05"; # Did you read the comment?
+  system.stateVersion = "25.05";
 }
