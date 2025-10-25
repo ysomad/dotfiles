@@ -11,6 +11,7 @@
   home.packages = with pkgs; [];
 
   home.file = {
+    ".gitconfig".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.gitconfig";
     ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim";
     ".config/ghostty".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/ghostty";
     ".config/hypr".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/hypr";
@@ -71,17 +72,9 @@
     enableZshIntegration = true;
   };
 
-  programs.bat = {
-    enable = true;
-  };
+  programs.bat.enable = true;
 
-  programs.git = {
-    enable = true;
-    settings.user = {
-      email = "49870662+ysomad@users.noreply.github.com";
-      name = "Aleksei Malykh";
-    };
-  };
+  programs.git.enable = true;
 
   programs.ssh = {
     enable = true;

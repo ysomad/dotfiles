@@ -244,7 +244,7 @@
   environment.variables = {
     EDITOR = "nvim";
     TERMINAL = "ghostty";
-    TERM = "ghostty";
+    TERM = "xterm-ghostty";
     BROWSER = "firefox-beta";
   };
 
