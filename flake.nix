@@ -29,13 +29,13 @@
     nixosConfigurations.nixos = nixosSystem {
       specialArgs = specialArgs;
       modules = [
-        ./configuration.nix
+        ./nix/configuration.nix
         hyprland.nixosModules.default
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.ysomad = import ./home.nix;
+          home-manager.users.ysomad = import ./nix/home.nix;
           home-manager.extraSpecialArgs = specialArgs;
         }
         nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
