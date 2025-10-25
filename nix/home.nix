@@ -23,38 +23,7 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    syntaxHighlighting.enable = true;
-    shellAliases = {
-      rebuild = "sudo nixos-rebuild switch --flake ~/dotfiles";
-      cleanup = "sudo nix-collect-garbage -d";
-      upgrade = "sudo nixos-rebuild switch --upgrade --flake ~/dotfiles";
-      cd = "z";
-      ls = "eza";
-      sl = "eza";
-      la = "eza -la";
-      al = "eza -la";
-      cat = "bat";
-      vim = "nvim";
-      vi = "nvim";
-      monitors = "hyprctl monitors all";
-    };
-    history = {
-      expireDuplicatesFirst = true;
-      size = 100000;
-      save = 100000;
-    };
-    oh-my-zsh = {
-      enable = true;
-      plugins = [
-        "git"
-        "sudo"
-      ];
-      theme = "robbyrussell";
-    };
-  };
+  gtk.enable = true;
 
   programs.fzf = {
     enable = true;
@@ -72,7 +41,7 @@
   };
 
   programs.bat.enable = true;
-  programs.git.enable = true;
+  programs.btop.enable = true;
 
   programs.ssh = {
     enable = true;
@@ -185,9 +154,6 @@
       set-window-option -g window-status-current-format "#[fg=colour1, bold] #I:#W"
     '';
   };
-
-  gtk.enable = true;
-  programs.btop.enable = true;
 
   # rclone to mount gdrvive
   # programs.rclone.enable = true;
