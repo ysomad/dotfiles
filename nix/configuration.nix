@@ -82,6 +82,11 @@
     git
     lazygit
 
+    # ssh
+    gnupg
+    pinentry-tty
+    keychain
+
     # CLI
     eza
     zoxide
@@ -98,6 +103,14 @@
     tree-sitter
     hl-log-viewer
     fastfetch
+    unzip
+    tree
+
+    # Shells / Terminals
+    zsh
+    # zsh-syntax-highlighting
+    # zsh-autosuggestions
+    ghostty
 
     # DB
     dbeaver-bin
@@ -152,12 +165,6 @@
     # JS
     nodejs_24
 
-    # Shells / Terminals
-    zsh
-    # zsh-syntax-highlighting
-    # zsh-autosuggestions
-    ghostty
-
     # Browsers
     firefox-beta
     chromium
@@ -177,11 +184,6 @@
     # insomnia
     # postman
 
-    # ssh
-    gnupg
-    pinentry-tty
-    keychain
-
     # VPN / Proxy
     wireguard-ui
     v2raya
@@ -189,25 +191,21 @@
     nekoray
 
     # Torrents
-    transmission_4-gtk
-
-    # Archives
-    zip
-    unzip
+    transmission_4
 
     # Images
     #gimp
     #feh
     #gthumb
 
-    # Passwords
-    keepass
+    # Secrets
     keepassxc
 
     # Screenshots
     #satty # annotations
 
     # App launcher
+    wofi
 
     # File manager
     nautilus
