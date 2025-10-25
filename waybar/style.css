@@ -9,6 +9,14 @@
   font-size: 15;
 }
 
+#cpu,
+#battery,
+#pulseaudio,
+#bluetooth,
+#network {
+  font-size: 22;
+}
+
 .modules-left {
   margin-left: 8px;
 }
@@ -42,6 +50,8 @@
 #bluetooth {
   margin-right: 17px;
 }
+
+
 
 #network {
   margin-right: 13px;
