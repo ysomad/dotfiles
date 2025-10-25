@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -14,7 +10,7 @@
   networking = {
     hostName = "nixos";
     nftables.enable = true;
-    stevenblack.enable = true; # hosts file
+    stevenblack.enable = true;
     nameservers = ["8.8.8.8" "8.8.4.4"];
 
     firewall = {
@@ -269,6 +265,9 @@
     enable = true;
     enableSSHSupport = true;
     pinentryPackage = pkgs.pinentry-tty;
+    settings = {
+      defaultCacheTtl = 99999;
+    };
   };
 
   programs.hyprland = {
