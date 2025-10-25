@@ -71,7 +71,6 @@
   };
 
   programs.bat.enable = true;
-
   programs.git.enable = true;
 
   programs.ssh = {
@@ -187,6 +186,7 @@
   };
 
   gtk.enable = true;
+  programs.btop.enable = true;
 
   # rclone to mount gdrvive
   # programs.rclone.enable = true;
