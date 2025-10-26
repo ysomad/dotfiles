@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   home.username = "ysomad";
@@ -13,7 +14,6 @@
   home.file = {
     ".gitconfig".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.gitconfig";
     ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim";
-    ".config/ghostty".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/ghostty";
     ".config/hypr".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/hypr";
     ".config/waybar".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/waybar";
   };
@@ -24,6 +24,25 @@
   programs.home-manager.enable = true;
 
   gtk.enable = true;
+
+  programs.kitty = lib.mkForce {
+    enable = true;
+    shellIntegration.enableZshIntegration = true;
+    font = {
+      name = "BlexMono Nerd Font";
+      size = 12;
+    };
+    settings = {
+      confirm_os_window_close = 0;
+      cursor_blink_interval = 0;
+      enable_audio_bell = false;
+      window_padding_width = 3;
+    };
+  };
+  stylix.targets.kitty = {
+    enable = true;
+    variant256Colors = true;
+  };
 
   programs.fzf = {
     enable = true;
@@ -115,6 +134,7 @@
   };
   services.ssh-agent.enable = true;
 
+  stylix.targets.tmux.enable = false;
   programs.tmux = {
     enable = true;
     prefix = "C-a";
