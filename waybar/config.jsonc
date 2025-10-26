@@ -7,6 +7,7 @@
   "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
   "modules-right": [
+    "group/tray-expander",
     "bluetooth",
     "network",
     "pulseaudio",
@@ -49,6 +50,22 @@
     "tooltip": false,
     // "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select"
   },
+  "group/tray-expander": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 600,
+      "children-class": "tray-group-item"
+    },
+    "modules": ["custom/expand-icon", "tray"]
+  },
+  "custom/expand-icon": {
+    "format": "",
+    "tooltip": false
+  },
+   "tray": {
+    "icon-size": 12,
+    "spacing": 17
+  },
   "network": {
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "format": "{icon}",
@@ -60,7 +77,8 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "spacing": 1,
-    // "on-click": "$TERMINAL impala"
+    // TODO: open impala in terminal
+    // "on-click": "nmtui"
   },
   "battery": {
     "format": "{capacity}% {icon}",
@@ -75,7 +93,7 @@
     "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
     "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
     "interval": 5,
-    // "on-click": "omarchy-menu power",
+    "on-click": "omarchy-menu power",
     "states": {
       "warning": 20,
       "critical": 10

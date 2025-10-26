@@ -8,9 +8,6 @@
 
   networking = {
     hostName = "nixos";
-    nftables.enable = true;
-    stevenblack.enable = true;
-    nameservers = ["8.8.8.8" "8.8.4.4"];
 
     firewall = {
       enable = true;
@@ -20,21 +17,18 @@
       allowedUDPPorts = [53317];
     };
 
-    networkmanager = {
-      enable = true;
-      wifi = {
-        backend = "iwd";
-        powersave = true;
-      };
-    };
+    # disable wpa_supplicant and network manager
+    networkmanager.enable = false;
+    wireless.enable = false;
 
     wireless.iwd = {
       enable = true;
-      settings = {
-        Network.EnableIPv6 = true;
-        Settings.AutoConnect = true;
-      };
     };
+
+    nameservers = [
+      "8.8.8.8"
+      "8.8.4.4"
+    ];
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -54,20 +48,6 @@
 
   # Battery
   powerManagement.enable = true;
-  # powerManagement.powertop.enable = true;
-  # services = {
-  #   power-profiles-daemon.enable = false;
-  #   tlp = {
-  #     enable = true;
-  #     settings = {
-  #       CPU_BOOST_ON_AC = 1;
-  #       CPU_BOOST_ON_BAT = 0;
-  #       CPU_SCALING_GOVERNOR_ON_AC = "performance";
-  #       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-  #       STOP_CHARGE_THRESH_BAT0 = 95;
-  #     };
-  #   };
-  # };
 
   time.timeZone = "Asia/Novosibirsk";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -80,8 +60,18 @@
   users.users.ysomad = {
     isNormalUser = true;
     description = "Aleksei Malykh";
-    extraGroups = ["audio" "networkmanager" "wheel"];
-    packages = with pkgs; [];
+    extraGroups = ["audio" "wheel"];
+    packages = [];
+  };
+
+  environment.variables = {
+    EDITOR = "nvim";
+    TERMINAL = "foot";
+    TERM = "foot";
+    BROWSER = "firefox-beta";
+
+    # hyprland
+    NIXOS_OZONE_WL = "1";
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -131,6 +121,7 @@
     # Shells / Terminals
     zsh
     kitty
+    foot
 
     # DB
     dbeaver-bin
@@ -146,8 +137,8 @@
 
     # Editors
     neovim
-    # vscode
-    # zed
+    vscode
+    zed
 
     # LSP
     gopls
@@ -195,7 +186,7 @@
 
     # Video
     mpv
-    #obs-studio
+    obs-studio
 
     # Emails
     thunderbird
@@ -206,21 +197,17 @@
 
     # VPN / Proxy
     wireguard-ui
-    nekoray
+    clash-verge-rev
 
     # Torrents
     transmission_4-gtk
 
     # Images
-    #gimp
-    #feh
-    #gthumb
+    gimp
+    feh
 
     # Secrets
     keepassxc
-
-    # Screenshots
-    #satty # annotations
 
     # App launcher
     wofi
@@ -234,6 +221,9 @@
 
     # Google drive mount
     rclone
+
+    # documents
+    libreoffice
   ];
 
   fonts = {
@@ -247,8 +237,6 @@
   # Shell
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [zsh];
-
-  programs.zoxide.enable = true;
 
   programs.zsh = {
     enable = true;
@@ -280,6 +268,13 @@
     };
   };
 
+  programs.foot = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.zoxide.enable = true;
+
   services.keyd = {
     enable = true;
     keyboards.default = {
@@ -294,13 +289,6 @@
     };
   };
 
-  environment.variables = {
-    EDITOR = "nvim";
-    TERMINAL = "kitty";
-    TERM = "xterm-kitty";
-    BROWSER = "firefox-beta";
-  };
-
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
@@ -312,20 +300,16 @@
     xwayland.enable = true;
   };
 
-  # https://discourse.nixos.org/t/nekoray-tun-mode-not-work/68696/2
-  # security.wrappers.nekobox_core = {
-  #   enable = true;
-  #   source = "${pkgs.nekoray.nekobox-core}/bin/nekobox_core";
-  #   program = "nekobox_core";
-  #   owner = "ysomad";
-  #   group = "users";
-  #   capabilities = "cap_net_admin=ep";
-  # };
-
   stylix = {
     enable = true;
     polarity = "dark";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/classic-dark.yaml";
+  };
+
+  programs.clash-verge = {
+    enable = true;
+    serviceMode = true;
+    tunMode = true;
   };
 
   system.stateVersion = "25.05";

@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  lib,
   ...
 }: {
   home.username = "ysomad";
@@ -9,7 +8,7 @@
 
   home.stateVersion = "25.05"; # Please read the comment before changing.
 
-  home.packages = with pkgs; [];
+  home.packages = [];
 
   home.file = {
     ".gitconfig".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/.gitconfig";
@@ -18,31 +17,47 @@
     ".config/waybar".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/waybar";
   };
 
-  home.sessionVariables = {};
+  home.sessionVariables = {
+    # for electron apps
+    DEFAULT_BROWSER = "firefox-beta";
+  };
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = let
+      browser = "firefox-beta.desktop";
+    in {
+      "text/html" = [browser];
+      "x-scheme-handler/http" = [browser];
+      "x-scheme-handler/https" = [browser];
+      "x-scheme-handler/about" = [browser];
+      "x-scheme-handler/unknown" = [browser];
+      "application/pdf" = [browser];
+
+      "image/png" = ["feh.desktop"];
+      "image/jpeg" = ["feh.desktop"];
+      "image/gif" = ["feh.desktop"];
+
+      "audio/mpeg" = ["mpv.desktop"];
+      "audio/flac" = ["mpv.desktop"];
+
+      "video/mp4" = ["mpv.desktop"];
+      "video/quicktime" = ["mpv.desktop"];
+
+      "inode/directory" = ["org.gnome.Nautilus.desktop"];
+
+      "text/markdown" = "nvim.desktop";
+      "text/plain" = "nvim.desktop";
+    };
+  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
   gtk.enable = true;
+  qt.enable = true;
 
-  programs.kitty = lib.mkForce {
-    enable = true;
-    shellIntegration.enableZshIntegration = true;
-    font = {
-      name = "BlexMono Nerd Font";
-      size = 12;
-    };
-    settings = {
-      confirm_os_window_close = 0;
-      cursor_blink_interval = 0;
-      enable_audio_bell = false;
-      window_padding_width = 1;
-    };
-  };
-  stylix.targets.kitty = {
-    enable = true;
-    variant256Colors = true;
-  };
+  programs.foot.enable = true;
 
   programs.fzf = {
     enable = true;
@@ -176,28 +191,27 @@
     '';
   };
 
-  # rclone to mount gdrvive
-  # programs.rclone.enable = true;
-  # systemd.user.services.rclone-gdrive-mount = {
-  #   Unit = {
-  #     Description = "Service that connects to Google Drive";
-  #     After = ["network-online.target"];
-  #     Requires = ["network-online.target"];
-  #   };
-  #   Install = {
-  #     WantedBy = ["default.target"];
-  #   };
-  #
-  #   Service = let
-  #     gdriveDir = "~/gdrive";
-  #   in {
-  #     Type = "simple";
-  #     ExecStartPre = "/run/current-system/sw/bin/mkdir -p ${gdriveDir}";
-  #     ExecStart = "${pkgs.rclone}/bin/rclone mount --vfs-cache-mode full gdrive: ${gdriveDir}";
-  #     ExecStop = "/run/current-system/sw/bin/fusermount -u ${gdriveDir}";
-  #     Restart = "on-failure";
-  #     RestartSec = "10s";
-  #     Environment = ["PATH=/run/wrappers/bin/:$PATH"];
-  #   };
-  # };
+  # rclone to mount gdrive
+  systemd.user.services.rclone-gdrive-mount = let
+    gdriveDir = "${config.home.homeDirectory}/gdrive";
+  in {
+    Unit = {
+      Description = "Mount Google Drive with rclone";
+      After = ["network-online.target"];
+      Wants = ["network-online.target"];
+    };
+
+    Service = {
+      Type = "notify";
+      ExecStartPre = "${pkgs.coreutils}/bin/mkdir -p ${gdriveDir}";
+      ExecStart = "${pkgs.rclone}/bin/rclone mount gdrive: ${gdriveDir} --vfs-cache-mode writes --vfs-cache-max-age 24h";
+      ExecStop = "${pkgs.fuse}/bin/fusermount -u ${gdriveDir}";
+      Restart = "on-failure";
+      RestartSec = "10s";
+    };
+
+    Install = {
+      WantedBy = ["default.target"];
+    };
+  };
 }
