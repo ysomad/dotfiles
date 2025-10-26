@@ -58,6 +58,7 @@
   qt.enable = true;
 
   programs.foot.enable = true;
+  programs.btop.enable = true;
 
   programs.fzf = {
     enable = true;
@@ -73,10 +74,6 @@
     enable = true;
     enableZshIntegration = true;
   };
-
-  programs.git.enable = true;
-  programs.bat.enable = true;
-  programs.btop.enable = true;
 
   programs.ssh = {
     enable = true;
@@ -191,7 +188,7 @@
     '';
   };
 
-  # rclone to mount gdrive
+  # rclone: mount gdrive
   systemd.user.services.rclone-gdrive-mount = let
     gdriveDir = "${config.home.homeDirectory}/gdrive";
   in {

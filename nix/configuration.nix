@@ -8,6 +8,7 @@
 
   networking = {
     hostName = "nixos";
+    nameservers = ["8.8.8.8" "8.8.4.4"];
 
     firewall = {
       enable = true;
@@ -17,18 +18,9 @@
       allowedUDPPorts = [53317];
     };
 
-    # disable wpa_supplicant and network manager
     networkmanager.enable = false;
     wireless.enable = false;
-
-    wireless.iwd = {
-      enable = true;
-    };
-
-    nameservers = [
-      "8.8.8.8"
-      "8.8.4.4"
-    ];
+    wireless.iwd.enable = true;
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -64,6 +56,12 @@
     packages = [];
   };
 
+  stylix = {
+    enable = true;
+    polarity = "dark";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/classic-dark.yaml";
+  };
+
   environment.variables = {
     EDITOR = "nvim";
     TERMINAL = "foot";
@@ -72,6 +70,20 @@
 
     # hyprland
     NIXOS_OZONE_WL = "1";
+  };
+
+  services.keyd = {
+    enable = true;
+    keyboards.default = {
+      ids = ["*"];
+      settings = {
+        main = {
+          capslock = "layer(control)";
+          backslash = "backspace";
+          backspace = "backslash";
+        };
+      };
+    };
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -275,35 +287,15 @@
 
   programs.zoxide.enable = true;
 
-  services.keyd = {
-    enable = true;
-    keyboards.default = {
-      ids = ["*"];
-      settings = {
-        main = {
-          capslock = "layer(control)";
-          backslash = "backspace";
-          backspace = "backslash";
-        };
-      };
-    };
-  };
-
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-    pinentryPackage = pkgs.pinentry-curses;
+    pinentryPackage = pkgs.pinentry-tty;
   };
 
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-  };
-
-  stylix = {
-    enable = true;
-    polarity = "dark";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/classic-dark.yaml";
   };
 
   programs.clash-verge = {
