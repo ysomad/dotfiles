@@ -1,20 +1,17 @@
 * {
-  background-color: #151515;
-  color: #e1e1e1;
-
   border: none;
   border-radius: 0;
   min-height: 0;
-  font-family: 'BlexMono Nerd Font Mono';
-  font-size: 15;
+  font-size: 14;
 }
 
+/* make icons bigger */
 #cpu,
 #battery,
 #pulseaudio,
 #bluetooth,
 #network {
-  font-size: 22;
+  font-size: 19;
 }
 
 .modules-left {

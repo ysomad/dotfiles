@@ -130,7 +130,7 @@
 
     # Shells / Terminals
     zsh
-    ghostty
+    kitty
 
     # DB
     dbeaver-bin
@@ -201,13 +201,12 @@
     thunderbird
 
     # API clients
-    # insomnia
+    insomnia
     # postman
 
     # VPN / Proxy
     wireguard-ui
-    # nekoray
-    clash-verge-rev
+    nekoray
 
     # Torrents
     transmission_4-gtk
@@ -230,7 +229,6 @@
     nautilus
 
     # Hypr
-    kitty
     hyprland
     waybar
 
@@ -239,8 +237,8 @@
   ];
 
   fonts = {
-    enableDefaultPackages = true;
     packages = with pkgs; [
+      noto-fonts
       font-awesome
       nerd-fonts.blex-mono
     ];
@@ -298,8 +296,8 @@
 
   environment.variables = {
     EDITOR = "nvim";
-    TERMINAL = "ghostty";
-    TERM = "xterm-ghostty";
+    TERMINAL = "kitty";
+    TERM = "xterm-kitty";
     BROWSER = "firefox-beta";
   };
 
