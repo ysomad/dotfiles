@@ -42,7 +42,7 @@
   "cpu": {
     "interval": 5,
     "format": "󰍛",
-    "on-click": "btop"
+    "on-click": "sh -c '$TERMINAL btop'"
   },
   "clock": {
     "format": "{:L%A %H:%M}",
@@ -77,8 +77,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "interval": 3,
     "spacing": 1,
-    // TODO: open impala in terminal
-    // "on-click": "nmtui"
+    "on-click": "sh -c '$TERMINAL impala'"
   },
   "battery": {
     "format": "{capacity}% {icon}",
