@@ -36,7 +36,7 @@
       confirm_os_window_close = 0;
       cursor_blink_interval = 0;
       enable_audio_bell = false;
-      window_padding_width = 3;
+      window_padding_width = 1;
     };
   };
   stylix.targets.kitty = {
