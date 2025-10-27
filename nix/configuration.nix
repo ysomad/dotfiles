@@ -1,10 +1,27 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # manage secrets
+  sops = {
+    defaultSopsFile = ./secrets/default.yaml;
+    age.keyFile = "/home/ysomad/.config/sops/age/keys.txt";
+    age.generateKey = true;
+    secrets.dropp-private = {
+      sopsFile = ./secrets/wireguard.yaml;
+    };
+    secrets.dropp-preshared = {
+      sopsFile = ./secrets/wireguard.yaml;
+    };
+  };
 
   networking = {
     hostName = "nixos";
@@ -15,12 +32,38 @@
 
       # localsend: https://forums.linuxmint.com/viewtopic.php?t=408601
       allowedTCPPorts = [53317];
-      allowedUDPPorts = [53317];
+      allowedUDPPorts = [53317 51820];
     };
 
     networkmanager.enable = false;
     wireless.enable = false;
     wireless.iwd.enable = true;
+
+    wg-quick.interfaces = {
+      dropp = {
+        address = ["172.26.230.5/24"];
+        dns = ["10.128.0.2"];
+        privateKeyFile = config.sops.secrets.dropp-private.path;
+        peers = [
+          {
+            publicKey = "Ma3gcXMHNusvKfKCnqggeqxKBrvKtWnxvF4xb+tU5lw=";
+            presharedKeyFile = config.sops.secrets.dropp-preshared.path;
+            allowedIPs = [
+              "172.26.230.0/24"
+              "10.127.0.0/16"
+              "10.128.0.0/23"
+              "10.129.0.0/24"
+              "10.130.0.0/24"
+              "192.168.21.0/24"
+              "192.168.22.0/24"
+              "192.168.24.0/24"
+            ];
+            endpoint = "wgvpn.dropp.market:51820";
+            persistentKeepalive = 25;
+          }
+        ];
+      };
+    };
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -75,7 +118,7 @@
   services.keyd = {
     enable = true;
     keyboards.default = {
-      ids = ["*"];
+      ids = ["0001:0001"]; # Built-in AT keyboard (PS/2)
       settings = {
         main = {
           capslock = "layer(control)";
@@ -208,7 +251,7 @@
     # postman
 
     # VPN / Proxy
-    wireguard-ui
+    wireguard-tools
     clash-verge-rev
 
     # Torrents

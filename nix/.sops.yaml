@@ -1,0 +1,8 @@
+keys:
+  - &ysomad age1vc6akj48xcf09dtt0t9ke7dg9h29vjymp8x9x3z3w2zfdyqp75yqq0cmqk
+
+creation_rules:
+  - path_regex: secrets/.*\.yaml$
+    key_groups:
+      - age:
+          - *ysomad
