@@ -6,6 +6,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # fix touchpad
+  boot.kernelParams = ["psmouse.synaptics_intertouch=0"];
+
   networking = {
     hostName = "nixos";
     nftables.enable = true;
@@ -114,7 +117,7 @@
   users.users.ysomad = {
     isNormalUser = true;
     description = "Aleksei Malykh";
-    extraGroups = ["network" "audio" "wheel"];
+    extraGroups = ["network" "audio" "wheel" "input"];
     packages = [];
   };
 
@@ -163,6 +166,9 @@
     dig
     impala
     localsend
+
+    # input
+    libinput
 
     # Git
     git
