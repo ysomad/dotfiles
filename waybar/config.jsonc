@@ -92,27 +92,27 @@
     "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
     "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
     "interval": 5,
-    "on-click": "omarchy-menu power",
     "states": {
       "warning": 20,
       "critical": 10
-    }
+    },
+    // "on-click": "omarchy-menu power"
   },
   "bluetooth": {
     "format": "",
     "format-disabled": "󰂲",
     "format-connected": "",
     "tooltip-format": "Devices connected: {num_connections}",
-    "on-click": "blueman-manager"
+    "on-click": "sh -c '$TERMINAL bluetuith'"
   },
   "pulseaudio": {
     "format": "{icon}",
-    "on-click": "pavucontrol",
     "tooltip-format": "Playing at {volume}%",
     "scroll-step": 5,
     "format-muted": "",
     "format-icons": {
       "default": ["", "", ""]
-    }
+    },
+    "on-click": "pavucontrol"
   }
 }
