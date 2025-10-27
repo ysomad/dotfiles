@@ -8,35 +8,40 @@
 
   networking = {
     hostName = "nixos";
-    nameservers = ["8.8.8.8" "8.8.4.4"];
-
-    firewall = {
-      enable = true;
-
-      allowedTCPPorts = [
-        53317 # localsend: https://forums.linuxmint.com/viewtopic.php?t=408601
-        53 # wireguard: https://wiki.nixos.org/wiki/WireGuard#Proxy_client_setup_2
-      ];
-      allowedUDPPorts = [
-        53317
-        53
-      ];
-    };
+    nftables.enable = true;
 
     networkmanager.enable = false;
     wireless.enable = false;
     wireless.iwd.enable = true;
 
+    nameservers = [
+      "8.8.8.8"
+      "8.8.4.4"
+    ];
+
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [
+        53317 # localsend: https://forums.linuxmint.com/viewtopic.php?t=408601
+        53
+      ];
+      allowedUDPPorts = [
+        53317
+        53
+        51820 # wireguard
+      ];
+    };
+
     wg-quick.interfaces = {
       dropp = {
+        autostart = false;
         address = ["172.26.230.5/24"];
         dns = ["10.128.0.2"];
         privateKeyFile = "/etc/wireguard/dropp-private.key";
-
         peers = [
           {
             publicKey = "Ma3gcXMHNusvKfKCnqggeqxKBrvKtWnxvF4xb+tU5lw=";
-            presharedKeyFile = "/etc/wireguard/dropp-preshared.key";
+            presharedKey = "OW5QfEE5Au888LVcTXFenTkfJELEGhaGzuhu8GibiQs=";
             allowedIPs = [
               "172.26.230.0/24"
               "10.127.0.0/16"
@@ -48,11 +53,16 @@
               "192.168.24.0/24"
             ];
             endpoint = "wgvpn.dropp.market:51820";
-            persistentKeepalive = 25;
+            persistentKeepalive = 0;
           }
         ];
       };
     };
+  };
+
+  services.dnsmasq = {
+    enable = true;
+    settings.interface = "dropp";
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -130,6 +140,7 @@
     blueman
 
     # Network
+    dig
     impala
     localsend
 
@@ -292,7 +303,7 @@
       cleanup = "sudo nix-collect-garbage -d";
       upgrade = "sudo nixos-rebuild switch --upgrade --flake ~/dotfiles";
       monitors = "hyprctl monitors all";
-      wg-dropp = "systemctl is-active wg-quick-dropp >/dev/null 2>&1 && sudo systemctl stop wg-quick-dropp || sudo systemctl start wg-quick-dropp";
+      wg-dropp = "if systemctl is-active wg-quick-dropp >/dev/null 2>&1; then sudo systemctl stop wg-quick-dropp; else sudo systemctl start wg-quick-dropp; fi && sudo systemctl status wg-quick-dropp";
       cd = "z";
       ls = "eza";
       sl = "eza";
