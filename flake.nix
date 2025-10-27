@@ -19,11 +19,6 @@
     hyprland.url = "github:hyprwm/Hyprland";
 
     nix-ai-tools.url = "github:numtide/nix-ai-tools";
-
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
@@ -33,7 +28,6 @@
     home-manager,
     stylix,
     hyprland,
-    sops-nix,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -47,7 +41,6 @@
         hyprland.nixosModules.default
         home-manager.nixosModules.home-manager
         stylix.nixosModules.stylix
-        sops-nix.nixosModules.sops
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
