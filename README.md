@@ -32,3 +32,5 @@ Open tmux session and press `Ctrl+a - I` to install plugins
 ### keyboard
 1. Disable all default shortcuts except for spotlight, screenshots and input sources
 2. Set 'Open Spotlight' to `Option+D' shortcut
+
+
