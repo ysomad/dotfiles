@@ -9,6 +9,12 @@
   # fix touchpad
   boot.kernelParams = ["psmouse.synaptics_intertouch=0"];
 
+  services.logind.settings.Login = {
+    HandleLidSwitch = "hibernate";
+    HandleLidSwitchExternalPower = "ignore";
+    HandlePowerKey = "hibernate";
+  };
+
   networking = {
     hostName = "nixos";
     nftables.enable = true;
@@ -117,7 +123,7 @@
   users.users.ysomad = {
     isNormalUser = true;
     description = "Aleksei Malykh";
-    extraGroups = ["network" "audio" "wheel" "input"];
+    extraGroups = ["network" "audio" "wheel"];
     packages = [];
   };
 
