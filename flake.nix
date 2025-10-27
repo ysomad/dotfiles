@@ -17,8 +17,6 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
-
-    nix-ai-tools.url = "github:numtide/nix-ai-tools";
   };
 
   outputs = {
