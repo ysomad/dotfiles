@@ -327,12 +327,20 @@
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [zsh];
 
+  # Autologin
+  services.getty.autologinUser = "ysomad";
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
     histSize = 100000;
+    loginShellInit = ''
+      if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
+        exec Hyprland
+      fi
+    '';
     shellAliases = {
       rebuild = "sudo nixos-rebuild switch --flake ~/dotfiles";
       cleanup = "sudo nix-collect-garbage -d";
