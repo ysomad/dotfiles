@@ -343,18 +343,18 @@
     };
   };
 
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+    pinentryPackage = pkgs.pinentry-tty;
+  };
+
   programs.foot = {
     enable = true;
     enableZshIntegration = true;
   };
 
   programs.zoxide.enable = true;
-
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-    pinentryPackage = pkgs.pinentry-tty;
-  };
 
   programs.hyprland = {
     enable = true;
