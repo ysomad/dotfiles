@@ -6,15 +6,17 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # fix touchpad
+  # Touchpad
   boot.kernelParams = ["psmouse.synaptics_intertouch=0"];
 
+  # Logind
   services.logind.settings.Login = {
     HandleLidSwitch = "hibernate";
     HandleLidSwitchExternalPower = "ignore";
     HandlePowerKey = "hibernate";
   };
 
+  # Network
   networking = {
     hostName = "nixos";
     nftables.enable = true;
@@ -113,6 +115,7 @@
   # Battery
   powerManagement.enable = true;
 
+  # Locale
   time.timeZone = "Asia/Novosibirsk";
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -121,6 +124,9 @@
     variant = "";
   };
 
+  # Autologin
+  services.getty.autologinUser = "ysomad";
+
   users.users.ysomad = {
     isNormalUser = true;
     description = "Aleksei Malykh";
@@ -128,6 +134,7 @@
     packages = [];
   };
 
+  # Themes
   stylix = {
     enable = true;
     polarity = "dark";
@@ -150,6 +157,7 @@
     NIXOS_OZONE_WL = "1";
   };
 
+  # Remaps
   services.keyd = {
     enable = true;
     keyboards.default = {
@@ -166,8 +174,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     # Audio
     pavucontrol
@@ -277,6 +283,7 @@
     # Video
     mpv
     obs-studio
+    ani-cli
 
     # Emails
     thunderbird
@@ -304,9 +311,10 @@
     # File manager
     nautilus
 
-    # Hypr
+    # Wayland
     hyprland
     waybar
+    wpaperd
 
     # Google drive mount
     rclone
@@ -326,9 +334,6 @@
   # Shell
   users.defaultUserShell = pkgs.zsh;
   environment.shells = with pkgs; [zsh];
-
-  # Autologin
-  services.getty.autologinUser = "ysomad";
 
   programs.zsh = {
     enable = true;

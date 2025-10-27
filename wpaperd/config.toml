@@ -1,0 +1,5 @@
+[default]
+path = "/home/ysomad/dotfiles/wallpapers"
+duration = "3h"
+mode = "center"
+sorting = "random"
