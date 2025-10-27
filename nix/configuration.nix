@@ -1,27 +1,10 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  # manage secrets
-  sops = {
-    defaultSopsFile = ./secrets/default.yaml;
-    age.keyFile = "/home/ysomad/.config/sops/age/keys.txt";
-    age.generateKey = true;
-    secrets.dropp-private = {
-      sopsFile = ./secrets/wireguard.yaml;
-    };
-    secrets.dropp-preshared = {
-      sopsFile = ./secrets/wireguard.yaml;
-    };
-  };
 
   networking = {
     hostName = "nixos";
@@ -30,9 +13,14 @@
     firewall = {
       enable = true;
 
-      # localsend: https://forums.linuxmint.com/viewtopic.php?t=408601
-      allowedTCPPorts = [53317];
-      allowedUDPPorts = [53317 51820];
+      allowedTCPPorts = [
+        53317 # localsend: https://forums.linuxmint.com/viewtopic.php?t=408601
+        53 # wireguard: https://wiki.nixos.org/wiki/WireGuard#Proxy_client_setup_2
+      ];
+      allowedUDPPorts = [
+        53317
+        53
+      ];
     };
 
     networkmanager.enable = false;
@@ -43,11 +31,12 @@
       dropp = {
         address = ["172.26.230.5/24"];
         dns = ["10.128.0.2"];
-        privateKeyFile = config.sops.secrets.dropp-private.path;
+        privateKeyFile = "/etc/wireguard/dropp-private.key";
+
         peers = [
           {
             publicKey = "Ma3gcXMHNusvKfKCnqggeqxKBrvKtWnxvF4xb+tU5lw=";
-            presharedKeyFile = config.sops.secrets.dropp-preshared.path;
+            presharedKeyFile = "/etc/wireguard/dropp-preshared.key";
             allowedIPs = [
               "172.26.230.0/24"
               "10.127.0.0/16"
@@ -95,7 +84,7 @@
   users.users.ysomad = {
     isNormalUser = true;
     description = "Aleksei Malykh";
-    extraGroups = ["audio" "wheel"];
+    extraGroups = ["network" "audio" "wheel"];
     packages = [];
   };
 
@@ -251,7 +240,6 @@
     # postman
 
     # VPN / Proxy
-    wireguard-tools
     clash-verge-rev
 
     # Torrents
@@ -304,6 +292,7 @@
       cleanup = "sudo nix-collect-garbage -d";
       upgrade = "sudo nixos-rebuild switch --upgrade --flake ~/dotfiles";
       monitors = "hyprctl monitors all";
+      wg-dropp = "systemctl is-active wg-quick-dropp >/dev/null 2>&1 && sudo systemctl stop wg-quick-dropp || sudo systemctl start wg-quick-dropp";
       cd = "z";
       ls = "eza";
       sl = "eza";
