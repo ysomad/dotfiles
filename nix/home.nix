@@ -145,8 +145,6 @@
         Port 22
     '';
   };
-  # Disabled: gpg-agent handles SSH keys (programs.gnupg.agent.enableSSHSupport in configuration.nix)
-  # services.ssh-agent.enable = true;
 
   stylix.targets.tmux.enable = false;
   programs.tmux = {
