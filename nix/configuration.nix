@@ -376,8 +376,10 @@
     enableSSHSupport = true;
     pinentryPackage = pkgs.pinentry-tty;
     settings = {
-      default-cache-ttl = 34560000; # 400 days
-      max-cache-ttl = 34560000; # 400 days
+      default-cache-ttl = 604800;
+      max-cache-ttl = 604800;
+      default-cache-ttl-ssh = 2592000;
+      max-cache-ttl-ssh = 2592000;
     };
   };
 
