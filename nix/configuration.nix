@@ -31,14 +31,15 @@
     firewall = {
       enable = true;
 
-      # localsend: https://forums.linuxmint.com/viewtopic.php?t=408601
-      allowedTCPPorts = [53317];
-      allowedUDPPorts = [53317];
+      allowedTCPPorts = [
+        53317 # localsend: https://forums.linuxmint.com/viewtopic.php?t=408601
+      ];
+      allowedUDPPorts = [
+        53317
+      ];
     };
 
     wg-quick.interfaces = {
-      # to make it work with clash verge add "exclude-interface: dropp" to clash verge config
-      # https://wiki.metacubex.one/config/inbound/tun/#include-interface
       dropp = {
         autostart = false;
         address = ["172.26.230.5/24"];
@@ -131,6 +132,12 @@
     enable = true;
     polarity = "dark";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/classic-dark.yaml";
+
+    cursor = {
+      package = pkgs.adwaita-icon-theme;
+      name = "Adwaita";
+      size = 24;
+    };
   };
 
   environment.variables = {
@@ -169,12 +176,8 @@
     blueman
 
     # Network
-    dig
     impala
     localsend
-
-    # input
-    libinput
 
     # Git
     git
@@ -359,6 +362,10 @@
     enable = true;
     enableSSHSupport = true;
     pinentryPackage = pkgs.pinentry-tty;
+    settings = {
+      default-cache-ttl = 34560000; # 400 days
+      max-cache-ttl = 34560000; # 400 days
+    };
   };
 
   programs.foot = {
