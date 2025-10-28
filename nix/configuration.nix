@@ -381,21 +381,19 @@
     };
   };
 
+  programs.foot = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
     pinentryPackage = pkgs.pinentry-tty;
     settings = {
-      default-cache-ttl = 604800;
-      max-cache-ttl = 604800;
-      default-cache-ttl-ssh = 2592000;
-      max-cache-ttl-ssh = 2592000;
+      default-cache-ttl = 28800;
+      max-cache-ttl = 28800;
     };
-  };
-
-  programs.foot = {
-    enable = true;
-    enableZshIntegration = true;
   };
 
   programs.zoxide.enable = true;
