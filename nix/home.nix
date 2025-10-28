@@ -112,7 +112,6 @@
         Port 22
     '';
   };
-  services.ssh-agent.enable = true;
 
   programs.tmux = {
     enable = true;
