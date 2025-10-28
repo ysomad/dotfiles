@@ -95,7 +95,7 @@
     "states": {
       "warning": 20,
       "critical": 10
-    },
+    }
     // "on-click": "omarchy-menu power"
   },
   "bluetooth": {
@@ -103,7 +103,7 @@
     "format-disabled": "󰂲",
     "format-connected": "",
     "tooltip-format": "Devices connected: {num_connections}",
-    "on-click": "sh -c '$TERMINAL bluetuith'"
+    "on-click": "blueman-manager"
   },
   "pulseaudio": {
     "format": "{icon}",

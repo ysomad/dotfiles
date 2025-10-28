@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if systemctl is-active wg-quick-dropp >/dev/null 2>&1; then
+    sudo systemctl stop wg-quick-dropp
+else
+    sudo systemctl start wg-quick-dropp
+fi
+
+sudo systemctl status wg-quick-dropp -l --no-pager

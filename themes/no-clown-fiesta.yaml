@@ -1,0 +1,22 @@
+---
+system: base16
+name: No Clown Fiesta
+author: ysomad
+variant: dark
+palette:
+  base00: '#151515'
+  base01: '#171717'
+  base02: '#202020'
+  base03: '#727272'
+  base04: '#AFAFAF'
+  base05: '#E1E1E1'
+  base06: '#E1E1E1'
+  base07: '#F5F5F5'
+  base08: '#b46958'
+  base09: '#FFA557'
+  base0A: '#F4BF75'
+  base0B: '#90A959'
+  base0C: '#88afa2'
+  base0D: '#BAD7FF'
+  base0E: '#AA759F'
+  base0F: '#7E97AB'
