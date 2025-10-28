@@ -3,3 +3,15 @@ path = "/home/ysomad/dotfiles/wallpapers"
 duration = "3h"
 mode = "center"
 sorting = "random"
+
+[eDP-1]
+path = "/home/ysomad/dotfiles/wallpapers"
+duration = "3h"
+mode = "center"
+sorting = "random"
+
+[HDMI-A-1]
+path = "/home/ysomad/dotfiles/wallpapers"
+duration = "3h"
+mode = "center"
+sorting = "random"
