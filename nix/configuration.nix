@@ -394,6 +394,12 @@
     enable = true;
     enableSSHSupport = true;
     pinentryPackage = pkgs.pinentry-tty;
+    settings = {
+      default-cache-ttl = 28800;
+      default-cache-ttl-ssh = 28800;
+      max-cache-ttl = 28800;
+      max-cache-ttl-ssh = 28800;
+    };
   };
 
   programs.zoxide.enable = true;
