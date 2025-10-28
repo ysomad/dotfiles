@@ -77,7 +77,7 @@
         peers = [
           {
             publicKey = "Ma3gcXMHNusvKfKCnqggeqxKBrvKtWnxvF4xb+tU5lw=";
-            presharedKey = "OW5QfEE5Au888LVcTXFenTkfJELEGhaGzuhu8GibiQs=";
+            presharedKeyFile = "/etc/wireguard/dropp-preshared.key";
             allowedIPs = [
               "172.26.230.0/24"
               "10.127.0.0/16"
