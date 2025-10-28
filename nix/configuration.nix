@@ -111,8 +111,12 @@
   services.blueman.enable = true;
 
   # Audio
+  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+
     pulse.enable = true;
   };
 
@@ -323,7 +327,7 @@
     # Wayland
     hyprland
     waybar
-    wpaperd
+    wbg
 
     # Notifications
     libnotify
@@ -388,7 +392,6 @@
 
   programs.gnupg.agent = {
     enable = true;
-    enableSSHSupport = true;
     pinentryPackage = pkgs.pinentry-tty;
   };
 
