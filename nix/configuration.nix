@@ -145,6 +145,12 @@
       name = "Adwaita";
       size = 24;
     };
+    fonts = {
+      monospace = {
+        package = pkgs.nerd-fonts.blex-mono;
+        name = "BlexMono Nerd Font";
+      };
+    };
   };
 
   environment.variables = {
@@ -249,7 +255,7 @@
 
     # Formatters
     beautysh
-    yamlfix
+    yamlfmt
     pgformatter
     alejandra # nix
 
@@ -370,10 +376,7 @@
     };
     ohMyZsh = {
       enable = true;
-      plugins = [
-        "git"
-        "sudo"
-      ];
+      plugins = ["git" "sudo"];
       theme = "robbyrussell";
     };
   };

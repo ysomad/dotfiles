@@ -23,40 +23,8 @@
     DEFAULT_BROWSER = "firefox-beta";
   };
 
-  xdg.mimeApps = {
-    enable = true;
-    defaultApplications = let
-      browser = "firefox-beta.desktop";
-    in {
-      "text/html" = [browser];
-      "x-scheme-handler/http" = [browser];
-      "x-scheme-handler/https" = [browser];
-      "x-scheme-handler/about" = [browser];
-      "x-scheme-handler/unknown" = [browser];
-      "application/pdf" = [browser];
-
-      "image/png" = ["feh.desktop"];
-      "image/jpeg" = ["feh.desktop"];
-      "image/gif" = ["feh.desktop"];
-
-      "audio/mpeg" = ["mpv.desktop"];
-      "audio/flac" = ["mpv.desktop"];
-
-      "video/mp4" = ["mpv.desktop"];
-      "video/quicktime" = ["mpv.desktop"];
-
-      "inode/directory" = ["org.gnome.Nautilus.desktop"];
-
-      "text/markdown" = "nvim.desktop";
-      "text/plain" = "nvim.desktop";
-    };
-  };
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  gtk.enable = true;
-  qt.enable = true;
 
   programs.foot.enable = true;
   programs.btop.enable = true;
@@ -146,7 +114,6 @@
     '';
   };
 
-  stylix.targets.tmux.enable = false;
   programs.tmux = {
     enable = true;
     prefix = "C-a";
@@ -177,14 +144,6 @@
       bind-key -T copy-mode-vi v send-keys -X begin-selection
       bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
       bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
-
-      # looks
-      set-option -g status-style bg=default
-      set -g status-fg colour7
-      set-window-option -g window-status-current-style fg=colour1
-      set -g status-left "#[fg=colour7][#S] "
-      set-window-option -g window-status-format " #I:#W"
-      set-window-option -g window-status-current-format "#[fg=colour1, bold] #I:#W"
     '';
   };
 
@@ -213,6 +172,7 @@
   };
 
   # Notifications
+  stylix.targets.mako.enable = true;
   services.mako = {
     enable = true;
     settings = {
