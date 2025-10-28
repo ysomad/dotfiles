@@ -15,7 +15,6 @@
     ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/nvim";
     ".config/hypr".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/hypr";
     ".config/waybar".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/waybar";
-    ".config/wpaperd".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/wpaperd";
   };
 
   home.sessionVariables = {
@@ -113,6 +112,7 @@
         Port 22
     '';
   };
+  services.ssh-agent.enable = true;
 
   programs.tmux = {
     enable = true;
@@ -127,10 +127,6 @@
       better-mouse-mode
     ];
     extraConfig = ''
-      set -g default-terminal "tmux-256color"
-      set -ga terminal-overrides ",256color*:Tc"
-      set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
-      set-environment -g COLORTERM "truecolor"
 
       # create windows
       bind c new-window -c "#{pane_current_path}"
@@ -146,6 +142,10 @@
       bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
     '';
   };
+  # set -g default-terminal "tmux-256color"
+  # set -ga terminal-overrides ",256color*:Tc"
+  # set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
+  # set-environment -g COLORTERM "truecolor"
 
   # rclone: mount gdrive
   systemd.user.services.rclone-gdrive-mount = let

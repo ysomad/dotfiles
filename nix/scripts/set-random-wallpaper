@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+WALLPAPER_DIR="$HOME/dotfiles/wallpapers"
+STATE_DIR="$HOME/.cache/wbg"
+STATE_FILE="$STATE_DIR/current-wallpaper"
+
+get_random_wallpaper() {
+    local current_wallpaper=""
+    if [ -f "$STATE_FILE" ]; then
+        current_wallpaper=$(cat "$STATE_FILE")
+    fi
+
+    local random_wallpaper
+    if [ -n "$current_wallpaper" ]; then
+        random_wallpaper=$(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) | grep -v "^${current_wallpaper}$" | shuf -n 1)
+    else
+        random_wallpaper=$(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) | shuf -n 1)
+    fi
+
+    echo "$random_wallpaper"
+}
+
+pkill wbg
+
+if [ ! -d "$WALLPAPER_DIR" ]; then
+    notify-send "Wallpaper error" "Directory $WALLPAPER_DIR does not exist"
+    exit 1
+fi
+
+random_wallpaper=$(get_random_wallpaper)
+
+if [ -z "$random_wallpaper" ]; then
+    notify-send "Wallpaper error" "No wallpapers found in $WALLPAPER_DIR"
+    exit 1
+fi
+
+mkdir -p "$STATE_DIR"
+echo "$random_wallpaper" > "$STATE_FILE"
+
+wbg "$random_wallpaper" &
+
+notify-send "Wallpaper changed" "$(basename "$random_wallpaper")"
