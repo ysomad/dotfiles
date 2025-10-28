@@ -8,6 +8,7 @@
 
   # Touchpad
   boot.kernelParams = ["psmouse.synaptics_intertouch=0"];
+  services.libinput.enable = true;
 
   # Logind
   services.logind.settings.Login = {
@@ -15,6 +16,9 @@
     HandleLidSwitchExternalPower = "ignore";
     HandlePowerKey = "hibernate";
   };
+
+  # Battery
+  powerManagement.enable = true;
 
   # Network
   networking = {
@@ -112,9 +116,6 @@
     pulse.enable = true;
   };
 
-  # Battery
-  powerManagement.enable = true;
-
   # Locale
   time.timeZone = "Asia/Novosibirsk";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -138,8 +139,7 @@
   stylix = {
     enable = true;
     polarity = "dark";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/classic-dark.yaml";
-
+    base16Scheme = ../themes/no-clown-fiesta.yaml;
     cursor = {
       package = pkgs.adwaita-icon-theme;
       name = "Adwaita";
@@ -158,6 +158,7 @@
   };
 
   # Remaps
+  hardware.keyboard.qmk.enable = false;
   services.keyd = {
     enable = true;
     keyboards.default = {
@@ -213,6 +214,8 @@
     unzip
     tree
     brightnessctl
+    libinput
+    powertop
 
     # Shells / Terminals
     zsh
@@ -316,6 +319,10 @@
     waybar
     wpaperd
 
+    # Notifications
+    libnotify
+    mako
+
     # Google drive mount
     rclone
 
@@ -351,7 +358,7 @@
       cleanup = "sudo nix-collect-garbage -d";
       upgrade = "sudo nixos-rebuild switch --upgrade --flake ~/dotfiles";
       monitors = "hyprctl monitors all";
-      wg-dropp = "if systemctl is-active wg-quick-dropp >/dev/null 2>&1; then sudo systemctl stop wg-quick-dropp; else sudo systemctl start wg-quick-dropp; fi && sudo systemctl status wg-quick-dropp";
+      wg-dropp = "~/dotfiles/nix/scripts/wg-dropp";
       cd = "z";
       ls = "eza";
       sl = "eza";
