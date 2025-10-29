@@ -414,8 +414,6 @@
       rebuild = "sudo nixos-rebuild switch --flake ~/dotfiles";
       cleanup = "sudo nix-collect-garbage -d";
       upgrade = "sudo nixos-rebuild switch --upgrade --flake ~/dotfiles";
-      monitors = "hyprctl monitors all";
-      wg-dropp = "~/dotfiles/nix/scripts/wg-dropp";
       cd = "z";
       ls = "eza";
       sl = "eza";
