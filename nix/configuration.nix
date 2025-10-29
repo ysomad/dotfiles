@@ -60,8 +60,8 @@
   # Network
   networking = {
     hostName = "nixos";
-    nftables.enable = true;
 
+    # use iwd only
     networkmanager.enable = false;
     wireless.enable = false;
     wireless.iwd.enable = true;
@@ -73,6 +73,11 @@
 
     firewall = {
       enable = true;
+
+      # required for TUN
+      # https://github.com/Sk7Str1p3/dotFiles/blob/9e03b805a02b318c62f0f3ef675ec6e3b7812e2e/system/nixos/modules/network/nekoray/default.nix#L8
+      # https://github.com/MatsuriDayo/nekoray/issues/1437
+      checkReversePath = "loose";
 
       allowedTCPPorts = [
         53317 # localsend: https://forums.linuxmint.com/viewtopic.php?t=408601
@@ -131,11 +136,6 @@
         ];
       };
     };
-  };
-
-  services.dnsmasq = {
-    enable = true;
-    settings.interface = "dropp";
   };
 
   # to add abillity to enable/disable tunnel using shortcut in hyprland
@@ -281,7 +281,6 @@
 
     # DB
     dbeaver-bin
-    libpq
 
     # Containers
     podman
@@ -353,7 +352,9 @@
     # postman
 
     # VPN / Proxy
+    zapret
     clash-verge-rev
+    nekoray
 
     # Torrents
     transmission_4-gtk
@@ -454,10 +455,96 @@
     xwayland.enable = true;
   };
 
+  services.zapret = {
+    enable = true;
+
+    # https://github.com/bol-van/zapret/discussions/1594
+    # https://github.com/bol-van/zapret/issues/623
+    params = [
+      "--dpi-desync=fake,disorder2"
+      "--dpi-desync-ttl=1"
+      "--dpi-desync-autottl=2"
+    ];
+
+    # https://github.com/Flowseal/zapret-discord-youtube/blob/main/lists/list-general.txt
+    whitelist = [
+      "cloudflare-ech.com"
+      "encryptedsni.com"
+      "cloudflareaccess.com"
+      "cloudflareapps.com"
+      "cloudflarebolt.com"
+      "cloudflareclient.com"
+      "cloudflareinsights.com"
+      "cloudflareok.com"
+      "cloudflarepartners.com"
+      "cloudflareportal.com"
+      "cloudflarepreview.com"
+      "cloudflareresolve.com"
+      "cloudflaressl.com"
+      "cloudflarestatus.com"
+      "cloudflarestorage.com"
+      "cloudflarestream.com"
+      "cloudflaretest.com"
+      "dis.gd"
+      "discord-attachments-uploads-prd.storage.googleapis.com"
+      "discord.app"
+      "discord.co"
+      "discord.com"
+      "discord.design"
+      "discord.dev"
+      "discord.gift"
+      "discord.gifts"
+      "discord.gg"
+      "discord.media"
+      "discord.new"
+      "discord.store"
+      "discord.status"
+      "discord-activities.com"
+      "discordactivities.com"
+      "discordapp.com"
+      "discordapp.net"
+      "discordcdn.com"
+      "discordmerch.com"
+      "discordpartygames.com"
+      "discordsays.com"
+      "discordsez.com"
+      "frankerfacez.com"
+      "ffzap.com"
+      "betterttv.net"
+      "7tv.app"
+      "7tv.io"
+      "yt3.ggpht.com"
+      "yt4.ggpht.com"
+      "yt3.googleusercontent.com"
+      "googlevideo.com"
+      "jnn-pa.googleapis.com"
+      "stable.dl2.discordapp.net"
+      "wide-youtube.l.google.com"
+      "youtube-nocookie.com"
+      "youtube-ui.l.google.com"
+      "youtube.com"
+      "youtubeembeddedplayer.googleapis.com"
+      "youtubekids.com"
+      "youtubei.googleapis.com"
+      "youtu.be"
+      "yt-video-upload.l.google.com"
+      "ytimg.com"
+      "ytimg.l.google.com"
+    ];
+  };
+
   programs.clash-verge = {
     enable = true;
     serviceMode = true;
     tunMode = true;
+  };
+
+  programs.nekoray = {
+    enable = true;
+    tunMode = {
+      enable = true;
+      setuid = true;
+    };
   };
 
   system.stateVersion = "25.05";
