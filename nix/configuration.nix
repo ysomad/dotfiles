@@ -138,6 +138,27 @@
     settings.interface = "dropp";
   };
 
+  # to add abillity to enable/disable tunnel using shortcut in hyprland
+  security.sudo.extraRules = [
+    {
+      users = ["ysomad"];
+      commands = [
+        {
+          command = "${pkgs.systemd}/bin/systemctl start wg-quick-*";
+          options = ["NOPASSWD"];
+        }
+        {
+          command = "${pkgs.systemd}/bin/systemctl stop wg-quick-*";
+          options = ["NOPASSWD"];
+        }
+        {
+          command = "${pkgs.systemd}/bin/systemctl status wg-quick-*";
+          options = ["NOPASSWD"];
+        }
+      ];
+    }
+  ];
+
   # Bluetooth
   hardware.bluetooth = {
     enable = true;
