@@ -30,8 +30,9 @@
   } @ inputs: let
     inherit (self) outputs;
     inherit (nixpkgs.lib) nixosSystem;
-    specialArgs = {inherit inputs outputs hyprland;};
+    specialArgs = {inherit inputs outputs;};
   in {
+    overlays = import ./nix/overlays.nix {inherit inputs;};
     nixosConfigurations.nixos = nixosSystem {
       specialArgs = specialArgs;
       modules = [

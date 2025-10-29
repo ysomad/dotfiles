@@ -4,15 +4,6 @@
   min-height: 0;
 }
 
-/* make icons bigger */
-/* #cpu, */
-/* #battery, */
-/* #pulseaudio, */
-/* #bluetooth, */
-/* #network { */
-/*   font-size: 16; */
-/* } */
-
 .modules-left {
   margin-left: 8px;
 }
