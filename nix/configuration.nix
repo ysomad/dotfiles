@@ -342,7 +342,7 @@
     keepassxc
 
     # App launcher
-    wofi
+    fuzzel
 
     # File manager
     nautilus
