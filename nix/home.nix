@@ -27,6 +27,7 @@
   programs.home-manager.enable = true;
 
   programs.foot.enable = true;
+  programs.fuzzel.enable = true;
   programs.btop.enable = true;
 
   programs.fzf = {
