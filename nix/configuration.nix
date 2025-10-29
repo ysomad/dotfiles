@@ -1,14 +1,31 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  outputs,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
+  ];
+
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  nixpkgs.overlays = [
+    # Add overlays your own flake exports (from overlays and pkgs dir):
+    outputs.overlays.modifications
   ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Touchpad
-  boot.kernelParams = ["psmouse.synaptics_intertouch=0"];
-  services.libinput.enable = true;
+  # Autologin
+  services.getty.autologinUser = "ysomad";
+
+  users.users.ysomad = {
+    isNormalUser = true;
+    description = "Aleksei Malykh";
+    extraGroups = ["network" "audio" "wheel"];
+    packages = [];
+  };
 
   # Logind
   services.logind.settings.Login = {
@@ -17,8 +34,28 @@
     HandlePowerKey = "hibernate";
   };
 
+  # Touchpad
+  boot.kernelParams = ["psmouse.synaptics_intertouch=0"];
+  services.libinput.enable = true;
+
   # Battery
-  powerManagement.enable = true;
+  # https://nixos.wiki/wiki/Laptop
+  powerManagement.powertop.enable = true;
+  services.power-profiles-daemon.enable = false;
+  services.system76-scheduler.settings.cfsProfiles.enable = true;
+  services.tlp = {
+    enable = true;
+    settings = {
+      CPU_BOOST_ON_AC = 1;
+      CPU_BOOST_ON_BAT = 0;
+
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+
+      START_CHARGE_THRESH_BAT0 = 25;
+      STOP_CHARGE_THRESH_BAT0 = 95;
+    };
+  };
 
   # Network
   networking = {
@@ -101,8 +138,6 @@
     settings.interface = "dropp";
   };
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-
   # Bluetooth
   hardware.bluetooth = {
     enable = true;
@@ -114,10 +149,9 @@
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
+    pulse.enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
-
-    pulse.enable = true;
   };
 
   # Locale
@@ -127,16 +161,6 @@
   services.xserver.xkb = {
     layout = "us";
     variant = "";
-  };
-
-  # Autologin
-  services.getty.autologinUser = "ysomad";
-
-  users.users.ysomad = {
-    isNormalUser = true;
-    description = "Aleksei Malykh";
-    extraGroups = ["network" "audio" "wheel"];
-    packages = [];
   };
 
   # Themes
@@ -225,7 +249,6 @@
     tree
     brightnessctl
     libinput
-    powertop
 
     # Shells / Terminals
     zsh
@@ -267,10 +290,10 @@
     go
     gofumpt
     golines
-    # gci # broken for some reason
+    gci
     goose
     golangci-lint
-    # go-swagger # broken for some reason
+    go-swagger
 
     # Python
     python3

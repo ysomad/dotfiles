@@ -1,5 +1,6 @@
 {
   config,
+  lib,
   pkgs,
   ...
 }: {
@@ -125,7 +126,10 @@
       vim-tmux-navigator
       better-mouse-mode
     ];
-    extraConfig = ''
+    extraConfig = lib.mkAfter ''
+      # simpler colors for active/inactive windows
+      set -g window-status-style "fg=#${config.lib.stylix.colors.base03}"
+      set -g window-status-current-style "fg=#${config.lib.stylix.colors.base07}"
 
       # create windows
       bind c new-window -c "#{pane_current_path}"
@@ -141,10 +145,16 @@
       bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
     '';
   };
-  # set -g default-terminal "tmux-256color"
-  # set -ga terminal-overrides ",256color*:Tc"
-  # set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
-  # set-environment -g COLORTERM "truecolor"
+
+  # Notifications
+  stylix.targets.mako.enable = true;
+  services.mako = {
+    enable = true;
+    settings = {
+      default-timeout = 5000;
+      ignore-timeout = false;
+    };
+  };
 
   # rclone: mount gdrive
   systemd.user.services.rclone-gdrive-mount = let
@@ -167,16 +177,6 @@
 
     Install = {
       WantedBy = ["default.target"];
-    };
-  };
-
-  # Notifications
-  stylix.targets.mako.enable = true;
-  services.mako = {
-    enable = true;
-    settings = {
-      default-timeout = 5000;
-      ignore-timeout = false;
     };
   };
 }

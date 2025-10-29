@@ -20,8 +20,6 @@ get_random_wallpaper() {
     echo "$random_wallpaper"
 }
 
-pkill wbg
-
 if [ ! -d "$WALLPAPER_DIR" ]; then
     notify-send "Wallpaper error" "Directory $WALLPAPER_DIR does not exist"
     exit 1
@@ -37,6 +35,7 @@ fi
 mkdir -p "$STATE_DIR"
 echo "$random_wallpaper" > "$STATE_FILE"
 
+pkill wbg
 wbg "$random_wallpaper" &
 
 notify-send "Wallpaper changed" "$(basename "$random_wallpaper")"
