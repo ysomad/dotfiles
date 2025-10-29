@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+    echo "Usage: $0 <interface>"
+    exit 1
+fi
+
+INTERFACE="$1"
+SERVICE="wg-quick-$INTERFACE"
+
+if systemctl is-active "$SERVICE" >/dev/null 2>&1; then
+    sudo systemctl stop "$SERVICE"
+    notify-send "Wireguard" "Stopped $INTERFACE tunnel"
+else
+    sudo systemctl start "$SERVICE"
+    notify-send "Wireguard" "Started $INTERFACE tunnel"
+fi
+
+sudo systemctl status "$SERVICE" -l --no-pager
