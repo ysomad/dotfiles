@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 WALLPAPER_DIR="$HOME/dotfiles/wallpapers"
-STATE_DIR="$HOME/.cache/wbg"
+STATE_DIR="/dev/shm/wbg"
 STATE_FILE="$STATE_DIR/current-wallpaper"
 
 get_random_wallpaper() {
