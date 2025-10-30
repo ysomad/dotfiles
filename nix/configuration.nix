@@ -17,6 +17,15 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Locale
+  time.timeZone = "Asia/Novosibirsk";
+  i18n.defaultLocale = "en_US.UTF-8";
+
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
+  };
+
   # Autologin
   services.getty.autologinUser = "ysomad";
 
@@ -35,14 +44,15 @@
   };
 
   # Touchpad
-  boot.kernelParams = ["psmouse.synaptics_intertouch=0"];
   services.libinput.enable = true;
 
   # Battery
   # https://nixos.wiki/wiki/Laptop
-  powerManagement.powertop.enable = true;
+  powerManagement = {
+    enable = true;
+    powertop.enable = true;
+  };
   services.power-profiles-daemon.enable = false;
-  services.system76-scheduler.settings.cfsProfiles.enable = true;
   services.tlp = {
     enable = true;
     settings = {
@@ -178,15 +188,6 @@
     alsa.support32Bit = true;
   };
 
-  # Locale
-  time.timeZone = "Asia/Novosibirsk";
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
   # Themes
   stylix = {
     enable = true;
@@ -223,16 +224,18 @@
       ids = ["0001:0001"]; # Built-in AT keyboard (PS/2)
       settings = {
         main = {
+          # hhkd like layout
           capslock = "layer(control)";
           backslash = "backspace";
           backspace = "backslash";
+          leftalt = "leftmeta";
+          leftmeta = "leftalt";
         };
       };
     };
   };
 
   nixpkgs.config.allowUnfree = true;
-
   environment.systemPackages = with pkgs; [
     # Audio
     pavucontrol
@@ -333,7 +336,6 @@
 
     # Browsers
     firefox-beta
-    chromium
 
     # Messengers
     telegram-desktop
