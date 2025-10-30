@@ -303,13 +303,13 @@
     tree
     brightnessctl
     libinput
+    atuin # shell history fzf
 
     # Shells / Terminals
     kitty
     foot
     fish
     starship
-    atuin # shell history
 
     # DB
     dbeaver-bin
