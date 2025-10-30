@@ -187,14 +187,6 @@
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true; # TODO: enable it only if HDMI is connected
-
-    # https://wiki.nixos.org/wiki/Bluetooth
-    settings = {
-      General = {
-        # show battery of bluetooth devices
-        Experimental = true;
-      };
-    };
   };
   services.blueman.enable = true;
 
@@ -205,6 +197,11 @@
     pulse.enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
+    wireplumber.extraConfig."10-bluez" = {
+      "monitor.bluez.properties" = {
+        "bluez5.enable-hw-volume" = false;
+      };
+    };
   };
 
   # Themes
