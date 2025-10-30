@@ -63,6 +63,8 @@
     };
   };
 
+  programs.foot.enable = true;
+
   programs.fuzzel = {
     enable = true;
     settings = {
@@ -71,7 +73,6 @@
     };
   };
 
-  programs.foot.enable = true;
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
@@ -79,10 +80,6 @@
       set fish_color_command white
       set fish_color_normal white
     '';
-  };
-  programs.eza = {
-    enable = true;
-    enableFishIntegration = false; # Disable auto-generated aliases (use configuration.nix aliases instead)
   };
 
   programs.starship = {
@@ -118,6 +115,7 @@
     flags = ["--disable-up-arrow"];
     settings = {
       invert = true;
+      show_help = false;
     };
   };
 
