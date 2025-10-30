@@ -213,11 +213,19 @@
     polarity = "dark";
     base16Scheme = ../themes/no-clown-fiesta.yaml;
     cursor = {
-      package = pkgs.adwaita-icon-theme;
-      name = "Adwaita";
+      package = pkgs.capitaine-cursors;
+      name = "capitaine-cursors";
       size = 24;
     };
     fonts = {
+      serif = {
+        package = pkgs.ibm-plex;
+        name = "IBM Plex Serif";
+      };
+      sansSerif = {
+        package = pkgs.ibm-plex;
+        name = "IBM Plex Sans";
+      };
       monospace = {
         package = pkgs.nerd-fonts.blex-mono;
         name = "BlexMono Nerd Font";
@@ -413,7 +421,6 @@
 
   fonts.packages = with pkgs; [
     font-awesome
-    nerd-fonts.blex-mono
   ];
 
   # Shell

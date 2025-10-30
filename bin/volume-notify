@@ -1,0 +1,86 @@
+#!/usr/bin/env bash
+
+# Script to control volume and send notifications
+# Usage: volume-notify [up|down|mute|mute-mic]
+
+ACTION="${1:-}"
+
+# Get default sink and source
+SINK="@DEFAULT_AUDIO_SINK@"
+SOURCE="@DEFAULT_AUDIO_SOURCE@"
+
+# Notification ID to replace previous notifications
+NOTIFICATION_ID=9993
+
+get_volume() {
+    wpctl get-volume "$SINK" | awk '{print int($2 * 100)}'
+}
+
+is_muted() {
+    wpctl get-volume "$SINK" | grep -q "MUTED"
+}
+
+get_mic_status() {
+    wpctl get-volume "$SOURCE" | grep -q "MUTED"
+}
+
+send_notification() {
+    local volume="$1"
+    local message="$2"
+
+    notify-send -h string:x-canonical-private-synchronous:volume \
+                -h int:value:"$volume" \
+                "Volume: $message"
+}
+
+case "$ACTION" in
+    up)
+        wpctl set-volume -l 1 "$SINK" 5%+
+        volume=$(get_volume)
+
+        if is_muted; then
+            send_notification "$volume" "${volume}% (Muted)"
+        else
+            send_notification "$volume" "${volume}%"
+        fi
+        ;;
+
+    down)
+        wpctl set-volume "$SINK" 5%-
+        volume=$(get_volume)
+
+        if is_muted; then
+            send_notification "$volume" "${volume}% (Muted)"
+        else
+            send_notification "$volume" "${volume}%"
+        fi
+        ;;
+
+    mute)
+        wpctl set-mute "$SINK" toggle
+        volume=$(get_volume)
+
+        if is_muted; then
+            send_notification "$volume" "Muted"
+        else
+            send_notification "$volume" "${volume}%"
+        fi
+        ;;
+
+    mute-mic)
+        wpctl set-mute "$SOURCE" toggle
+
+        if get_mic_status; then
+            notify-send -h string:x-canonical-private-synchronous:microphone \
+                        "Microphone: Muted"
+        else
+            notify-send -h string:x-canonical-private-synchronous:microphone \
+                        "Microphone: Unmuted"
+        fi
+        ;;
+
+    *)
+        echo "Usage: $0 [up|down|mute|mute-mic]"
+        exit 1
+        ;;
+esac
