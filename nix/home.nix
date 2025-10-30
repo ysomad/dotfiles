@@ -18,13 +18,50 @@
     ".config/waybar".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/dotfiles/waybar";
   };
 
+  programs.home-manager.enable = true;
+
   home.sessionVariables = {
     # for electron apps
     DEFAULT_BROWSER = "firefox-beta";
   };
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "application/pdf" = "firefox-beta.desktop";
+
+      "image/png" = "feh.desktop";
+      "image/jpeg" = "feh.desktop";
+      "image/jpg" = "feh.desktop";
+      "image/gif" = "feh.desktop";
+      "image/webp" = "feh.desktop";
+      "image/bmp" = "feh.desktop";
+      "image/svg+xml" = "feh.desktop";
+
+      "video/mp4" = "mpv.desktop";
+      "video/x-matroska" = "mpv.desktop";
+      "video/webm" = "mpv.desktop";
+      "video/mpeg" = "mpv.desktop";
+      "video/x-msvideo" = "mpv.desktop";
+
+      "x-scheme-handler/http" = "firefox-beta.desktop";
+      "x-scheme-handler/https" = "firefox-beta.desktop";
+      "text/html" = "firefox-beta.desktop";
+
+      "application/vnd.oasis.opendocument.text" = "writer.desktop";
+      "application/msword" = "writer.desktop";
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document" = "writer.desktop";
+      "application/rtf" = "writer.desktop";
+
+      "application/vnd.oasis.opendocument.spreadsheet" = "calc.desktop";
+      "application/vnd.ms-excel" = "calc.desktop";
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" = "calc.desktop";
+
+      "application/vnd.oasis.opendocument.presentation" = "impress.desktop";
+      "application/vnd.ms-powerpoint" = "impress.desktop";
+      "application/vnd.openxmlformats-officedocument.presentationml.presentation" = "impress.desktop";
+    };
+  };
 
   programs.foot.enable = true;
   programs.fuzzel.enable = true;
