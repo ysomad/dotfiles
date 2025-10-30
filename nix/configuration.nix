@@ -187,6 +187,14 @@
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true; # TODO: enable it only if HDMI is connected
+
+    # https://wiki.nixos.org/wiki/Bluetooth
+    settings = {
+      General = {
+        # show battery of bluetooth devices
+        Experimental = true;
+      };
+    };
   };
   services.blueman.enable = true;
 

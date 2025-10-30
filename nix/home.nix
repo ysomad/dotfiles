@@ -76,7 +76,7 @@
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-      set fish_greeting # Disable greeting
+      set fish_greeting
       set fish_color_command white
       set fish_color_normal white
     '';
@@ -96,7 +96,7 @@
 
       git_branch = {
         symbol = "";
-        format = "[$symbolbranch](bold magenta)";
+        format = "[$symbol $branch](bold magenta)";
       };
 
       git_status = {
