@@ -96,7 +96,7 @@
 
       git_branch = {
         symbol = "";
-        format = "[$symbol $branch](bold magenta)";
+        format = "[$symbolbranch](bold magenta)";
       };
 
       git_status = {
@@ -207,6 +207,9 @@
       set -g window-status-style "fg=#${config.lib.stylix.colors.base03}"
       set -g window-status-current-style "fg=#${config.lib.stylix.colors.base07}"
 
+      # renumber windows automatically
+      set-option -g renumber-windows on
+
       # create windows
       bind c new-window -c "#{pane_current_path}"
       bind-key C command-prompt -p "Name of new window: " "new-window -n '%%'"
@@ -214,11 +217,14 @@
       # splits
       bind | split-window -h -c "#{pane_current_path}"
       bind - split-window -v -c "#{pane_current_path}"
+      unbind '"'
+      unbind %
 
       # tmux-yank
       bind-key -T copy-mode-vi v send-keys -X begin-selection
       bind-key -T copy-mode-vi C-v send-keys -X rectangle-toggle
       bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+
     '';
   };
 
