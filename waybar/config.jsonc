@@ -55,7 +55,7 @@
   "group/tray-expander": {
     "orientation": "inherit",
     "drawer": {
-      "transition-duration": 600,
+      "transition-duration": 0,
       "children-class": "tray-group-item"
     },
     "modules": ["custom/expand-icon", "tray"]
@@ -65,8 +65,8 @@
     "tooltip": false
   },
    "tray": {
-    "icon-size": 12,
-    "spacing": 17
+    "icon-size": 13,
+    "spacing": 15
   },
   "network": {
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],

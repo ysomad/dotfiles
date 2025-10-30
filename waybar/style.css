@@ -23,27 +23,30 @@
   opacity: 0.5;
 }
 
-#custom-cpu,
-#battery,
-#pulseaudio {
-  min-width: 12px;
-  margin: 0 7.5px;
-}
-
 #tray {
   margin-right: 16px;
-}
-
-#bluetooth {
-  margin-right: 17px;
 }
 
 #custom-expand-icon {
   margin-right: 20px;
 }
 
-#network {
+#bluetooth {
+  margin-right: 17px;
+}
+
+#custom-cpu,
+#battery {
+  min-width: 12px;
+  margin: 0 7.5px;
+}
+
+#pulseaudio {
   margin-right: 13px;
+}
+
+#network {
+  margin-right: 17px;
 }
 
 tooltip {
