@@ -89,34 +89,25 @@
     enable = true;
     enableFishIntegration = true;
     settings = {
-      format = "$directory$git_branch$git_status$cmd_duration$character";
-
-      character = {
-        success_symbol = "";
-        error_symbol = "";
-      };
+      format = "$directory$git_branch$git_status$cmd_duration";
 
       directory = {
         truncation_length = 1;
         truncate_to_repo = false;
-        style = "white";
-        format = "[$path]($style) ";
+        format = "[$path](cyan) ";
       };
 
       git_branch = {
-        style = "magenta";
-        format = "[$branch]($style)";
+        format = "[$branch](magenta)";
       };
 
       git_status = {
-        style = "magenta";
-        format = "[$all_status$ahead_behind]($style) ";
+        format = "[$all_status$ahead_behind](magenta) ";
       };
 
       cmd_duration = {
         min_time = 1000;
-        format = "[$duration]($style) ";
-        style = "bright-black";
+        format = "[$duration](bright-black) ";
       };
     };
   };
