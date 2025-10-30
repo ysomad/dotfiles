@@ -215,7 +215,7 @@
     cursor = {
       package = pkgs.capitaine-cursors;
       name = "capitaine-cursors";
-      size = 24;
+      size = 30;
     };
     fonts = {
       serif = {
@@ -416,7 +416,7 @@
     rclone
 
     # documents
-    libreoffice
+    libreoffice-qt
   ];
 
   fonts.packages = with pkgs; [
