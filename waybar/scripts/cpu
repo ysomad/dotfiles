@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+CACHE_DIR="/dev/shm/waybar_cpu_${USER}"
+[[ ! -d "$CACHE_DIR" ]] && mkdir -p "$CACHE_DIR"
+
+temp=$(awk '{printf "%.0f", $1/1000}' /sys/class/thermal/thermal_zone0/temp)
+tooltip="Temp: ${temp}°C"
+
+# Read /proc/stat and process each line
+line_num=0
+while read -r label user nice system idle iowait irq softirq steal guest guest_nice; do
+    [[ ! $label =~ ^cpu[0-9]*$ ]] && continue
+
+    total=$((user + nice + system + idle + iowait + irq + softirq + steal))
+
+    if [[ $label == "cpu" ]]; then
+        cache_file="$CACHE_DIR/total"
+        name="Usage"
+    else
+        cache_file="$CACHE_DIR/core$line_num"
+        name="Core$line_num"
+        ((line_num++))
+    fi
+
+    # Read previous values
+    if [[ -f "$cache_file" ]]; then
+        read prev_total prev_idle < "$cache_file"
+    else
+        prev_total=0
+        prev_idle=0
+    fi
+
+    # Save current values
+    echo "$total $idle" > "$cache_file"
+
+    # Calculate usage
+    diff_total=$((total - prev_total))
+    diff_idle=$((idle - prev_idle))
+
+    if ((diff_total > 0)); then
+        usage=$((100 * (diff_total - diff_idle) / diff_total))
+    else
+        usage=0
+    fi
+
+    tooltip="${tooltip}\n${name}: ${usage}%"
+
+done < /proc/stat
+
+printf '{"text":"","tooltip":"%s"}\n' "$tooltip"

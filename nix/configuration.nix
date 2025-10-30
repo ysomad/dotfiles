@@ -26,6 +26,10 @@
     variant = "";
   };
 
+  # Inputs
+  services.libinput.enable = true; # required for touchpad support
+  boot.kernelParams = ["usbcore.autosuspend=120"]; # autosusped usd devices after 2 min
+
   # Autologin
   services.getty.autologinUser = "ysomad";
 
@@ -43,27 +47,29 @@
     HandlePowerKey = "hibernate";
   };
 
-  # Touchpad
-  services.libinput.enable = true;
-
   # Battery
   # https://nixos.wiki/wiki/Laptop
+  # https://www.reddit.com/r/NixOS/comments/18ipxjo/laptop_power_management/
   powerManagement = {
     enable = true;
     powertop.enable = true;
   };
-  services.power-profiles-daemon.enable = false;
-  services.tlp = {
-    enable = true;
-    settings = {
-      CPU_BOOST_ON_AC = 1;
-      CPU_BOOST_ON_BAT = 0;
 
-      CPU_SCALING_GOVERNOR_ON_AC = "performance";
-      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+  services = {
+    power-profiles-daemon.enable = false;
+    thermald.enable = true;
+    tlp = {
+      enable = true;
+      settings = {
+        CPU_BOOST_ON_AC = 1;
+        CPU_BOOST_ON_BAT = 0;
 
-      START_CHARGE_THRESH_BAT0 = 25;
-      STOP_CHARGE_THRESH_BAT0 = 95;
+        CPU_SCALING_GOVERNOR_ON_AC = "performance";
+        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+
+        START_CHARGE_THRESH_BAT0 = 40;
+        STOP_CHARGE_THRESH_BAT0 = 80;
+      };
     };
   };
 
@@ -278,9 +284,11 @@
     libinput
 
     # Shells / Terminals
-    zsh
     kitty
     foot
+    fish
+    starship
+    atuin # shell history
 
     # DB
     dbeaver-bin
@@ -399,19 +407,18 @@
   };
 
   # Shell
-  users.defaultUserShell = pkgs.zsh;
-  environment.shells = with pkgs; [zsh];
+  users.defaultUserShell = pkgs.fish;
+  environment.shells = with pkgs; [fish];
 
-  programs.zsh = {
+  programs.fish = {
     enable = true;
-    enableCompletion = true;
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
-    histSize = 100000;
     loginShellInit = ''
-      if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-        exec Hyprland
-      fi
+      if [ (tty) = "/dev/tty1" ]
+          exec Hyprland
+      end
+      if test (tty) = "/dev/tty1"
+          exec Hyprland
+      end
     '';
     shellAliases = {
       rebuild = "sudo nixos-rebuild switch --flake ~/dotfiles";
@@ -426,16 +433,13 @@
       vim = "nvim";
       vi = "nvim";
     };
-    ohMyZsh = {
-      enable = true;
-      plugins = ["git" "sudo"];
-      theme = "robbyrussell";
-    };
   };
+
+  programs.starship.enable = true;
 
   programs.foot = {
     enable = true;
-    enableZshIntegration = true;
+    enableFishIntegration = true;
   };
 
   programs.gnupg.agent = {
@@ -450,7 +454,10 @@
     };
   };
 
-  programs.zoxide.enable = true;
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+  };
 
   programs.hyprland = {
     enable = true;

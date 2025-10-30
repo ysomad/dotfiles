@@ -23,7 +23,7 @@
   opacity: 0.5;
 }
 
-#cpu,
+#custom-cpu,
 #battery,
 #pulseaudio {
   min-width: 12px;

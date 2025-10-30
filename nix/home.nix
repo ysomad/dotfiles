@@ -63,23 +63,26 @@
     };
   };
 
+  programs.fuzzel = {
+    enable = true;
+    settings = {
+      border.radius = 3;
+      colors.border = lib.mkForce "727272ee";
+    };
+  };
+
   programs.foot.enable = true;
-  programs.fuzzel.enable = true;
-  programs.btop.enable = true;
+  programs.fish.enable = true;
+  programs.eza.enable = true;
 
-  programs.fzf = {
+  programs.starship = {
     enable = true;
-    enableZshIntegration = true;
+    enableFishIntegration = true;
   };
 
-  programs.zoxide = {
+  programs.atuin = {
     enable = true;
-    enableZshIntegration = true;
-  };
-
-  programs.eza = {
-    enable = true;
-    enableZshIntegration = true;
+    enableFishIntegration = true;
   };
 
   programs.ssh = {
@@ -183,6 +186,8 @@
       bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
     '';
   };
+
+  programs.btop.enable = true;
 
   # Notifications
   stylix.targets.mako.enable = true;
