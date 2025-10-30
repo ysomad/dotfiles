@@ -91,20 +91,21 @@
       directory = {
         truncation_length = 1;
         truncate_to_repo = false;
-        format = "[$path](cyan) ";
+        format = "[$path](bold cyan) ";
       };
 
       git_branch = {
-        format = "[$branch](magenta)";
+        symbol = "";
+        format = "[$symbol $branch](bold magenta)";
       };
 
       git_status = {
-        format = "[$all_status$ahead_behind](magenta) ";
+        format = "[$all_status$ahead_behind](bold magenta) ";
       };
 
       cmd_duration = {
         min_time = 1000;
-        format = "[$duration](bright-black) ";
+        format = "[$duration](bold bright-black) ";
       };
     };
   };
