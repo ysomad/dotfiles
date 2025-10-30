@@ -12,7 +12,7 @@
     "bluetooth",
     "network",
     "pulseaudio",
-    "cpu",
+    "custom/cpu",
     "battery"
   ],
   "hyprland/workspaces": {
@@ -40,16 +40,17 @@
       "6": []
     }
   },
-  "cpu": {
-    "interval": 5,
+  "custom/cpu": {
+    "exec": "$HOME/.config/waybar/scripts/cpu",
+    "return-type": "json",
     "format": "󰍛",
+    "interval": 5,
     "on-click": "sh -c '$TERMINAL btop'"
   },
   "clock": {
     "format": "{:L%A %H:%M}",
     "format-alt": "{:L%d %B W%V %Y}",
-    "tooltip": false,
-    // "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select"
+    "tooltip": false
   },
   "group/tray-expander": {
     "orientation": "inherit",
@@ -92,12 +93,12 @@
     "format-full": "󰂅",
     "tooltip-format-discharging": "{power:>1.0f}W↓ {capacity}%",
     "tooltip-format-charging": "{power:>1.0f}W↑ {capacity}%",
+    "tooltip-format-plugged": "Plugged {capacity}%",
     "interval": 5,
     "states": {
       "warning": 20,
       "critical": 10
     }
-    // "on-click": "omarchy-menu power"
   },
   "bluetooth": {
     "format": "",
