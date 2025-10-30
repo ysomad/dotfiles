@@ -72,17 +72,62 @@
   };
 
   programs.foot.enable = true;
-  programs.fish.enable = true;
-  programs.eza.enable = true;
+  programs.fish = {
+    enable = true;
+    interactiveShellInit = ''
+      set fish_greeting # Disable greeting
+      set fish_color_command white
+      set fish_color_normal white
+    '';
+  };
+  programs.eza = {
+    enable = true;
+    enableFishIntegration = false; # Disable auto-generated aliases (use configuration.nix aliases instead)
+  };
 
   programs.starship = {
     enable = true;
     enableFishIntegration = true;
+    settings = {
+      format = "$directory$git_branch$git_status$cmd_duration$character";
+
+      character = {
+        success_symbol = "";
+        error_symbol = "";
+      };
+
+      directory = {
+        truncation_length = 1;
+        truncate_to_repo = false;
+        style = "white";
+        format = "[$path]($style) ";
+      };
+
+      git_branch = {
+        style = "magenta";
+        format = "[$branch]($style)";
+      };
+
+      git_status = {
+        style = "magenta";
+        format = "[$all_status$ahead_behind]($style) ";
+      };
+
+      cmd_duration = {
+        min_time = 1000;
+        format = "[$duration]($style) ";
+        style = "bright-black";
+      };
+    };
   };
 
   programs.atuin = {
     enable = true;
     enableFishIntegration = true;
+    flags = ["--disable-up-arrow"];
+    settings = {
+      invert = true;
+    };
   };
 
   programs.ssh = {

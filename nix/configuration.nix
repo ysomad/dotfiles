@@ -47,30 +47,14 @@
     HandlePowerKey = "hibernate";
   };
 
-  # Battery
-  # https://nixos.wiki/wiki/Laptop
-  # https://www.reddit.com/r/NixOS/comments/18ipxjo/laptop_power_management/
-  powerManagement = {
-    enable = true;
-    powertop.enable = true;
-  };
-
+  # Power management
+  #
+  # Should use PPD since its working better for AMD
+  # https://community.frame.work/t/responded-amd-7040-sleep-states/38101/13
   services = {
-    power-profiles-daemon.enable = false;
-    thermald.enable = true;
-    tlp = {
-      enable = true;
-      settings = {
-        CPU_BOOST_ON_AC = 1;
-        CPU_BOOST_ON_BAT = 0;
-
-        CPU_SCALING_GOVERNOR_ON_AC = "performance";
-        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-
-        START_CHARGE_THRESH_BAT0 = 40;
-        STOP_CHARGE_THRESH_BAT0 = 80;
-      };
-    };
+    power-profiles-daemon.enable = true;
+    thermald.enable = false;
+    tlp.enable = false;
   };
 
   # Network
@@ -181,7 +165,7 @@
   # Bluetooth
   hardware.bluetooth = {
     enable = true;
-    powerOnBoot = false;
+    powerOnBoot = true; # TODO: enable it only if HDMI is connected
   };
   services.blueman.enable = true;
 
@@ -398,13 +382,10 @@
     libreoffice
   ];
 
-  fonts = {
-    packages = with pkgs; [
-      noto-fonts
-      font-awesome
-      nerd-fonts.blex-mono
-    ];
-  };
+  fonts.packages = with pkgs; [
+    font-awesome
+    nerd-fonts.blex-mono
+  ];
 
   # Shell
   users.defaultUserShell = pkgs.fish;
@@ -424,14 +405,18 @@
       rebuild = "sudo nixos-rebuild switch --flake ~/dotfiles";
       cleanup = "sudo nix-collect-garbage -d";
       upgrade = "sudo nixos-rebuild switch --upgrade --flake ~/dotfiles";
+      g = "git";
       cd = "z";
+      dc = "z";
       ls = "eza";
       sl = "eza";
       la = "eza -la";
       al = "eza -la";
       cat = "bat";
+      ct = "bat";
       vim = "nvim";
       vi = "nvim";
+      v = "nvim";
     };
   };
 
@@ -465,7 +450,7 @@
   };
 
   services.zapret = {
-    enable = true;
+    enable = false;
 
     # https://github.com/bol-van/zapret/discussions/1594
     # https://github.com/bol-van/zapret/issues/623
