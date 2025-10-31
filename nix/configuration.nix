@@ -67,13 +67,11 @@
         CPU_BOOST_ON_AC = 0; # disable coz its getting kinda hot
         CPU_BOOST_ON_BAT = 0;
 
-        CPU_MIN_PERF_ON_AC = 20;
         CPU_MAX_PERF_ON_AC = 100;
-        CPU_MIN_PERF_ON_BAT = 20;
         CPU_MAX_PERF_ON_BAT = 20;
 
-        START_CHARGE_THRESH_BAT0 = 50;
-        STOP_CHARGE_THRESH_BAT0 = 80;
+        START_CHARGE_THRESH_BAT0 = 80;
+        STOP_CHARGE_THRESH_BAT0 = 90;
       };
     };
   };
@@ -293,7 +291,7 @@
     tree
     brightnessctl
     libinput
-    atuin # shell history fzf
+    atuin
 
     # Shells / Terminals
     kitty
@@ -303,6 +301,7 @@
 
     # DB
     dbeaver-bin
+    jetbrains.datagrip
 
     # Containers
     # podman
@@ -314,8 +313,7 @@
 
     # Editors
     neovim
-    # vscode
-    # zed
+    zed
 
     # LSP
     gopls
@@ -333,12 +331,14 @@
 
     # Go
     go
+    gotools
     gofumpt
     golines
     gci
     goose
     golangci-lint
     go-swagger
+    mockgen
 
     # Python
     python3
@@ -358,11 +358,9 @@
 
     # Messengers
     telegram-desktop
-    slack
 
     # Video
     mpv
-    # obs-studio
     ani-cli
 
     # Emails
@@ -559,12 +557,16 @@
     tunMode = true;
   };
 
-  programs.nekoray = {
+  services.smartd = {
     enable = true;
-    tunMode = {
-      enable = true;
-      setuid = true;
-    };
+    devices = [
+      {
+        device = "/dev/disk/by-id/nvme-eui.ace42e000a5943cd2ee4ac0000000001";
+      }
+      {
+        device = "/dev/disk/by-id/nvme-SKHynix_HFS512GD9TNI-L2B0B_NY06N091511106O3K";
+      }
+    ];
   };
 
   system.stateVersion = "25.05";
