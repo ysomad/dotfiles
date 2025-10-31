@@ -230,8 +230,6 @@
     TERMINAL = "foot";
     TERM = "foot";
     BROWSER = "firefox-beta";
-
-    # hyprland
     NIXOS_OZONE_WL = "1";
   };
 
