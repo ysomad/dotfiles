@@ -398,6 +398,7 @@
     hyprland
     waybar
     wbg
+    hyprshot
 
     # Notifications
     libnotify
