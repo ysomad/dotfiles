@@ -12,5 +12,8 @@
     go-swagger = stable.go-swagger;
 
     gimp = stable.gimp;
+
+    # broken login on unstable 31.10.25
+    insomnia = stable.insomnia;
   };
 }
