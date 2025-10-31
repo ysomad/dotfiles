@@ -72,7 +72,7 @@
         CPU_MIN_PERF_ON_BAT = 20;
         CPU_MAX_PERF_ON_BAT = 20;
 
-        START_CHARGE_THRESH_BAT0 = 40;
+        START_CHARGE_THRESH_BAT0 = 50;
         STOP_CHARGE_THRESH_BAT0 = 80;
       };
     };
@@ -197,11 +197,6 @@
     pulse.enable = true;
     alsa.enable = true;
     alsa.support32Bit = true;
-    wireplumber.extraConfig."10-bluez" = {
-      "monitor.bluez.properties" = {
-        "bluez5.enable-hw-volume" = false;
-      };
-    };
   };
 
   # Themes
@@ -312,17 +307,17 @@
     dbeaver-bin
 
     # Containers
-    podman
-    podman-compose
-    lazydocker
+    # podman
+    # podman-compose
+    # lazydocker
 
     # AI
     claude-code
 
     # Editors
     neovim
-    vscode
-    zed
+    # vscode
+    # zed
 
     # LSP
     gopls
@@ -369,7 +364,7 @@
 
     # Video
     mpv
-    obs-studio
+    # obs-studio
     ani-cli
 
     # Emails
@@ -382,7 +377,6 @@
     # VPN / Proxy
     zapret
     clash-verge-rev
-    nekoray
 
     # Torrents
     transmission_4-gtk
@@ -413,7 +407,7 @@
     rclone
 
     # documents
-    libreoffice-qt
+    libreoffice
   ];
 
   fonts.packages = with pkgs; [
