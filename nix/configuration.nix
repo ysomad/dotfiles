@@ -79,6 +79,7 @@
   # Network
   networking = {
     hostName = "nixos";
+    stevenblack.enable = true;
 
     # use iwd only
     networkmanager.enable = false;
@@ -286,12 +287,12 @@
     btop
     tree-sitter
     hl-log-viewer
-    fastfetch
     unzip
     tree
     brightnessctl
     libinput
     atuin
+    astroterm
 
     # Shells / Terminals
     kitty
@@ -300,7 +301,6 @@
     starship
 
     # DB
-    dbeaver-bin
     jetbrains.datagrip
 
     # Containers
@@ -334,6 +334,7 @@
     gotools
     gofumpt
     golines
+    gotests
     gci
     goose
     golangci-lint
@@ -371,7 +372,6 @@
     # postman
 
     # VPN / Proxy
-    zapret
     clash-verge-rev
 
     # Torrents
@@ -473,100 +473,10 @@
     xwayland.enable = true;
   };
 
-  services.zapret = {
-    enable = false;
-
-    # https://github.com/bol-van/zapret/discussions/1594
-    # https://github.com/bol-van/zapret/issues/623
-    params = [
-      "--dpi-desync=fake,disorder2"
-      "--dpi-desync-ttl=1"
-      "--dpi-desync-autottl=2"
-    ];
-
-    # https://github.com/Flowseal/zapret-discord-youtube/blob/main/lists/list-general.txt
-    whitelist = [
-      "cloudflare-ech.com"
-      "encryptedsni.com"
-      "cloudflareaccess.com"
-      "cloudflareapps.com"
-      "cloudflarebolt.com"
-      "cloudflareclient.com"
-      "cloudflareinsights.com"
-      "cloudflareok.com"
-      "cloudflarepartners.com"
-      "cloudflareportal.com"
-      "cloudflarepreview.com"
-      "cloudflareresolve.com"
-      "cloudflaressl.com"
-      "cloudflarestatus.com"
-      "cloudflarestorage.com"
-      "cloudflarestream.com"
-      "cloudflaretest.com"
-      "dis.gd"
-      "discord-attachments-uploads-prd.storage.googleapis.com"
-      "discord.app"
-      "discord.co"
-      "discord.com"
-      "discord.design"
-      "discord.dev"
-      "discord.gift"
-      "discord.gifts"
-      "discord.gg"
-      "discord.media"
-      "discord.new"
-      "discord.store"
-      "discord.status"
-      "discord-activities.com"
-      "discordactivities.com"
-      "discordapp.com"
-      "discordapp.net"
-      "discordcdn.com"
-      "discordmerch.com"
-      "discordpartygames.com"
-      "discordsays.com"
-      "discordsez.com"
-      "frankerfacez.com"
-      "ffzap.com"
-      "betterttv.net"
-      "7tv.app"
-      "7tv.io"
-      "yt3.ggpht.com"
-      "yt4.ggpht.com"
-      "yt3.googleusercontent.com"
-      "googlevideo.com"
-      "jnn-pa.googleapis.com"
-      "stable.dl2.discordapp.net"
-      "wide-youtube.l.google.com"
-      "youtube-nocookie.com"
-      "youtube-ui.l.google.com"
-      "youtube.com"
-      "youtubeembeddedplayer.googleapis.com"
-      "youtubekids.com"
-      "youtubei.googleapis.com"
-      "youtu.be"
-      "yt-video-upload.l.google.com"
-      "ytimg.com"
-      "ytimg.l.google.com"
-    ];
-  };
-
   programs.clash-verge = {
     enable = true;
     serviceMode = true;
     tunMode = true;
-  };
-
-  services.smartd = {
-    enable = true;
-    devices = [
-      {
-        device = "/dev/disk/by-id/nvme-eui.ace42e000a5943cd2ee4ac0000000001";
-      }
-      {
-        device = "/dev/disk/by-id/nvme-SKHynix_HFS512GD9TNI-L2B0B_NY06N091511106O3K";
-      }
-    ];
   };
 
   system.stateVersion = "25.05";
