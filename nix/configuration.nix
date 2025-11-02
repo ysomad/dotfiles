@@ -17,6 +17,21 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.kernelParams = [
+    "usbcore.autosuspend=120" # autosuspend usbs after 2m
+    "resume_offset=<offset>" # for hibernation
+  ];
+
+  # Hibernation
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 16 * 1024;
+    }
+  ];
+
+  boot.resumeDevice = "/dev/disk/by-uuid/922f5dcd-fd26-4857-afff-0254fde0c30e";
+
   # Locale
   time.timeZone = "Asia/Novosibirsk";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -28,7 +43,6 @@
 
   # Inputs
   services.libinput.enable = true; # required for touchpad support
-  boot.kernelParams = ["usbcore.autosuspend=120"]; # autosusped usd devices after 2 min
 
   # Autologin
   services.getty.autologinUser = "ysomad";
@@ -41,37 +55,25 @@
   };
 
   # Logind
+  # https://www.freedesktop.org/software/systemd/man/latest/logind.conf.html
   services.logind.settings.Login = {
     HandleLidSwitch = "hibernate";
     HandleLidSwitchExternalPower = "ignore";
     HandlePowerKey = "hibernate";
+    HandlePowerKeyLongPress = "poweroff";
   };
 
   # Power management
-  powerManagement.powertop.enable = true;
-  services = {
-    power-profiles-daemon.enable = false;
-    thermald.enable = false;
-
-    system76-scheduler.settings.cfsProfiles.enable = true;
-
-    tlp = {
-      enable = true;
-      settings = {
-        CPU_SCALING_GOVERNOR_ON_AC = "performance";
-        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-
-        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-        CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-
-        CPU_BOOST_ON_AC = 0; # disable coz its getting kinda hot
-        CPU_BOOST_ON_BAT = 0;
-
-        CPU_MAX_PERF_ON_AC = 100;
-        CPU_MAX_PERF_ON_BAT = 20;
-
-        START_CHARGE_THRESH_BAT0 = 80;
-        STOP_CHARGE_THRESH_BAT0 = 90;
+  services.auto-cpufreq = {
+    enable = true;
+    settings = {
+      battery = {
+        governor = "powersave";
+        turbo = "never";
+      };
+      charger = {
+        governor = "performance";
+        turbo = "auto";
       };
     };
   };
@@ -190,6 +192,7 @@
   services.blueman.enable = true;
 
   # Audio
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -292,7 +295,6 @@
     brightnessctl
     libinput
     atuin
-    astroterm
 
     # Shells / Terminals
     kitty

@@ -17,13 +17,6 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
-
-    elephant.url = "github:abenz1267/elephant";
-
-    walker = {
-      url = "github:abenz1267/walker";
-      inputs.elephant.follows = "elephant";
-    };
   };
 
   outputs = {
@@ -33,7 +26,6 @@
     home-manager,
     stylix,
     hyprland,
-    walker,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -51,12 +43,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.users.ysomad = {
-            imports = [
-              ./nix/home.nix
-              inputs.walker.homeManagerModules.default
-            ];
-          };
+          home-manager.users.ysomad = import ./nix/home.nix;
           home-manager.extraSpecialArgs = specialArgs;
         }
         nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
