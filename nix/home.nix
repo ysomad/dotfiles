@@ -27,13 +27,7 @@
 
   programs.foot.enable = true;
 
-  programs.fuzzel = {
-    enable = true;
-    settings = {
-      border.radius = 3;
-      colors.border = lib.mkForce "727272ee";
-    };
-  };
+  programs.rofi.enable = true;
 
   programs.fish = {
     enable = true;
