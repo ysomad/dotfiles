@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+WALLPAPER_DIR="$HOME/dotfiles/wallpapers"
+STATE_DIR="/dev/shm/wbg"
+WALLPAPER_LIST_CACHE="$STATE_DIR/wallpaper-list"
+CURRENT_INDEX_FILE="$STATE_DIR/current-index"
+
+build_wallpaper_cache() {
+    find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) | sort > "$WALLPAPER_LIST_CACHE"
+}
+
+get_next_wallpaper() {
+    # Check if cache exists and is not empty
+    if [ ! -f "$WALLPAPER_LIST_CACHE" ] || [ ! -s "$WALLPAPER_LIST_CACHE" ]; then
+        build_wallpaper_cache
+    fi
+
+    # Read wallpapers into array
+    local wallpapers=()
+    mapfile -t wallpapers < "$WALLPAPER_LIST_CACHE"
+
+    local total_wallpapers=${#wallpapers[@]}
+
+    if [ "$total_wallpapers" -eq 0 ]; then
+        return 1
+    fi
+
+    # Get current index, default to -1 (so next will be 0)
+    local current_index=-1
+    [ -f "$CURRENT_INDEX_FILE" ] && read -r current_index < "$CURRENT_INDEX_FILE"
+
+    # Calculate next index (wrap around to 0 if at end)
+    local next_index=$(( (current_index + 1) % total_wallpapers ))
+
+    # Get the wallpaper at next_index using array indexing
+    local next_wallpaper="${wallpapers[$next_index]}"
+
+    # Save the new index
+    echo "$next_index" > "$CURRENT_INDEX_FILE"
+
+    echo "$next_wallpaper"
+}
+
+[ ! -d "$WALLPAPER_DIR" ] && { notify-send "Wallpaper error" "Directory $WALLPAPER_DIR does not exist"; exit 1; }
+
+mkdir -p "$STATE_DIR"
+
+next_wallpaper=$(get_next_wallpaper)
+
+[ -z "$next_wallpaper" ] && { notify-send "Wallpaper error" "No wallpapers found in $WALLPAPER_DIR"; exit 1; }
+
+pkill wbg
+wbg "$next_wallpaper" &
+
+notify-send "Wallpaper changed" "${next_wallpaper##*/}"

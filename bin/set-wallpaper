@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+STATE_DIR="/dev/shm/wbg"
+WALLPAPER_LIST_CACHE="$STATE_DIR/wallpaper-list"
+CURRENT_INDEX_FILE="$STATE_DIR/current-index"
+
+if [ -f "$CURRENT_INDEX_FILE" ] && [ -f "$WALLPAPER_LIST_CACHE" ]; then
+    current_index=$(cat "$CURRENT_INDEX_FILE")
+    current_wallpaper=$(sed -n "$((current_index + 1))p" "$WALLPAPER_LIST_CACHE")
+
+    if [ -n "$current_wallpaper" ] && [ -f "$current_wallpaper" ]; then
+        pkill wbg
+        wbg "$current_wallpaper" &
+        exit 0
+    fi
+fi
+
+exec ./cycle-wallpaper
