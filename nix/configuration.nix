@@ -339,6 +339,7 @@
     gofumpt
     golines
     gotests
+    gomodifytags
     gci
     goose
     golangci-lint
