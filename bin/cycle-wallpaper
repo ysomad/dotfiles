@@ -10,9 +10,15 @@ build_wallpaper_cache() {
 }
 
 get_next_wallpaper() {
-    # Check if cache exists and is not empty
+    # Count files in wallpaper directory
+    local dir_count=$(ls -1 "$WALLPAPER_DIR" | wc -l)
+
+    # Check if cache needs rebuild
     if [ ! -f "$WALLPAPER_LIST_CACHE" ] || [ ! -s "$WALLPAPER_LIST_CACHE" ]; then
         build_wallpaper_cache
+    else
+        local cache_count=$(wc -l < "$WALLPAPER_LIST_CACHE")
+        [ "$cache_count" -ne "$dir_count" ] && build_wallpaper_cache
     fi
 
     # Read wallpapers into array

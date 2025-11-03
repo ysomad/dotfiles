@@ -15,4 +15,5 @@ if [ -f "$CURRENT_INDEX_FILE" ] && [ -f "$WALLPAPER_LIST_CACHE" ]; then
     fi
 fi
 
-exec ./cycle-wallpaper
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+exec "$SCRIPT_DIR/cycle-wallpaper"

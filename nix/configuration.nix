@@ -7,18 +7,18 @@
     ./hardware-configuration.nix
   ];
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  nixpkgs.overlays = [
-    # Add overlays your own flake exports (from overlays and pkgs dir):
-    outputs.overlays.modifications
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelParams = [
+    "usbcore.autosuspend=120" # autosuspend usbs after 2m
   ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.kernelParams = [
-    "usbcore.autosuspend=120" # autosuspend usbs after 2m
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  nixpkgs.overlays = [
+    outputs.overlays.modifications
   ];
 
   # Hibernation
@@ -207,9 +207,8 @@
     polarity = "dark";
     base16Scheme = ../themes/no-clown-fiesta.yaml;
     cursor = {
-      package = pkgs.capitaine-cursors;
-      name = "capitaine-cursors";
-      size = 30;
+      package = pkgs.adwaita-icon-theme;
+      name = "Adwaita";
     };
     fonts = {
       serif = {
@@ -377,6 +376,7 @@
 
     # VPN / Proxy
     clash-verge-rev
+    nekoray
 
     # Torrents
     transmission_4-gtk
