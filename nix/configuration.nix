@@ -363,6 +363,7 @@
 
     # Messengers
     telegram-desktop
+    slack
 
     # Video
     mpv
@@ -481,6 +482,14 @@
     enable = true;
     serviceMode = true;
     tunMode = true;
+  };
+
+  programs.nekoray = {
+    enable = true;
+    tunMode = {
+      enable = true;
+      setuid = true;
+    };
   };
 
   system.stateVersion = "25.05";
