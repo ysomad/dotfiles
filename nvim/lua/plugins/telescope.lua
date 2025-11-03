@@ -11,6 +11,10 @@ return {
 
 		require("telescope").setup({
 			defaults = {
+				preview = {
+					-- disable tressitter previews since im using it from main and its not compatible with telescope yet
+					treesitter = false,
+				},
 				path_display = { "truncate " },
 				mappings = {
 					i = {

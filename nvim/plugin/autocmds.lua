@@ -41,3 +41,11 @@ autocmd("FileType", {
 		vim.opt_local.tabstop = 2
 	end,
 })
+
+-- treesitter syntax highlighting
+autocmd("FileType", {
+	pattern = { "go,sql" },
+	callback = function()
+		vim.treesitter.start()
+	end,
+})
