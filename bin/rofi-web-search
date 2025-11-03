@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+# Rofi script for web searches with ! prefix
+# Usage: rofi -modi "websearch:~/dotfiles/bin/rofi-web-search" -show websearch
+
+if [ -z "$@" ]; then
+    echo -en "!nix <query>\0info\x1fSearch NixOS packages\n"
+    echo -en "!home <query>\0info\x1fSearch home-manager options\n"
+    echo -en "!gh <query>\0info\x1fSearch GitHub\n"
+    exit 0
+fi
+
+input=$(echo "$*" | awk '{$1=$1};1')
+
+[[ "$input" == !* ]] && input="${input:1}"
+
+search_engine="${input%% *}"
+query="${input#* }"
+
+[[ "$search_engine" == "$query" ]] && search_engine="default"
+
+search_term="${query// /+}"
+
+case "$search_engine" in
+    nix)
+        url="https://search.nixos.org/packages?channel=unstable&query=${search_term}"
+        ;;
+    home)
+        url="https://home-manager-options.extranix.com/?query=${search_term}&release=release-25.05"
+        ;;
+    gh)
+        url="https://github.com/search?q=${search_term}"
+        ;;
+    default|*)
+        url="https://www.google.com/search?q=${search_term}"
+        ;;
+esac
+
+xdg-open "$url" &
+
+exit 0

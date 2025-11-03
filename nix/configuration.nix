@@ -19,8 +19,6 @@
 
   boot.kernelParams = [
     "usbcore.autosuspend=120" # autosuspend usbs after 2m
-    "resume_offset=<offset>" # for hibernation
-    "mem_sleep_default=deep"
   ];
 
   # Hibernation
@@ -391,7 +389,7 @@
     keepassxc
 
     # App launcher
-    fuzzel
+    rofi
 
     # File manager
     nautilus
