@@ -20,6 +20,7 @@
   boot.kernelParams = [
     "usbcore.autosuspend=120" # autosuspend usbs after 2m
     "resume_offset=<offset>" # for hibernation
+    "mem_sleep_default=deep"
   ];
 
   # Hibernation
@@ -57,23 +58,24 @@
   # Logind
   # https://www.freedesktop.org/software/systemd/man/latest/logind.conf.html
   services.logind.settings.Login = {
-    HandleLidSwitch = "hibernate";
+    HandleLidSwitch = "suspend-then-hibernate";
     HandleLidSwitchExternalPower = "ignore";
     HandlePowerKey = "hibernate";
     HandlePowerKeyLongPress = "poweroff";
   };
 
   # Power management
-  services.auto-cpufreq = {
-    enable = true;
-    settings = {
-      battery = {
-        governor = "powersave";
-        turbo = "never";
-      };
-      charger = {
-        governor = "performance";
-        turbo = "auto";
+  powerManagement.powertop.enable = true;
+  services = {
+    power-profiles-daemon.enable = false;
+    tlp = {
+      enable = true;
+      settings = {
+        CPU_BOOST_ON_AC = 0;
+        CPU_BOOST_ON_BAT = 0;
+        CPU_SCALING_GOVERNOR_ON_AC = "performance";
+        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+        STOP_CHARGE_THRESH_BAT0 = 85;
       };
     };
   };
