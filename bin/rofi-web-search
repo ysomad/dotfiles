@@ -4,9 +4,9 @@
 # Usage: rofi -modi "websearch:~/dotfiles/bin/rofi-web-search" -show websearch
 
 if [ -z "$@" ]; then
-    echo -en "!nix <query>\0info\x1fSearch NixOS packages\n"
-    echo -en "!home <query>\0info\x1fSearch home-manager options\n"
-    echo -en "!gh <query>\0info\x1fSearch GitHub\n"
+    echo -en "!nix <query>\n"
+    echo -en "!home <query>\n"
+    echo -en "!gh <query>\n"
     exit 0
 fi
 
