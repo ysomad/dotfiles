@@ -185,6 +185,7 @@
   };
 
   # Bluetooth
+  hardware.enableAllFirmware = true;
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true; # TODO: enable it only if HDMI is connected
@@ -209,6 +210,7 @@
     cursor = {
       package = pkgs.adwaita-icon-theme;
       name = "Adwaita";
+      size = 24;
     };
     fonts = {
       serif = {
@@ -272,7 +274,6 @@
     # ssh
     gnupg
     pinentry-tty
-    keychain
 
     # CLI
     eza
