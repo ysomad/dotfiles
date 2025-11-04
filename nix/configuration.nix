@@ -49,7 +49,7 @@
   users.users.ysomad = {
     isNormalUser = true;
     description = "Aleksei Malykh";
-    extraGroups = ["network" "audio" "wheel"];
+    extraGroups = ["network" "audio" "wheel" "podman"];
     packages = [];
   };
 
@@ -255,6 +255,16 @@
     };
   };
 
+  # Virtualisation
+  virtualisation = {
+    containers.enable = true;
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
+
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     # Audio
@@ -306,9 +316,9 @@
     jetbrains.datagrip
 
     # Containers
-    # podman
-    # podman-compose
-    # lazydocker
+    podman
+    podman-compose
+    lazydocker
 
     # AI
     claude-code
@@ -373,11 +383,9 @@
 
     # API clients
     insomnia
-    # postman
 
     # VPN / Proxy
     clash-verge-rev
-    nekoray
 
     # Torrents
     transmission_4-gtk
@@ -484,13 +492,14 @@
     tunMode = true;
   };
 
-  programs.nekoray = {
-    enable = true;
-    tunMode = {
-      enable = true;
-      setuid = true;
-    };
-  };
+  # https://github.com/NixOS/nixpkgs/issues/457613
+  # programs.nekoray = {
+  #     enable = true;
+  #     tunMode = {
+  #       enable = true;
+  #       setuid = true;
+  #     };
+  #   };
 
   system.stateVersion = "25.05";
 }
