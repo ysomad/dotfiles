@@ -201,6 +201,19 @@
     alsa.support32Bit = true;
   };
 
+  # Disable ThinkPad microphone LED
+  # https://discourse.nixos.org/t/mute-key-indicator-light-is-always-on/39528
+  systemd.services.disable-mic-led = {
+    description = "Disable microphone LED";
+    wantedBy = ["sound.target"];
+    after = ["sound.target"];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.bash}/bin/bash -c 'echo off > /sys/class/sound/ctl-led/mic/mode'";
+      RemainAfterExit = true;
+    };
+  };
+
   # Themes
   stylix = {
     enable = true;
