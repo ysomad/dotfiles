@@ -25,6 +25,11 @@
     DEFAULT_BROWSER = "firefox-beta";
   };
 
+  programs.keychain = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
   programs.foot.enable = true;
 
   programs.rofi = {
