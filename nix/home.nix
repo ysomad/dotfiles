@@ -27,7 +27,10 @@
 
   programs.foot.enable = true;
 
-  programs.rofi.enable = true;
+  programs.rofi = {
+    enable = true;
+    plugins = [pkgs.rofi-emoji];
+  };
 
   programs.fish = {
     enable = true;
