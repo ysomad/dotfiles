@@ -279,9 +279,7 @@
 
   # Secrets
   services.gnome.gnome-keyring.enable = true;
-  security.pam.services = {
-    login.enableGnomeKeyring = true;
-  };
+  security.pam.services.login.enableGnomeKeyring = true;
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
@@ -298,10 +296,6 @@
     # Git
     git
     lazygit
-
-    # ssh
-    gnupg
-    pinentry-tty
 
     # CLI
     eza
@@ -323,6 +317,9 @@
     brightnessctl
     libinput
     atuin
+
+    # SSH
+    gnupg
 
     # Shells / Terminals
     kitty
@@ -480,11 +477,6 @@
   programs.foot = {
     enable = true;
     enableFishIntegration = true;
-  };
-
-  programs.gnupg.agent = {
-    enable = true;
-    pinentryPackage = pkgs.pinentry-tty;
   };
 
   programs.zoxide = {
