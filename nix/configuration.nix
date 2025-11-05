@@ -318,6 +318,9 @@
     libinput
     atuin
 
+    # SSH
+    gnupg
+
     # Shells / Terminals
     kitty
     foot
