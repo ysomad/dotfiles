@@ -476,8 +476,6 @@
     enableFishIntegration = true;
   };
 
-  programs.gnupg.agent.enable = true;
-
   programs.zoxide = {
     enable = true;
     enableFishIntegration = true;
