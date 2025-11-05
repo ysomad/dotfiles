@@ -343,7 +343,7 @@
 
     # Editors
     neovim
-    zed
+    neovide
 
     # LSP
     gopls

@@ -233,4 +233,6 @@
 
   # bluetooth headset button to control media
   services.mpris-proxy.enable = true;
+
+  programs.neovide.enable = true;
 }
