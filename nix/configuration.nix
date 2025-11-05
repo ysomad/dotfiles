@@ -277,11 +277,13 @@
     };
   };
 
-  # Secrets
-  services.gnome.gnome-keyring.enable = true;
-  security.pam.services = {
-    login.enableGnomeKeyring = true;
+  # Secrets and SSH agent
+  services.gnome = {
+    gnome-keyring.enable = true;
+    gcr-ssh-agent.enable = true;
   };
+
+  security.pam.services.login.enableGnomeKeyring = true;
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
@@ -298,10 +300,6 @@
     # Git
     git
     lazygit
-
-    # ssh
-    gnupg
-    pinentry-tty
 
     # CLI
     eza
@@ -482,10 +480,7 @@
     enableFishIntegration = true;
   };
 
-  programs.gnupg.agent = {
-    enable = true;
-    pinentryPackage = pkgs.pinentry-tty;
-  };
+  programs.gnupg.agent.enable = true;
 
   programs.zoxide = {
     enable = true;

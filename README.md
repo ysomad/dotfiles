@@ -34,3 +34,5 @@ Open tmux session and press `Ctrl+a - I` to install plugins
 2. Set 'Open Spotlight' to `Option+D' shortcut
 
 
+
+asdf
