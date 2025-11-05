@@ -43,9 +43,6 @@
   # Inputs
   services.libinput.enable = true; # required for touchpad support
 
-  # Autologin
-  services.getty.autologinUser = "ysomad";
-
   users.users.ysomad = {
     isNormalUser = true;
     description = "Aleksei Malykh";
@@ -193,7 +190,6 @@
   services.blueman.enable = true;
 
   # Audio
-  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -315,7 +311,7 @@
     # DB
     jetbrains.datagrip
 
-    # Containers
+    # Virtualisation
     podman
     podman-compose
     lazydocker
@@ -396,6 +392,7 @@
 
     # Secrets
     keepassxc
+    keychain
 
     # App launcher
     rofi
@@ -468,12 +465,6 @@
     enable = true;
     enableSSHSupport = true;
     pinentryPackage = pkgs.pinentry-tty;
-    settings = {
-      default-cache-ttl = 28800;
-      default-cache-ttl-ssh = 28800;
-      max-cache-ttl = 28800;
-      max-cache-ttl-ssh = 28800;
-    };
   };
 
   programs.zoxide = {
