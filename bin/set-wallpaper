@@ -1,19 +1,77 @@
 #!/usr/bin/env bash
 
-STATE_DIR="/dev/shm/wbg"
+WALLPAPER_DIR="$HOME/dotfiles/wallpapers"
+STATE_DIR="$HOME/.local/state/wbg"
 WALLPAPER_LIST_CACHE="$STATE_DIR/wallpaper-list"
 CURRENT_INDEX_FILE="$STATE_DIR/current-index"
 
-if [ -f "$CURRENT_INDEX_FILE" ] && [ -f "$WALLPAPER_LIST_CACHE" ]; then
-    current_index=$(cat "$CURRENT_INDEX_FILE")
-    current_wallpaper=$(sed -n "$((current_index + 1))p" "$WALLPAPER_LIST_CACHE")
+build_cache() {
+    find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) | sort > "$WALLPAPER_LIST_CACHE"
+}
 
-    if [ -n "$current_wallpaper" ] && [ -f "$current_wallpaper" ]; then
-        pkill wbg
-        wbg "$current_wallpaper" &
-        exit 0
+get_next() {
+    local dir_count=$(ls -1 "$WALLPAPER_DIR" | wc -l)
+
+    if [ ! -f "$WALLPAPER_LIST_CACHE" ] || [ ! -s "$WALLPAPER_LIST_CACHE" ]; then
+        build_cache
+    else
+        local cache_count=$(wc -l < "$WALLPAPER_LIST_CACHE")
+        [ "$cache_count" -ne "$dir_count" ] && build_cache
     fi
-fi
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-exec "$SCRIPT_DIR/cycle-wallpaper"
+    local wallpapers=()
+    mapfile -t wallpapers < "$WALLPAPER_LIST_CACHE"
+
+    local total=${#wallpapers[@]}
+    [ "$total" -eq 0 ] && return 1
+
+    local idx=-1
+    [ -f "$CURRENT_INDEX_FILE" ] && read -r idx < "$CURRENT_INDEX_FILE"
+
+    local next_idx=$(( (idx + 1) % total ))
+    local next_wp="${wallpapers[$next_idx]}"
+
+    echo "$next_idx" > "$CURRENT_INDEX_FILE"
+    echo "$next_wp"
+}
+
+set_wp() {
+    local wp="$1"
+    local notify="$2"
+
+    pkill wbg
+    wbg "$wp" &
+
+    [ "$notify" = "true" ] && notify-send "Wallpaper changed" "${wp##*/}"
+}
+
+restore() {
+    if [ -f "$CURRENT_INDEX_FILE" ] && [ -f "$WALLPAPER_LIST_CACHE" ]; then
+        local idx=$(cat "$CURRENT_INDEX_FILE")
+        local wp=$(sed -n "$((idx + 1))p" "$WALLPAPER_LIST_CACHE")
+
+        if [ -n "$wp" ] && [ -f "$wp" ]; then
+            set_wp "$wp" "false"
+            exit 0
+        fi
+    fi
+
+    cycle
+}
+
+cycle() {
+    [ ! -d "$WALLPAPER_DIR" ] && { notify-send "Wallpaper error" "Directory $WALLPAPER_DIR does not exist"; exit 1; }
+
+    mkdir -p "$STATE_DIR"
+
+    local next_wp=$(get_next)
+
+    [ -z "$next_wp" ] && { notify-send "Wallpaper error" "No wallpapers found in $WALLPAPER_DIR"; exit 1; }
+
+    set_wp "$next_wp" "true"
+}
+
+case "${1:-restore}" in
+    cycle|next) cycle ;;
+    restore|set|*) restore ;;
+esac
