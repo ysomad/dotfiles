@@ -28,6 +28,7 @@
   programs.keychain = {
     enable = true;
     enableFishIntegration = true;
+    keys = ["id_ed25519"];
   };
 
   programs.foot.enable = true;

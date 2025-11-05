@@ -261,6 +261,9 @@
     };
   };
 
+  # Secretse
+  services.gnome.gnome-keyring.enable = true;
+
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     # Audio
@@ -292,6 +295,7 @@
     ripgrep
     gcc
     gnumake
+    keychain
     tmux
     btop
     tree-sitter
@@ -392,7 +396,6 @@
 
     # Secrets
     keepassxc
-    keychain
 
     # App launcher
     rofi
