@@ -44,7 +44,7 @@ autocmd("FileType", {
 
 -- treesitter syntax highlighting
 autocmd("FileType", {
-	pattern = { "go,sql" },
+	pattern = { "go,sql,python,yaml,bash,lua,javascript,typescript,tsx" },
 	callback = function()
 		vim.treesitter.start()
 	end,
