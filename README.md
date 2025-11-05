@@ -35,3 +35,4 @@ Open tmux session and press `Ctrl+a - I` to install plugins
 
 
 
+sdf
