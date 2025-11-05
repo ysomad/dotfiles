@@ -277,12 +277,8 @@
     };
   };
 
-  # Secrets and SSH agent
-  services.gnome = {
-    gnome-keyring.enable = true;
-    gcr-ssh-agent.enable = true;
-  };
-
+  # Secrets
+  services.gnome.gnome-keyring.enable = true;
   security.pam.services.login.enableGnomeKeyring = true;
 
   nixpkgs.config.allowUnfree = true;
