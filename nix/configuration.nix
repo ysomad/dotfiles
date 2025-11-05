@@ -261,8 +261,11 @@
     };
   };
 
-  # Secretse
+  # Secrets
   services.gnome.gnome-keyring.enable = true;
+  security.pam.services = {
+    login.enableGnomeKeyring = true;
+  };
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
@@ -295,7 +298,6 @@
     ripgrep
     gcc
     gnumake
-    keychain
     tmux
     btop
     tree-sitter
@@ -466,7 +468,6 @@
 
   programs.gnupg.agent = {
     enable = true;
-    enableSSHSupport = true;
     pinentryPackage = pkgs.pinentry-tty;
   };
 
