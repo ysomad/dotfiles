@@ -43,9 +43,6 @@
   # Inputs
   services.libinput.enable = true; # required for touchpad support
 
-  # Autologin
-  services.getty.autologinUser = "ysomad";
-
   users.users.ysomad = {
     isNormalUser = true;
     description = "Aleksei Malykh";
@@ -387,6 +384,7 @@
 
     # Browsers
     firefox-beta
+    chromium
 
     # Messengers
     telegram-desktop
