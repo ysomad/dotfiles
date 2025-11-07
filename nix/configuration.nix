@@ -229,15 +229,14 @@
       name = "Adwaita";
       size = 24;
     };
-    fonts = {
-      serif = {
-        package = pkgs.ibm-plex;
-        name = "IBM Plex Serif";
-      };
+    fonts = rec {
       sansSerif = {
         package = pkgs.ibm-plex;
         name = "IBM Plex Sans";
       };
+
+      serif = sansSerif;
+
       monospace = {
         package = pkgs.nerd-fonts.blex-mono;
         name = "BlexMono Nerd Font";
