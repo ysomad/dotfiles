@@ -17,5 +17,6 @@
     insomnia = stable.insomnia;
 
     neovim = inputs.neovim-nightly-overlay.packages.${final.system}.default;
+    zen-browser = inputs.zen-browser.packages.${final.system}.default;
   };
 }

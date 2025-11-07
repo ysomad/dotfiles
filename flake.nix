@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.05";
-    nixos-hardware.url = "github:nixos/nixos-hardware";
+    nixos-hardware.url = "github:nixos/nixos-hardware/master";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -18,6 +18,11 @@
 
     hyprland.url = "github:hyprwm/Hyprland";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -46,6 +51,9 @@
           home-manager.useUserPackages = true;
           home-manager.users.ysomad = import ./nix/home.nix;
           home-manager.extraSpecialArgs = specialArgs;
+          home-manager.sharedModules = [
+            inputs.zen-browser.homeModules.default
+          ];
         }
         nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
       ];
