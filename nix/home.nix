@@ -22,7 +22,7 @@
 
   home.sessionVariables = {
     # for electron apps
-    DEFAULT_BROWSER = "firefox-beta";
+    DEFAULT_BROWSER = "zen-beta";
   };
 
   programs.foot.enable = true;
@@ -233,6 +233,52 @@
 
   # bluetooth headset button to control media
   services.mpris-proxy.enable = true;
+
+  # https://github.com/0xc000022070/zen-browser-flake/issues/59#issuecomment-2964607780
+  programs.zen-browser = {
+    enable = true;
+    nativeMessagingHosts = [pkgs.firefoxpwa];
+
+    profiles.default = {
+      settings = {
+        "zen.theme.content-element-separation" = 0;
+        "zen.view.compact.animate-sidebar" = false;
+      };
+
+      spacesForce = true;
+      spaces = {
+        "Personal" = {
+          id = "572910e1-4468-4832-a869-0b3a93e2f165";
+          icon = "🏠";
+          position = 1000;
+        };
+        "Work" = {
+          id = "ec287d7f-d910-4860-b400-513f269dee77";
+          icon = "💼";
+          position = 1001;
+        };
+      };
+    };
+
+    policies = {
+      DisableAppUpdate = true;
+      DisableFeedbackCommands = true;
+      DisableFirefoxStudies = true;
+      DisablePocket = true;
+      isableTelemetry = true;
+      DontCheckDefaultBrowser = true;
+      NoDefaultBookmarks = true;
+
+      EnableTrackingProtection = {
+        Value = true;
+        Locked = true;
+        Cryptomining = true;
+        Fingerprinting = true;
+      };
+    };
+  };
+
+  stylix.targets.zen-browser.enable = false;
 
   programs.neovide.enable = true;
 }

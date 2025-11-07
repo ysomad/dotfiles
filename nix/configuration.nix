@@ -7,7 +7,6 @@
     ./hardware-configuration.nix
   ];
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.kernelParams = [
     "usbcore.autosuspend=120" # autosuspend usbs after 2m
   ];
@@ -43,6 +42,9 @@
   # Inputs
   services.libinput.enable = true; # required for touchpad support
 
+  # Autologin
+  services.getty.autologinUser = "ysomad";
+
   users.users.ysomad = {
     isNormalUser = true;
     description = "Aleksei Malykh";
@@ -60,23 +62,25 @@
   };
 
   # Power management
-  powerManagement.powertop.enable = true;
+  powerManagement = {
+    enable = true;
+    powertop.enable = true;
+  };
 
-  services = {
-    power-profiles-daemon.enable = false;
-
-    tlp = {
-      enable = true;
-      settings = {
-        CPU_BOOST_ON_AC = 0;
-        CPU_BOOST_ON_BAT = 0;
-        CPU_SCALING_GOVERNOR_ON_AC = "performance";
-        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-        START_CHARGE_THRESH_BAT0 = 60;
-        STOP_CHARGE_THRESH_BAT0 = 85;
-      };
+  services.tlp = {
+    enable = true;
+    settings = {
+      CPU_BOOST_ON_AC = 0;
+      CPU_BOOST_ON_BAT = 0;
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+      START_CHARGE_THRESH_BAT0 = 40;
+      STOP_CHARGE_THRESH_BAT0 = 85;
     };
   };
+
+  # Fans
+  programs.coolercontrol.enable = true;
 
   # Network
   networking = {
@@ -245,7 +249,7 @@
     EDITOR = "nvim";
     TERMINAL = "foot";
     TERM = "foot";
-    BROWSER = "firefox-beta";
+    BROWSER = "zen-beta";
     NIXOS_OZONE_WL = "1";
   };
 
@@ -282,13 +286,6 @@
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.login.enableGnomeKeyring = true;
 
-  xdg.portal = {
-    enable = true;
-
-    # required for slack screen sharing
-    extraPortals = with pkgs; [xdg-desktop-portal-gtk xdg-desktop-portal-wlr];
-  };
-
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     # Audio
@@ -300,6 +297,10 @@
     # Network
     impala
     localsend
+
+    # Fans
+    coolercontrol.coolercontrold
+    coolercontrol.coolercontrol-gui
 
     # Git
     git
@@ -391,8 +392,10 @@
     nodejs_24
 
     # Browsers
+    firefox
     firefox-beta
     chromium
+    zen-browser
 
     # Messengers
     telegram-desktop
