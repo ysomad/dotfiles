@@ -82,9 +82,6 @@
     };
   };
 
-  # Fans
-  programs.coolercontrol.enable = true;
-
   # Network
   networking = {
     hostName = "nixos";
@@ -303,10 +300,6 @@
     # Network
     impala
     localsend
-
-    # Fans
-    coolercontrol.coolercontrold
-    coolercontrol.coolercontrol-gui
 
     # Git
     git
