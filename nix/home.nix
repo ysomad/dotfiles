@@ -242,6 +242,9 @@
       settings = {
         "zen.theme.content-element-separation" = 0;
         "zen.view.compact.animate-sidebar" = false;
+
+        # https://github.com/zen-browser/desktop/issues/6302
+        "widget.gtk.rounded-bottom-corners.enabled" = false;
       };
 
       spacesForce = true;

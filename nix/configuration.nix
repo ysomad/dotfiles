@@ -9,6 +9,8 @@
 
   boot.kernelParams = [
     "usbcore.autosuspend=120" # autosuspend usbs after 2m
+    "mem_sleep_default=deep"
+    "resume_offset=5869568"
   ];
 
   boot.loader.systemd-boot.enable = true;
@@ -28,6 +30,7 @@
     }
   ];
 
+  # Enable hibernate support
   boot.resumeDevice = "/dev/disk/by-uuid/922f5dcd-fd26-4857-afff-0254fde0c30e";
 
   # Locale
@@ -55,7 +58,7 @@
   # Logind
   # https://www.freedesktop.org/software/systemd/man/latest/logind.conf.html
   services.logind.settings.Login = {
-    HandleLidSwitch = "suspend-then-hibernate";
+    HandleLidSwitch = "hibernate";
     HandleLidSwitchExternalPower = "ignore";
     HandlePowerKey = "hibernate";
     HandlePowerKeyLongPress = "poweroff";
@@ -181,6 +184,10 @@
           }
           {
             command = "/run/current-system/sw/bin/systemctl status wg-quick-*";
+            options = ["NOPASSWD"];
+          }
+          {
+            command = "/run/current-system/sw/bin/systemctl hibernate";
             options = ["NOPASSWD"];
           }
         ];
@@ -325,6 +332,7 @@
     brightnessctl
     libinput
     atuin
+    astroterm
 
     # SSH
     gnupg
