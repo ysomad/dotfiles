@@ -243,8 +243,12 @@
         "zen.theme.content-element-separation" = 0;
         "zen.view.compact.animate-sidebar" = false;
 
+        # performance tweaks
         # https://github.com/zen-browser/desktop/issues/6302
         "widget.gtk.rounded-bottom-corners.enabled" = false;
+        "zen.theme.gradient" = false;
+        "zen.view.experimental-rounded-view" = false;
+        "zen.mediacontrols.enabled" = false;
       };
 
       spacesForce = true;
