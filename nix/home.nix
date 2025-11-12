@@ -282,7 +282,6 @@
       };
     };
   };
-
   stylix.targets.zen-browser.enable = false;
 
   programs.neovide.enable = true;

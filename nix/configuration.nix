@@ -229,8 +229,8 @@
     polarity = "dark";
     base16Scheme = ../themes/no-clown-fiesta.yaml;
     cursor = {
-      package = pkgs.adwaita-icon-theme;
-      name = "Adwaita";
+      package = pkgs.phinger-cursors;
+      name = "phinger-cursors-dark";
       size = 24;
     };
     fonts = rec {
