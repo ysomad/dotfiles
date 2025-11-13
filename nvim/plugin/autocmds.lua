@@ -1,35 +1,27 @@
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
-local ysomad_group = augroup("ysomad", {})
-local yank_group = augroup("HighlightYank", {})
-
 -- highlight on yank
 autocmd("TextYankPost", {
-	group = yank_group,
+	group = augroup("HighlightYank", { clear = true }),
 	pattern = "*",
 	callback = function()
-		vim.highlight.on_yank({
-			higroup = "IncSearch",
-			timeout = 40,
-		})
+		vim.highlight.on_yank({ timeout = 40, visual = true })
 	end,
 })
 
 --- remove all trailing whitespace on save
 autocmd("BufWritePre", {
-	group = ysomad_group,
+	group = augroup("TrailingWhitespace", {}),
 	pattern = "*",
 	command = [[%s/\s\+$//e]],
 })
 
--- don't auto commenting new lines
-autocmd("BufEnter", {
-	pattern = "*",
+-- no auto continue comments on new line
+autocmd("FileType", {
+	group = augroup("NoAutoComment", {}),
 	callback = function()
-		vim.opt.fo:remove("c")
-		vim.opt.fo:remove("r")
-		vim.opt.fo:remove("o")
+		vim.opt_local.formatoptions:remove({ "c", "r", "o" })
 	end,
 })
 
@@ -48,4 +40,15 @@ autocmd("FileType", {
 	callback = function()
 		vim.treesitter.start()
 	end,
+})
+
+-- open help in vertical split
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "help",
+	command = "wincmd L",
+})
+
+-- auto resize splits when the terminal's window is resized
+vim.api.nvim_create_autocmd("VimResized", {
+	command = "wincmd =",
 })
