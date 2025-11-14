@@ -36,21 +36,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 vim.lsp.enable({
 	"lua_ls",
-
 	"gopls",
 	"golangci_lint_ls",
-
 	"pyright",
 	"nil_ls",
-	-- "ts_ls",
-
-	-- "rust_analyzer",
-	-- "kotlin_lsp",
-
-	-- "bashls",
-	-- "yamlls",
-	-- "dockerls",
-	-- "docker_compose_language_service",
+	"ts_ls",
+	"bashls",
 })
 
 vim.diagnostic.config({
