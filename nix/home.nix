@@ -30,6 +30,7 @@
   programs.rofi = {
     enable = true;
     plugins = [pkgs.rofi-emoji];
+    extraConfig.show-icons = true;
   };
 
   programs.fish = {

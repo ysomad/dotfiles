@@ -404,6 +404,7 @@
     # Video
     mpv
     ani-cli
+    yt-dlp
 
     # Emails
     thunderbird
@@ -413,6 +414,7 @@
 
     # VPN / Proxy
     clash-verge-rev
+    # throne
 
     # Torrents
     transmission_4-gtk
@@ -445,6 +447,9 @@
 
     # documents
     libreoffice
+
+    wineWowPackages.waylandFull
+    winetricks
   ];
 
   fonts.packages = with pkgs; [
@@ -507,14 +512,13 @@
     tunMode = true;
   };
 
-  # https://github.com/NixOS/nixpkgs/issues/457613
-  # programs.nekoray = {
+  # programs.throne = {
+  #   enable = true;
+  #   tunMode = {
   #     enable = true;
-  #     tunMode = {
-  #       enable = true;
-  #       setuid = true;
-  #     };
+  #     setuid = true;
   #   };
+  # };
 
   system.stateVersion = "25.05";
 }
