@@ -358,6 +358,8 @@
     pyright
     taplo
     nil
+    typescript-language-server
+    bash-language-server
 
     # Formatters
     beautysh
