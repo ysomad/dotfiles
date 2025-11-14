@@ -5,7 +5,7 @@ return {
 	opts = {
 		notify_no_formatters = false,
 		formatters_by_ft = {
-			go = { "gofumpt", "goimports", "gci", "golines" },
+			go = { "gofumpt", "goimports", "golines" },
 			python = { "isort", "black" },
 			sql = { "pg_format" },
 			bash = { "beautysh" },
@@ -16,23 +16,6 @@ return {
 			proto = { "buf" },
 		},
 		formatters = {
-			gci = {
-				inherit = false,
-				stdin = false,
-				command = "gci",
-				args = {
-					"write",
-					"-s",
-					"standard",
-					"-s",
-					"default",
-					"-s",
-					"localModule",
-					"--skip-generated",
-					"--skip-vendor",
-					"$FILENAME",
-				},
-			},
 			golines = { args = { "-m", "120" } },
 		},
 		format_on_save = function(bufnr)

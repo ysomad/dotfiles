@@ -366,6 +366,8 @@
     yamlfmt
     pgformatter
     alejandra # nix
+    beautysh
+    taplo
 
     # Go
     go
@@ -374,7 +376,6 @@
     golines
     gotests
     gomodifytags
-    gci
     goose
     golangci-lint
     go-swagger
