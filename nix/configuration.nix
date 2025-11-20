@@ -114,13 +114,33 @@
     };
 
     wg-quick.interfaces = {
-      # to make it work with tun:
-      # enable tun routing, add allowed ips to direct routes
       dropp = {
         autostart = false;
         address = ["172.26.230.5/24"];
-        # dns = ["10.128.0.2"];
+        dns = ["10.128.0.2"];
         privateKeyFile = "/etc/wireguard/dropp-private.key";
+
+        table = "51820";
+        postUp = ''
+          ip rule add to 172.26.230.0/24 lookup 51820 prio 100
+          ip rule add to 10.127.0.0/16 lookup 51820 prio 100
+          ip rule add to 10.128.0.0/23 lookup 51820 prio 100
+          ip rule add to 10.129.0.0/24 lookup 51820 prio 100
+          ip rule add to 10.130.0.0/24 lookup 51820 prio 100
+          ip rule add to 192.168.21.0/24 lookup 51820 prio 100
+          ip rule add to 192.168.22.0/24 lookup 51820 prio 100
+          ip rule add to 192.168.24.0/24 lookup 51820 prio 100
+        '';
+        postDown = ''
+          ip rule del to 172.26.230.0/24 lookup 51820 prio 100 2>/dev/null || true
+          ip rule del to 10.127.0.0/16 lookup 51820 prio 100 2>/dev/null || true
+          ip rule del to 10.128.0.0/23 lookup 51820 prio 100 2>/dev/null || true
+          ip rule del to 10.129.0.0/24 lookup 51820 prio 100 2>/dev/null || true
+          ip rule del to 10.130.0.0/24 lookup 51820 prio 100 2>/dev/null || true
+          ip rule del to 192.168.21.0/24 lookup 51820 prio 100 2>/dev/null || true
+          ip rule del to 192.168.22.0/24 lookup 51820 prio 100 2>/dev/null || true
+          ip rule del to 192.168.24.0/24 lookup 51820 prio 100 2>/dev/null || true
+        '';
 
         peers = [
           {
@@ -377,7 +397,7 @@
     # Browsers
     firefox
     firefox-beta
-    chromium
+    brave
     zen-browser
 
     # pdf
@@ -431,10 +451,8 @@
     # Google drive mount
     rclone
 
-    # documents
-    libreoffice
-
-    wineWowPackages.waylandFull
+    # wine
+    wineWowPackages.stagingFull
     winetricks
   ];
 

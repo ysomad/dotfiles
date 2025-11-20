@@ -13,7 +13,6 @@ return {
 		local neotest_golang_opts = {
 			go_test_args = {
 				"-v",
-				"-race",
 				"-count=1",
 				"-timeout=60s",
 				"-coverprofile=" .. vim.fn.getcwd() .. "/coverage.out",
