@@ -93,8 +93,7 @@
     wireless.iwd.enable = true;
 
     nameservers = [
-      "8.8.8.8"
-      "8.8.4.4"
+      "9.9.9.9"
     ];
 
     firewall = {
@@ -400,9 +399,6 @@
     brave
     zen-browser
 
-    # pdf
-    zathura
-
     # Messengers
     telegram-desktop
     slack
@@ -454,6 +450,13 @@
     # wine
     wineWowPackages.stagingFull
     winetricks
+
+    # disk management
+    gparted
+
+    # pdf
+    zathura
+    texlive.combined.scheme-full
   ];
 
   fonts.packages = with pkgs; [
