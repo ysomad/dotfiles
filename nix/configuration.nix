@@ -247,12 +247,17 @@
     };
   };
 
-  environment.variables = {
-    EDITOR = "nvim";
-    TERMINAL = "foot";
-    TERM = "foot";
-    BROWSER = "zen-beta";
-    NIXOS_OZONE_WL = "1";
+  environment = {
+    sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+    };
+
+    variables = {
+      EDITOR = "nvim";
+      TERMINAL = "foot";
+      TERM = "foot";
+      BROWSER = "zen-beta";
+    };
   };
 
   # Remaps
