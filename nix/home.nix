@@ -111,17 +111,6 @@
         LocalForward 1337 localhost:2387
         LocalForward 1488 localhost:6767
       Host de1
-        HostName 164.90.242.229
-        StrictHostKeyChecking no
-        User root
-        ForwardAgent yes
-        IdentityFile ~/.ssh/id_ed25519
-        IdentitiesOnly yes
-        AddKeysToAgent yes
-        ServerAliveInterval 60
-        ServerAliveCountMax 1200
-        Port 38671
-      Host de2
         HostName 194.87.71.214
         StrictHostKeyChecking no
         User root
