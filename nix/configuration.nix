@@ -407,6 +407,8 @@
     # Messengers
     telegram-desktop
     slack
+    discord-ptb
+    betterdiscordctl
 
     # Video
     mpv
@@ -451,10 +453,6 @@
 
     # Google drive mount
     rclone
-
-    # wine
-    wineWowPackages.stagingFull
-    winetricks
 
     # disk management
     gparted
