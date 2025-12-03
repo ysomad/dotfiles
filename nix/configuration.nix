@@ -441,6 +441,12 @@
     # File manager
     nautilus
 
+    # Thumbnails
+    # https://wiki.nixos.org/wiki/Thumbnails
+    ffmpeg-headless
+    ffmpegthumbnailer
+    gdk-pixbuf
+
     # Wayland
     hyprland
     waybar
