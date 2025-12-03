@@ -304,6 +304,7 @@
     # Network
     impala
     localsend
+    bind # dig, nslookup etc
 
     # Git
     git
