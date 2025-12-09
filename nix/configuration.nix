@@ -400,9 +400,7 @@
     nodejs_24
 
     # Browsers
-    firefox
-    firefox-beta
-    brave
+    chromium
     zen-browser
 
     # Messengers
@@ -416,6 +414,9 @@
     ani-cli
     yt-dlp
 
+    # Audio
+    audacity
+
     # Emails
     thunderbird
 
@@ -424,7 +425,6 @@
 
     # VPN / Proxy
     clash-verge-rev
-    throne
 
     # Torrents
     transmission_4-gtk
@@ -523,18 +523,19 @@
     xwayland.enable = true;
   };
 
+  programs.chromium = {
+    enable = true;
+    extensions = [
+      "bgnkhhnnamicmpeenaelnjfhikgbkllg" # adguard
+      "khncfooichmfjbepaaaebmommgaepoid" # unhook
+      "didegimhafipceonhjepacocaffmoppf" # passbolt
+    ];
+  };
+
   programs.clash-verge = {
     enable = true;
     serviceMode = true;
     tunMode = true;
-  };
-
-  programs.throne = {
-    enable = true;
-    tunMode = {
-      enable = true;
-      setuid = true;
-    };
   };
 
   system.stateVersion = "25.05";
