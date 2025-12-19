@@ -383,6 +383,9 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
 
+# Disable secure input
+# https://forum.keyboardmaestro.com/t/how-can-i-disable-secure-input-when-km-is-stuck/9361/8
+ioreg -l -w 0 | grep SecureInput
 
 # Kill affected applications
 
