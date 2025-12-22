@@ -2,7 +2,7 @@
 live_config_reload = true
 
 [colors.bright]
-black = "#202020"
+black = "#373737"
 blue = "#a5d6ff"
 cyan = "#88afa2"
 green = "#90a959"

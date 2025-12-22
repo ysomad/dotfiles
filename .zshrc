@@ -3,7 +3,6 @@ export EDITOR=nvim
 
 # plugins
 source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # starship
 eval "$(starship init zsh)"
@@ -19,6 +18,7 @@ ZSH_AUTOSUGGEST_USE_ASYNC=true
 alias v=nvim
 alias vi=nvim
 alias vim=nvim
+alias g=git
 
 # eza (better ls)
 alias ls="eza"
