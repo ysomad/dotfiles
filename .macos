@@ -82,6 +82,13 @@ sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
 # See: https://security.stackexchange.com/a/47786/8918
 defaults write com.apple.terminal SecureKeyboardEntry -bool true
 
+# Open emoji menu on FN
+# https://macos-defaults.com/keyboard/applefnusagetype.html
+defaults write com.apple.HIToolbox AppleFnUsageType -int "2"
+
+# Disable apple intelligence
+defaults write com.apple.CloudSubscriptionFeatures.optIn "545129924" -bool "false"
+
 
 ###############################################################################
 # Trackpad, keyboard
@@ -327,6 +334,9 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 # Bottom right
 defaults write com.apple.dock wvous-br-corner -int 0
 defaults write com.apple.dock wvous-br-modifier -int 0
+
+# Change time format
+defaults write com.apple.menuextra.clock "DateFormat" -string "\"EEE h:mm\""
 
 
 ###############################################################################
