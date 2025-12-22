@@ -7,7 +7,6 @@
 - link:
     # file removing last login msg from terminal
     ~/.hushlogin: .hushlogin
-    ~/.aider.conf.yml: .aider.conf.yml
 
     # git
     ~/.gitconfig: .gitconfig
@@ -15,11 +14,11 @@
     # shell
     ~/.zshrc: .zshrc
     ~/.zprofile: .zprofile
+    ~/.config/starship.toml: starship.toml
     ~/.config/tmux/tmux.conf: tmux/tmux.conf
 
     # term
     ~/.config/alacritty/alacritty.toml: alacritty/alacritty.toml
-    ~/.config/ghostty/config: ghostty/config
 
     # Neovim
     ~/.config/nvim/init.lua: nvim/init.lua
@@ -39,8 +38,6 @@
 
 
     # window manager
-    # ~/.config/yabai/yabairc: yabai/yabairc
-    # ~/.config/skhd/skhdrc: skhd/skhdrc
     ~/.config/aerospace/aerospace.toml: aerospace/aerospace.toml
 
     # jetbrains
@@ -50,6 +47,3 @@
     ~/bin/:
       path: bin/*
       glob: true
-
-    # vscode
-    ~/Library/Application Support/Code/User/settings.json: vscode/settings.json
