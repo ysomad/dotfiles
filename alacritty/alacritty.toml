@@ -27,7 +27,7 @@ yellow = "#f4bf75"
 
 [colors.normal]
 black = "#171717"
-blue = "#a5d6ff"
+blue = "#7e97ab"
 cyan = "#88afa2"
 green = "#90a959"
 magenta = "#aa759f"
@@ -43,15 +43,7 @@ foreground = "#e1e1e1"
 TERM = "xterm-256color"
 
 [font]
-size = 10
-
-[font.bold]
-family = "BlexMono Nerd Font Mono"
-style = "Medium"
-
-[font.bold_italic]
-family = "BlexMono Nerd Font Mono"
-style = "Medium Italic"
+size = 13
 
 [font.italic]
 family = "BlexMono Nerd Font Mono"
@@ -61,12 +53,20 @@ style = "Italic"
 family = "BlexMono Nerd Font Mono"
 style = "Regular"
 
+[font.bold]
+family = "BlexMono Nerd Font Mono"
+style = "Medium"
+
+[font.bold_italic]
+family = "BlexMono Nerd Font Mono"
+style = "Medium Italic"
+
 [font.offset]
 x = 0
 y = 0
 
 [scrolling]
-history = 5000
+history = 50000
 
 [window]
 decorations = "buttonless"
