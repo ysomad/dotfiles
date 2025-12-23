@@ -119,6 +119,10 @@ if.app-id = 'org.jkiss.dbeaver.core.product'
 run = 'move-node-to-workspace 3'
 
 [[on-window-detected]]
+if.app-id = 'com.jetbrains.datagrip'
+run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
 if.app-id = 'com.tdesktop.Telegram'
 run = 'move-node-to-workspace 5'
 
@@ -156,4 +160,8 @@ run = 'move-node-to-workspace 6'
 
 [[on-window-detected]]
 if.app-id = 'com.valvesoftware.steam.helper'
+run = 'move-node-to-workspace G'
+
+[[on-window-detected]]
+if.app-id = 'net.battle.app'
 run = 'move-node-to-workspace G'
