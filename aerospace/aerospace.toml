@@ -4,7 +4,7 @@ start-at-login = true
 alt-e = 'exec-and-forget open -g ~'
 alt-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
 alt-b = 'exec-and-forget open -n /Applications/Firefox.app'
-alt-shift-b = 'exec-and-forget open -n /Applications/Google Chrome.app'
+alt-shift-b = 'exec-and-forget open -n /Applications/Google\ Chrome.app'
 
 alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
@@ -34,7 +34,6 @@ alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
 alt-a = 'workspace A'
 alt-c = 'workspace C'
-alt-d = 'workspace D'
 alt-g = 'workspace G'
 alt-i = 'workspace I'
 alt-m = 'workspace M'
@@ -63,7 +62,6 @@ alt-shift-8 = 'move-node-to-workspace 8'
 alt-shift-9 = 'move-node-to-workspace 9'
 alt-shift-a = 'move-node-to-workspace A'
 alt-shift-c = 'move-node-to-workspace C'
-alt-shift-d = 'move-node-to-workspace D'
 alt-shift-g = 'move-node-to-workspace G'
 alt-shift-i = 'move-node-to-workspace I'
 alt-shift-m = 'move-node-to-workspace M'
@@ -142,7 +140,7 @@ if.app-id = 'com.spotify.client'
 run = 'move-node-to-workspace 6'
 
 [[on-window-detected]]
-if.app-id = 'csu.ffg.happ.plus'
+if.app-id = 'su.ffg.happ.plus'
 run = 'move-node-to-workspace 6'
 
 [[on-window-detected]]
