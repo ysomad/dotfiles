@@ -1,5 +1,8 @@
 start-at-login = true
 
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+on-focus-changed = 'move-mouse window-lazy-center'
+
 [mode.main.binding]
 alt-e = 'exec-and-forget open -g ~'
 alt-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
@@ -146,3 +149,11 @@ run = 'move-node-to-workspace 6'
 [[on-window-detected]]
 if.app-id = 'com.wireguard.macos'
 run = 'move-node-to-workspace 6'
+
+[[on-window-detected]]
+if.app-id = 'org.m0k.transmission'
+run = 'move-node-to-workspace 6'
+
+[[on-window-detected]]
+if.app-id = 'com.valvesoftware.steam.helper'
+run = 'move-node-to-workspace G'
