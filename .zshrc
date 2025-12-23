@@ -28,6 +28,9 @@ alias la="eza -la"
 eval "$(zoxide init zsh)"
 alias cd=z
 
+# bat (better cat)
+alias cat=bat
+
 # atuin (shell history)
 eval "$(atuin init zsh)"
 
