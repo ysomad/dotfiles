@@ -16,6 +16,7 @@
     ~/.zprofile: .zprofile
     ~/.config/starship.toml: starship.toml
     ~/.config/tmux/tmux.conf: tmux/tmux.conf
+    ~/.config/bat/config: bat/config
 
     # term
     ~/.config/alacritty/alacritty.toml: alacritty/alacritty.toml
