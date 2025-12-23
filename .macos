@@ -75,6 +75,10 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 ###############################################################################
 # System
 
+# Better fonts for 2k displays and alacritty
+# https://github.com/alacritty/alacritty/issues/4616
+defaults write -g AppleFontSmoothing -int 0
+
 # Enable Firewall
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
 
