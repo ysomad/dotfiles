@@ -32,7 +32,7 @@ alias cd=z
 alias cat=bat
 
 # atuin (shell history)
-eval "$(atuin init zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"
 
 # go
 export GOPATH=$HOME/go

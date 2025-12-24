@@ -1,0 +1,5 @@
+update_check = false
+enter_accept = false
+show_help = false
+show_tabs = false
+prefer_reduced_motion = true
