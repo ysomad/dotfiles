@@ -82,10 +82,12 @@ mas "Happ", id: 6746188973
 mas "WhatsApp", id: 310633997
 mas "WireGuard", id: 1451685025
 go "mvdan.cc/gofumpt"
+go "golang.org/x/tools/cmd/goimports"
 go "github.com/nametake/golangci-lint-langserver"
 go "github.com/golangci/golines"
 go "github.com/fatih/gomodifytags"
 go "github.com/pressly/goose/v3/cmd/goose"
+go "golang.org/x/tools/gopls"
 go "github.com/cweill/gotests/gotests"
 go "github.com/koron/iferr"
 go "github.com/josharian/impl"
