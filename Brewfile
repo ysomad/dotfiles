@@ -1,3 +1,4 @@
+tap "cesarferreira/tap"
 tap "go-swagger/go-swagger"
 tap "jesseduffield/lazygit"
 tap "mac-cleanup/mac-cleanup-py"
@@ -52,6 +53,7 @@ brew "yq"
 brew "yt-dlp"
 brew "zoxide"
 brew "zsh-autosuggestions"
+brew "cesarferreira/tap/rip"
 brew "go-swagger/go-swagger/go-swagger"
 cask "aerospace"
 cask "alacritty"
@@ -78,6 +80,7 @@ cask "telegram-desktop"
 cask "thunderbird"
 cask "transmission"
 cask "wine-stable"
+cask "wireshark-app"
 mas "Happ", id: 6746188973
 mas "WhatsApp", id: 310633997
 mas "WireGuard", id: 1451685025
