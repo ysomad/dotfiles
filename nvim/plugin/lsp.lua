@@ -39,7 +39,6 @@ vim.lsp.enable({
 	"gopls",
 	"golangci_lint_ls",
 	"pyright",
-	"nil_ls",
 	"ts_ls",
 	"bashls",
 	"kotlin_lsp",
