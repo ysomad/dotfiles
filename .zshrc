@@ -20,6 +20,7 @@ alias vi=nvim
 alias vim=nvim
 alias g=git
 alias ..="cd .."
+alias docker=podman
 
 # eza (better ls)
 alias ls="eza"

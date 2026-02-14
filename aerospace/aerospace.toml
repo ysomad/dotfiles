@@ -163,3 +163,7 @@ run = 'move-node-to-workspace G'
 [[on-window-detected]]
 if.app-id = 'net.battle.app'
 run = 'move-node-to-workspace G'
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'gigabg'
+run = ['layout floating', 'move-node-to-workspace G']
