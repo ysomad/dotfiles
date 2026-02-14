@@ -43,6 +43,9 @@ return {
 			usePlaceholders = true,
 			staticcheck = true,
 			directoryFilters = { "-.git", "-.vscode", "-.idea", "-node_modules" },
+			env = {
+				GOEXPERIMENT = "jsonv2",
+			},
 		},
 	},
 }
