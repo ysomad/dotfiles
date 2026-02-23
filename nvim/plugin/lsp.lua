@@ -42,6 +42,7 @@ vim.lsp.enable({
 	"ts_ls",
 	"bashls",
 	"kotlin_lsp",
+	"marksman",
 })
 
 vim.diagnostic.config({

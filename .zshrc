@@ -1,3 +1,10 @@
+# OPENSPEC:START
+# OpenSpec shell completions configuration
+fpath=("/Users/ysomad/.zsh/completions" $fpath)
+autoload -Uz compinit
+compinit
+# OPENSPEC:END
+
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export EDITOR=nvim
 
