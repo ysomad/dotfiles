@@ -1,6 +1,6 @@
 return {
 	"olexsmir/gopher.nvim",
-	branch = "main",
+	ft = "go",
 	config = function()
 		require("gopher").setup({
 			gotests = {
