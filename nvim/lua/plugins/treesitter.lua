@@ -14,6 +14,7 @@ return {
 			"lua",
 			"javascript",
 			"typescript",
+			"latex",
 		})
 	end,
 }
