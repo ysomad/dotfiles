@@ -43,6 +43,7 @@ return {
 			usePlaceholders = true,
 			staticcheck = true,
 			directoryFilters = { "-.git", "-.vscode", "-.idea", "-node_modules" },
+			buildFlags = { "-tags=integration" },
 			env = {
 				GOEXPERIMENT = "jsonv2",
 			},
