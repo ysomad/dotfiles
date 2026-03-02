@@ -8,7 +8,7 @@ return {
 			"go",
 			"sql",
 			"python",
-			"kotlin",
+			"rust",
 			"yaml",
 			"bash",
 			"lua",
