@@ -45,6 +45,11 @@
     # jetbrains
     ~/.ideavimrc: .ideavimrc
 
+    # ai
+    ~/.codex:
+      path: codex/*
+      glob: true
+
     # bin
     ~/bin/:
       path: bin/*
