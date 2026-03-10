@@ -5,7 +5,7 @@ autoload -Uz compinit
 compinit
 # OPENSPEC:END
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 export EDITOR=nvim
 
 # plugins
