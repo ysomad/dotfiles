@@ -1,6 +1,9 @@
-model = "gpt-5.3-codex"
+model = "gpt-5.4"
 model_reasoning_effort = "high"
 approval_policy = "on-request"
 
 [tui]
-theme = "ansi"
+theme = "base16"
+
+[notice.model_migrations]
+"gpt-5.3-codex" = "gpt-5.4"
