@@ -52,3 +52,10 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("VimResized", {
 	command = "wincmd =",
 })
+
+-- update force all plugins
+vim.api.nvim_create_user_command("PackUpdateAll", function()
+	vim.pack.update(nil, { force = true })
+end, {
+	desc = "Force update all vim.pack plugins",
+})
