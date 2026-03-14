@@ -24,11 +24,15 @@
 
     # Neovim
     ~/.config/nvim/init.lua: nvim/init.lua
+    ~/.config/nvim/nvim-pack-lock.json: nvim/nvim-pack-lock.json
     ~/.config/nvim/lua:
       path: nvim/lua/*
       glob: true
     ~/.config/nvim/plugin:
       path: nvim/plugin/*
+      glob: true
+    ~/.config/nvim/plugin/plugins:
+      path: nvim/plugin/plugins/*
       glob: true
     ~/.config/nvim/lsp:
       path: nvim/lsp/*
@@ -36,8 +40,6 @@
     ~/.config/nvim/after:
       path: nvim/after/*
       glob: true
-    ~/.config/nvim/lazy-lock.json: nvim/lazy-lock.json
-
 
     # window manager
     ~/.config/aerospace/aerospace.toml: aerospace/aerospace.toml

@@ -14,6 +14,15 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 		end
 
+		local unmap = function(keys)
+			pcall(vim.keymap.del, "n", keys, { buffer = event.buf })
+		end
+
+		-- unmap default lsp keymaps
+		for _, keys in ipairs({ "gri", "grt", "grr", "gra", "grn" }) do
+			unmap(keys)
+		end
+
 		map("gr", vim.lsp.buf.references, "[g]o to [r]eferences")
 		map("gd", vim.lsp.buf.definition, "[g]o to [d]efinition")
 		map("gD", vim.lsp.buf.declaration, "[g]o to [D]eclaration")
