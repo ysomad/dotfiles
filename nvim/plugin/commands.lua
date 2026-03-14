@@ -27,18 +27,10 @@ autocmd("FileType", {
 
 -- 2 spaces for selected filetypes
 autocmd("FileType", {
-	pattern = "xml,html,xhtml,css,scss,javascript,yaml,htmljinja,lua,typescript,tsx,proto,json,jsonc,nix",
+	pattern = "html,css,javascript,yaml,lua,typescript,proto,json,jsonc,nix,rust",
 	callback = function()
 		vim.opt_local.shiftwidth = 2
 		vim.opt_local.tabstop = 2
-	end,
-})
-
--- treesitter syntax highlighting
-autocmd("FileType", {
-	pattern = { "go,sql,python,kotlin,yaml,bash,lua,javascript,typescript" },
-	callback = function()
-		vim.treesitter.start()
 	end,
 })
 
@@ -52,3 +44,8 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("VimResized", {
 	command = "wincmd =",
 })
+
+-- update all plugins
+vim.api.nvim_create_user_command("PackUpdateAll", function()
+	vim.pack.update()
+end, { desc = "Update all plugins" })
