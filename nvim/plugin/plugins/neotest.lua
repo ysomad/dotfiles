@@ -1,6 +1,5 @@
 vim.pack.add({
 	"https://github.com/nvim-neotest/nvim-nio",
-	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 	"https://github.com/nvim-lua/plenary.nvim",
 	"https://github.com/antoinemadec/FixCursorHold.nvim",
 	"https://github.com/andythigpen/nvim-coverage",
