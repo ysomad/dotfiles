@@ -23,9 +23,8 @@ vim.pack.add({
 	"https://github.com/nvim-telescope/telescope-fzf-native.nvim",
 	{
 		src = "https://github.com/nvim-telescope/telescope.nvim",
-		version = "0.1.x",
+		version = "v0.2.1",
 	},
-	"https://github.com/Bekaboo/dropbar.nvim",
 })
 
 local actions = require("telescope.actions")
@@ -73,9 +72,3 @@ vim.keymap.set("n", "<leader>/", builtin.current_buffer_fuzzy_find, { desc = "Fu
 vim.keymap.set("n", "<leader>fr", builtin.lsp_references, { desc = "List references in Telescope" })
 vim.keymap.set("n", "<leader>fi", builtin.lsp_implementations, { desc = "Show implementations in Telescope" })
 vim.keymap.set("n", "<leader>ft", builtin.lsp_type_definitions, { desc = "Show definitions in Telescope" })
-
-local dropbar_api = require("dropbar.api")
-
-vim.keymap.set("n", "<Leader>;", dropbar_api.pick, { desc = "Pick symbols in winbar" })
-vim.keymap.set("n", "[;", dropbar_api.goto_context_start, { desc = "Go to start of current context" })
-vim.keymap.set("n", "];", dropbar_api.select_next_context, { desc = "Select next context" })
