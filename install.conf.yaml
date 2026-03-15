@@ -43,6 +43,7 @@
     ~/.codex:
       path: codex/*
       glob: true
+    ~/.config/opencode/opencode.json: opencode/opencode.json
     # bin
     ~/bin/:
       path: bin/*

@@ -2,3 +2,4 @@
 Brewfile.lock.json
 .aider*
 nvim.log
+tmp
