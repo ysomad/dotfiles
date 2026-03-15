@@ -1,4 +1,3 @@
----
 - defaults:
     link:
       relink: true
@@ -7,10 +6,8 @@
 - link:
     # file removing last login msg from terminal
     ~/.hushlogin: .hushlogin
-
     # git
     ~/.gitconfig: .gitconfig
-
     # shell
     ~/.zshrc: .zshrc
     ~/.zprofile: .zprofile
@@ -18,17 +15,19 @@
     ~/.config/tmux/tmux.conf: tmux/tmux.conf
     ~/.config/bat/config: bat/config
     ~/.config/atuin/config.toml: atuin/config.toml
-
     # term
     ~/.config/alacritty/alacritty.toml: alacritty/alacritty.toml
-
     # Neovim
     ~/.config/nvim/init.lua: nvim/init.lua
+    ~/.config/nvim/nvim-pack-lock.json: nvim/nvim-pack-lock.json
     ~/.config/nvim/lua:
       path: nvim/lua/*
       glob: true
     ~/.config/nvim/plugin:
       path: nvim/plugin/*
+      glob: true
+    ~/.config/nvim/plugin/plugins:
+      path: nvim/plugin/plugins/*
       glob: true
     ~/.config/nvim/lsp:
       path: nvim/lsp/*
@@ -36,20 +35,15 @@
     ~/.config/nvim/after:
       path: nvim/after/*
       glob: true
-    ~/.config/nvim/lazy-lock.json: nvim/lazy-lock.json
-
-
     # window manager
     ~/.config/aerospace/aerospace.toml: aerospace/aerospace.toml
-
     # jetbrains
     ~/.ideavimrc: .ideavimrc
-
     # ai
     ~/.codex:
       path: codex/*
       glob: true
-
+    ~/.config/opencode/opencode.json: opencode/opencode.json
     # bin
     ~/bin/:
       path: bin/*
