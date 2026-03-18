@@ -48,6 +48,8 @@ vim.api.nvim_create_autocmd("FileType", {
 		"rust",
 		"sh",
 		"typescript",
+		"yaml",
+		"sql",
 	},
 	callback = function(ev)
 		pcall(vim.treesitter.start, ev.buf)
