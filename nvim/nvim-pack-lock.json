@@ -1,9 +1,5 @@
 {
   "plugins": {
-    "99": {
-      "rev": "ec9872f7df7f4eb8b319719c1c253eb3ea8877ed",
-      "src": "https://github.com/ThePrimeagen/99"
-    },
     "FixCursorHold.nvim": {
       "rev": "1900f89dc17c603eec29960f57c00bd9ae696495",
       "src": "https://github.com/antoinemadec/FixCursorHold.nvim"
@@ -57,6 +53,10 @@
     "neotest-golang": {
       "rev": "58d07a76d714f8f768bbe27711b06d41ca237728",
       "src": "https://github.com/fredrikaverpil/neotest-golang"
+    },
+    "neotest-python": {
+      "rev": "b0d3a861bd85689d8ed73f0590c47963a7eb1bf9",
+      "src": "https://github.com/nvim-neotest/neotest-python"
     },
     "no-clown-fiesta.nvim": {
       "rev": "04b808e9769ded988089772ffcaf08d92d75d927",

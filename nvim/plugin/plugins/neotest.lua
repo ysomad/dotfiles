@@ -5,6 +5,7 @@ vim.pack.add({
 	"https://github.com/andythigpen/nvim-coverage",
 	"https://github.com/fredrikaverpil/neotest-golang",
 	"https://github.com/nvim-neotest/neotest",
+	"https://github.com/nvim-neotest/neotest-python",
 })
 
 vim.api.nvim_create_autocmd("VimEnter", {
@@ -24,6 +25,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
 		neotest.setup({
 			adapters = {
 				require("neotest-golang")(neotest_golang_opts),
+				require("neotest-python"),
 			},
 		})
 
