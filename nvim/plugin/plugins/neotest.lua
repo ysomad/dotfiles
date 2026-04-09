@@ -4,37 +4,42 @@ vim.pack.add({
 	"https://github.com/antoinemadec/FixCursorHold.nvim",
 	"https://github.com/andythigpen/nvim-coverage",
 	"https://github.com/fredrikaverpil/neotest-golang",
-	"https://github.com/nvim-neotest/neotest",
+	{ src = "https://github.com/nvim-neotest/neotest", version = "master" },
 	"https://github.com/nvim-neotest/neotest-python",
 })
 
 vim.api.nvim_create_autocmd("VimEnter", {
 	once = true,
 	callback = function()
-		local neotest = require("neotest")
-		local neotest_golang_opts = {
-			go_test_args = {
-				"-v",
-				"-count=1",
-				"-timeout=60s",
-				"-coverprofile=" .. vim.fn.getcwd() .. "/coverage.out",
-			},
-			testify_enabled = true,
-		}
+		local ok, err = pcall(function()
+			local neotest = require("neotest")
+			local neotest_golang_opts = {
+				go_test_args = {
+					"-v",
+					"-count=1",
+					"-timeout=60s",
+					"-coverprofile=" .. vim.fn.getcwd() .. "/coverage.out",
+				},
+				testify_enabled = true,
+			}
 
-		neotest.setup({
-			adapters = {
-				require("neotest-golang")(neotest_golang_opts),
-				require("neotest-python"),
-			},
-		})
+			neotest.setup({
+				adapters = {
+					require("neotest-golang")(neotest_golang_opts),
+					require("neotest-python"),
+				},
+			})
 
-		require("coverage").setup({
-			highlights = {
-				covered = { fg = "#90a959" },
-				uncovered = { fg = "#cc6666" },
-			},
-		})
+			require("coverage").setup({
+				highlights = {
+					covered = { fg = "#90a959" },
+					uncovered = { fg = "#cc6666" },
+				},
+			})
+		end)
+		if not ok then
+			vim.notify("neotest setup failed: " .. err, vim.log.levels.ERROR)
+		end
 	end,
 })
 

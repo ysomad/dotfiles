@@ -29,5 +29,11 @@ trust_level = "trusted"
 [projects."/Users/ysomad/Code/droppmarket/product-matcher"]
 trust_level = "trusted"
 
+[projects."/Users/ysomad/Code/droppmarket/slackbot"]
+trust_level = "trusted"
+
+[projects."/Users/ysomad/.ssh"]
+trust_level = "trusted"
+
 [notice.model_migrations]
 "gpt-5.3-codex" = "gpt-5.4"

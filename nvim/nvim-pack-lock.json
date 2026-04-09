@@ -47,15 +47,16 @@
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
     "neotest": {
-      "rev": "deadfb1af5ce458742671ad3a013acb9a6b41178",
-      "src": "https://github.com/nvim-neotest/neotest"
+      "rev": "fd0b7986dd0ae04e38ec7dc0c78a432e3820839c",
+      "src": "https://github.com/nvim-neotest/neotest",
+      "version": "'master'"
     },
     "neotest-golang": {
-      "rev": "58d07a76d714f8f768bbe27711b06d41ca237728",
+      "rev": "48634bebbfa1fe63ed50f170916112c538d8e70d",
       "src": "https://github.com/fredrikaverpil/neotest-golang"
     },
     "neotest-python": {
-      "rev": "b0d3a861bd85689d8ed73f0590c47963a7eb1bf9",
+      "rev": "e6df4f1892f6137f58135917db24d1655937d831",
       "src": "https://github.com/nvim-neotest/neotest-python"
     },
     "no-clown-fiesta.nvim": {
