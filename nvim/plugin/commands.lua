@@ -1,5 +1,6 @@
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
+local usercmd = vim.api.nvim_create_user_command
 
 -- highlight on yank
 autocmd("TextYankPost", {
@@ -35,22 +36,22 @@ autocmd("FileType", {
 })
 
 -- open help in vertical split
-vim.api.nvim_create_autocmd("FileType", {
+autocmd("FileType", {
 	pattern = "help",
 	command = "wincmd L",
 })
 
 -- auto resize splits when the terminal's window is resized
-vim.api.nvim_create_autocmd("VimResized", {
+autocmd("VimResized", {
 	command = "wincmd =",
 })
 
 -- update all plugins
-vim.api.nvim_create_user_command("PackUpdateAll", function()
+usercmd("PackUpdateAll", function()
 	vim.pack.update()
 end, { desc = "Update all plugins" })
 
-vim.api.nvim_create_user_command("PackDeleteAll", function()
+usercmd("PackDeleteAll", function()
 	local names = {}
 
 	for _, plugin in ipairs(vim.pack.get()) do
