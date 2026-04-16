@@ -121,6 +121,10 @@
       "src": "https://github.com/nvim-telescope/telescope.nvim",
       "version": "'v0.2.1'"
     },
+    "vim-godot": {
+      "rev": "2cecd0c83a7b3f012142a584d53a3a51be246c8e",
+      "src": "https://github.com/habamax/vim-godot"
+    },
     "vim-tmux-navigator": {
       "rev": "e41c431a0c7b7388ae7ba341f01a0d217eb3a432",
       "src": "https://github.com/christoomey/vim-tmux-navigator"

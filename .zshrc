@@ -26,6 +26,7 @@ alias v=nvim
 alias vi=nvim
 alias vim=nvim
 alias g=git
+alias codex='codex --sandbox read-only --ask-for-approval untrusted'
 alias ..="cd .."
 alias docker=podman
 

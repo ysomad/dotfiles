@@ -1,39 +1,10 @@
 model = "gpt-5.4"
 model_reasoning_effort = "high"
 approval_policy = "on-request"
+approvals_reviewer = "user"
 
 [tui]
 theme = "base16"
-
-[projects."/Users/ysomad/Code/droppmarket/mobile"]
-trust_level = "trusted"
-
-[projects."/Users/ysomad/Code/droppmarket/lies-of-bi"]
-trust_level = "trusted"
-
-[projects."/Users/ysomad/Code/droppmarket/openclaw"]
-trust_level = "trusted"
-
-[projects."/Users/ysomad"]
-trust_level = "trusted"
-
-[projects."/Users/ysomad/dotfiles"]
-trust_level = "trusted"
-
-[projects."/Users/ysomad/Code/ysomad/gigavpn"]
-trust_level = "trusted"
-
-[projects."/Users/ysomad/Code/droppmarket/product-scraper"]
-trust_level = "trusted"
-
-[projects."/Users/ysomad/Code/droppmarket/product-matcher"]
-trust_level = "trusted"
-
-[projects."/Users/ysomad/Code/droppmarket/slackbot"]
-trust_level = "trusted"
-
-[projects."/Users/ysomad/.ssh"]
-trust_level = "trusted"
 
 [notice.model_migrations]
 "gpt-5.3-codex" = "gpt-5.4"

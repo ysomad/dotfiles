@@ -71,3 +71,10 @@ usercmd("PackDeleteAll", function()
 end, {
 	desc = "Delete all inactive vim.pack plugins",
 })
+
+local project_file = vim.fs.joinpath(vim.fn.getcwd(), "project.godot")
+local is_godot_project = vim.fn.filereadable(project_file) == 1
+
+if is_godot_project then
+	vim.fn.serverstart("./godothost")
+end

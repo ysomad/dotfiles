@@ -14,6 +14,7 @@ require("conform").setup({
 		lua = { "stylua" },
 		nix = { "alejandra" },
 		proto = { "buf" },
+		gdscript = { "gdformat" },
 	},
 	formatters = {
 		golines = { args = { "-m", "120" } },
