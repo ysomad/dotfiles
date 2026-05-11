@@ -52,8 +52,8 @@ vim.lsp.enable({
 	"ts_ls",
 	"bashls",
 	"marksman",
-	"protobuf-language-server",
 	"gdscript",
+	"buf_ls",
 })
 
 vim.diagnostic.config({
