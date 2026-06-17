@@ -54,6 +54,7 @@ vim.lsp.enable({
 	"marksman",
 	"gdscript",
 	"buf_ls",
+	"roslyn_ls",
 })
 
 vim.diagnostic.config({

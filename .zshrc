@@ -50,5 +50,8 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH
 export PATH=$PATH:$GOBIN
 
+# c#
+export PATH="$PATH:$HOME/.dotnet/tools"
+
 # remap CapsLock to Ctrl
 /usr/bin/hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x7000000E0}]}' > /dev/null 2>&1

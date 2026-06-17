@@ -37,6 +37,7 @@ require("nvim-treesitter").install({
 	"yaml",
 	"proto",
 	"gdscript",
+	"c_sharp",
 })
 
 vim.api.nvim_create_autocmd("FileType", {
@@ -54,6 +55,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		"sql",
 		"proto",
 		"gdscript",
+		"c_sharp",
 	},
 	callback = function(ev)
 		pcall(vim.treesitter.start, ev.buf)
