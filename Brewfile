@@ -30,6 +30,8 @@ brew "cmake"
 brew "curl"
 # Debugger for the Go programming language
 brew "delve"
+# .NET Core
+brew "dotnet"
 # Modern, maintained replacement for ls
 brew "eza"
 # Simple, fast and user-friendly alternative to find
@@ -154,6 +156,8 @@ cask "nikitabobko/tap/aerospace"
 cask "alacritty"
 # Menu bar tool to limit maximum charging percentage
 cask "aldente"
+# Web debugging Proxy application
+cask "charles"
 # Terminal-based AI coding assistant
 cask "claude-code"
 # OpenAI's coding agent that runs in your terminal
