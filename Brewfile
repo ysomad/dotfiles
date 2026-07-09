@@ -30,8 +30,8 @@ brew "cmake"
 brew "curl"
 # Debugger for the Go programming language
 brew "delve"
-# .NET Core
-brew "dotnet"
+# TIFF library and utilities
+brew "libtiff"
 # Modern, maintained replacement for ls
 brew "eza"
 # Simple, fast and user-friendly alternative to find
@@ -168,15 +168,11 @@ cask "crossover"
 cask "datagrip"
 # Voice and text chat software
 cask "discord"
-# Developer platform
-cask "dotnet-sdk"
 # Web browser
 cask "firefox"
 cask "font-blex-mono-nerd-font"
 # 2D and 3D game engine
 cask "godot"
-# C# scripting capable version of Godot game engine
-cask "godot-mono"
 # Web browser
 cask "google-chrome"
 # Client for the Google Drive storage service
@@ -185,8 +181,6 @@ cask "google-drive"
 cask "gpg-suite"
 # Open Source Multimedia Framework
 cask "gstreamer-runtime"
-# Deck tracker and deck manager for Hearthstone
-cask "hstracker"
 # Free and open-source media player
 cask "iina"
 # HTTP and GraphQL Client
