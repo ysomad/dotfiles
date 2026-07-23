@@ -6,7 +6,7 @@ vim.keymap.set(
 	{ desc = "Rename in curr buffer" }
 )
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "chmod +x curr file" })
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open netrw" })
+vim.keymap.set("n", "<leader>pv", "<cmd>Explore %:p:h<CR>", { desc = "Open netrw in curr buffer dir" })
 
 -- giga yankers and pasters
 vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste from system clipboard" })

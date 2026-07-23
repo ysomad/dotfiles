@@ -8,6 +8,7 @@ alt-e = 'exec-and-forget open -g ~'
 alt-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
 alt-b = 'exec-and-forget open -n /Applications/Firefox.app'
 alt-shift-b = 'exec-and-forget open -n /Applications/Google\ Chrome.app'
+alt-d = 'exec-and-forget open -a Sol'
 
 alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'
