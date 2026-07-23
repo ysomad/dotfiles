@@ -1,9 +1,7 @@
-tap "anomalyco/tap", trusted: true
-tap "cesarferreira/tap", trusted: true
-tap "go-swagger/go-swagger", trusted: true
-tap "jesseduffield/lazygit", trusted: true
-tap "mac-cleanup/mac-cleanup-py", trusted: true
-tap "nikitabobko/tap", trusted: true
+tap "cesarferreira/tap"
+tap "go-swagger/go-swagger"
+tap "nikitabobko/tap"
+tap "ozgurcd/tap"
 # Download with resuming and segmented downloading
 brew "aria2"
 # Improved shell history for zsh, bash, fish and nushell
@@ -114,8 +112,6 @@ brew "rtk"
 brew "rust-analyzer"
 # Rust toolchain installer
 brew "rustup"
-# Shell Script Compiler
-brew "shc"
 # Cross-shell prompt for astronauts
 brew "starship"
 # Opinionated Lua code formatter
@@ -147,11 +143,13 @@ brew "zoxide"
 # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
 # Fuzzy find and kill processes from your terminal
-brew "cesarferreira/tap/rip"
+brew "cesarferreira/tap/rip", trusted: true
 # Toolkit to work with swagger for golang
-brew "go-swagger/go-swagger/go-swagger"
+brew "go-swagger/go-swagger/go-swagger", trusted: true
+# A fast, AST-based repository structure and call graph analyzer for Go.
+brew "ozgurcd/tap/gograph", trusted: true
 # AeroSpace is an i3-like tiling window manager for macOS
-cask "nikitabobko/tap/aerospace"
+cask "nikitabobko/tap/aerospace", trusted: true
 # GPU-accelerated terminal emulator
 cask "alacritty"
 # Menu bar tool to limit maximum charging percentage
@@ -162,8 +160,6 @@ cask "charles"
 cask "claude-code"
 # OpenAI's coding agent that runs in your terminal
 cask "codex"
-# Tool to run Windows software
-cask "crossover"
 # Databases and SQL IDE
 cask "datagrip"
 # Voice and text chat software
@@ -205,6 +201,8 @@ cask "rar"
 cask "skim"
 # Team communication and collaboration software
 cask "slack"
+# Launcher & command palette
+cask "sol"
 # Music streaming service
 cask "spotify"
 # Video game digital distribution service
@@ -217,6 +215,8 @@ cask "thunderbird"
 cask "transmission"
 # Compatibility layer to run Windows applications
 cask "wine@staging"
+# Wine wrapper, setup tool and launcher for FFXIV
+cask "xiv-on-mac"
 mas "Happ", id: 6746188973
 mas "WireGuard", id: 1451685025
 go "github.com/air-verse/air"
