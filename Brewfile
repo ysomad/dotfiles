@@ -87,7 +87,7 @@ brew "ncurses"
 # Incremental parsing library
 brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
-brew "neovim", args: ["HEAD"]
+brew "neovim"
 # PostgreSQL syntax beautifier
 brew "pgformatter"
 # Tool for managing OCI containers and pods

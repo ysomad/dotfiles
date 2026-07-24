@@ -90,14 +90,17 @@ alt-shift-slash = 'mode join'
 
 [mode.service.binding]
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
-f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling layout
+f = [
+  'layout floating tiling',
+  'mode main',
+] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 esc = ['mode main', 'reload-config']
 
 [mode.join.binding]
-alt-shift-h = ['join-with left',  'mode main']
-alt-shift-j = ['join-with down',  'mode main']
-alt-shift-k = ['join-with up',    'mode main']
+alt-shift-h = ['join-with left', 'mode main']
+alt-shift-j = ['join-with down', 'mode main']
+alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 esc = 'mode main'
 
