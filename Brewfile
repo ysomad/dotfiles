@@ -154,6 +154,8 @@ cask "nikitabobko/tap/aerospace", trusted: true
 cask "alacritty"
 # Menu bar tool to limit maximum charging percentage
 cask "aldente"
+# Application launcher and productivity software
+cask "alfred"
 # Web debugging Proxy application
 cask "charles"
 # Terminal-based AI coding assistant
@@ -201,8 +203,6 @@ cask "rar"
 cask "skim"
 # Team communication and collaboration software
 cask "slack"
-# Launcher & command palette
-cask "sol"
 # Music streaming service
 cask "spotify"
 # Video game digital distribution service
