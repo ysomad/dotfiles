@@ -169,8 +169,6 @@ cask "discord"
 # Web browser
 cask "firefox"
 cask "font-blex-mono-nerd-font"
-# 2D and 3D game engine
-cask "godot"
 # Web browser
 cask "google-chrome"
 # Client for the Google Drive storage service
@@ -195,8 +193,6 @@ cask "obs"
 cask "obsidian"
 # Collaboration platform for API development
 cask "postman"
-# HTTP debugging proxy
-cask "proxyman"
 # Archive manager for data compression and backups
 cask "rar"
 # PDF reader and note-taking application
