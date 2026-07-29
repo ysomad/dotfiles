@@ -108,10 +108,10 @@ brew "python@3.10"
 brew "ripgrep"
 # CLI proxy to minimize LLM token consumption
 brew "rtk"
-# Experimental Rust compiler front-end for IDEs
-brew "rust-analyzer"
 # Rust toolchain installer
 brew "rustup"
+# Smart session manager for the terminal
+brew "sesh"
 # Cross-shell prompt for astronauts
 brew "starship"
 # Opinionated Lua code formatter

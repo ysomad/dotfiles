@@ -1,10 +1,3 @@
-# OPENSPEC:START
-# OpenSpec shell completions configuration
-fpath=("/Users/ysomad/.zsh/completions" $fpath)
-autoload -Uz compinit
-compinit
-# OPENSPEC:END
-
 export PATH=$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH
 export EDITOR=nvim
 
@@ -52,6 +45,9 @@ export PATH=$PATH:$GOBIN
 
 # c#
 export PATH="$PATH:$HOME/.dotnet/tools"
+
+# rust
+export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
 
 # remap CapsLock to Ctrl
 /usr/bin/hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x7000000E0}]}' > /dev/null 2>&1
