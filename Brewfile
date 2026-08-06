@@ -1,6 +1,6 @@
-tap "cesarferreira/tap"
-tap "go-swagger/go-swagger"
-tap "nikitabobko/tap"
+tap "cesarferreira/tap", trusted: true
+tap "go-swagger/go-swagger", trusted: true
+tap "nikitabobko/tap", trusted: true
 tap "ozgurcd/tap"
 # Download with resuming and segmented downloading
 brew "aria2"
@@ -143,13 +143,11 @@ brew "zoxide"
 # Fish-like fast/unobtrusive autosuggestions for zsh
 brew "zsh-autosuggestions"
 # Fuzzy find and kill processes from your terminal
-brew "cesarferreira/tap/rip", trusted: true
+brew "cesarferreira/tap/rip"
 # Toolkit to work with swagger for golang
-brew "go-swagger/go-swagger/go-swagger", trusted: true
-# A fast, AST-based repository structure and call graph analyzer for Go.
-brew "ozgurcd/tap/gograph", trusted: true
+brew "go-swagger/go-swagger/go-swagger"
 # AeroSpace is an i3-like tiling window manager for macOS
-cask "nikitabobko/tap/aerospace", trusted: true
+cask "nikitabobko/tap/aerospace"
 # GPU-accelerated terminal emulator
 cask "alacritty"
 # Menu bar tool to limit maximum charging percentage
@@ -209,6 +207,8 @@ cask "telegram-desktop"
 cask "thunderbird"
 # Open-source BitTorrent client
 cask "transmission"
+# Menu bar toolkit with keep-awake, system monitor and volume mixer
+cask "vorssaint"
 # Compatibility layer to run Windows applications
 cask "wine@staging"
 # Wine wrapper, setup tool and launcher for FFXIV
