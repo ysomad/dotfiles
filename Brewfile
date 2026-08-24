@@ -146,6 +146,8 @@ brew "zsh-autosuggestions"
 brew "cesarferreira/tap/rip"
 # Toolkit to work with swagger for golang
 brew "go-swagger/go-swagger/go-swagger"
+# A fast, AST-based repository structure and call graph analyzer for Go.
+brew "ozgurcd/tap/gograph", link: false, trusted: true
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "nikitabobko/tap/aerospace"
 # GPU-accelerated terminal emulator
@@ -167,6 +169,8 @@ cask "discord"
 # Web browser
 cask "firefox"
 cask "font-blex-mono-nerd-font"
+# Fast, AST-based repository structure and call graph analyzer for Go
+cask "ozgurcd/tap/gograph", trusted: true
 # Web browser
 cask "google-chrome"
 # Client for the Google Drive storage service
@@ -207,8 +211,6 @@ cask "telegram-desktop"
 cask "thunderbird"
 # Open-source BitTorrent client
 cask "transmission"
-# Menu bar toolkit with keep-awake, system monitor and volume mixer
-cask "vorssaint"
 # Compatibility layer to run Windows applications
 cask "wine@staging"
 # Wine wrapper, setup tool and launcher for FFXIV
@@ -216,6 +218,7 @@ cask "xiv-on-mac"
 mas "Happ", id: 6746188973
 mas "WireGuard", id: 1451685025
 go "github.com/air-verse/air"
+go "golang.org/x/perf/cmd/benchstat"
 go "mvdan.cc/gofumpt"
 go "golang.org/x/tools/cmd/goimports"
 go "github.com/nametake/golangci-lint-langserver"
