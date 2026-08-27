@@ -14,9 +14,9 @@ fg_secondary = "gray"    # 7  #e1e1e1
 fg_dim = "darkgray"      # 8  #727272 - nvim Comment, tmux colour245
 
 diff_add = "green"
-diff_add_bg = "#181B18"          # nvim DiffAdd bg
+diff_add_bg = "#394129"  # blend(panel_bg, green #90a959, 30%)
 diff_del = "red"
-diff_del_bg = "#1B1818"          # nvim DiffDelete bg
+diff_del_bg = "#4B2D2D"  # blend(panel_bg, red #cc6666, 30%)
 diff_context = "gray"
 diff_hunk_header = "blue"        # 4  #7e97ab - nvim gray_blue
 expanded_context_fg = "darkgray"
@@ -25,8 +25,8 @@ expanded_context_fg = "darkgray"
 # so code in the diff follows the terminal palette too.
 syntax_theme = "terminal-syntax.tmTheme"
 
-syntax_add_bg = "#181B18"
-syntax_del_bg = "#1B1818"
+syntax_add_bg = "#394129"
+syntax_del_bg = "#4B2D2D"
 
 file_added = "green"
 file_modified = "blue" # nvim sign_change is slate blue, not yellow
