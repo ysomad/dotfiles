@@ -126,6 +126,8 @@ brew "tmux"
 brew "tree"
 # Parser generator tool
 brew "tree-sitter-cli"
+# Code review TUI with vim keybindings
+brew "tuicr"
 # Language Server Protocol implementation for TypeScript wrapping tsserver
 brew "typescript-language-server"
 # Extremely fast Python package installer and resolver, written in Rust

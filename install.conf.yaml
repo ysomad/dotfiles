@@ -17,6 +17,10 @@
     ~/.config/atuin/config.toml: atuin/config.toml
     # term
     ~/.config/alacritty/alacritty.toml: alacritty/alacritty.toml
+    # code review
+    ~/.config/tuicr/config.toml: tuicr/config.toml
+    ~/.config/tuicr/themes/terminal.toml: tuicr/themes/terminal.toml
+    ~/.config/tuicr/themes/terminal-syntax.tmTheme: tuicr/themes/terminal-syntax.tmTheme
     # Neovim
     ~/.config/nvim/init.lua: nvim/init.lua
     ~/.config/nvim/nvim-pack-lock.json: nvim/nvim-pack-lock.json

@@ -126,6 +126,10 @@
       "src": "https://github.com/nvim-telescope/telescope.nvim",
       "version": "'v0.2.1'"
     },
+    "tuicr.nvim": {
+      "rev": "8b84a000ecc2126ffd2394c188a23f83912779ea",
+      "src": "https://github.com/xendarboh/tuicr.nvim"
+    },
     "vim-godot": {
       "rev": "2cecd0c83a7b3f012142a584d53a3a51be246c8e",
       "src": "https://github.com/habamax/vim-godot"

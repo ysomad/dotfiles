@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Syntax colors for tuicr, terminal-driven.
+
+  Every color is an ANSI placeholder of the form #0N000000, which tuicr
+  translates to terminal palette slot N (src/syntax/mod.rs, syntect_color_to_ratatui).
+  Nothing here is a real RGB value, so code in the diff follows the terminal
+  palette exactly like the rest of the theme.
+
+    00 black   01 red     02 green   04 blue
+    06 cyan    08 dark gray          0F white
+
+  Scope -> color follows no-clown-fiesta: plain fg for variables, types,
+  operators and delimiters; blue for keywords and strings; cyan for functions;
+  red only for numbers, booleans and imports; gray for comments.
+-->
+<plist version="1.0">
+<dict>
+  <key>name</key>
+  <string>tuicr Terminal Syntax</string>
+  <key>settings</key>
+  <array>
+    <dict>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#0F000000</string>
+        <key>background</key>
+        <string>#00000000</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Comment</string>
+      <key>scope</key>
+      <string>comment, punctuation.definition.comment</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#08000000</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Keyword</string>
+      <key>scope</key>
+      <string>keyword, storage, storage.type, storage.modifier, keyword.control</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#04000000</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Import</string>
+      <key>scope</key>
+      <string>keyword.control.import, keyword.control.export, keyword.other.import</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#01000000</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Operator and punctuation</string>
+      <key>scope</key>
+      <string>keyword.operator, punctuation, meta.delimiter, meta.brace</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#0F000000</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>String</string>
+      <key>scope</key>
+      <string>string, punctuation.definition.string</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#04000000</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Character</string>
+      <key>scope</key>
+      <string>constant.character, constant.character.escape</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#02000000</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Number and boolean</string>
+      <key>scope</key>
+      <string>constant.numeric, constant.language</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#01000000</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Constant</string>
+      <key>scope</key>
+      <string>constant, constant.other, support.constant</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#0F000000</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Function</string>
+      <key>scope</key>
+      <string>entity.name.function, support.function, variable.function, meta.function-call</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#06000000</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Type</string>
+      <key>scope</key>
+      <string>entity.name.type, entity.name.class, support.type, support.class</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#0F000000</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Variable</string>
+      <key>scope</key>
+      <string>variable, variable.parameter, variable.other, support.variable</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#0F000000</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Tag</string>
+      <key>scope</key>
+      <string>entity.name.tag</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#04000000</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Attribute</string>
+      <key>scope</key>
+      <string>entity.other.attribute-name</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#06000000</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Markup heading</string>
+      <key>scope</key>
+      <string>markup.heading, entity.name.section</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#04000000</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Markup diff</string>
+      <key>scope</key>
+      <string>markup.inserted</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#02000000</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Markup deleted</string>
+      <key>scope</key>
+      <string>markup.deleted</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#01000000</string>
+      </dict>
+    </dict>
+
+    <dict>
+      <key>name</key>
+      <string>Invalid</string>
+      <key>scope</key>
+      <string>invalid, invalid.illegal</string>
+      <key>settings</key>
+      <dict>
+        <key>foreground</key>
+        <string>#01000000</string>
+      </dict>
+    </dict>
+  </array>
+</dict>
+</plist>

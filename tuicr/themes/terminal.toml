@@ -1,0 +1,64 @@
+# Foregrounds are ANSI names, so they follow the terminal palette instead of
+# being hardcoded here. Only the four dark background keys are hex: ANSI 8 is a
+# text gray (#727272), leaving no slot dark enough for a cursor row or a diff
+# tint. Those values come from no-clown-fiesta.
+#
+# Hue budget follows no-clown-fiesta and the tmux bar: gray tiers carry
+# structure, green = additions, red = deletions/issues, blue = structure,
+# cyan = renames/suggestions, yellow only for warnings.
+panel_bg = "#151515"            # Alacritty primary background, nvim bg.
+                                # Hex so the search-match blend works (see pending).
+bg_highlight = "#202020"        # nvim accent (Pmenu, ColorColumn, QuickFixLine)
+fg_primary = "white"            # 15 #e1e1e1 - nvim's plain fg
+fg_secondary = "gray"           # 7  #e1e1e1
+fg_dim = "darkgray"             # 8  #727272 - nvim Comment, tmux colour245
+
+diff_add = "green"
+diff_add_bg = "#181B18"         # nvim DiffAdd bg
+diff_del = "red"
+diff_del_bg = "#1B1818"         # nvim DiffDelete bg
+diff_context = "gray"
+diff_hunk_header = "blue"       # 4  #7e97ab - nvim gray_blue
+expanded_context_fg = "darkgray"
+
+# Syntax colors live in a sibling tmTheme that uses ANSI placeholder colors,
+# so code in the diff follows the terminal palette too.
+syntax_theme = "terminal-syntax.tmTheme"
+
+syntax_add_bg = "#181B18"
+syntax_del_bg = "#1B1818"
+
+file_added = "green"
+file_modified = "blue"          # nvim sign_change is slate blue, not yellow
+file_deleted = "red"
+file_renamed = "cyan"
+
+reviewed = "green"
+pending = "#727272"             # dim = not done, like tmux's inactive window.
+                                # Same value ANSI 8 resolves to; hex so tuicr can blend
+                                # it with panel_bg for the search-match background.
+
+comment_note = "blue"
+comment_suggestion = "cyan"
+comment_issue = "red"
+comment_praise = "green"
+
+border_focused = "gray"         # tmux active = colour15
+border_unfocused = "darkgray"   # tmux dim    = colour245
+status_bar_bg = "black"         # tmux status-style bg=default -> flat
+cursor_color = "white"
+cursor_line_bg = "#202020"
+branch_name = "magenta"         # 5  #aa759f - starship git_branch is "bold purple"
+help_indicator = "darkgray"
+
+message_info_fg = "blue"
+message_info_bg = "black"
+message_warning_fg = "yellow"
+message_warning_bg = "black"
+message_error_fg = "red"
+message_error_bg = "black"
+update_badge_fg = "darkgray"
+update_badge_bg = "black"
+
+mode_fg = "white"               # tmux window-status-current: fg=colour15
+mode_bg = "black"
