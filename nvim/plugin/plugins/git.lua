@@ -5,3 +5,5 @@ vim.pack.add({
 })
 
 vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "LazyGit" })
+
+vim.g.lazygit_floating_window_scaling_factor = 1.0

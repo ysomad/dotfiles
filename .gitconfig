@@ -5,3 +5,5 @@
 
 [commit]
 	gpgsign = true
+[url "git@github.com:droppmarket/"]
+	insteadOf = https://github.com/droppmarket/

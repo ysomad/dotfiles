@@ -113,10 +113,6 @@
       "rev": "e3c18ddd27a853f85a6f513a864cf4f2982b9f26",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
-    "roslyn.nvim": {
-      "rev": "c4ef25973bcc30a2c8c8766711fbbdb3d02b70a3",
-      "src": "https://github.com/seblyng/roslyn.nvim"
-    },
     "telescope-fzf-native.nvim": {
       "rev": "6fea601bd2b694c6f2ae08a6c6fab14930c60e2c",
       "src": "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
@@ -145,6 +141,10 @@
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
       "src": "https://github.com/folke/which-key.nvim"
+    },
+    "zdiff.nvim": {
+      "rev": "6e2a105d7cc138b25e2907589ad2c5251e608424",
+      "src": "https://github.com/martindur/zdiff.nvim"
     }
   }
 }

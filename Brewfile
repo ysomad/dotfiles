@@ -148,8 +148,6 @@ brew "zsh-autosuggestions"
 brew "cesarferreira/tap/rip"
 # Toolkit to work with swagger for golang
 brew "go-swagger/go-swagger/go-swagger"
-# A fast, AST-based repository structure and call graph analyzer for Go.
-brew "ozgurcd/tap/gograph", link: false, trusted: true
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "nikitabobko/tap/aerospace"
 # GPU-accelerated terminal emulator
@@ -168,6 +166,8 @@ cask "codex"
 cask "datagrip"
 # Voice and text chat software
 cask "discord"
+# Per-application volume mixer, equalizer, and audio router
+cask "finetune"
 # Web browser
 cask "firefox"
 cask "font-blex-mono-nerd-font"
