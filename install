@@ -1,15 +1,53 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
 
-CONFIG="install.conf.yaml"
-DOTBOT_DIR="dotbot"
-
-DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-cd "${BASEDIR}"
-git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
-git submodule update --init --recursive "${DOTBOT_DIR}"
+# link <src-rel> <dst-abs>
+# -n keeps a re-run from nesting the link inside an existing directory symlink
+link() {
+    local src="$BASEDIR/$1" dst="$2"
+    mkdir -p "$(dirname "$dst")"
+    ln -sfn "$src" "$dst"
+    printf '  ~%s -> %s\n' "${dst#"$HOME"}" "$1"
+}
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+# link_glob <src-dir-rel> <dst-dir-abs>
+link_glob() {
+    local child name
+    for child in "$BASEDIR/$1"/*; do
+        [ -e "$child" ] || continue
+        name="$(basename "$child")"
+        link "$1/$name" "$2/$name"
+    done
+}
+
+echo "linking..."
+
+# shell
+link .hushlogin               "$HOME/.hushlogin"
+link .gitconfig               "$HOME/.gitconfig"
+link .zshrc                   "$HOME/.zshrc"
+link .zprofile                "$HOME/.zprofile"
+link starship.toml            "$HOME/.config/starship.toml"
+
+# tools
+link tmux/tmux.conf           "$HOME/.config/tmux/tmux.conf"
+link bat/config               "$HOME/.config/bat/config"
+link atuin/config.toml        "$HOME/.config/atuin/config.toml"
+link alacritty/alacritty.toml "$HOME/.config/alacritty/alacritty.toml"
+link aerospace/aerospace.toml "$HOME/.config/aerospace/aerospace.toml"
+
+# whole directories, same as nix/home.nix does on nixos
+link nvim                     "$HOME/.config/nvim"
+link tuicr                    "$HOME/.config/tuicr"
+
+# jetbrains
+link .ideavimrc               "$HOME/.ideavimrc"
+
+# scripts, per file because ~/bin holds unmanaged files too
+link_glob bin                 "$HOME/bin"
+
+echo "cleaning broken links..."
+find "$HOME" "$HOME/.config" "$HOME/bin" -maxdepth 1 -type l ! -exec test -e {} \; -print -delete 2>/dev/null || true
