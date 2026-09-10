@@ -104,6 +104,8 @@ brew "pyenv"
 brew "pyright"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.10"
+# Rsync for cloud storage
+brew "rclone"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # CLI proxy to minimize LLM token consumption

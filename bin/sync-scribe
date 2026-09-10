@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+SRC="${KOREADER_DIR:-$HOME/Documents/Books/koreader}"
+DST="scribe:/mnt/us/documents/mybooks"
+
+command -v rclone >/dev/null || { echo "rclone missing: brew install rclone" >&2; exit 1; }
+[ -d "$SRC" ] || { echo "no such dir: $SRC" >&2; exit 1; }
+
+# kindle has no rsync; koreader ships sftp-server, so use rclone's sftp backend.
+# remote defined inline via env so no rclone.conf is needed.
+export RCLONE_CONFIG=""                             # no config file, remote is defined here
+export RCLONE_CONFIG_SCRIBE_TYPE=sftp
+export RCLONE_CONFIG_SCRIBE_SSH="ssh scribe"        # reuse ~/.ssh/config: ip, port, key, agent
+export RCLONE_CONFIG_SCRIBE_DISABLE_HASHCHECK=true  # no md5sum/sha1sum worth running on-device
+export RCLONE_CONFIG_SCRIBE_SHELL_TYPE=unix
+export RCLONE_CONFIG_SCRIBE_KNOWN_HOSTS_FILE=none   # ssh does host keys, not rclone
+
+# copy, never sync: *.sdr holds koreader reading progress, device owns it
+rclone copy "$SRC" "$DST" \
+    --exclude ".DS_Store" \
+    --exclude "**/*.sdr/**" \
+    --progress \
+    --stats-one-line \
+    "$@"
