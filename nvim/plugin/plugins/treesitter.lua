@@ -55,7 +55,7 @@ vim.api.nvim_create_autocmd("FileType", {
 		"sql",
 		"proto",
 		"gdscript",
-		"c_sharp",
+		"cs",
 	},
 	callback = function(ev)
 		pcall(vim.treesitter.start, ev.buf)

@@ -6,8 +6,8 @@ on-focus-changed = 'move-mouse window-lazy-center'
 [mode.main.binding]
 alt-e = 'exec-and-forget open -g ~'
 alt-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
-alt-b = 'exec-and-forget open -n /Applications/Firefox.app'
-alt-shift-b = 'exec-and-forget open -n /Applications/Google\ Chrome.app'
+# alt-b = 'exec-and-forget open -n /Applications/Firefox.app'
+# alt-shift-b = 'exec-and-forget open -n /Applications/Google\ Chrome.app'
 
 alt-slash = 'layout tiles horizontal vertical'
 alt-comma = 'layout accordion horizontal vertical'

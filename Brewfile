@@ -168,11 +168,15 @@ cask "codex"
 cask "datagrip"
 # Voice and text chat software
 cask "discord"
+# Developer platform
+cask "dotnet-sdk"
 # Per-application volume mixer, equalizer, and audio router
 cask "finetune"
 # Web browser
 cask "firefox"
 cask "font-blex-mono-nerd-font"
+# C# scripting capable version of Godot game engine
+cask "godot-mono"
 # Fast, AST-based repository structure and call graph analyzer for Go
 cask "ozgurcd/tap/gograph", trusted: true
 # Web browser
