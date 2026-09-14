@@ -70,14 +70,14 @@ brew "lazygit"
 brew "libpq"
 # Language Server for the Lua language
 brew "lua-language-server"
-# Python cleanup script for macOS
-brew "mac-cleanup-py"
 # GUI for vim, made for macOS
 brew "macvim"
 # Language Server Protocol for Markdown
 brew "marksman"
 # Mac App Store command-line interface
 brew "mas"
+# Deep clean and optimize your Mac
+brew "mole"
 # Feature-rich command-line audio/video downloader
 brew "yt-dlp"
 # Media player based on MPlayer and mplayer2
