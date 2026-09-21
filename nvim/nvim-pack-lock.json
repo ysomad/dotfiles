@@ -13,6 +13,10 @@
       "rev": "086a40dc7ed8242c03be9f47fbcee68699cc2395",
       "src": "https://github.com/stevearc/conform.nvim"
     },
+    "diffview.nvim": {
+      "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
+      "src": "https://github.com/sindrets/diffview.nvim"
+    },
     "dropbar.nvim": {
       "rev": "ce202248134e3949aac375fd66c28e5207785b10",
       "src": "https://github.com/Bekaboo/dropbar.nvim"
@@ -141,10 +145,6 @@
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
       "src": "https://github.com/folke/which-key.nvim"
-    },
-    "zdiff.nvim": {
-      "rev": "6e2a105d7cc138b25e2907589ad2c5251e608424",
-      "src": "https://github.com/martindur/zdiff.nvim"
     }
   }
 }

@@ -257,7 +257,7 @@ defaults write com.apple.dock "static-only" -bool "true"
 defaults write com.apple.dock mouse-over-hilite-stack -bool false
 
 # Set the icon size of Dock items to 48 pixels
-defaults write com.apple.dock tilesize -int 48
+defaults write com.apple.dock tilesize -int 64
 
 # Change minimize/maximize window effect
 defaults write com.apple.dock "mineffect" -string "scale"
