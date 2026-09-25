@@ -114,6 +114,8 @@ brew "rtk"
 brew "rustup"
 # Smart session manager for the terminal
 brew "sesh"
+# Fast SQL formatter/linter
+brew "sqruff"
 # Cross-shell prompt for astronauts
 brew "starship"
 # Opinionated Lua code formatter
@@ -154,10 +156,6 @@ brew "go-swagger/go-swagger/go-swagger"
 cask "nikitabobko/tap/aerospace"
 # GPU-accelerated terminal emulator
 cask "alacritty"
-# Menu bar tool to limit maximum charging percentage
-cask "aldente"
-# Application launcher and productivity software
-cask "alfred"
 # Web debugging Proxy application
 cask "charles"
 # Terminal-based AI coding assistant

@@ -369,7 +369,7 @@
     # Formatters
     beautysh
     yamlfmt
-    pgformatter
+    sqruff # sql
     alejandra # nix
     beautysh
     taplo

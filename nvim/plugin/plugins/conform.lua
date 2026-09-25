@@ -7,7 +7,7 @@ require("conform").setup({
 	formatters_by_ft = {
 		go = { "gofumpt", "goimports", "golines" },
 		python = { "isort", "black" },
-		sql = { "pg_format" },
+		sql = { "sqruff" },
 		bash = { "beautysh" },
 		yaml = { "yamlfmt" },
 		toml = { "taplo" },

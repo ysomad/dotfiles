@@ -54,6 +54,7 @@ vim.lsp.enable({
 	"marksman",
 	"gdscript",
 	"buf_ls",
+	"sqruff",
 	"roslyn_ls",
 })
 

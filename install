@@ -31,6 +31,7 @@ link .gitconfig               "$HOME/.gitconfig"
 link .zshrc                   "$HOME/.zshrc"
 link .zprofile                "$HOME/.zprofile"
 link starship.toml            "$HOME/.config/starship.toml"
+link .sqruff                  "$HOME/.sqruff"
 
 # tools
 link tmux/tmux.conf           "$HOME/.config/tmux/tmux.conf"
