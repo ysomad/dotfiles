@@ -14,9 +14,9 @@ fg_secondary = "gray"    # 7  #e1e1e1
 fg_dim = "darkgray"      # 8  #727272 - nvim Comment, tmux colour245
 
 diff_add = "green"
-diff_add_bg = "#394129"  # blend(panel_bg, green #90a959, 30%)
+diff_add_bg = "#394129"          # blend(panel_bg, green #90a959, 30%)
 diff_del = "red"
-diff_del_bg = "#4B2D2D"  # blend(panel_bg, red #cc6666, 30%)
+diff_del_bg = "#4B2D2D"          # blend(panel_bg, red #cc6666, 30%)
 diff_context = "gray"
 diff_hunk_header = "blue"        # 4  #7e97ab - nvim gray_blue
 expanded_context_fg = "darkgray"

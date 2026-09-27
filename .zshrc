@@ -33,6 +33,13 @@ alias cd=z
 # bat (better cat)
 alias cat=bat
 
+# hide tuicr session and summary messages
+tuicr() {
+  command tuicr "$@" 2> >(
+    command grep --line-buffered -vE '^tuicr-(session|summary):' >&2
+  )
+}
+
 # atuin (shell history)
 eval "$(atuin init zsh --disable-up-arrow)"
 
@@ -50,3 +57,4 @@ export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
 
 # remap CapsLock to Ctrl
 /usr/bin/hidutil property --set '{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x7000000E0}]}' > /dev/null 2>&1
+
