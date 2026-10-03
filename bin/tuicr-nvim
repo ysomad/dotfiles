@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# tuicr wrapper for tuicr.nvim: the plugin spawns the binary via termopen, so
+# the shell function in .zshrc does not apply, and with a pty tuicr's stderr
+# lands in the plugin's captured stdout and ends up in its result window.
+# Same filter as the tuicr() function in .zshrc.
+
+tuicr "$@" 2> >(grep --line-buffered -vE '^tuicr-(session|summary):' >&2)
