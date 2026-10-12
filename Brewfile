@@ -42,8 +42,6 @@ brew "fzf"
 brew "gcc"
 # Control Golang package import order and make it always deterministic
 brew "gci"
-# Independent set of GDScript tools - parser, linter, formatter, and more
-brew "gdtoolkit"
 # Distributed revision control system
 brew "git"
 # GNU Transport Layer Security (TLS) Library
@@ -70,8 +68,6 @@ brew "lazygit"
 brew "libpq"
 # Language Server for the Lua language
 brew "lua-language-server"
-# GUI for vim, made for macOS
-brew "macvim"
 # Language Server Protocol for Markdown
 brew "marksman"
 # Mac App Store command-line interface
@@ -88,8 +84,6 @@ brew "ncurses"
 brew "tree-sitter"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# PostgreSQL syntax beautifier
-brew "pgformatter"
 # Tool for managing OCI containers and pods
 brew "podman"
 # Alternative to docker-compose using podman
@@ -102,14 +96,10 @@ brew "protoc-gen-go"
 brew "pyenv"
 # Static type checker for Python
 brew "pyright"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.10"
 # Rsync for cloud storage
 brew "rclone"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# CLI proxy to minimize LLM token consumption
-brew "rtk"
 # Rust toolchain installer
 brew "rustup"
 # Smart session manager for the terminal
@@ -156,8 +146,6 @@ brew "go-swagger/go-swagger/go-swagger"
 cask "nikitabobko/tap/aerospace"
 # GPU-accelerated terminal emulator
 cask "alacritty"
-# Web debugging Proxy application
-cask "charles"
 # Terminal-based AI coding assistant
 cask "claude-code"
 # OpenAI's coding agent that runs in your terminal
