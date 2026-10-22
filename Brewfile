@@ -2,6 +2,14 @@ tap "cesarferreira/tap", trusted: true
 tap "go-swagger/go-swagger", trusted: true
 tap "nikitabobko/tap", trusted: true
 tap "ozgurcd/tap"
+# Simple, modern, secure file encryption
+brew "age"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Automate deployment, configuration, and upgrading
+brew "ansible"
+# Checks ansible playbooks for practices and behaviour
+brew "ansible-lint"
 # Download with resuming and segmented downloading
 brew "aria2"
 # Improved shell history for zsh, bash, fish and nushell
@@ -116,8 +124,6 @@ brew "taplo"
 brew "telnet"
 # Terminal multiplexer
 brew "tmux"
-# Display directories as trees (with optional color/HTML output)
-brew "tree"
 # Parser generator tool
 brew "tree-sitter-cli"
 # Code review TUI with vim keybindings
@@ -173,6 +179,8 @@ cask "google-drive"
 cask "gpg-suite"
 # Open Source Multimedia Framework
 cask "gstreamer-runtime"
+# Deck tracker and deck manager for Hearthstone
+cask "hstracker"
 # Free and open-source media player
 cask "iina"
 # HTTP and GraphQL Client
