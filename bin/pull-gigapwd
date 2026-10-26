@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+DST="${GIGAPWD_BACKUP_DIR:-$HOME/.gigapwd-backups}"
+REMOTE="${GIGAPWD_BACKUP_REMOTE:-gigapwd-backup}"            # ~/.ssh/config alias: host, port, key
+RSYNC=/opt/homebrew/bin/rsync
+
+# macos /usr/bin/rsync is openrsync, rrsync on the server can reject its args
+[ -x "$RSYNC" ] || { echo "rsync missing: brew install rsync" >&2; exit 1; }
+mkdir -p "$DST"
+
+# server side is rrsync -ro, archives are age-encrypted.
+# --ignore-existing: a hacked server can't overwrite old copies.
+# no --delete: keep everything, prune by hand.
+"$RSYNC" -a --ignore-existing --exclude='.*' \
+    -e ssh \
+    "$REMOTE:./" "$DST/" \
+    "$@"
+
+echo "$(date '+%F %T') pulled into $DST"

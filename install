@@ -50,5 +50,8 @@ link .ideavimrc               "$HOME/.ideavimrc"
 # scripts, per file because ~/bin holds unmanaged files too
 link_glob bin                 "$HOME/bin"
 
+# launchd agents, load with: launchctl bootstrap gui/$(id -u) <plist>
+link_glob launchd             "$HOME/Library/LaunchAgents"
+
 echo "cleaning broken links..."
 find "$HOME" "$HOME/.config" "$HOME/bin" -maxdepth 1 -type l ! -exec test -e {} \; -print -delete 2>/dev/null || true

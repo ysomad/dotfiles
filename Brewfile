@@ -108,6 +108,8 @@ brew "pyright"
 brew "rclone"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Utility that provides fast incremental file transfer
+brew "rsync"
 # Rust toolchain installer
 brew "rustup"
 # Smart session manager for the terminal
@@ -215,8 +217,6 @@ cask "thunderbird"
 cask "transmission"
 # Compatibility layer to run Windows applications
 cask "wine@staging"
-# Wine wrapper, setup tool and launcher for FFXIV
-cask "xiv-on-mac"
 mas "Happ", id: 6746188973
 mas "WireGuard", id: 1451685025
 go "github.com/air-verse/air"
