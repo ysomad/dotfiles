@@ -1,0 +1,28 @@
+# no-clown-fiesta dark, switch with: theme <dark|light>
+[colors.primary]
+background = "#151515"
+foreground = "#E1E1E1"
+
+[colors.cursor]
+cursor = "#D0D0D0"
+text = "#151515"
+
+[colors.normal]
+black = "#151515"
+blue = "#7E97AB"
+cyan = "#88afa2"
+green = "#90A959"
+magenta = "#AA759F"
+red = "#b46958"
+white = "#AFAFAF"
+yellow = "#F4BF75"
+
+[colors.bright]
+black = "#727272"
+blue = "#BAD7FF"
+cyan = "#88afa2"
+green = "#90A959"
+magenta = "#AA759F"
+red = "#b46958"
+white = "#E1E1E1"
+yellow = "#F4BF75"

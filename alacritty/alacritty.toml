@@ -1,43 +1,7 @@
 [general]
 live_config_reload = true
-
-[colors.bright]
-black = "#727272"
-blue = "#57788d"
-cyan = "#3e5f66"
-green = "#a9bd7e"
-magenta = "#AA759F"
-red = "#d49e90"
-white = "#D6D6D6"
-yellow = "#b89058"
-
-[colors.cursor]
-cursor = "#151515"
-text = "#D0D0D0"
-
-[colors.dim]
-black = "#373737"
-blue = "#637786"
-cyan = "#3e5f66"
-green = "#CCDEC6"
-magenta = "#AA759F"
-red = "#DEC6C6"
-white = "#aaaaaa"
-yellow = "#b89058"
-
-[colors.normal]
-black = "#151515"
-blue = "#637786"
-cyan = "#3e5f66"
-green = "#CCDEC6"
-magenta = "#AA759F"
-red = "#DEC6C6"
-white = "#aaaaaa"
-yellow = "#b89058"
-
-[colors.primary]
-background = "#E1E1E1"
-foreground = "#151515"
+# no-clown-fiesta from dotfiles/themes, switch with: theme <dark|light>
+import = ["~/.config/alacritty/theme.toml"]
 
 [env]
 TERM = "xterm-256color"

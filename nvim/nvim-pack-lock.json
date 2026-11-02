@@ -17,10 +17,6 @@
       "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
       "src": "https://github.com/sindrets/diffview.nvim"
     },
-    "dropbar.nvim": {
-      "rev": "f7c6fa21e2a7c32576e7a1791774a3736987f467",
-      "src": "https://github.com/Bekaboo/dropbar.nvim"
-    },
     "friendly-snippets": {
       "rev": "b4d01b0fdf3c9a549961c2f9ffe8dc09be166219",
       "src": "https://github.com/rafamadriz/friendly-snippets"
@@ -67,10 +63,6 @@
     "no-clown-fiesta.nvim": {
       "rev": "04b808e9769ded988089772ffcaf08d92d75d927",
       "src": "https://github.com/aktersnurra/no-clown-fiesta.nvim"
-    },
-    "nvim-colorizer.lua": {
-      "rev": "72a05f62c52241bc7441c820eb53946f92b2e6a4",
-      "src": "https://github.com/NvChad/nvim-colorizer.lua"
     },
     "nvim-coverage": {
       "rev": "a939e425e363319d952a6c35fb3f38b34041ded2",

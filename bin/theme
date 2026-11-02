@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# theme [dark|light]: print or switch the no-clown-fiesta variant everywhere.
+# alacritty reloads by itself, tmux and running nvims are told to.
+set -euo pipefail
+
+THEMES="$(cd "$(dirname "$(readlink -f "$0")")/../themes" && pwd)"
+CURRENT="$HOME/.config/theme"
+
+if [ $# -eq 0 ]; then
+    cat "$CURRENT" 2>/dev/null || echo dark
+    exit
+fi
+
+case "$1" in dark | light) ;; *) echo "usage: theme [dark|light]" >&2; exit 1 ;; esac
+
+echo "$1" > "$CURRENT"
+mkdir -p "$HOME/.config/alacritty" "$HOME/.config/tmux"
+ln -sf "$THEMES/alacritty/$1.toml" "$HOME/.config/alacritty/theme.toml"
+ln -sf "$THEMES/tmux/$1.conf" "$HOME/.config/tmux/theme.conf"
+
+tmux source-file "$HOME/.config/tmux/tmux.conf" 2>/dev/null || true
+
+for sock in "${TMPDIR:-$(getconf DARWIN_USER_TEMP_DIR)}"/nvim.*/*/nvim.*; do
+    [ -S "$sock" ] && nvim --server "$sock" --remote-send "<Cmd>Theme $1<CR>" >/dev/null 2>&1 || true
+done

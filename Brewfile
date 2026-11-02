@@ -1,4 +1,5 @@
 tap "cesarferreira/tap", trusted: true
+tap "cormacrelf/tap"
 tap "go-swagger/go-swagger", trusted: true
 tap "nikitabobko/tap", trusted: true
 tap "ozgurcd/tap"
@@ -148,12 +149,16 @@ brew "zoxide"
 brew "zsh-autosuggestions"
 # Fuzzy find and kill processes from your terminal
 brew "cesarferreira/tap/rip"
+# Watcher for macOS 10.14+ light/dark mode changes
+brew "cormacrelf/tap/dark-notify", trusted: true
 # Toolkit to work with swagger for golang
 brew "go-swagger/go-swagger/go-swagger"
 # AeroSpace is an i3-like tiling window manager for macOS
 cask "nikitabobko/tap/aerospace"
 # GPU-accelerated terminal emulator
 cask "alacritty"
+# Web browser focusing on privacy
+cask "brave-browser"
 # Terminal-based AI coding assistant
 cask "claude-code"
 # OpenAI's coding agent that runs in your terminal

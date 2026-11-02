@@ -2,9 +2,9 @@ vim.pack.add({
 	"https://github.com/nvim-lualine/lualine.nvim",
 })
 
-require("lualine").setup({
+local opts = {
 	options = {
-		theme = "no-clown-fiesta-light",
+		theme = "no-clown-fiesta-" .. vim.g.theme_variant,
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		icons_enabled = true,
@@ -17,4 +17,14 @@ require("lualine").setup({
 		lualine_y = {},
 		lualine_z = { "location" },
 	},
+}
+require("lualine").setup(opts)
+
+-- follow `theme <dark|light>`, see colorscheme.lua
+vim.api.nvim_create_autocmd("User", {
+	pattern = "ThemeChanged",
+	callback = function()
+		opts.options.theme = "no-clown-fiesta-" .. vim.g.theme_variant
+		require("lualine").setup(opts)
+	end,
 })
