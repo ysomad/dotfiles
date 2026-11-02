@@ -3,41 +3,41 @@ live_config_reload = true
 
 [colors.bright]
 black = "#727272"
-blue = "#a5d6ff"
-cyan = "#88afa2"
-green = "#90a959"
-magenta = "#aa759f"
-red = "#cc6666"
-white = "#e1e1e1"
-yellow = "#f4bf75"
+blue = "#57788d"
+cyan = "#3e5f66"
+green = "#a9bd7e"
+magenta = "#AA759F"
+red = "#d49e90"
+white = "#D6D6D6"
+yellow = "#b89058"
 
 [colors.cursor]
-cursor = "#d0d0d0"
-text = "#151515"
+cursor = "#151515"
+text = "#D0D0D0"
 
 [colors.dim]
 black = "#373737"
-blue = "#7e97ab"
-cyan = "#88afa2"
-green = "#90a959"
-magenta = "#aa759f"
-red = "#cc6666"
-white = "#e1e1e1"
-yellow = "#f4bf75"
+blue = "#637786"
+cyan = "#3e5f66"
+green = "#CCDEC6"
+magenta = "#AA759F"
+red = "#DEC6C6"
+white = "#aaaaaa"
+yellow = "#b89058"
 
 [colors.normal]
-black = "#171717"
-blue = "#7e97ab"
-cyan = "#88afa2"
-green = "#90a959"
-magenta = "#aa759f"
-red = "#cc6666"
-white = "#e1e1e1"
-yellow = "#f4bf75"
+black = "#151515"
+blue = "#637786"
+cyan = "#3e5f66"
+green = "#CCDEC6"
+magenta = "#AA759F"
+red = "#DEC6C6"
+white = "#aaaaaa"
+yellow = "#b89058"
 
 [colors.primary]
-background = "#151515"
-foreground = "#e1e1e1"
+background = "#E1E1E1"
+foreground = "#151515"
 
 [env]
 TERM = "xterm-256color"

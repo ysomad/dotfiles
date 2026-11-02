@@ -11,6 +11,14 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 # General UI/UX
 
+# https://forums.macrumors.com/threads/override-window-corner-radius-disable-floating-sidebar.2484925/
+# change corner radius && disable floating sidebar
+defaults write -g NSConvolutionOverride1 -float 4
+defaults write -g NSSplitViewItemSidebarDefaultsToFloatingAppearance -bool false
+
+# Reduce transparency
+defaults write com.apple.universalaccess reduceTransparency -bool true
+
 # Set sidebar icon size to medium
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 

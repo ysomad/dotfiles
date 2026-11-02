@@ -4,6 +4,7 @@ vim.pack.add({
 
 require("lualine").setup({
 	options = {
+		theme = "no-clown-fiesta-light",
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		icons_enabled = true,
