@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+variant=$(cat "$HOME/.config/theme" 2>/dev/null || echo dark)
+case "$variant" in dark | light) ;; *) variant=dark ;; esac
+exec difft --background "$variant" "$@"

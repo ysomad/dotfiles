@@ -7,3 +7,25 @@
 	gpgsign = true
 [url "git@github.com:droppmarket/"]
 	insteadOf = https://github.com/droppmarket/
+[core]
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	line-numbers = true
+[merge]
+	conflictStyle = zdiff3
+[diff]
+	tool = difftastic
+[difftool]
+	prompt = false
+[difftool "difftastic"]
+	cmd = difft-themed "$LOCAL" "$REMOTE"
+[pager]
+	difftool = true
+[alias]
+	difft = -c diff.external=difft-themed diff
+# delta colors, linked by bin/theme
+[include]
+	path = ~/.config/delta/theme.gitconfig

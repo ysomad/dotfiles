@@ -1,0 +1,21 @@
+# Adapted from upstream Neovim highlight roles; see themes/README.md.
+[delta]
+    dark = true
+    syntax-theme = no-clown-fiesta-dark
+    minus-style = syntax "#1B1818"
+    minus-emph-style = "#E1E1E1" "#38404f"
+    minus-empty-line-marker-style = "#984936" "#1B1818"
+    plus-style = syntax "#181B18"
+    plus-emph-style = "#E1E1E1" "#38404f"
+    plus-empty-line-marker-style = "#586935" "#181B18"
+    line-numbers-minus-style = "#984936"
+    line-numbers-plus-style = "#586935"
+    line-numbers-zero-style = "#727272"
+    line-numbers-left-style = "#727272"
+    line-numbers-right-style = "#727272"
+    file-style = "#BAD7FF" bold
+    file-decoration-style = "#373737" ul
+    hunk-header-style = file line-number syntax
+    hunk-header-decoration-style = "#373737" box
+    blame-palette = "#151515" "#171717" "#202020"
+    whitespace-error-style = "#984936" reverse

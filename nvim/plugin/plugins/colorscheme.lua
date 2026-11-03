@@ -1,5 +1,8 @@
 vim.pack.add({
-	"https://github.com/aktersnurra/no-clown-fiesta.nvim",
+	{
+		src = "https://github.com/ysomad/no-clown-fiesta.nvim",
+		version = "master",
+	},
 })
 
 -- variant comes from ~/.config/theme, `theme <dark|light>` calls :Theme in

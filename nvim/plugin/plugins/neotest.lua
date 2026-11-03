@@ -30,12 +30,15 @@ vim.api.nvim_create_autocmd("VimEnter", {
 				},
 			})
 
-			require("coverage").setup({
-				highlights = {
-					covered = { fg = "#90a959" },
-					uncovered = { fg = "#cc6666" },
-				},
-			})
+				require("coverage").setup({})
+				-- Override the plugin's default colors after its ColorScheme handler.
+				local function coverage_highlights()
+					vim.api.nvim_set_hl(0, "CoverageCovered", { link = "SignAdd" })
+					vim.api.nvim_set_hl(0, "CoverageUncovered", { link = "SignDelete" })
+					vim.api.nvim_set_hl(0, "CoveragePartial", { link = "SignChange" })
+				end
+				coverage_highlights()
+				vim.api.nvim_create_autocmd("ColorScheme", { callback = coverage_highlights })
 		end)
 		if not ok then
 			vim.notify("neotest setup failed: " .. err, vim.log.levels.ERROR)

@@ -61,8 +61,13 @@
       "src": "https://github.com/nvim-neotest/neotest-python"
     },
     "no-clown-fiesta.nvim": {
-      "rev": "04b808e9769ded988089772ffcaf08d92d75d927",
-      "src": "https://github.com/aktersnurra/no-clown-fiesta.nvim"
+      "rev": "fba5381d227d5bc7fc257f73fb8d1c9de447c805",
+      "src": "https://github.com/ysomad/no-clown-fiesta.nvim",
+      "version": "'master'"
+    },
+    "nvim-colorizer.lua": {
+      "rev": "72a05f62c52241bc7441c820eb53946f92b2e6a4",
+      "src": "https://github.com/NvChad/nvim-colorizer.lua"
     },
     "nvim-coverage": {
       "rev": "a939e425e363319d952a6c35fb3f38b34041ded2",
@@ -117,10 +122,6 @@
       "rev": "3333a52ff548ba0a68af6d8da1e54f9cd96e9179",
       "src": "https://github.com/nvim-telescope/telescope.nvim",
       "version": "'v0.2.1'"
-    },
-    "tuicr.nvim": {
-      "rev": "8b84a000ecc2126ffd2394c188a23f83912779ea",
-      "src": "https://github.com/xendarboh/tuicr.nvim"
     },
     "vim-godot": {
       "rev": "2cecd0c83a7b3f012142a584d53a3a51be246c8e",

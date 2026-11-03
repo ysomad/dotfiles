@@ -37,6 +37,8 @@ brew "cmake"
 brew "curl"
 # Debugger for the Go programming language
 brew "delve"
+# Diff that understands syntax
+brew "difftastic"
 # TIFF library and utilities
 brew "libtiff"
 # Modern, maintained replacement for ls
@@ -53,6 +55,8 @@ brew "gcc"
 brew "gci"
 # Distributed revision control system
 brew "git"
+# Programmatically trigger syntax-highlighting pager for git, diff, and grep
+brew "git-delta"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
 # Passphrase entry dialog utilizing the Assuan protocol

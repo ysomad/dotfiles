@@ -1,0 +1,18 @@
+# no-clown-fiesta light, switch with: theme <dark|light>
+# Adapted from upstream Neovim highlight roles; see themes/README.md.
+gui:
+  theme:
+    activeBorderColor: ["#637786", bold]
+    inactiveBorderColor: ["#aaaaaa"]
+    searchingActiveBorderColor: ["#b89058", bold]
+    optionsTextColor: ["#8ba1bf"]
+    selectedLineBgColor: ["#aaaaaa"]
+    inactiveViewSelectedLineBgColor: ["#D6D6D6"]
+    cherryPickedCommitFgColor: ["#8ba1bf"]
+    cherryPickedCommitBgColor: ["#B1B9C8"]
+    markedBaseCommitFgColor: ["#b89058"]
+    markedBaseCommitBgColor: ["#cfcfcf"]
+    unstagedChangesColor: ["#874e42"]
+    defaultFgColor: ["#151515"]
+    authorColors:
+      "*": "#2B2B2B"

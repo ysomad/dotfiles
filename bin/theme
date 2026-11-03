@@ -14,10 +14,17 @@ fi
 
 case "$1" in dark | light) ;; *) echo "usage: theme [dark|light]" >&2; exit 1 ;; esac
 
+mkdir -p "$HOME/.config/alacritty" "$HOME/.config/tmux" "$HOME/.config/delta" "$HOME/.config/lazygit" "$HOME/.config/bat/themes"
+for variant in dark light; do
+    ln -sf "$THEMES/bat/no-clown-fiesta-$variant.tmTheme" "$HOME/.config/bat/themes/no-clown-fiesta-$variant.tmTheme"
+done
+bat cache --build >/dev/null
 echo "$1" > "$CURRENT"
-mkdir -p "$HOME/.config/alacritty" "$HOME/.config/tmux"
 ln -sf "$THEMES/alacritty/$1.toml" "$HOME/.config/alacritty/theme.toml"
 ln -sf "$THEMES/tmux/$1.conf" "$HOME/.config/tmux/theme.conf"
+ln -sf "$THEMES/delta/$1.gitconfig" "$HOME/.config/delta/theme.gitconfig"
+ln -sf "$THEMES/bat/$1.conf" "$HOME/.config/bat/config"
+ln -sf "$THEMES/lazygit/$1.yml" "$HOME/.config/lazygit/theme.yml"
 
 tmux source-file "$HOME/.config/tmux/tmux.conf" 2>/dev/null || true
 

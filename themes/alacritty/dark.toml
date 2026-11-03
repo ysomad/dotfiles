@@ -7,18 +7,22 @@ foreground = "#E1E1E1"
 cursor = "#D0D0D0"
 text = "#151515"
 
+[colors.selection]
+background = "#E1E1E1"
+text = "#151515"
+
 [colors.normal]
 black = "#151515"
-blue = "#7E97AB"
+blue = "#BAD7FF"
 cyan = "#88afa2"
 green = "#90A959"
 magenta = "#AA759F"
 red = "#b46958"
-white = "#AFAFAF"
+white = "#E1E1E1"
 yellow = "#F4BF75"
 
 [colors.bright]
-black = "#727272"
+black = "#AFAFAF"
 blue = "#BAD7FF"
 cyan = "#88afa2"
 green = "#90A959"

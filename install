@@ -37,6 +37,7 @@ link .sqruff                  "$HOME/.sqruff"
 link tmux/tmux.conf           "$HOME/.config/tmux/tmux.conf"
 link bat/config               "$HOME/.config/bat/config"
 link atuin/config.toml        "$HOME/.config/atuin/config.toml"
+link lazygit/config.yml       "$HOME/.config/lazygit/config.yml"
 link alacritty/alacritty.toml "$HOME/.config/alacritty/alacritty.toml"
 link aerospace/aerospace.toml "$HOME/.config/aerospace/aerospace.toml"
 

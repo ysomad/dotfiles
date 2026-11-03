@@ -9,21 +9,60 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 
 ###############################################################################
-# General UI/UX
+# Appearance (light/dark is switched manually via bin/theme)
 
-# https://forums.macrumors.com/threads/override-window-corner-radius-disable-floating-sidebar.2484925/
-# change corner radius && disable floating sidebar
-defaults write -g NSConvolutionOverride1 -float 4
-defaults write -g NSSplitViewItemSidebarDefaultsToFloatingAppearance -bool false
+# Accent color: graphite
+defaults write NSGlobalDomain AppleAccentColor -int -1
+defaults write NSGlobalDomain AppleAquaColorVariant -int 6
 
-# Reduce transparency
-defaults write com.apple.universalaccess reduceTransparency -bool true
+# Highlight color: graphite
+defaults write NSGlobalDomain AppleHighlightColor -string "0.847059 0.847059 0.862745 Graphite"
+
+# Icon & widget style: tinted (graphite), follows light/dark
+defaults write NSGlobalDomain AppleIconAppearanceTheme -string "TintedAutomatic"
+defaults write NSGlobalDomain AppleIconAppearanceTintColor -string "Graphite"
+
+# Disable wallpaper tinting in windows
+defaults write NSGlobalDomain AppleReduceDesktopTinting -bool true
 
 # Set sidebar icon size to medium
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
 
 # Always show scrollbars
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+
+
+###############################################################################
+# Accessibility
+# Note: writing com.apple.universalaccess requires Full Disk Access for the terminal
+
+# Increase contrast
+defaults write com.apple.universalaccess increaseContrast -bool true
+defaults write com.apple.Accessibility DarkenSystemColors -bool true
+defaults write com.apple.Accessibility EnhancedBackgroundContrastEnabled -bool true
+
+# Reduce transparency
+defaults write com.apple.universalaccess reduceTransparency -bool true
+
+# Reduce motion
+defaults write com.apple.universalaccess reduceMotion -bool true
+defaults write com.apple.Accessibility ReduceMotionEnabled -bool true
+
+# Differentiate without color
+defaults write com.apple.universalaccess differentiateWithoutColor -bool true
+defaults write com.apple.Accessibility DifferentiateWithoutColor -bool true
+
+# Prefer non-blinking cursor
+defaults write com.apple.Accessibility PrefersNonBlinkingCursorIndicator -bool true
+
+
+###############################################################################
+# General UI/UX
+
+# https://forums.macrumors.com/threads/override-window-corner-radius-disable-floating-sidebar.2484925/
+# change corner radius && disable floating sidebar
+defaults write -g NSConvolutionOverride1 -float 4
+defaults write -g NSSplitViewItemSidebarDefaultsToFloatingAppearance -bool false
 
 # opening and closing windows and popovers
 defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
@@ -82,10 +121,6 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
 ###############################################################################
 # System
-
-# Better fonts for 2k displays and alacritty
-# https://github.com/alacritty/alacritty/issues/4616
-defaults write -g AppleFontSmoothing -int 0
 
 # Enable Firewall
 sudo /usr/libexec/ApplicationFirewall/socketfilterfw --setglobalstate on
