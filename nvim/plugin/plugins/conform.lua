@@ -15,6 +15,7 @@ require("conform").setup({
 		nix = { "alejandra" },
 		proto = { "buf" },
 		gdscript = { "gdformat" },
+		templ = { "templ" },
 	},
 	formatters = {
 		golines = { args = { "-m", "120" } },

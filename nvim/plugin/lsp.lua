@@ -56,6 +56,7 @@ vim.lsp.enable({
 	"buf_ls",
 	"sqruff",
 	"roslyn_ls",
+	"templ",
 })
 
 vim.diagnostic.config({
